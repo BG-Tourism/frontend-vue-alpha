@@ -1,0 +1,64 @@
+.badge-combined {
+    @include font-size(12px);
+
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $gray-600;
+    border-radius: 6px;
+    background-color: $white;
+    color: $gray-600;
+    font-weight: 400;
+    white-space: nowrap;
+
+    &.green {
+        border-color: $green-100;
+        color: $green-500;
+
+        .colored {
+            background-color: $green-100;
+        }
+    }
+
+    &.yellow {
+        border-color: $amber-100;
+        color: $amber-500;
+
+        .colored {
+            background-color: $amber-100;
+        }
+    }
+
+    &.blue {
+        border-color: $blue-100;
+        color: $blue-500;
+
+        .colored {
+            background-color: $blue-100;
+        }
+    }
+
+    &.red {
+        border-color: $rose-100;
+        color: $rose-500;
+
+        .colored {
+            background-color: $rose-100;
+        }
+    }
+
+    .colored {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        background-color: $gray-100;
+        font-weight: 500;
+    }
+
+    span {
+        padding: 5px 8px;
+    }
+}
+
+@import 'responsive/badge-combined'

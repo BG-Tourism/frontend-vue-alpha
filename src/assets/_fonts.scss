@@ -1,0 +1,82 @@
+@font-face {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Repo';
+    src: url('/fonts/Repo/Repo-Light.eot');
+    src:
+        url('/fonts/Repo/Repo-Light.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Repo/Repo-Light.woff2') format('woff2'),
+        url('/fonts/Repo/Repo-Light.woff') format('woff'),
+        url('/fonts/Repo/Repo-Light.ttf') format('truetype'),
+        url('/fonts/Repo/Repo-Light.svg#Repo-Light') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Repo';
+    src: url('/fonts/Repo/Repo-Regular.eot');
+    src:
+        url('/fonts/Repo/Repo-Regular.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Repo/Repo-Regular.woff2') format('woff2'),
+        url('/fonts/Repo/Repo-Regular.woff') format('woff'),
+        url('/fonts/Repo/Repo-Regular.ttf') format('truetype'),
+        url('/fonts/Repo/Repo-Regular.svg#Repo-Regular') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Repo';
+    src: url('/fonts/Repo/Repo-Medium.eot');
+    src:
+        url('/fonts/Repo/Repo-Medium.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Repo/Repo-Medium.woff2') format('woff2'),
+        url('/fonts/Repo/Repo-Medium.woff') format('woff'),
+        url('/fonts/Repo/Repo-Medium.ttf') format('truetype'),
+        url('/fonts/Repo/Repo-Medium.svg#Repo-Medium') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 600;
+    font-style: normal;
+    font-family: 'Repo';
+    src: url('/fonts/Repo/Repo-DemiBold.eot');
+    src:
+        url('/fonts/Repo/Repo-DemiBold.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Repo/Repo-DemiBold.woff2') format('woff2'),
+        url('/fonts/Repo/Repo-DemiBold.woff') format('woff'),
+        url('/fonts/Repo/Repo-DemiBold.ttf') format('truetype'),
+        url('/fonts/Repo/Repo-DemiBold.svg#Repo-DemiBold') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Repo';
+    src: url('/fonts/Repo/Repo-Bold.eot');
+    src:
+        url('/fonts/Repo/Repo-Bold.eot#iefix') format('embedded-opentype'),
+        url('/fonts/Repo/Repo-Bold.woff2') format('woff2'),
+        url('/fonts/Repo/Repo-Bold.woff') format('woff'),
+        url('/fonts/Repo/Repo-Bold.ttf') format('truetype'),
+        url('/fonts/Repo/Repo-Bold.svg#Repo-Bold') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'icomoon';
+    src: url('/fonts/IcoMoon/icomoon.eot');
+    src:
+        url('/fonts/IcoMoon/icomoon.eot#iefix') format('embedded-opentype'),
+        url('/fonts/IcoMoon/icomoon.ttf') format('truetype'),
+        url('/fonts/IcoMoon/icomoon.woff') format('woff'),
+        url('/fonts/IcoMoon/icomoon.svg#icomoon') format('svg');
+    font-display: block;
+}

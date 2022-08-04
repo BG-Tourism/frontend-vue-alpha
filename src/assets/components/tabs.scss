@@ -1,0 +1,108 @@
+.tabs {
+    position: sticky;
+    top: 91px;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: $slate-200;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: $slate-50;
+
+    li {
+        width: 100%;
+
+        &:hover,
+        &:focus {
+            i {
+                color: $blue-600;
+            }
+        }
+
+        a,
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: transparent;
+            border-radius: 6px;
+            background-color: transparent;
+            white-space: nowrap;
+            transition: all 200ms linear;
+
+            &:hover {
+                background-color: $slate-100;
+            }
+
+            &.active {
+                border-color: $blue-500;
+                background-color: $blue-50;
+
+                i {
+                    color: $blue-600;
+                }
+            }
+
+            &.disabled {
+                pointer-events: none;
+
+                i,
+                span {
+                    color: $slate-300;
+                }
+            }
+        }
+
+        i,
+        span {
+            color: $slate-600;
+        }
+
+        i {
+            @include font-size(20px);
+
+            margin: 0 10px 0 0;
+        }
+
+        span {
+            @include font-size(16px);
+
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.tab-content {
+    overflow: hidden;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+
+    .content-loading,
+    .no-results {
+        border: 0;
+        border-radius: 0;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        background-color: $white;
+        box-shadow: none;
+    }
+
+    .no-results {
+        .page-icon {
+            background-color: $slate-100;
+        }
+    }
+}
+
+@import 'responsive/tabs';

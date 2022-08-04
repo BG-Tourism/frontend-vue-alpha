@@ -1,0 +1,155 @@
+.form-select {
+    position: relative;
+    padding: 0 0 20px;
+
+    &.success {
+        select {
+            @include placeholder {
+                color: $green-700;
+            }
+
+            border-color: $green-300;
+            background-color: $green-50;
+            color: $green-900;
+
+            &:focus {
+                border-color: $green-600;
+                outline-color: $green-200;
+            }
+        }
+
+        .message {
+            color: $green-600;
+        }
+    }
+
+    &.danger {
+        select {
+            @include placeholder {
+                color: $red-700;
+            }
+
+            border-color: $red-300;
+            background-color: $red-50;
+            color: $red-900;
+
+            &:focus {
+                border-color: $red-600;
+                outline-color: $red-200;
+            }
+        }
+
+        .message {
+            color: $red-600;
+        }
+    }
+
+    &.warning {
+        select {
+            @include placeholder {
+                color: $amber-700;
+            }
+
+            border-color: $amber-300;
+            background-color: $amber-50;
+            color: $amber-900;
+
+            &:focus {
+                border-color: $amber-600;
+                outline-color: $amber-200;
+            }
+        }
+
+        .message {
+            color: $amber-600;
+        }
+    }
+
+    label {
+        @include font-size(14px);
+
+        display: inline-block;
+        margin: 0 0 10px;
+
+        &.required {
+            font-weight: 500;
+
+            &::after {
+                content: '*';
+                display: inline-block;
+                padding: 0 0 0 5px;
+                color: $red-600;
+            }
+        }
+    }
+
+    select {
+        @include font-size(16px);
+
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+        padding: 12px 38px 12px 12px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-300;
+        border-radius: 6px;
+        background-color: transparent;
+        color: $gray-600;
+        -webkit-box-shadow: none;
+        box-shadow: rgba($black, 0%) 0 0 0 0, rgba($black, 0%) 0 0 0 0, rgba($black, 5%) 0 1px 2px 0;
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: transparent;
+        line-height: 1.2;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        filter: none;
+        transition: all 200ms linear;
+        appearance: none;
+
+        &:focus {
+            border-color: $blue-500;
+            outline-color: $blue-200;
+        }
+
+        &:disabled {
+            border-color: $gray-200;
+            background-color: $gray-50;
+            color: $gray-500;
+            cursor: not-allowed;
+        }
+    }
+
+    option {
+        background-color: $white;
+        color: $gray-700;
+    }
+
+    .select {
+        position: relative;
+
+        &::before {
+            @include icon;
+            @include font-size(20px);
+
+            content: '\e901';
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            z-index: 2;
+            color: $zinc-600;
+            transform: translateY(-50%);
+        }
+    }
+
+    .message {
+        @include font-size(12px);
+
+        display: block;
+        margin: 10px 0 0;
+    }
+}
+
+@import 'responsive/form-select';

@@ -1,0 +1,143 @@
+.table-list {
+    &:first-of-type {
+        header {
+            border-top: 0;
+        }
+    }
+
+    &.horizontal {
+        .item {
+            flex-direction: column;
+
+            .title,
+            .details {
+                width: 100%;
+            }
+
+            .title {
+                padding: 0 0 5px;
+            }
+        }
+    }
+
+    header {
+        @include font-size(12px);
+
+        padding: 12px 15px;
+        border-width: 1px 0;
+        border-style: solid;
+        border-color: $slate-200;
+        background-color: $slate-100;
+        color: $slate-700;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .item {
+        display: flex;
+        padding: 20px;
+        background-color: $slate-50;
+
+        &:nth-child(odd) {
+            background-color: $white;
+
+            .details {
+                &.dual {
+                    .box {
+                        &:first-child {
+                            pre {
+                                border-color: $red-300;
+                                background-color: $red-50;
+                            }
+                        }
+
+                        &:last-child {
+                            pre {
+                                border-color: $green-300;
+                                background-color: $green-50;
+                            }
+                        }
+                    }
+                }
+
+                pre {
+                    border-color: $slate-300;
+                    background-color: $slate-50;
+                }
+            }
+        }
+
+        .title,
+        .details {
+            @include font-size(14px);
+
+            line-height: 1.4;
+        }
+
+        .title {
+            width: 20%;
+            color: $slate-500;
+        }
+
+        .details {
+            width: 80%;
+            color: $slate-600;
+            font-weight: 500;
+
+            &.dual {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+
+                .box {
+                    &:first-child {
+                        span {
+                            color: $red-500;
+                        }
+
+                        pre {
+                            border-color: $red-400;
+                            background-color: $red-100;
+                            color: $red-700;
+                        }
+                    }
+
+                    &:last-child {
+                        span {
+                            color: $green-500;
+                        }
+
+                        pre {
+                            border-color: $green-400;
+                            background-color: $green-100;
+                            color: $green-700;
+                        }
+                    }
+
+                    span {
+                        display: inline-block;
+                        padding: 0 0 10px;
+                    }
+                }
+            }
+        }
+
+        a {
+            color: $blue-600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            padding: 0 0 0 15px;
+
+            li {
+                list-style-type: disc;
+            }
+        }
+    }
+}
+
+@import 'responsive/table-list';

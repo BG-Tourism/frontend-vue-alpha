@@ -1,0 +1,172 @@
+// Vue-form-modal plugin
+.vfm {
+    &.vfm--fixed {
+        width: 100vw;
+    }
+
+    &__container,
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.modal-container {
+    min-width: 450px;
+    max-width: 550px;
+    padding: 25px;
+
+    &.small {
+        max-width: 650px;
+    }
+
+    &.medium {
+        max-width: 750px;
+    }
+
+    &.large {
+        max-width: 850px;
+    }
+}
+
+.modal {
+    width: 100%;
+    border-radius: 6px;
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 rgba($black, 0.3), 0 3px 6px 2px rgba($black, 0.1);
+
+    .modal-header {
+        margin: 0 0 20px;
+        padding: 20px;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: $slate-100;
+
+        &.with-category {
+            h1 {
+                font-weight: 400;
+            }
+
+            .arrow {
+                display: inline-block;
+                padding: 0 10px;
+            }
+
+            .category {
+                font-weight: 500;
+            }
+        }
+
+        h1 {
+            @include font-size(18px);
+
+            color: $slate-600;
+            font-weight: 500;
+        }
+    }
+
+    .modal-content {
+        padding: 0 20px;
+
+        p {
+            @include font-size(14px);
+
+            padding: 0 0 15px;
+            line-height: 1.4;
+
+            &:last-of-type {
+                padding: 0;
+            }
+
+            &.text-center {
+                text-align: center;
+
+                &.margin {
+                    margin: 0 0 20px;
+                }
+            }
+        }
+
+        .content-loading {
+            height: 250px;
+            border: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .form-input,
+        .form-selectfile {
+            &:last-child {
+                padding: 0;
+            }
+        }
+
+        .form-checkbox {
+            padding: 20px 0 0;
+        }
+
+        .table-list {
+            width: 800px;
+            margin: -20px;
+        }
+
+        .vgt-inner-wrap {
+            margin: -20px;
+            border-width: 0 0 1px;
+            border-style: solid;
+            border-color: $slate-200;
+        }
+
+        .badge-status {
+            display: inline-block;
+        }
+    }
+
+    .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 20px 0 0;
+        padding: 12px 20px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        background-color: $slate-50;
+
+        button {
+            margin: 0 0 0 10px;
+            padding: 0 20px;
+        }
+
+        &.combined {
+            justify-content: space-between;
+
+            .left-side {
+                display: flex;
+                align-items: center;
+
+                button {
+                    margin: 0 10px 0 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .right-side {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                button {
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@import 'responsive/modal';

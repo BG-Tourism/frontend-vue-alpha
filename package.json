@@ -1,0 +1,64 @@
+{
+    "name": "tourism-app",
+    "private": true,
+    "author": "Tom Atanasov (Xen)",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint:eslint": "eslint \"src/**/*.{js,ts,vue}\"",
+        "lint:eslint:fix": "eslint --fix \"src/**/*.{js,ts,vue}\"",
+        "lint:prettier": "prettier --check \"src/**/*.{js,json,ts,vue}\"",
+        "lint:prettier:fix": "prettier --write \"src/**/*.{js,json,ts,vue}\"",
+        "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
+        "lint:stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "@vueuse/core": "^9.1.0",
+        "axios": "^0.27.2",
+        "js-md5": "^0.7.3",
+        "nprogress": "^0.2.0",
+        "pinia": "^2.0.17",
+        "vee-validate": "^4.6.2",
+        "vue": "^3.2.37",
+        "vue-i18n": "^9.2.0",
+        "vue-router": "^4.1.3"
+    },
+    "devDependencies": {
+        "@types/js-md5": "^0.4.3",
+        "@vitejs/plugin-vue": "^3.0.1",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "eslint": "^8.21.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-vue": "^9.3.0",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.3",
+        "prettier": "^2.7.1",
+        "sass": "^1.54.2",
+        "stylelint": "^14.9.1",
+        "stylelint-config-recommended": "^8.0.0",
+        "stylelint-config-standard": "^26.0.0",
+        "stylelint-config-standard-scss": "^5.0.0",
+        "stylelint-order": "^5.0.0",
+        "vite": "^3.0.4",
+        "vite-plugin-eslint": "^1.7.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "post-commit": "git update-index --again"
+        }
+    },
+    "lint-staged": {
+        "**/*.{js,vue}": [
+            "npm run lint:eslint:fix",
+            "npm run lint:prettier:fix"
+        ],
+        "**/*.{css,scss}": [
+            "npm run lint:stylelint:fix"
+        ]
+    }
+}

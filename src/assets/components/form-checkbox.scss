@@ -1,0 +1,127 @@
+.form-checkbox {
+    padding: 0 0 20px;
+
+    &.danger {
+        input {
+            ~.checkmark {
+                border-color: $red-300;
+                background-color: $red-50;
+                color: $red-500;
+
+                &:focus {
+                    border-color: $red-600;
+                    color: $red-600;
+                    outline-color: $red-200;
+                }
+            }
+        }
+
+        .message {
+            color: $red-600;
+        }
+    }
+
+    label {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 0 40px;
+        cursor: pointer;
+    }
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        ~.checkmark {
+            &::before {
+                @include font-size(14px);
+                @include icon;
+
+                content: '\e90c';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                color: $white;
+                opacity: 0;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &:checked {
+            ~.checkmark {
+                border-color: $blue-600;
+                background-color: $blue-600;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:disabled {
+            ~.text,
+            ~.checkmark {
+                cursor: not-allowed;
+            }
+
+            ~.checkmark {
+                border-color: $gray-200;
+                background-color: $gray-50;
+
+                &::before {
+                    color: $gray-500;
+                }
+            }
+        }
+    }
+
+    .text {
+        @include font-size(14px);
+
+        display: inline-block;
+        padding: 5px 0;
+        color: $gray-600;
+        font-weight: 500;
+        line-height: 1.2;
+
+        a {
+            color: $blue-600;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .checkmark {
+        @include font-size(16px);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-300;
+        border-radius: 6px;
+        background-color: $white;
+        box-shadow: rgba($black, 0%) 0 0 0 0, rgba($black, 0%) 0 0 0 0, rgba($black, 5%) 0 1px 2px 0;
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: transparent;
+        transition: all 200ms linear;
+    }
+
+    .message {
+        @include font-size(12px);
+
+        display: block;
+        margin: 10px 0 0 -40px;
+    }
+}
+
+@import 'responsive/form-checkbox';

@@ -1,0 +1,92 @@
+.draggable-list {
+    margin: -10px 0 0 -20px;
+
+    ul {
+        margin: 10px 0 0 20px;
+    }
+
+    li {
+        cursor: move;
+
+        &.sortable-chosen,
+        &.ghost {
+            .item {
+                border-color: $blue-600;
+                background-color: $slate-50;
+            }
+        }
+
+        &.ghost {
+            .item {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: $slate-200;
+        border-radius: 6px;
+        background-color: $white;
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            @include font-size(18px);
+        }
+
+        p,
+        a {
+            @include font-size(14px);
+
+            margin: 10px 0 0;
+        }
+
+        p {
+            color: $slate-600;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            color: $blue-600;
+
+            i {
+                @include font-size(12px);
+
+                position: relative;
+                top: -1px;
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .button {
+            margin: 0 0 0 10px;
+
+            &:first-child {
+                margin: 0;
+            }
+
+            .icon-holder {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@import 'responsive/draggable-list';

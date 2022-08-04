@@ -1,0 +1,112 @@
+.badge-status {
+    @include font-size(12px);
+
+    display: inline;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: $slate-100;
+    color: $slate-500;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: pre;
+
+    &.circle-only {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 6px 0 0;
+        padding: 0;
+        border-radius: 50%;
+        background-color: $slate-500;
+
+        // Jump.BG's Color Pallete
+
+        &.style-1 {
+            border-color: darken(#C0E5F4, 5%);
+            background-color: #C0E5F4;
+            color: darken(#C0E5F4, 50%);
+        }
+
+        &.style-2 {
+            border-color: darken(#DEEBFF, 5%);
+            background-color: #DEEBFF;
+            color: darken(#DEEBFF, 50%);
+        }
+
+        &.style-3 {
+            border-color: darken(#ECE0FA, 5%);
+            background-color: #ECE0FA;
+            color: darken(#ECE0FA, 50%);
+        }
+
+        &.style-4 {
+            border-color: darken(#D8EACC, 5%);
+            background-color: #D8EACC;
+            color: darken(#D8EACC, 50%);
+        }
+
+        &.style-5 {
+            border-color: darken(#DEE3FF, 5%);
+            background-color: #DEE3FF;
+            color: darken(#DEE3FF, 50%);
+        }
+
+        // ---
+
+        &.green {
+            background-color: $green-500;
+        }
+
+        &.red {
+            background-color: $rose-500;
+        }
+
+        &.yellow {
+            background-color: $amber-500;
+        }
+
+        &.blue {
+            background-color: $blue-500;
+        }
+
+        &.pink {
+            background-color: $pink-500;
+        }
+
+        &.cyan {
+            background-color: $cyan-500;
+        }
+    }
+
+    &.green {
+        background-color: $green-100;
+        color: $green-500;
+    }
+
+    &.red {
+        background-color: $rose-100;
+        color: $rose-500;
+    }
+
+    &.yellow {
+        background-color: $amber-100;
+        color: $amber-500;
+    }
+
+    &.blue {
+        background-color: $blue-100;
+        color: $blue-500;
+    }
+
+    &.pink {
+        background-color: $pink-100;
+        color: $pink-500;
+    }
+
+    &.cyan {
+        background-color: $cyan-100;
+        color: $cyan-500;
+    }
+}
+
+@import 'responsive/badge-status'

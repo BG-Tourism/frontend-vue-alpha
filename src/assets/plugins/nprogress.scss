@@ -1,0 +1,17 @@
+@import 'nprogress/nprogress.css';
+
+#nprogress {
+    pointer-events: none;
+}
+
+#nprogress .bar {
+    background: $blue-500;
+}
+
+#nprogress .peg {
+    box-shadow: 0 0 10px $blue-500, 0 0 5px $blue-500;
+}
+
+#nprogress .spinner {
+    display: none;
+}
