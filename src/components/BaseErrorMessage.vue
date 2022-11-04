@@ -1,7 +1,7 @@
 <template>
-    <span :id="id" class="message">
+    <div :id="id" class="error-message">
         <slot />
-    </span>
+    </div>
 </template>
 
 <script>

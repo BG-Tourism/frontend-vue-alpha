@@ -1,83 +1,261 @@
-.form-input {
-    padding: 0 0 20px;
+.input-container {
+    width: 100%;
 
-    &.success {
-        input {
-            @include placeholder {
-                color: $green-400;
-            }
-
-            border-color: $green-300;
-            background-color: $green-50;
-            color: $green-900;
-
-            &:focus {
-                border-color: $green-600;
-                outline-color: $green-200;
-            }
-        }
-
-        .message {
-            color: $green-600;
-        }
-    }
-
-    &.danger {
-        input {
-            @include placeholder {
-                color: $red-400;
-            }
-
-            border-color: $red-300;
-            background-color: $red-50;
-            color: $red-900;
-
-            &:focus {
+    &.focus {
+        &.has-error {
+            .input-field {
                 border-color: $red-600;
                 outline-color: $red-200;
             }
         }
 
-        .message {
+        .input-field {
+            border-color: $blue-500;
+            outline-color: $blue-200;
+        }
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &.disabled,
+    &.readonly {
+        &.has-prefix,
+        &.has-suffix {
+            .input-prefix,
+            .input-suffix {
+                background-color: $gray-50;
+                color: $gray-500;
+            }
+        }
+    }
+
+    &.has-error {
+        &.has-prefix,
+        &.has-suffix {
+            color: $red-400;
+        }
+
+        .input-field {
+            border-color: $red-300;
+            background-color: $red-50;
+        }
+
+        .input-prefix,
+        .input-suffix {
+            &::before {
+                background-color: $red-300;
+            }
+        }
+
+        .input-prepend,
+        .input-append {
+            background-color: $red-100;
             color: $red-600;
         }
-    }
 
-    &.warning {
+        .input-prepend,
+        .input-append,
+        .input-prefix,
+        .input-suffix {
+            i,
+            svg {
+                color: $red-600;
+            }
+
+            svg {
+                fill: $red-600 !important;
+
+                path {
+                    fill: $red-600 !important;
+                }
+            }
+        }
+
+        .input-error {
+            p {
+                height: auto;
+                padding: 10px 0 0;
+                opacity: 1;
+                visibility: visible;
+                transition: height 200ms linear, padding 200ms linear, opacity 0ms, visibility 0ms;
+            }
+        }
+
         input {
             @include placeholder {
-                color: $amber-400;
+                color: $red-400;
             }
 
-            border-color: $amber-300;
-            background-color: $amber-50;
-            color: $amber-900;
-
-            &:focus {
-                border-color: $amber-600;
-                outline-color: $amber-200;
-            }
-        }
-
-        .message {
-            color: $amber-600;
+            color: $red-900;
         }
     }
 
-    label {
+    &.has-prefix {
+        input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &.has-suffix {
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &.has-prepend {
+        .input-field {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            input {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    &.has-append {
+        .input-field {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            box-shadow: none;
+
+            input {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+
+    .input-wrapper {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .input-field {
+        z-index: 1;
+        display: flex;
+        flex: 0 1 auto;
+        align-items: stretch;
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+        min-width: 200px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $gray-300;
+        border-radius: 6px;
+        background-color: $gray-200;
+        box-shadow: rgba($black, 5%) 0 1px 2px 0;
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: transparent;
+        transition: all 200ms linear;
+    }
+
+    .input-prefix,
+    .input-suffix {
         @include font-size(14px);
 
-        display: inline-block;
-        margin: 0 0 10px;
+        position: relative;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $white;
 
-        &.required {
-            font-weight: 500;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 1px;
+            height: 50%;
+            background-color: $slate-300;
+            transform: translateY(-50%);
+        }
+    }
 
-            &::after {
-                content: '*';
-                display: inline-block;
-                padding: 0 0 0 5px;
-                color: $red-600;
+    .input-prefix {
+        &::before {
+            right: 0;
+        }
+    }
+
+    .input-suffix {
+        &::before {
+            left: 0;
+        }
+    }
+
+    .input-prepend,
+    .input-append {
+        position: relative;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $gray-200;
+    }
+
+    .input-prepend,
+    .input-append,
+    .input-prefix,
+    .input-suffix {
+        @include font-size(14px);
+
+        padding: 0 15px;
+        color: $gray-600;
+        line-height: 1;
+        cursor: text;
+
+        i,
+        svg {
+            @include font-size(16px);
+
+            color: $gray-600;
+        }
+
+        svg {
+            width: 16px !important;
+            height: 16px !important;
+            fill: $gray-600 !important;
+
+            path {
+                fill: $gray-600 !important;
+            }
+        }
+    }
+
+    .input-prepend {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    .input-append {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .input-error {
+        p {
+            @include font-size(14px);
+
+            height: 0;
+            padding: 0;
+            color: $red-600;
+            line-height: 1.2;
+            opacity: 0;
+            visibility: hidden;
+            transition: height 200ms linear, padding 200ms linear, opacity 0ms, visibility 0ms;
+
+            strong {
+                font-weight: 500;
             }
         }
     }
@@ -102,26 +280,16 @@
         overflow: hidden;
         width: 100%;
         padding: 12px 16px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: $gray-300;
+        border: none;
         border-radius: 6px;
         background-color: $white;
         color: $gray-600;
-        box-shadow: rgba($black, 0%) 0 0 0 0, rgba($black, 0%) 0 0 0 0, rgba($black, 5%) 0 1px 2px 0;
-        outline-width: 3px;
-        outline-style: solid;
-        outline-color: transparent;
         line-height: 1.2;
         filter: none;
         transition: all 200ms linear;
 
-        &:focus {
-            border-color: $blue-500;
-            outline-color: $blue-200;
-        }
-
-        &:disabled {
+        &:disabled,
+        &:read-only {
             @include placeholder {
                 color: $gray-400;
             }
@@ -129,15 +297,13 @@
             border-color: $gray-200;
             background-color: $gray-50;
             color: $gray-500;
-            cursor: not-allowed;
+            opacity: 1;
+            cursor: default;
         }
-    }
 
-    .message {
-        @include font-size(12px);
-
-        display: block;
-        margin: 10px 0 0;
+        &:focus {
+            outline: none;
+        }
     }
 }
 

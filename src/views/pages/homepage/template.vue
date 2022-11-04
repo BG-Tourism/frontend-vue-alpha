@@ -5,6 +5,11 @@
                 <h1>{{ $t('page.homepage.pageTitle') }}</h1>
             </div>
             <div class="container-content">
+                <BaseInput :placeholder="$t('general.settings')">
+                    <template #prefix>
+                        <i class="icon-settings" />
+                    </template>
+                </BaseInput>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus exercitationem ducimus eaque,
                     unde nemo consectetur reprehenderit ratione sunt minus sed vitae ex pariatur ipsum, omnis corrupti maxime
@@ -30,9 +35,14 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
+    import BaseInput from '@/components/BaseInput.vue'
+
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
+        components: {
+            BaseInput
+        },
         setup() {
             const i18n = useI18n()
             const store = useGeneralStore()

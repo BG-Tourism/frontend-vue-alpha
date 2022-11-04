@@ -37,8 +37,8 @@
 
         <div class="divider" />
 
-        <BaseButton title="Настройки" type="custom" icon="icon-settings" class="settings" />
-        <BaseButton title="Изход" type="custom" icon="icon-logout" class="logout" />
+        <BaseButton :title="$t('general.settings')" type="custom" icon="icon-settings" class="settings" />
+        <BaseButton :title="$t('general.logout')" type="custom" icon="icon-logout" class="logout" />
     </div>
 </template>
 
