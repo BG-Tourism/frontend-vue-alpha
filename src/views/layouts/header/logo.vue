@@ -1,8 +1,6 @@
 <template>
     <div class="logo">
-        <router-link :to="{ name: 'Homepage' }">
-            <span class="name">{{ appName }}</span>
-        </router-link>
+        <router-link :to="{ name: 'Homepage' }">{{ appName }}</router-link>
     </div>
 </template>
 

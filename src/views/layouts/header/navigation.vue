@@ -1,11 +1,23 @@
 <template>
-    <ul class="navigation">
-        <li>
-            <router-link :to="{ name: 'Homepage' }" class="link">
-                <span>{{ $t('page.homepage.pageTitle') }}</span>
-            </router-link>
-        </li>
-    </ul>
+    <nav class="navigation">
+        <ul>
+            <li>
+                <router-link :to="{ name: 'Homepage' }" class="link">
+                    <span>{{ $t('page.homepage.pageTitle') }}</span>
+                </router-link>
+            </li>
+            <li>
+                <router-link :to="{ name: 'About' }" class="link">
+                    <span>{{ $t('page.about.pageTitle') }}</span>
+                </router-link>
+            </li>
+            <li>
+                <router-link :to="{ name: 'Contact' }" class="link">
+                    <span>{{ $t('page.contact.pageTitle') }}</span>
+                </router-link>
+            </li>
+        </ul>
+    </nav>
 </template>
 
 <script>

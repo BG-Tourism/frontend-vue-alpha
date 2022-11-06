@@ -4,7 +4,7 @@
             <div class="container-title">
                 <h1>{{ $t('page.homepage.pageTitle') }}</h1>
             </div>
-            <div class="container-content">
+            <div class="container-content padding">
                 <BaseInput :placeholder="$t('general.settings')">
                     <template #prefix>
                         <i class="icon-settings" />

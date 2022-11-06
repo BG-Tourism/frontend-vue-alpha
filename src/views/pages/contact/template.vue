@@ -4,7 +4,7 @@
             <div class="container-title">
                 <h1>{{ $t('page.contact.pageTitle') }}</h1>
             </div>
-            <div class="container-content">
+            <div class="container-content padding">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus exercitationem ducimus eaque,
                     unde nemo consectetur reprehenderit ratione sunt minus sed vitae ex pariatur ipsum, omnis corrupti maxime

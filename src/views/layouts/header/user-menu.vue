@@ -1,44 +1,72 @@
 <template>
     <div class="user-menu">
-        <div class="person">
-            <div class="details">
-                <span>{{ $t('general.welcome') }}</span>
-                <strong>{{ user.name.split(' ')[0] }}</strong>
-            </div>
-            <div class="avatar">
-                <img :src="'https://gravatar.com/avatar/' + md5(user.email) + '?size=40'" :alt="user.name" loading="lazy" />
-            </div>
+        <div class="language">
+            <BaseDropdown placement="right">
+                <template #button>
+                    <button>
+                        <i class="icon-languages" />
+                    </button>
+                </template>
+                <template #menu>
+                    <ul class="dropdown-menu">
+                        <li v-for="(language, index) in getSupportedLocales()" :key="index">
+                            <a
+                                href="javascript:void(0);"
+                                :class="$i18n.locale === language.code ? 'active' : ''"
+                                @click="changeLocale(language.code)"
+                            >
+                                <span>{{ language.name }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </template>
+            </BaseDropdown>
         </div>
 
-        <div class="divider" />
-
-        <BaseDropdown class="language">
-            <template #button>
-                <i class="icon-languages" />
-            </template>
-            <template #menu>
-                <ul class="dropdown-menu">
-                    <li v-for="(language, index) in getSupportedLocales()" :key="index">
-                        <button :class="$i18n.locale === language.code ? 'active' : ''" @click="changeLocale(language.code)">
-                            {{ language.name }}
-                        </button>
-                    </li>
-                </ul>
-            </template>
-        </BaseDropdown>
-
-        <BaseButton
+        <button
             :title="isDark ? $t('general.colorMode.toggleToLight') : $t('general.colorMode.toggleToDark')"
-            type="custom"
-            :icon="isDark ? 'icon-day' : 'icon-night'"
             class="color-mode"
             @click="toggleDark()"
-        />
+        >
+            <i :class="isDark ? 'icon-day' : 'icon-night'" />
+        </button>
 
         <div class="divider" />
 
-        <BaseButton :title="$t('general.settings')" type="custom" icon="icon-settings" class="settings" />
-        <BaseButton :title="$t('general.logout')" type="custom" icon="icon-logout" class="logout" />
+        <div class="user-details">
+            <BaseDropdown placement="right">
+                <template #button>
+                    <button class="button">
+                        <i class="icon-user" />
+                    </button>
+                </template>
+                <template #menu>
+                    <header>
+                        <picture>
+                            <img :src="'https://gravatar.com/avatar/' + md5(user.email) + '?size=50'" loading="lazy" />
+                        </picture>
+                        <div class="details">
+                            <strong>{{ user.name }}</strong>
+                            <span>{{ user.email }}</span>
+                        </div>
+                    </header>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <i class="icon-settings" />
+                                <span>{{ $t('general.settings') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="danger">
+                                <i class="icon-logout" />
+                                <span>{{ $t('general.logout') }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </template>
+            </BaseDropdown>
+        </div>
     </div>
 </template>
 
@@ -48,14 +76,12 @@
     import { useRoute } from 'vue-router'
     import md5 from 'js-md5'
 
-    import BaseButton from '@/components/BaseButton.vue'
     import BaseDropdown from '@/components/BaseDropdown.vue'
 
     import { getSupportedLocales, changeLocale } from '@/utils/locales'
 
     export default defineComponent({
         components: {
-            BaseButton,
             BaseDropdown
         },
         setup() {
