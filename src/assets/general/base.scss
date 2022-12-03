@@ -166,10 +166,6 @@ dd {
     margin: 0;
 }
 
-main {
-    padding: 70px 0 0;
-}
-
 [class^='icon-'],
 [class*=' icon-'] {
     @include icon;
@@ -232,7 +228,7 @@ main {
 .page-content {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 0 30px;
 }
 
 .container-title {

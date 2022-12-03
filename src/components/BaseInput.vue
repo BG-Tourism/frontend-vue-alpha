@@ -54,7 +54,7 @@
 
     import BaseErrorMessage from '@/components/BaseErrorMessage.vue'
 
-    import uniqueId from '@/helpers/uniqueId'
+    import UniqueID from '@/helpers/uniqueId'
     import setupFormComponent from '@/helpers/setupFormComponent'
 
     export default defineComponent({
@@ -146,7 +146,7 @@
             }
         },
         setup(props, context) {
-            const uuid = uniqueId()
+            const uuid = UniqueID().getID()
             const { updateValue } = setupFormComponent(props, context)
             const focus = ref(false)
 

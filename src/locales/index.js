@@ -11,6 +11,7 @@ const i18n = createI18n({
     globalInjection: true,
     warnHtmlInMessage: false,
     warnHtmlMessage: false,
+    fallbackLocale: 'bg',
     locale: getPreferredLanguage()
 })
 

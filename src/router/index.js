@@ -11,6 +11,22 @@ const routes = [
         component: () => import(/* webpackChunkName: 'homepage' */ '@/views/pages/homepage/template.vue')
     },
     {
+        path: '/category/:category',
+        name: 'Category',
+        meta: {
+            className: 'page-category'
+        },
+        component: () => import(/* webpackChunkName: 'category' */ '@/views/pages/category/template.vue')
+    },
+    {
+        path: '/place/:slug',
+        name: 'Place',
+        meta: {
+            className: 'page-place'
+        },
+        component: () => import(/* webpackChunkName: 'place' */ '@/views/pages/place/template.vue')
+    },
+    {
         path: '/about',
         name: 'About',
         meta: {
