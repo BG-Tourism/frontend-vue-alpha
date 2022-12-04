@@ -1,17 +1,141 @@
 <template>
-    <div class="page-content">
-        <div class="top-section">
-            <div class="photo">
-                <picture>
-                    <img :src="place.image" alt="" loading="lazy" />
-                </picture>
-            </div>
-            <div class="main-details">
-                <h1>{{ place.locale[$i18n.locale].title }}</h1>
-                <div class="description" v-html="place.locale[$i18n.locale].description" />
+    <section class="top-section">
+        <div class="page-content">
+            <div class="wrapper">
+                <div class="photo">
+                    <div class="holder">
+                        <a href="javascript:void(0);">
+                            <picture>
+                                <img :src="place.image" alt="" loading="lazy" />
+                            </picture>
+                            <div class="view-more">
+                                <span>
+                                    <i class="icon-info" />
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="main-details">
+                    <h1>
+                        <span>{{ place.locale[$i18n.locale].title }}</span>
+                        <span v-if="place.unesco" class="icon" :title="$t('page.place.unesco')">
+                            <i class="icon-unesco" />
+                        </span>
+                    </h1>
+                    <ul class="metrics">
+                        <li>
+                            <i class="icon-location" />
+                            <span>
+                                {{ place.locale[$i18n.locale].location }}
+                            </span>
+                            <span class="badge-status">
+                                {{ place.coords.latitude.toFixed(5) }}, {{ place.coords.longitude.toFixed(5) }}
+                            </span>
+                        </li>
+                        <li>
+                            <i class="icon-weather-cloudy" />
+                            <span>
+                                {{ $t('page.place.weather.cloudy') }}
+                                {{ place.weather[new Date().toLocaleDateString('en-us', { weekday: 'long' }).toLowerCase()] }}
+                            </span>
+                        </li>
+                        <li>
+                            <i class="icon-mountain-altitude" />
+                            <span>{{ place.altitude }} {{ $t('page.place.altitude') }}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="location-gallery">
+        <div class="page-content">
+            <div class="gallery">
+                <div class="image">
+                    <a href="javascript:void(0);">
+                        <img src="/images/photos/4-1.jpg" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="javascript:void(0);">
+                        <img src="/images/photos/4-2.jpg" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="javascript:void(0);">
+                        <img src="/images/photos/4-3.jpg" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="javascript:void(0);">
+                        <img src="/images/photos/4-4.jpg" alt="" loading="lazy" />
+                    </a>
+                </div>
+                <div class="image">
+                    <a href="javascript:void(0);">
+                        <img src="/images/photos/4-5.jpg" alt="" loading="lazy" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-details">
+        <div class="page-content">
+            <h1>
+                <span>{{ $t('page.place.section.description') }}</span>
+                <button :title="$t('page.place.section.playAudio')">
+                    <i class="icon-play" />
+                </button>
+            </h1>
+            <div v-html="place.locale[$i18n.locale].description" />
+        </div>
+    </section>
+
+    <section class="audio-playlist">
+        <button class="toggle-visibility" :title="$t('page.place.audio.controls.hide')">
+            <i class="icon-arrow-down" />
+        </button>
+        <div class="audio-details">
+            <picture>
+                <img :src="place.image" alt="" loading="lazy" />
+                <div class="icon">
+                    <i class="icon-audio-line" />
+                </div>
+            </picture>
+            <div class="heading">
+                <h4>{{ $t('page.place.audio.section', { section: $t('page.place.section.description') }) }}</h4>
+                <p>
+                    {{ $t('page.place.audio.describe') }}
+                    <strong>{{ place.locale[$i18n.locale].title }}</strong>
+                </p>
+            </div>
+        </div>
+        <div class="audio-line">
+            <div class="channel" style="width: 24%"></div>
+        </div>
+        <div class="audio-controls">
+            <div class="main">
+                <button class="skip" :title="$t('page.place.audio.controls.skipBack')">
+                    <i class="icon-skip-back" />
+                </button>
+                <button class="toggle" :title="$t('page.place.audio.controls.play')">
+                    <i class="icon-play" />
+                </button>
+                <button class="skip" :title="$t('page.place.audio.controls.skipForward')">
+                    <i class="icon-skip-forward" />
+                </button>
+            </div>
+            <div class="time">00:52 / 01:12</div>
+            <div class="secondary">
+                <button class="volume" :title="$t('page.place.audio.controls.volume')">
+                    <i class="icon-volume-2" />
+                </button>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -36,10 +160,21 @@
                 category: 2,
                 slug: 'hram-pametnik-sveti-aleksandar-nevski',
                 image: '/images/photos/4.jpg',
+                unesco: true,
+                weather: {
+                    monday: '1°C',
+                    tuesday: '2°C',
+                    wednesday: '3°C',
+                    thursday: '4°C',
+                    friday: '5°C',
+                    saturday: '6°C',
+                    sunday: '7°C'
+                },
                 coords: {
                     latitude: 42.69577,
                     longitude: 23.33286
                 },
+                altitude: 559,
                 locale: {
                     bg: {
                         title: 'Храм-паметник "Свети Александър Невски"',

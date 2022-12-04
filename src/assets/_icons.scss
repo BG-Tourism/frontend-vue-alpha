@@ -82,26 +82,6 @@
     content: '\e915';
 }
 
-.icon-nature::before {
-    content: '\e916';
-}
-
-.icon-monuments::before {
-    content: '\e917';
-}
-
-.icon-architecture::before {
-    content: '\e918';
-}
-
-.icon-animals::before {
-    content: '\e919';
-}
-
-.icon-asterisk::before {
-    content: '\e91a';
-}
-
 .icon-user::before {
     content: '\e90b';
 }
@@ -146,6 +126,86 @@
     content: '\e924';
 }
 
-.icon-list::before {
+.icon-weather-windy-cloudy::before {
+    content: '\e916';
+}
+
+.icon-weather-windy::before {
+    content: '\e917';
+}
+
+.icon-weather-sunny::before {
+    content: '\e918';
+}
+
+.icon-weather-stormy::before {
+    content: '\e919';
+}
+
+.icon-weather-snow::before {
+    content: '\e91a';
+}
+
+.icon-weather-shower::before {
     content: '\e925';
+}
+
+.icon-weather-partly-sunny::before {
+    content: '\e926';
+}
+
+.icon-weather-night::before {
+    content: '\e927';
+}
+
+.icon-weather-downpour::before {
+    content: '\e928';
+}
+
+.icon-weather-cloudy::before {
+    content: '\e929';
+}
+
+.icon-mountain-altitude::before {
+    content: '\e92a';
+}
+
+.icon-unesco::before {
+    content: '\e92b';
+}
+
+.icon-volume-x::before {
+    content: '\e92c';
+}
+
+.icon-volume-2::before {
+    content: '\e92d';
+}
+
+.icon-volume-1::before {
+    content: '\e92e';
+}
+
+.icon-skip-forward::before {
+    content: '\e930';
+}
+
+.icon-skip-back::before {
+    content: '\e931';
+}
+
+.icon-playlist::before {
+    content: '\e932';
+}
+
+.icon-play::before {
+    content: '\e933';
+}
+
+.icon-pause::before {
+    content: '\e934';
+}
+
+.icon-audio-line::before {
+    content: '\e935';
 }

@@ -69,6 +69,8 @@
                 position: relative;
                 overflow: hidden;
                 border-radius: 12px;
+                background-color: $slate-100;
+                box-shadow: rgba($black, 0.2) 0 1px 2px 0;
 
                 &:hover {
                     picture {
@@ -87,16 +89,12 @@
 
                 picture {
                     @include image {
-                        @include font-size(80px);
+                        @include font-size(60px);
                     }
 
                     position: relative;
-                    overflow: hidden;
                     width: 100%;
                     padding-top: 120%;
-                    border-radius: 12px;
-                    background-color: $slate-100;
-                    box-shadow: rgba($black, 0.2) 0 1px 2px 0;
 
                     img {
                         position: absolute;
