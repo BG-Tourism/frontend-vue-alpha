@@ -3,7 +3,7 @@
         <div class="page-content">
             <div class="preview">
                 <picture>
-                    <img src="images/photos/6.jpg" alt="" loading="lazy" />
+                    <img src="/images/photos/6.jpg" alt="" loading="lazy" />
                 </picture>
                 <div class="content">
                     <h1 v-html="$t('page.homepage.slogan.title')" />
