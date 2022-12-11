@@ -2,7 +2,7 @@
     <div class="page-content">
         <div class="page-container">
             <div class="container-title">
-                <h1>{{ $t('page.category.pageTitle') }}</h1>
+                <h1>{{ $t('page.city.pageTitle') }}</h1>
             </div>
             <div class="container-content padding">
                 <p>{{ $route.params.slug }}</p>
@@ -25,7 +25,7 @@
             const titleSuffix = store.titleSuffix
 
             const pageTitle = computed(() => {
-                return i18n.t('page.category.pageTitle') + titleSuffix
+                return i18n.t('page.city.pageTitle') + titleSuffix
             })
 
             useTitle(pageTitle)

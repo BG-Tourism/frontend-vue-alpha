@@ -1,6 +1,10 @@
 <template>
     <footer class="page-footer">
         <div class="container">
+            <p
+                class="open-source"
+                v-html="$t('general.footerOpenSource', { repo: 'https://github.com/BG-Tourism/frontend-ver2' })"
+            />
             <div class="wrapper">
                 <p>
                     &copy; {{ currentYear }}

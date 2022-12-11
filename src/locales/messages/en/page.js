@@ -1,5 +1,6 @@
 import about from './pages/about'
 import category from './pages/category'
+import city from './pages/city'
 import contact from './pages/contact'
 import error from './pages/error'
 import homepage from './pages/homepage'
@@ -10,6 +11,7 @@ import terms from './pages/terms'
 const messages = {
     about,
     category,
+    city,
     contact,
     error,
     homepage,

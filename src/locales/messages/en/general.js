@@ -5,6 +5,10 @@ const messages = {
     },
     settings: 'Settings',
     logout: 'Sign out',
+    seeMore: 'See more',
+    showMore: 'Show more',
+    footerOpenSource:
+        'This project is an open source development and is available on <a href="{repo}" target="_blank" rel="noopener">GitHub</a>. Anyone can contribute to its development.',
     footerCopyright: 'All Rights Reserved'
 }
 

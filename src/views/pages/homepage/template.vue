@@ -1,17 +1,37 @@
 <template>
     <section class="hero">
         <div class="page-content">
-            <h1 v-html="$t('page.homepage.slogan.title')" />
-            <p v-html="$t('page.homepage.slogan.description')" />
+            <div class="preview">
+                <picture>
+                    <img src="images/photos/6.jpg" alt="" loading="lazy" />
+                </picture>
+                <div class="content">
+                    <h1 v-html="$t('page.homepage.slogan.title')" />
+                    <p v-html="$t('page.homepage.slogan.description')" />
+                    <button class="see-more" v-html="$t('page.homepage.slogan.button')" />
+                </div>
+            </div>
+            <div class="search-box">
+                <div class="wrapper">
+                    <BaseInput :placeholder="$t('page.homepage.slogan.search')">
+                        <template #prefix>
+                            <i class="icon-navigation" />
+                        </template>
+                    </BaseInput>
+                    <button>
+                        <i class="icon-search" />
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="locations">
         <div class="page-content">
-            <div class="category">
+            <div class="featured">
                 <div class="title">
-                    <h2>{{ $t('page.homepage.locations.categories.popular.slogan.title') }}</h2>
-                    <p>{{ $t('page.homepage.locations.categories.popular.slogan.description') }}</p>
+                    <h2>{{ $t('page.homepage.locations.featured.title') }}</h2>
+                    <p>{{ $t('page.homepage.locations.featured.description') }}</p>
                 </div>
 
                 <ul class="list">
@@ -20,38 +40,93 @@
                             <picture>
                                 <img :src="place.image" alt="" loading="lazy" />
                             </picture>
-                            <h3>
-                                <span>{{ place.locale[$i18n.locale].title }}</span>
-                            </h3>
+                            <h3>{{ place.locale[$i18n.locale].title }}</h3>
+                            <p>{{ place.locale[$i18n.locale].location }}</p>
                         </router-link>
                     </li>
                 </ul>
 
-                <router-link :to="{ name: 'Category', params: { category: 'popular' } }" class="button big blue">
-                    <span>{{ $t('page.homepage.locations.viewMore') }}</span>
-                </router-link>
+                <button class="see-more">
+                    {{ $t('general.showMore') }}
+                </button>
             </div>
-            <div class="category">
+
+            <div class="categories">
                 <div class="title">
-                    <h2>{{ $t('page.homepage.locations.categories.winter.slogan.title') }}</h2>
-                    <p>{{ $t('page.homepage.locations.categories.winter.slogan.description') }}</p>
+                    <h2>{{ $t('page.homepage.locations.categories.title') }}</h2>
+                    <p>{{ $t('page.homepage.locations.categories.description') }}</p>
+                </div>
+
+                <ul class="tabs">
+                    <li>
+                        <button class="active">
+                            <i class="icon-category-nature" />
+                            <span>{{ $t('page.homepage.locations.categories.tabs.nature') }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="icon-category-architecture" />
+                            <span>{{ $t('page.homepage.locations.categories.tabs.architecture') }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="icon-category-monuments" />
+                            <span>{{ $t('page.homepage.locations.categories.tabs.monuments') }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="icon-category-seasonal" />
+                            <span>{{ $t('page.homepage.locations.categories.tabs.seasonal') }}</span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <ul class="list">
+                        <li v-for="place in categoryWinter" :key="place.id">
+                            <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
+                                <picture>
+                                    <img :src="place.image" alt="" loading="lazy" />
+                                </picture>
+                                <h3>{{ place.locale[$i18n.locale].title }}</h3>
+                                <p>{{ place.locale[$i18n.locale].location }}</p>
+                            </router-link>
+                        </li>
+                    </ul>
+
+                    <router-link :to="{ name: 'Category', params: { slug: 'nature' } }" class="see-more">
+                        {{ $t('general.seeMore') }}
+                    </router-link>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="page-content">
+            <div class="wrapper">
+                <div class="title">
+                    <h2>{{ $t('page.homepage.destinations.title') }}</h2>
+                    <p>{{ $t('page.homepage.destinations.description') }}</p>
                 </div>
 
                 <ul class="list">
-                    <li v-for="place in categoryWinter" :key="place.id">
-                        <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
+                    <li v-for="city in cities" :key="city.id">
+                        <router-link :to="{ name: 'City', params: { slug: city.slug } }">
                             <picture>
-                                <img :src="place.image" alt="" loading="lazy" />
+                                <img :src="city.image" alt="" loading="lazy" />
                             </picture>
-                            <h3>
-                                <span>{{ place.locale[$i18n.locale].title }}</span>
-                            </h3>
+                            <h3>{{ city.locale[$i18n.locale].title }}</h3>
+                            <p v-html="$t('page.homepage.destinations.locations_count', { count: city.locations_count })" />
                         </router-link>
                     </li>
                 </ul>
 
-                <router-link :to="{ name: 'Category', params: { category: 'winter' } }" class="button big blue">
-                    <span>{{ $t('page.homepage.locations.viewMore') }}</span>
+                <router-link :to="{ name: 'City', params: { slug: 'sofia' } }" class="see-more">
+                    {{ $t('general.seeMore') }}
                 </router-link>
             </div>
         </div>
@@ -63,9 +138,14 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
+    import BaseInput from '@/components/BaseInput.vue'
+
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
+        components: {
+            BaseInput
+        },
         setup() {
             const i18n = useI18n()
             const store = useGeneralStore()
@@ -78,21 +158,6 @@
             useTitle(pageTitle)
 
             const categoryPopularNow = [
-                {
-                    id: 4,
-                    slug: 'yazovir-batak',
-                    image: '/images/photos/8.jpg',
-                    locale: {
-                        bg: {
-                            title: 'Язовир "Батак"',
-                            location: 'до гр. Батак'
-                        },
-                        en: {
-                            title: 'Batak Dam',
-                            location: 'next to Batak City'
-                        }
-                    }
-                },
                 {
                     id: 7,
                     slug: 'dyavolski-most',
@@ -135,21 +200,6 @@
                         en: {
                             title: 'Rila Monastery Nature Park',
                             location: 'Rila City'
-                        }
-                    }
-                },
-                {
-                    id: 9,
-                    slug: 'podkovata-zavoyat-na-yazovir-kardzhali',
-                    image: '/images/photos/6.jpg',
-                    locale: {
-                        bg: {
-                            title: '"Подковата" завоят на язовир Кърджали',
-                            location: 'до гр. Кърджали'
-                        },
-                        en: {
-                            title: 'The "horseshoe" bend of the Kardzhali dam',
-                            location: 'next to Kardzhali City'
                         }
                     }
                 }
@@ -218,9 +268,69 @@
                 }
             ]
 
+            let cities = [
+                {
+                    id: 1,
+                    slug: 'sofia',
+                    image: '/images/cities/1.jpg',
+                    locations_count: 213,
+                    locale: {
+                        bg: {
+                            title: 'София'
+                        },
+                        en: {
+                            title: 'Sofia'
+                        }
+                    }
+                },
+                {
+                    id: 2,
+                    slug: 'vratsa',
+                    image: '/images/cities/2.jpg',
+                    locations_count: 52,
+                    locale: {
+                        bg: {
+                            title: 'Враца'
+                        },
+                        en: {
+                            title: 'Vratsa'
+                        }
+                    }
+                },
+                {
+                    id: 3,
+                    slug: 'kazanlak',
+                    image: '/images/cities/3.jpg',
+                    locations_count: 85,
+                    locale: {
+                        bg: {
+                            title: 'Казанлък'
+                        },
+                        en: {
+                            title: 'Kazanlak'
+                        }
+                    }
+                },
+                {
+                    id: 4,
+                    slug: 'plovdiv',
+                    image: '/images/cities/4.jpg',
+                    locations_count: 61,
+                    locale: {
+                        bg: {
+                            title: 'Пловдив'
+                        },
+                        en: {
+                            title: 'Plovdiv'
+                        }
+                    }
+                }
+            ]
+
             return {
                 categoryPopularNow,
-                categoryWinter
+                categoryWinter,
+                cities
             }
         }
     })

@@ -1,26 +1,31 @@
 const messages = {
     pageTitle: 'Homepage',
-    // slogan: {
-    //     title: 'Кратко надъхващо заглавие',
-    //     description: 'Малко по-дълго изречение, представящо по най-добрия начин подбраните забележителности.'
-    // },
+    slogan: {
+        title: 'Rediscover the beauty<br>of Bulgaria',
+        description: 'Get to know the rich history of Bulgaria in your next adventure.',
+        button: 'Start from here',
+        search: 'Which landmark will you start with?'
+    },
     locations: {
-        categories: {
-            popular: {
-                slogan: {
-                    title: 'Most Popular',
-                    description: 'Choose a landmark from among the most popular that our users are currently visiting.'
-                }
-            },
-            winter: {
-                slogan: {
-                    title: 'Winter Season',
-                    description:
-                        'Each season gives us the opportunity to see the landmarks in a new light. Here is a list of the best ones to visit during the winter season.'
-                }
-            }
+        featured: {
+            title: 'Most Popular',
+            description: 'Choose a landmark from among the most popular that our users are currently visiting.'
         },
-        viewMore: 'More Landmarks'
+        categories: {
+            title: 'Select from a Category',
+            description: "Discover some of the Bulgaria's most spectacular sites and monuments.",
+            tabs: {
+                nature: 'Nature',
+                architecture: 'Architecture',
+                monuments: 'Monuments',
+                seasonal: 'Seasonal Tourism'
+            }
+        }
+    },
+    destinations: {
+        title: 'Popular Cities',
+        description: "Visit iconic and unique sights that define the Bulgarian cites' culture and history",
+        locations_count: '{count} locations in the area'
     }
 }
 

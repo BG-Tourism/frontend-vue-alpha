@@ -11,7 +11,15 @@ const routes = [
         component: () => import(/* webpackChunkName: 'homepage' */ '@/views/pages/homepage/template.vue')
     },
     {
-        path: '/category/:category',
+        path: '/city/:slug',
+        name: 'City',
+        meta: {
+            className: 'page-city'
+        },
+        component: () => import(/* webpackChunkName: 'city' */ '@/views/pages/city/template.vue')
+    },
+    {
+        path: '/category/:slug',
         name: 'Category',
         meta: {
             className: 'page-category'
