@@ -1,4 +1,8 @@
 const messages = {
+    navigation: {
+        homepage: 'Homepage',
+        category: 'Category "{category}"'
+    },
     colorMode: {
         toggleToLight: 'Toggle to Light theme',
         toggleToDark: 'Toggle to Dark theme'

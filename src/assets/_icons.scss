@@ -74,10 +74,6 @@
     content: '\e913';
 }
 
-.icon-socials::before {
-    content: '\e914';
-}
-
 .icon-unlink::before {
     content: '\e915';
 }
@@ -170,7 +166,7 @@
     content: '\e92a';
 }
 
-.icon-unesco::before {
+.icon-award::before {
     content: '\e92b';
 }
 
@@ -224,4 +220,28 @@
 
 .icon-category-architecture::before {
     content: '\e938';
+}
+
+.icon-heart-solid::before {
+    content: '\e939';
+}
+
+.icon-heart::before {
+    content: '\e93a';
+}
+
+.icon-share::before {
+    content: '\e93b';
+}
+
+.icon-star-solid::before {
+    content: '\e93c';
+}
+
+.icon-star::before {
+    content: '\e93d';
+}
+
+.icon-route::before {
+    content: '\e914';
 }

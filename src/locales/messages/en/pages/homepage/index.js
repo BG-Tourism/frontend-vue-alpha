@@ -1,7 +1,7 @@
 const messages = {
     pageTitle: 'Homepage',
     slogan: {
-        title: 'Rediscover the beauty<br>of Bulgaria',
+        title: 'Wonders of Bulgaria',
         description: 'Get to know the rich history of Bulgaria in your next adventure.',
         button: 'Start from here',
         search: 'Which landmark will you start with?'

@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import { usePreferredLanguages } from '@vueuse/core'
 
 import { defaultLocale, locales } from '@/config/locales'
@@ -18,7 +18,7 @@ function filterLocale(locale) {
 }
 
 function getPreferredLanguage() {
-    let locale = ref(null)
+    let locale = reactive(null)
     const storageLocale = localStorage.getItem('locale')
 
     if (storageLocale) {

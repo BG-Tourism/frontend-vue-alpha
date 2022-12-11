@@ -1,4 +1,8 @@
 const messages = {
+    navigation: {
+        homepage: 'Начало',
+        category: 'Категория "{category}"'
+    },
     colorMode: {
         toggleToLight: 'Превключване към светла тема',
         toggleToDark: 'Превключване към тъмна тема'

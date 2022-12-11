@@ -1,0 +1,37 @@
+.breadcrumbs {
+    padding: 40px 0 30px;
+
+    li {
+        @include font-size(16px);
+
+        display: inline-block;
+        color: $slate-600;
+
+        &::after {
+            content: '›';
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+
+            a {
+                font-weight: 500;
+                pointer-events: none;
+            }
+        }
+
+        a {
+            display: inline-block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@import 'responsive/breadcrumbs';

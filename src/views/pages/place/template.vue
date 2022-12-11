@@ -1,145 +1,140 @@
 <template>
-    <section class="top-section">
+    <section class="location-heading">
         <div class="page-content">
-            <div class="wrapper">
-                <div class="photo">
-                    <div class="holder">
-                        <a href="javascript:void(0);">
-                            <picture>
-                                <img :src="place.image" alt="" loading="lazy" />
-                            </picture>
-                            <div class="view-more">
-                                <span>
-                                    <i class="icon-info" />
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="main-details">
-                    <h1>
-                        <span>{{ place.locale[$i18n.locale].title }}</span>
-                        <span v-if="place.unesco" class="icon" :title="$t('page.place.unesco')">
-                            <i class="icon-unesco" />
-                        </span>
-                    </h1>
-                    <ul class="metrics">
-                        <li>
-                            <i class="icon-location" />
-                            <span>
-                                {{ place.locale[$i18n.locale].location }}
-                            </span>
-                            <span class="badge-status">
-                                {{ place.coords.latitude.toFixed(5) }}, {{ place.coords.longitude.toFixed(5) }}
-                            </span>
-                        </li>
-                        <li>
-                            <i class="icon-weather-cloudy" />
-                            <span>
-                                {{ $t('page.place.weather.cloudy') }}
-                                {{ place.weather[new Date().toLocaleDateString('en-us', { weekday: 'long' }).toLowerCase()] }}
-                            </span>
-                        </li>
-                        <li>
-                            <i class="icon-mountain-altitude" />
-                            <span>{{ place.altitude }} {{ $t('page.place.altitude') }}</span>
-                        </li>
-                    </ul>
-                </div>
+            <ul class="breadcrumbs">
+                <li>
+                    <router-link :to="{ name: 'Homepage' }">
+                        {{ $t('general.navigation.homepage') }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'Category', params: { slug: place.category.slug } }">
+                        {{ $t('general.navigation.category', { category: place.category.locale[$i18n.locale].name }) }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
+                        {{ place.locale[$i18n.locale].title }}
+                    </router-link>
+                </li>
+            </ul>
+
+            <div class="title">
+                <h1>{{ place.locale[$i18n.locale].title }}</h1>
+                <aside>
+                    <button :title="$t('page.place.buttons.map')">
+                        <i class="icon-route" />
+                    </button>
+                    <button
+                        :class="['favorite', isFavorite ? 'active' : null]"
+                        :title="isFavorite ? $t('page.place.buttons.favorite.undo') : $t('page.place.buttons.favorite.make')"
+                        @click.prevent="isFavorite = !isFavorite"
+                    >
+                        <i :class="isFavorite ? 'icon-heart-solid' : 'icon-heart'" />
+                    </button>
+                    <button :title="$t('page.place.buttons.share')">
+                        <i class="icon-share" />
+                    </button>
+                </aside>
             </div>
+
+            <ul class="information">
+                <li class="rating">
+                    <i class="icon-star-solid" />
+                    <strong>4.8</strong>
+                    <span>{{ $t('page.place.reviews', place.reviews_count) }}</span>
+                </li>
+                <li>
+                    <i class="icon-location" />
+                    <span>
+                        {{ place.locale[$i18n.locale].location }}
+                    </span>
+                </li>
+                <li>
+                    <i class="icon-weather-cloudy" />
+                    <span>
+                        {{ $t('page.place.weather.cloudy') }}
+                        {{ place.weather[new Date().toLocaleDateString('en-us', { weekday: 'long' }).toLowerCase()] }}
+                    </span>
+                </li>
+                <li>
+                    <i class="icon-mountain-altitude" />
+                    <span>{{ place.altitude }} {{ $t('page.place.altitude') }}</span>
+                </li>
+                <li v-if="place.unesco" :title="$t('page.place.unesco.title')">
+                    <i class="icon-award" />
+                    <span>{{ $t('page.place.unesco.label') }}</span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <section class="location-gallery">
         <div class="page-content">
-            <div class="gallery">
-                <div class="image">
-                    <a href="javascript:void(0);">
-                        <img src="/images/photos/4-1.jpg" alt="" loading="lazy" />
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="javascript:void(0);">
-                        <img src="/images/photos/4-2.jpg" alt="" loading="lazy" />
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="javascript:void(0);">
-                        <img src="/images/photos/4-3.jpg" alt="" loading="lazy" />
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="javascript:void(0);">
-                        <img src="/images/photos/4-4.jpg" alt="" loading="lazy" />
-                    </a>
-                </div>
-                <div class="image">
-                    <a href="javascript:void(0);">
-                        <img src="/images/photos/4-5.jpg" alt="" loading="lazy" />
-                    </a>
+            <div class="wrapper">
+                <div v-for="(photo, index) in place.photos" :key="photo.id" class="photo">
+                    <picture @click.prevent="toggleGallery(photo.id)">
+                        <img :src="`/images/photos/4-${photo.id}.jpg`" alt="" />
+                    </picture>
+                    <button v-if="index === 0" @click.prevent="toggleGallery(photo.id)">
+                        <i class="icon-image" />
+                        <span>{{ $t('page.place.photography.more') }}</span>
+                    </button>
+                    <p class="copyrights">
+                        {{ $t('page.place.photography.author', { author: photo.author }) }}
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="location-details">
+    <section class="location-contents">
         <div class="page-content">
-            <h1>
-                <span>{{ $t('page.place.section.description') }}</span>
-                <button :title="$t('page.place.section.playAudio')">
-                    <i class="icon-play" />
-                </button>
-            </h1>
-            <div v-html="place.locale[$i18n.locale].description" />
-        </div>
-    </section>
-
-    <section class="audio-playlist">
-        <button class="toggle-visibility" :title="$t('page.place.audio.controls.hide')">
-            <i class="icon-arrow-down" />
-        </button>
-        <div class="audio-details">
-            <picture>
-                <img :src="place.image" alt="" loading="lazy" />
-                <div class="icon">
-                    <i class="icon-audio-line" />
+            <div class="wrapper">
+                <div class="table-of-contents">
+                    <div class="holder">
+                        <h2>{{ $t('page.place.contents.tableOfContents') }}</h2>
+                        <ul>
+                            <li v-for="(content, index) in place.contents" :key="index">
+                                <a href="javascript:void(0);">
+                                    {{ content.locale[$i18n.locale].title }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        <i class="icon-alert-triangle" />
+                        <span>{{ $t('page.place.contents.copyrights') }}</span>
+                    </p>
                 </div>
-            </picture>
-            <div class="heading">
-                <h4>{{ $t('page.place.audio.section', { section: $t('page.place.section.description') }) }}</h4>
-                <p>
-                    {{ $t('page.place.audio.describe') }}
-                    <strong>{{ place.locale[$i18n.locale].title }}</strong>
-                </p>
-            </div>
-        </div>
-        <div class="audio-line">
-            <div class="channel" style="width: 24%"></div>
-        </div>
-        <div class="audio-controls">
-            <div class="main">
-                <button class="skip" :title="$t('page.place.audio.controls.skipBack')">
-                    <i class="icon-skip-back" />
-                </button>
-                <button class="toggle" :title="$t('page.place.audio.controls.play')">
-                    <i class="icon-play" />
-                </button>
-                <button class="skip" :title="$t('page.place.audio.controls.skipForward')">
-                    <i class="icon-skip-forward" />
-                </button>
-            </div>
-            <div class="time">00:52 / 01:12</div>
-            <div class="secondary">
-                <button class="volume" :title="$t('page.place.audio.controls.volume')">
-                    <i class="icon-volume-2" />
-                </button>
+                <div class="contents">
+                    <div v-for="(content, index) in place.contents" :key="index" class="content">
+                        <div class="title">
+                            <h1>{{ content.locale[$i18n.locale].title }}</h1>
+                            <div class="authors">
+                                <p>{{ $t('page.place.contents.author', content.authors.length) }}</p>
+                                <ul :class="content.authors.length > 1 ? 'multiple' : null">
+                                    <li v-for="author in content.authors" :key="author.id">
+                                        <a href="javascript:void(0);" :title="author.names">
+                                            <img :src="author.photo" alt="" />
+                                        </a>
+                                        <span v-if="content.authors.length === 1">
+                                            {{ author.names }}
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div v-html="content.locale[$i18n.locale].text"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-    import { computed, defineComponent } from 'vue'
+    import { computed, defineComponent, ref } from 'vue'
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
@@ -155,11 +150,52 @@
                 return i18n.t('page.place.pageTitle') + titleSuffix
             })
 
+            const isFavorite = ref(false)
+            const isGalleryOpened = ref(false)
+
             const place = {
                 id: 1,
-                category: 2,
                 slug: 'hram-pametnik-sveti-aleksandar-nevski',
                 image: '/images/photos/4.jpg',
+                photos: [
+                    {
+                        id: 1,
+                        image: '/images/photos/4-1.jpg',
+                        author: 'Александър Костов',
+                        date_added: 1670777697
+                    },
+                    {
+                        id: 2,
+                        image: '/images/photos/4-2.jpg',
+                        author: 'Александър Костов',
+                        date_added: 1670777697
+                    },
+                    {
+                        id: 3,
+                        image: '/images/photos/4-3.jpg',
+                        author: 'Александър Костов',
+                        date_added: 1670777697
+                    },
+                    {
+                        id: 4,
+                        image: '/images/photos/4-4.jpg',
+                        author: 'Александър Костов',
+                        date_added: 1670777697
+                    }
+                ],
+                reviews_count: 125,
+                category: {
+                    id: 1,
+                    slug: 'nature',
+                    locale: {
+                        bg: {
+                            name: 'Природа'
+                        },
+                        en: {
+                            name: 'Nature'
+                        }
+                    }
+                },
                 unesco: true,
                 weather: {
                     monday: '1°C',
@@ -178,23 +214,78 @@
                 locale: {
                     bg: {
                         title: 'Храм-паметник "Свети Александър Невски"',
-                        location: 'гр. София',
-                        description:
-                            '<p>Катедралният храм "Св. Ал. Невски" е считан за символ на българската столица. Намира се в центъра на София, на едноименния площад, а отблясъкът на златните му кубета привлича погледа от километри разстояние.</p><p>Храмът е построен в чест на руския император Александър II, наричан още "Цар Освободител", чиято армия през 1878г освобождава България от петвековното османско владичество. Св. Александър Невски, чието име носи катедралата, е руски княз (1220-1263г) - велик пълководец и дипломат. Той е светец-покровител на руския император Александър II и е символ на руската бойна слава.</p><p>Храмът е изграден по предложение на българския политик и общественик Петко Каравелов (1843-1903г). Първоначално е било решено той да бъде издигнат в Търново, но българският княз Батенберг (управлявал 1879-1886г) настоява да е в София. Една част от средствата за построяването на храма се отпускат от държавния бюджет, друга от дарения на видни граждани, включително и от княз Батенберг, който дарява сумата от 6000 златни лева.</p>'
+                        location: 'гр. София'
                     },
                     en: {
                         title: 'St. Alexander Nevsky Temple-Monument',
-                        location: 'Sofia City',
-                        description:
-                            '<p>The cathedral "St. Al. Nevsky" is considered a symbol of the Bulgarian capital. It is located in the center of Sofia, on the square of the same name, and the glare of its golden cubes attracts the eye from kilometers away.</p><p>The temple was built in honor of the Russian Emperor Alexander II, also called "Tsar Osvoboditel", whose army in 1878 he freed Bulgaria from the five-century Ottoman rule. St. Alexander Nevsky, whose name bears the cathedral, was a Russian prince (1220-1263) - a great commander and diplomat. He is the patron saint of the Russian Emperor Alexander II and is a symbol of Russian military glory.</p><p>The temple was built at the suggestion of the Bulgarian politician and public figure Petko Karavelov (1843-1903). Initially, it was decided that it would be erected in Tarnovo, but the Bulgarian Prince Battenberg (ruled 1879-1886) insisted that it be in Sofia. One part of the funds for the construction of the temple is allocated from the state budget, another from donations of prominent citizens, including Prince Battenberg, who donated the sum of 6,000 gold leva.</p>'
+                        location: 'Sofia City'
                     }
-                }
+                },
+                contents: [
+                    {
+                        id: 1,
+                        authors: [
+                            {
+                                id: 1,
+                                names: 'Том Атанасов',
+                                photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                            }
+                        ],
+                        locale: {
+                            bg: {
+                                title: 'Кратко резюме',
+                                text: '<p>Храм-паметникът "Свети Александър Невски" в София, България, е религиозна сграда, построена в началото на 20-ти век в чест на средновековния руски княз Александър Невски. Тя е ярък образец на българската възрожденска архитектура и е най-голямата източноправославна катедрала на Балканите. Историята на храм-паметника датира от края на 19 век, когато България се стреми да утвърди своята национална идентичност. Строежът на храма започва през 1882 г. и завършва през 1912 г. Проектът е финансиран от руския цар Александър II. В криптата на храм-паметника се съхраняват тленните останки на български народни герои. Тук се намира и Българската академия на науките.</p>'
+                            },
+                            en: {
+                                title: 'Summary',
+                                text: "<p>The Saint Alexander Nevsky Temple-Monument in Sofia, Bulgaria is a religious building built in the early 20th century in tribute to the medieval Russian prince Alexander Nevsky. It is a striking example of Bulgarian National Revival architecture and is the largest Eastern Orthodox cathedral in the Balkans. The temple-monument's history dates back to the late 19th century when Bulgaria was seeking to establish its own national identity. Construction of the temple began in 1882 and was completed in 1912. The project was funded by the Russian Tsar Alexander II. The temple-monument's crypt contains the remains of Bulgarian national heroes. It is also home to the Bulgarian Academy of Sciences.</p>"
+                            }
+                        }
+                    },
+                    {
+                        id: 2,
+                        authors: [
+                            {
+                                id: 1,
+                                names: 'Том Атанасов',
+                                photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                            },
+                            {
+                                id: 2,
+                                names: 'Александър Найденов',
+                                photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
+                            }
+                        ],
+                        locale: {
+                            bg: {
+                                title: 'История',
+                                text: '<p>Храм-паметникът Свети Александър Невски в София, България е красива и емблематична религиозна сграда, разположена в сърцето на града. Построена в началото на 20-и век, тази източноправославна църква е в знак на почит към средновековния руски княз Александър Невски, който се слави с военните си победи над нахлуващите тевтонски рицари.</p><p>Храм-паметникът е ярък образец на българската възрожденска архитектура със своите високи златни куполи и сложна резба. Това е най-голямата източноправославна катедрала на Балканите и нейното величие и красота я правят задължителна дестинация за посетителите на София.</p><p>Историята на храм-паметника „Свети Александър Невски“ датира от края на 19 век, когато българският народ се стреми да утвърди своята национална идентичност и да се освободи от властта на Османската империя. Руският княз Александър Невски е възприеман като герой, който успешно е защитил своя народ от чужди нашественици и затова е избран за символ на българската борба за независимост.</p><p>Строежът на храм-паметника започва през 1882 г., а официално е завършен през 1912 г. Проектът е финансиран от руския цар Александър II, който иска да почете своя съименник и да подкрепи българския народ в стремежа му към независимост.</p><p>Храм-паметникът се намира на хълм в центъра на София, като местоположението му е внимателно подбрано, за да бъде лесно видимо и достъпно за хората от града. Интериорът на храма е също толкова впечатляващ, колкото и екстериорът, със своите богато украсени фрески, красиви витражи и сложни дърворезби. Главният олтар на храма е посветен на Свети Александър Невски, има и параклис, посветен на Света София, покровителката на града.</p><p>Една от най-интересните особености на храм-паметника „Свети Александър Невски“ е неговата крипта, в която се съхраняват тленните останки на български национални герои и други важни личности. Първоначално криптата е била предназначена да бъде последното място за почивка на самия княз Александър Невски, но тленните му останки така и не са пренесени в София. Вместо това криптата е дом на други герои от българския народ, включително революционера Васил Левски и поета Христо Ботев.</p><p>Освен своето религиозно и историческо значение, храм-паметникът „Свети Александър Невски“ е и важна културна и художествена забележителност в София. В храм-паметника се помещава Българската академия на науките, която е създадена през 1869 г. и е най-старото и престижно висше учебно заведение в страната. Академията се помещава в красива сграда до храма, а нейните членове са сред най-уважаваните учени и изследователи в България.</p><p>Храм-паметникът „Свети Александър Невски“ е красив и вдъхновяващ пример за българската възрожденска архитектура и е задължителна дестинация за всеки, който посети София. Неговата богата история, красив дизайн и важно културно и религиозно значение го правят истинско съкровище на града.</p>'
+                            },
+                            en: {
+                                title: 'History',
+                                text: "<p>The Saint Alexander Nevsky Temple-Monument in Sofia, Bulgaria is a beautiful and iconic religious building located in the heart of the city. Built in the early 20th century, this Eastern Orthodox church is a tribute to the medieval Russian prince Alexander Nevsky, who is celebrated for his military victories over the invading Teutonic Knights.</p><p>The temple-monument is a striking example of Bulgarian National Revival architecture, with its tall golden domes and intricate carvings. It is the largest Eastern Orthodox cathedral in the Balkans, and its grandeur and beauty make it a must-see destination for visitors to Sofia.</p><p>The history of the Saint Alexander Nevsky Temple-Monument dates back to the late 19th century, when the Bulgarian people were seeking to establish their own national identity and break free from the rule of the Ottoman Empire. The Russian prince Alexander Nevsky was seen as a hero who had successfully defended his people against foreign invaders, and so he was chosen as the symbol of the Bulgarian struggle for independence.</p><p>Construction of the temple-monument began in 1882, and it was officially completed in 1912. The project was funded by the Russian Tsar Alexander II, who wanted to honor his namesake and support the Bulgarian people in their quest for independence.</p><p>The temple-monument is located on a hill in the center of Sofia, and its location was carefully chosen to be easily visible and accessible to the people of the city. The interior of the temple is just as impressive as the exterior, with its ornate frescoes, beautiful stained glass windows, and intricate carvings. The main altar of the temple is dedicated to Saint Alexander Nevsky, and there is also a chapel dedicated to Saint Sofia, the patron saint of the city.</p><p>One of the most interesting features of the Saint Alexander Nevsky Temple-Monument is its crypt, which contains the remains of Bulgarian national heroes and other important figures. The crypt was originally intended to be the final resting place of Prince Alexander Nevsky himself, but his remains were never brought to Sofia. Instead, the crypt is home to the remains of other heroes of the Bulgarian people, including the revolutionary Vasil Levski and the poet Hristo Botev.</p><p>In addition to its religious and historical significance, the Saint Alexander Nevsky Temple-Monument is also an important cultural and artistic landmark in Sofia. The temple-monument is home to the Bulgarian Academy of Sciences, which was established in 1869 and is the country's oldest and most prestigious institution of higher learning. The academy is housed in a beautiful building adjacent to the temple, and its members are among the most respected scholars and researchers in Bulgaria.</p><p>The Saint Alexander Nevsky Temple-Monument is a beautiful and inspiring example of Bulgarian National Revival architecture, and it is a must-see destination for anyone visiting Sofia. Its rich history, beautiful design, and important cultural and religious significance make it a true treasure of the city.</p>"
+                            }
+                        }
+                    }
+                ]
             }
 
             useTitle(pageTitle)
 
+            const toggleGallery = (id) => {
+                isGalleryOpened.value = !isGalleryOpened.value
+
+                if (isGalleryOpened.value) {
+                    console.log(`Gallery opened with Photo ID: ${id}.`)
+                } else {
+                    console.log(`Gallery closed with Photo ID: ${id}.`)
+                }
+            }
+
             return {
-                place
+                place,
+                isFavorite,
+                toggleGallery
             }
         }
     })
