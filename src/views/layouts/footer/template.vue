@@ -1,10 +1,7 @@
 <template>
     <footer class="page-footer">
         <div class="container">
-            <p
-                class="open-source"
-                v-html="$t('general.footerOpenSource', { repo: 'https://github.com/BG-Tourism/frontend-ver2' })"
-            />
+            <p class="open-source" v-html="$t('general.footerOpenSource', { repo: gitRepository })" />
             <div class="wrapper">
                 <p>
                     &copy; {{ currentYear }}
@@ -35,11 +32,13 @@
         name: 'BlockFooter',
         setup() {
             const appName = import.meta.env.VITE_APP_NAME
+            const gitRepository = import.meta.env.VITE_APP_GIT_REPO
             const currentYear = new Date().getFullYear()
 
             return {
-                currentYear,
-                appName
+                appName,
+                gitRepository,
+                currentYear
             }
         }
     })

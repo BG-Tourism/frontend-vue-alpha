@@ -1,5 +1,9 @@
 <template>
     <header class="page-header">
+        <section v-if="environment" :class="['top-line', environment]">
+            <span v-html="$t('general.headerEnvironment.' + environment, { repo: gitRepository })" />
+        </section>
+
         <div class="container">
             <BlockLogo />
 
@@ -22,6 +26,15 @@
             BlockLogo,
             BlockNavigation,
             BlockUserMenu
+        },
+        setup() {
+            const environment = import.meta.env.VITE_APP_ENV
+            const gitRepository = import.meta.env.VITE_APP_GIT_REPO
+
+            return {
+                environment,
+                gitRepository
+            }
         }
     })
 </script>
