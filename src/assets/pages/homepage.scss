@@ -277,33 +277,52 @@
                 padding: 0 0 50px;
 
                 button {
-                    @include font-size(14px);
-
                     display: flex;
                     align-items: center;
-                    padding: 6px 12px;
+                    padding: 8px 14px;
                     border: 0;
                     border-radius: 14px;
                     background-color: transparent;
-                    color: $slate-500;
-                    font-weight: 600;
-                    transition: all 200ms linear;
 
                     &:hover {
-                        color: $slate-800;
+                        span,
+                        i {
+                            color: $slate-800;
+                        }
                     }
 
                     &.active {
                         background-color: $slate-800;
-                        color: $white;
+
+                        span,
+                        i {
+                            color: $white;
+                        }
 
                         &:hover {
-                            color: $white;
+                            span,
+                            i {
+                                color: $white;
+                            }
                         }
                     }
 
+                    span,
                     i {
-                        padding: 0 8px 0 0;
+                        color: $slate-500;
+                        transition: all 200ms linear;
+                    }
+
+                    i {
+                        @include font-size(18px);
+
+                        padding: 0 10px 0 0;
+                    }
+
+                    span {
+                        @include font-size(16px);
+
+                        font-weight: 500;
                     }
                 }
             }

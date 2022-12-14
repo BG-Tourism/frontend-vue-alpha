@@ -10,9 +10,8 @@ const messages = {
     },
     reviews: '(no reviews) | (1 review) | ({n} reviews)',
     weather: {
-        cloudy: 'cloudy'
+        cloudy: 'cloudy {temperature} {unit}'
     },
-    altitude: 'altitude',
     unesco: {
         label: 'UNESCO',
         title: 'Тhis landmark is part of the UNESCO Cultural Heritage.'

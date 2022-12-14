@@ -23,6 +23,7 @@
                 justify-content: flex-end;
 
                 button {
+                    position: relative;
                     display: flex;
                     flex: 0 0 auto;
                     align-items: center;
@@ -42,6 +43,12 @@
 
                         i {
                             color: $slate-600;
+                        }
+
+                        .tooltip-container {
+                            top: 100%;
+                            opacity: 1;
+                            visibility: visible;
                         }
                     }
 
@@ -83,37 +90,136 @@
             padding: 0 0 60px;
 
             li {
-                display: flex;
-                gap: 10px;
-                align-items: center;
+                position: relative;
 
-                &.rating {
-                    i {
-                        color: $yellow-400;
+                &:hover {
+                    .tooltip-container {
+                        top: 100%;
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
 
-                i,
-                span {
-                    color: $slate-500;
+                &.rating {
+                    .information-holder {
+                        i {
+                            color: $yellow-400;
+                        }
+                    }
                 }
 
-                span,
-                strong {
-                    @include font-size(15px);
+                .tooltip-container {
+                    .weather-days {
+                        display: flex;
+                        gap: 1px;
+                        overflow: hidden;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: $slate-200;
+                        border-radius: 12px;
+                        background-color: $slate-200;
+                        box-shadow: rgba($slate-800, 24%) 0 3px 8px;
+                    }
+
+                    .weather-day {
+                        width: 150px;
+                        background-color: $white;
+                        color: $slate-600;
+                        text-align: center;
+                    }
+
+                    .weather-heading {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 30px 0 0;
+
+                        .weather-title {
+                            @include font-size(20px);
+
+                            padding: 0 0 10px;
+                            font-weight: 600;
+                        }
+
+                        .weather-date {
+                            @include font-size(12px);
+
+                            font-weight: 500;
+                        }
+                    }
+
+                    .weather-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 150px;
+                        height: 100px;
+
+                        i {
+                            @include font-size(40px);
+                        }
+                    }
+
+                    .weather-degrees {
+                        display: flex;
+                        gap: 15px;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 0 30px;
+
+                        .weather-degree-day,
+                        .weather-degree-night {
+                            @include font-size(18px);
+
+                            display: flex;
+                            gap: 5px;
+                            align-items: flex-start;
+                        }
+
+                        .weather-degree-day {
+                            color: $slate-700;
+                            font-weight: 500;
+                        }
+
+                        .weather-degree-night {
+                            color: $slate-500;
+                        }
+
+                        .divider {
+                            width: 1px;
+                            height: 18px;
+                            background-color: $slate-300;
+                            transform: rotate(20deg);
+                        }
+                    }
                 }
 
-                i {
-                    @include font-size(20px);
-                }
+                .information-holder {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
 
-                span {
-                    font-weight: 400;
-                }
+                    i,
+                    span {
+                        color: $slate-500;
+                    }
 
-                strong {
-                    color: $slate-800;
-                    font-weight: 600;
+                    span,
+                    strong {
+                        @include font-size(15px);
+                    }
+
+                    i {
+                        @include font-size(20px);
+                    }
+
+                    span {
+                        font-weight: 400;
+                    }
+
+                    strong {
+                        color: $slate-800;
+                        font-weight: 600;
+                    }
                 }
             }
         }

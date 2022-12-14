@@ -10,9 +10,8 @@ const messages = {
     },
     reviews: '(няма ревюта) | (1 ревю) | ({n} ревюта)',
     weather: {
-        cloudy: 'облачно'
+        cloudy: 'облачно {temperature} {unit}'
     },
-    altitude: 'м. н.в.',
     unesco: {
         label: 'UNESCO',
         title: 'Тази забележителност е част от културното наследство на ЮНЕСКО.'

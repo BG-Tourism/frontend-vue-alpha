@@ -7,6 +7,24 @@ const messages = {
         toggleToLight: 'Toggle to Light theme',
         toggleToDark: 'Toggle to Dark theme'
     },
+    unit: {
+        celsius: '°C',
+        fahrenheit: '°F',
+        coords: 'GPS Coordinates - <strong>{latitude}</strong> latitude, and <strong>{longitude}</strong> longitude.',
+        altitude: {
+            short: 'altitude',
+            long: 'Меters above sea level'
+        }
+    },
+    nameOfDay: {
+        0: 'Sunday',
+        1: 'Monday',
+        2: 'Tuesday',
+        3: 'Wednesday',
+        4: 'Thursday',
+        5: 'Friday',
+        6: 'Saturday'
+    },
     settings: 'Settings',
     logout: 'Sign out',
     seeMore: 'See more',

@@ -22,48 +22,118 @@
             <div class="title">
                 <h1>{{ place.locale[$i18n.locale].title }}</h1>
                 <aside>
-                    <button :title="$t('page.place.buttons.map')">
+                    <button>
                         <i class="icon-route" />
+                        <div class="tooltip-container center">
+                            <div class="tooltip-content">
+                                {{ $t('page.place.buttons.map') }}
+                            </div>
+                        </div>
                     </button>
-                    <button
-                        :class="['favorite', isFavorite ? 'active' : null]"
-                        :title="isFavorite ? $t('page.place.buttons.favorite.undo') : $t('page.place.buttons.favorite.make')"
-                        @click.prevent="isFavorite = !isFavorite"
-                    >
+                    <button :class="['favorite', isFavorite ? 'active' : null]" @click.prevent="isFavorite = !isFavorite">
                         <i :class="isFavorite ? 'icon-heart-solid' : 'icon-heart'" />
+                        <div class="tooltip-container right">
+                            <div class="tooltip-content">
+                                {{ isFavorite ? $t('page.place.buttons.favorite.undo') : $t('page.place.buttons.favorite.make') }}
+                            </div>
+                        </div>
                     </button>
-                    <button :title="$t('page.place.buttons.share')">
+                    <button>
                         <i class="icon-share" />
+                        <div class="tooltip-container right">
+                            <div class="tooltip-content">
+                                {{ $t('page.place.buttons.share') }}
+                            </div>
+                        </div>
                     </button>
                 </aside>
             </div>
 
             <ul class="information">
                 <li class="rating">
-                    <i class="icon-star-solid" />
-                    <strong>4.8</strong>
-                    <span>{{ $t('page.place.reviews', place.reviews_count) }}</span>
+                    <div class="information-holder">
+                        <i class="icon-star-solid" />
+                        <strong>4.8</strong>
+                        <span>{{ $t('page.place.reviews', place.reviews_count) }}</span>
+                    </div>
                 </li>
                 <li>
-                    <i class="icon-location" />
-                    <span>
-                        {{ place.locale[$i18n.locale].location }}
-                    </span>
+                    <div class="information-holder">
+                        <i class="icon-location" />
+                        <span>{{ place.locale[$i18n.locale].location }}</span>
+                    </div>
+                    <div class="tooltip-container center">
+                        <div
+                            class="tooltip-content"
+                            v-html="
+                                $t('general.unit.coords', {
+                                    latitude: place.coords.latitude,
+                                    longitude: place.coords.longitude
+                                })
+                            "
+                        />
+                    </div>
                 </li>
                 <li>
-                    <i class="icon-weather-cloudy" />
-                    <span>
-                        {{ $t('page.place.weather.cloudy') }}
-                        {{ place.weather[new Date().toLocaleDateString('en-us', { weekday: 'long' }).toLowerCase()] }}
-                    </span>
+                    <div class="information-holder">
+                        <i class="icon-weather-cloudy" />
+                        <span>
+                            {{
+                                $t('page.place.weather.cloudy', {
+                                    temperature: place.weather[0].temperature[0],
+                                    unit: $t('general.unit.celsius')
+                                })
+                            }}
+                        </span>
+                    </div>
+                    <div class="tooltip-container">
+                        <div class="weather-days">
+                            <div v-for="day in place.weather" :key="day" class="weather-day">
+                                <span class="weather-heading">
+                                    <span class="weather-title">
+                                        {{ $t(`general.nameOfDay.${day.date.number}`) }}
+                                    </span>
+                                    <span class="weather-date">{{ day.date.long }}</span>
+                                </span>
+                                <div class="weather-icon">
+                                    <i :class="'icon-weather-' + day.state" />
+                                </div>
+                                <span class="weather-degrees">
+                                    <span class="weather-degree-day">
+                                        {{ day.temperature[0] }}
+                                        <small>{{ $t('general.unit.celsius') }}</small>
+                                    </span>
+                                    <span class="divider"></span>
+                                    <span class="weather-degree-night">
+                                        {{ day.temperature[1] }}
+                                        <small>{{ $t('general.unit.celsius') }}</small>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
-                    <i class="icon-mountain-altitude" />
-                    <span>{{ place.altitude }} {{ $t('page.place.altitude') }}</span>
+                    <div class="information-holder">
+                        <i class="icon-mountain-altitude" />
+                        <span>{{ place.altitude }} {{ $t('general.unit.altitude.short') }}</span>
+                    </div>
+                    <div class="tooltip-container center">
+                        <div class="tooltip-content">
+                            {{ $t('general.unit.altitude.long') }}
+                        </div>
+                    </div>
                 </li>
-                <li v-if="place.unesco" :title="$t('page.place.unesco.title')">
-                    <i class="icon-award" />
-                    <span>{{ $t('page.place.unesco.label') }}</span>
+                <li v-if="place.unesco">
+                    <div class="information-holder">
+                        <i class="icon-award" />
+                        <span>{{ $t('page.place.unesco.label') }}</span>
+                    </div>
+                    <div class="tooltip-container center">
+                        <div class="tooltip-content">
+                            {{ $t('page.place.unesco.title') }}
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -138,6 +208,8 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
+    import getNextFiveDays from '@/helpers/getNextFiveDays'
+
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
@@ -197,15 +269,33 @@
                     }
                 },
                 unesco: true,
-                weather: {
-                    monday: '1°C',
-                    tuesday: '2°C',
-                    wednesday: '3°C',
-                    thursday: '4°C',
-                    friday: '5°C',
-                    saturday: '6°C',
-                    sunday: '7°C'
-                },
+                weather: [
+                    {
+                        date: getNextFiveDays(i18n.locale)[0],
+                        state: 'cloudy',
+                        temperature: [2, -3] // 0 = day, 1 = night
+                    },
+                    {
+                        date: getNextFiveDays(i18n.locale)[1],
+                        state: 'snow',
+                        temperature: [9, 1]
+                    },
+                    {
+                        date: getNextFiveDays(i18n.locale)[2],
+                        state: 'windy-cloudy',
+                        temperature: [12, 4]
+                    },
+                    {
+                        date: getNextFiveDays(i18n.locale)[3],
+                        state: 'snow',
+                        temperature: [14, 6]
+                    },
+                    {
+                        date: getNextFiveDays(i18n.locale)[4],
+                        state: 'partly-sunny',
+                        temperature: [9, -2]
+                    }
+                ],
                 coords: {
                     latitude: 42.69577,
                     longitude: 23.33286
