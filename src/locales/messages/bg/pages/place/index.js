@@ -8,7 +8,13 @@ const messages = {
         },
         share: 'Сподели'
     },
-    reviews: '(няма ревюта) | (1 ревю) | ({n} ревюта)',
+    reviews: {
+        text: '(няма ревюта) | (1 ревю) | ({n} ревюта)',
+        title: 'Ревюта',
+        description: 'Защото твоето мнение е от значение!',
+        stars: '1 звезда | {n} звезди',
+        addReview: 'Разкажи твоята история'
+    },
     weather: {
         cloudy: 'облачно {temperature} {unit}'
     },

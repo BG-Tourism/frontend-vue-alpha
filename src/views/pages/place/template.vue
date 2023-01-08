@@ -54,7 +54,7 @@
                     <div class="information-holder">
                         <i class="icon-star-solid" />
                         <strong>4.8</strong>
-                        <span>{{ $t('page.place.reviews', place.reviews_count) }}</span>
+                        <span>{{ $t('page.place.reviews.text', place.reviews_count) }}</span>
                     </div>
                 </li>
                 <li>
@@ -201,6 +201,45 @@
             </div>
         </div>
     </section>
+
+    <section class="location-reviews">
+        <div class="page-content">
+            <div class="wrapper">
+                <div class="title flex">
+                    <h2>{{ $t('page.place.reviews.title') }}</h2>
+                    <p>{{ $t('page.place.reviews.description') }}</p>
+                </div>
+                <div class="list">
+                    <div v-for="review in place.reviews" :key="review.id" class="item">
+                        <div class="author">
+                            <picture>
+                                <img :src="review.author.photo" alt="" />
+                            </picture>
+                            <div class="info">
+                                <h3>{{ review.author.names }}</h3>
+                                <div class="rating" :title="$t('page.place.reviews.stars', review.rating)">
+                                    <i
+                                        v-for="(star, i) in 5"
+                                        :key="i"
+                                        :class="star <= review.rating ? 'icon-star-solid' : 'icon-star'"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <p>{{ review.comment }}</p>
+                        </div>
+                        <div class="dates">
+                            <time>{{ $d(new Date(review.date_added), 'full', String(locale)) }}</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button>{{ $t('page.place.reviews.addReview') }}</button>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -215,6 +254,7 @@
     export default defineComponent({
         setup() {
             const i18n = useI18n()
+            const { locale } = useI18n({ useScope: 'global' })
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
 
@@ -357,6 +397,80 @@
                             }
                         }
                     }
+                ],
+                reviews: [
+                    {
+                        id: 1,
+                        author: {
+                            id: 1,
+                            names: 'Том Атанасов',
+                            photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
+                        },
+                        rating: 5,
+                        date_added: 1660815374000,
+                        comment:
+                            'Храм-паметникът "Свети Александър Невски" в София е впечатляваща и красива православна катедрала. Трябва да се види, когато посещавате града.'
+                    },
+                    {
+                        id: 2,
+                        author: {
+                            id: 2,
+                            names: 'Александър Найденов',
+                            photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                        },
+                        rating: 4,
+                        date_added: 1685017043000,
+                        comment:
+                            'Бях поразен от величието на храм-паметника "Свети Александър Невски" в София. Златните куполи и сложните детайли по екстериора са наистина зашеметяващи.'
+                    },
+                    {
+                        id: 3,
+                        author: {
+                            id: 3,
+                            names: 'Петър Георгиев',
+                            photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                        },
+                        rating: 5,
+                        date_added: 1685017043000,
+                        comment:
+                            'Интериорът на храм-паметника "Свети Александър Невски" в София е също толкова впечатляващ, колкото и екстериорът. Стенописите и иконите спират дъха, а атмосферата е спокойна.'
+                    },
+                    {
+                        id: 4,
+                        author: {
+                            id: 4,
+                            names: 'Пламен Калайджиев',
+                            photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                        },
+                        rating: 5,
+                        date_added: 1685017043000,
+                        comment:
+                            'Горещо препоръчвам да го посетите, дори и да не сте особено религиозни. Архитектурата и историята на катедралата я превръщат в завладяващо културно преживяване.'
+                    },
+                    {
+                        id: 5,
+                        author: {
+                            id: 5,
+                            names: 'Георги Йорданов',
+                            photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                        },
+                        rating: 2,
+                        date_added: 1685017043000,
+                        comment:
+                            'Разочарован съм от посещението си. Екстериорът беше хубав, но интериорът не беше впечатляващ и не беше добре поддържан. Не оправда очакванията ми.'
+                    },
+                    {
+                        id: 5,
+                        author: {
+                            id: 5,
+                            names: 'Мария Величкова',
+                            photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                        },
+                        rating: 5,
+                        date_added: 1685017043000,
+                        comment:
+                            'Едно от най-хубавите неща за храма е местоположението. Разположен е на хълм с изглед към града, осигуряващ спираща дъха гледка от територията.'
+                    }
                 ]
             }
 
@@ -373,6 +487,7 @@
             }
 
             return {
+                locale,
                 place,
                 isFavorite,
                 toggleGallery

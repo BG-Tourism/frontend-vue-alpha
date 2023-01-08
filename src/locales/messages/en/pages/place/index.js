@@ -8,7 +8,13 @@ const messages = {
         },
         share: 'Share'
     },
-    reviews: '(no reviews) | (1 review) | ({n} reviews)',
+    reviews: {
+        text: '(no reviews) | (1 review) | ({n} reviews)',
+        title: 'Reviews',
+        description: 'Because your opinion matters!',
+        stars: '1 star | {n} stars',
+        addReview: 'Tell your story'
+    },
     weather: {
         cloudy: 'cloudy {temperature} {unit}'
     },
