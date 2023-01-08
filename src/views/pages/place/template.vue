@@ -172,10 +172,6 @@
                             </li>
                         </ul>
                     </div>
-                    <p>
-                        <i class="icon-alert-triangle" />
-                        <span>{{ $t('page.place.contents.copyrights') }}</span>
-                    </p>
                 </div>
                 <div class="contents">
                     <div v-for="(content, index) in place.contents" :key="index" class="content">
@@ -197,6 +193,12 @@
                         </div>
                         <div v-html="content.locale[$i18n.locale].text"></div>
                     </div>
+                </div>
+                <div class="copyrights">
+                    <p>
+                        <i class="icon-alert-triangle" />
+                        <span>{{ $t('page.place.contents.copyrights') }}</span>
+                    </p>
                 </div>
             </div>
         </div>
