@@ -177,21 +177,8 @@
                     <div v-for="(content, index) in place.contents" :key="index" class="content">
                         <div class="title">
                             <h1>{{ content.locale[$i18n.locale].title }}</h1>
-                            <div class="authors">
-                                <p>{{ $t('page.place.contents.author', content.authors.length) }}</p>
-                                <ul :class="content.authors.length > 1 ? 'multiple' : null">
-                                    <li v-for="author in content.authors" :key="author.id">
-                                        <a href="javascript:void(0);" :title="author.names">
-                                            <img :src="author.photo" alt="" />
-                                        </a>
-                                        <span v-if="content.authors.length === 1">
-                                            {{ author.names }}
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-                        <div v-html="content.locale[$i18n.locale].text"></div>
+                        <div class="markdown" v-html="content.locale[$i18n.locale].text"></div>
                     </div>
                 </div>
                 <div class="copyrights">
@@ -232,7 +219,7 @@
                             <p>{{ review.comment }}</p>
                             <a v-if="review.attachment != null" href="javascript:void(0);">
                                 <picture>
-                                    <img :src="`/public/images/photos/${review.attachment}`" />
+                                    <img :src="`/images/photos/${review.attachment}`" />
                                 </picture>
                             </a>
                         </div>
@@ -417,6 +404,7 @@
                         date_added: 1660815374000,
                         comment:
                             'Храм-паметникът "Свети Александър Невски" в София е впечатляваща и красива православна катедрала. Трябва да се види, когато посещавате града.',
+                        comment_language: 'bg',
                         attachment: '4-2.jpg'
                     },
                     {
@@ -430,6 +418,7 @@
                         date_added: 1685017043000,
                         comment:
                             'Бях поразен от величието на храм-паметника "Свети Александър Невски" в София. Златните куполи и сложните детайли по екстериора са наистина зашеметяващи.',
+                        comment_language: 'bg',
                         attachment: null
                     },
                     {
@@ -443,6 +432,7 @@
                         date_added: 1685017043000,
                         comment:
                             'Интериорът на храм-паметника "Свети Александър Невски" в София е също толкова впечатляващ, колкото и екстериорът. Стенописите и иконите спират дъха, а атмосферата е спокойна.',
+                        comment_language: 'bg',
                         attachment: null
                     },
                     {
@@ -456,6 +446,7 @@
                         date_added: 1685017043000,
                         comment:
                             'Горещо препоръчвам да го посетите, дори и да не сте особено религиозни. Архитектурата и историята на катедралата я превръщат в завладяващо културно преживяване.',
+                        comment_language: 'bg',
                         attachment: '4-6.jpg'
                     },
                     {
@@ -469,6 +460,7 @@
                         date_added: 1685017043000,
                         comment:
                             'Разочарован съм от посещението си. Екстериорът беше хубав, но интериорът не беше впечатляващ и не беше добре поддържан. Не оправда очакванията ми.',
+                        comment_language: 'bg',
                         attachment: '4-7.jpg'
                     },
                     {
@@ -482,6 +474,7 @@
                         date_added: 1685017043000,
                         comment:
                             'Едно от най-хубавите неща за храма е местоположението. Разположен е на хълм с изглед към града, осигуряващ спираща дъха гледка от територията.',
+                        comment_language: 'bg',
                         attachment: null
                     }
                 ]
