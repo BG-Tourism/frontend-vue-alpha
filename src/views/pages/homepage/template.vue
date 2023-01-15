@@ -86,10 +86,20 @@
 
                 <div class="tab-content">
                     <ul class="list">
-                        <li v-for="place in categoryWinter" :key="place.id">
+                        <li v-for="place in categoryNature" :key="place.id">
                             <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                                 <picture>
                                     <img :src="place.image" alt="" loading="lazy" />
+                                    <div class="badges">
+                                        <div class="stars">
+                                            <i class="icon-star-solid" />
+                                            <span>{{ place.user_score.toFixed(1) }}</span>
+                                        </div>
+                                        <div class="visitors">
+                                            <i class="icon-users" />
+                                            <span>{{ place.visitors }}</span>
+                                        </div>
+                                    </div>
                                 </picture>
                                 <h3>{{ place.locale[$i18n.locale].title }}</h3>
                                 <p>{{ place.locale[$i18n.locale].location }}</p>
@@ -205,11 +215,13 @@
                 }
             ]
 
-            const categoryWinter = [
+            const categoryNature = [
                 {
                     id: 5,
                     slug: 'belogradchishkite-skali',
                     image: '/images/photos/9.jpg',
+                    user_score: 4.2,
+                    visitors: 2345,
                     locale: {
                         bg: {
                             title: 'Белоградчишките скали',
@@ -225,6 +237,8 @@
                     id: 6,
                     slug: 'natsionalen-park-muzey-shipka',
                     image: '/images/photos/5.jpg',
+                    user_score: 5,
+                    visitors: 1244,
                     locale: {
                         bg: {
                             title: 'Национален парк-музей "Шипка"',
@@ -240,6 +254,8 @@
                     id: 8,
                     slug: 'krepost-tsarevets',
                     image: '/images/photos/3.jpg',
+                    user_score: 3.6,
+                    visitors: 614,
                     locale: {
                         bg: {
                             title: 'Крепост Царевец',
@@ -255,6 +271,8 @@
                     id: 1,
                     slug: 'hram-pametnik-sveti-aleksandar-nevski',
                     image: '/images/photos/4.jpg',
+                    user_score: 4.7,
+                    visitors: 3821,
                     locale: {
                         bg: {
                             title: 'Храм-паметник "Свети Александър Невски"',
@@ -329,7 +347,7 @@
 
             return {
                 categoryPopularNow,
-                categoryWinter,
+                categoryNature,
                 cities
             }
         }

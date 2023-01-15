@@ -8,6 +8,10 @@ const messages = {
         },
         share: 'Share'
     },
+    visitors: {
+        score: '0 visitors | 1 visitor | {n} visitors',
+        describe: 'This is the number of our users who have visited this location.'
+    },
     reviews: {
         text: '(no reviews) | (1 review) | ({n} reviews)',
         title: 'Reviews',

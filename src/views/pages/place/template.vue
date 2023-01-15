@@ -53,8 +53,17 @@
                 <li class="rating">
                     <div class="information-holder">
                         <i class="icon-star-solid" />
-                        <strong>4.8</strong>
+                        <strong>{{ place.user_score.toFixed(1) }}</strong>
                         <span>{{ $t('page.place.reviews.text', place.reviews_count) }}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="information-holder">
+                        <i class="icon-users" />
+                        <span>{{ $t('page.place.visitors.score', place.visitors) }}</span>
+                    </div>
+                    <div class="tooltip-container center">
+                        <div class="tooltip-content" v-html="$t('page.place.visitors.describe')" />
                     </div>
                 </li>
                 <li>
@@ -289,7 +298,9 @@
                         date_added: 1670777697
                     }
                 ],
+                user_score: 4.8,
                 reviews_count: 125,
+                visitors: 3255,
                 category: {
                     id: 1,
                     slug: 'nature',
