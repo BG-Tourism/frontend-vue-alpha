@@ -8,8 +8,8 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'Category', params: { slug: place.category.slug } }">
-                        {{ $t('general.navigation.category', { category: place.category.locale[$i18n.locale].name }) }}
+                    <router-link :to="{ name: 'Places' }">
+                        {{ $t('general.navigation.places') }}
                     </router-link>
                 </li>
                 <li>

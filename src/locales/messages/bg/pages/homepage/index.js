@@ -18,7 +18,8 @@ const messages = {
                 nature: 'Природа',
                 architecture: 'Архитектура',
                 monuments: 'Паметници',
-                seasonal: 'Сезонен туризъм'
+                seasonal: 'Сезонен туризъм',
+                viewAll: 'Всички категории'
             }
         }
     },

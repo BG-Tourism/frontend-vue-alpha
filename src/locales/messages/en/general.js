@@ -1,7 +1,12 @@
 const messages = {
     navigation: {
+        categories: 'Categories',
+        category: 'Category "{title}"',
         homepage: 'Homepage',
-        category: 'Category "{category}"'
+        place: 'Place "{title}"',
+        places: 'Places',
+        region: 'Region "{title}"',
+        regions: 'Regions'
     },
     colorMode: {
         toggleToLight: 'Toggle to Light theme',

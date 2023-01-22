@@ -1,7 +1,12 @@
 const messages = {
     navigation: {
+        categories: 'Категории',
+        category: 'Категория "{title}"',
         homepage: 'Начало',
-        category: 'Категория "{category}"'
+        place: 'Забележителност "{title}"',
+        places: 'Забележителности',
+        region: 'Регион "{title}"',
+        regions: 'Региони'
     },
     colorMode: {
         toggleToLight: 'Превключване към светла тема',

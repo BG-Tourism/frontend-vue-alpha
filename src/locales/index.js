@@ -16,7 +16,7 @@ const i18n = createI18n({
 })
 
 for (const code of Object.keys(locales)) {
-    const messages = await import(/* webpackChunkName: "locale-[request]" */ `./messages/${code}/index.js`)
+    const messages = await import(`./messages/${code}/index.js`)
 
     i18n.global.setLocaleMessage(code, messages.default)
     i18n.global.setDateTimeFormat(code, dateTimeFormats)

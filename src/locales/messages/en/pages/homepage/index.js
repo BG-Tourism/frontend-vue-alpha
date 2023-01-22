@@ -18,7 +18,8 @@ const messages = {
                 nature: 'Nature',
                 architecture: 'Architecture',
                 monuments: 'Monuments',
-                seasonal: 'Seasonal Tourism'
+                seasonal: 'Seasonal Tourism',
+                viewAll: 'All Categories'
             }
         }
     },

@@ -8,15 +8,23 @@ const routes = [
         meta: {
             className: 'page-homepage'
         },
-        component: () => import(/* webpackChunkName: 'homepage' */ '@/views/pages/homepage/template.vue')
+        component: () => import('@/views/pages/homepage/template.vue')
     },
     {
-        path: '/city/:slug',
-        name: 'City',
+        path: '/region/:slug',
+        name: 'Region',
         meta: {
-            className: 'page-city'
+            className: 'page-region'
         },
-        component: () => import(/* webpackChunkName: 'city' */ '@/views/pages/city/template.vue')
+        component: () => import('@/views/pages/view/region/template.vue')
+    },
+    {
+        path: '/regions',
+        name: 'Regions',
+        meta: {
+            className: 'page-regions'
+        },
+        component: () => import('@/views/pages/find/regions/template.vue')
     },
     {
         path: '/category/:slug',
@@ -24,7 +32,15 @@ const routes = [
         meta: {
             className: 'page-category'
         },
-        component: () => import(/* webpackChunkName: 'category' */ '@/views/pages/category/template.vue')
+        component: () => import('@/views/pages/view/category/template.vue')
+    },
+    {
+        path: '/categories',
+        name: 'Categories',
+        meta: {
+            className: 'page-categories'
+        },
+        component: () => import('@/views/pages/find/categories/template.vue')
     },
     {
         path: '/place/:slug',
@@ -32,7 +48,15 @@ const routes = [
         meta: {
             className: 'page-place'
         },
-        component: () => import(/* webpackChunkName: 'place' */ '@/views/pages/place/template.vue')
+        component: () => import('@/views/pages/view/place/template.vue')
+    },
+    {
+        path: '/places',
+        name: 'Places',
+        meta: {
+            className: 'page-places'
+        },
+        component: () => import('@/views/pages/find/places/template.vue')
     },
     {
         path: '/about',
@@ -40,7 +64,7 @@ const routes = [
         meta: {
             className: 'page-about'
         },
-        component: () => import(/* webpackChunkName: 'about' */ '@/views/pages/about/template.vue')
+        component: () => import('@/views/pages/about/template.vue')
     },
     {
         path: '/contact',
@@ -48,7 +72,7 @@ const routes = [
         meta: {
             className: 'page-contact'
         },
-        component: () => import(/* webpackChunkName: 'contact' */ '@/views/pages/contact/template.vue')
+        component: () => import('@/views/pages/contact/template.vue')
     },
     {
         path: '/terms',
@@ -56,7 +80,7 @@ const routes = [
         meta: {
             className: 'page-general'
         },
-        component: () => import(/* webpackChunkName: 'general' */ '@/views/pages/terms/template.vue')
+        component: () => import('@/views/pages/terms/template.vue')
     },
     {
         path: '/privacy',
@@ -64,7 +88,7 @@ const routes = [
         meta: {
             className: 'page-general'
         },
-        component: () => import(/* webpackChunkName: 'general' */ '@/views/pages/privacy/template.vue')
+        component: () => import('@/views/pages/privacy/template.vue')
     },
     {
         path: '/:catchAll(.*)',
@@ -72,7 +96,7 @@ const routes = [
         meta: {
             className: 'page-error'
         },
-        component: () => import(/* webpackChunkName: 'error-404' */ '@/views/pages/errors/template.vue')
+        component: () => import('@/views/pages/errors/template.vue')
     }
 ]
 

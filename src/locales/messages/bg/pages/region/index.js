@@ -1,5 +1,5 @@
 const messages = {
-    pageTitle: 'City'
+    pageTitle: 'Регион'
 }
 
 export default messages

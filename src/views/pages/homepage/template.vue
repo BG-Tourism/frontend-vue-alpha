@@ -82,6 +82,13 @@
                             <span>{{ $t('page.homepage.locations.categories.tabs.seasonal') }}</span>
                         </button>
                     </li>
+                    <li class="divider"></li>
+                    <li>
+                        <router-link :to="{ name: 'Categories' }">
+                            <i class="icon-category-all" />
+                            <span>{{ $t('page.homepage.locations.categories.tabs.viewAll') }}</span>
+                        </router-link>
+                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -124,18 +131,18 @@
                 </div>
 
                 <ul class="list">
-                    <li v-for="city in cities" :key="city.id">
-                        <router-link :to="{ name: 'City', params: { slug: city.slug } }">
+                    <li v-for="region in regions" :key="region.id">
+                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
                             <picture>
-                                <img :src="city.image" alt="" loading="lazy" />
+                                <img :src="region.image" alt="" loading="lazy" />
                             </picture>
-                            <h3>{{ city.locale[$i18n.locale].title }}</h3>
-                            <p v-html="$t('page.homepage.destinations.locations_count', { count: city.locations_count })" />
+                            <h3>{{ region.locale[$i18n.locale].title }}</h3>
+                            <p v-html="$t('page.homepage.destinations.locations_count', { count: region.locations_count })" />
                         </router-link>
                     </li>
                 </ul>
 
-                <router-link :to="{ name: 'City', params: { slug: 'sofia' } }" class="see-more">
+                <router-link :to="{ name: 'Regions' }" class="see-more">
                     {{ $t('general.seeMore') }}
                 </router-link>
             </div>
@@ -286,7 +293,7 @@
                 }
             ]
 
-            let cities = [
+            let regions = [
                 {
                     id: 1,
                     slug: 'sofia',
@@ -348,7 +355,7 @@
             return {
                 categoryPopularNow,
                 categoryNature,
-                cities
+                regions
             }
         }
     })
