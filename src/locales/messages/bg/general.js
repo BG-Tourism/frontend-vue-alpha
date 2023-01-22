@@ -35,8 +35,7 @@ const messages = {
     seeMore: 'Виж повече',
     showMore: 'Покажи повече',
     headerEnvironment: {
-        production:
-            'Алфа версия на проекта. Допринесете за разработката в <a href="{repo}" target="_blank" rel="noopener">GitHub</a>.',
+        production: 'Това е прототип. Към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>.',
         staging: 'Тестова среда',
         local: 'Среда за разработка'
     },
