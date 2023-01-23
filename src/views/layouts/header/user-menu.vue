@@ -1,5 +1,7 @@
 <template>
     <div class="user-menu">
+        <div class="divider" />
+
         <div class="language">
             <BaseDropdown placement="right">
                 <template #button>
@@ -29,9 +31,9 @@
             @click="toggleDark()"
         >
             <i :class="isDark ? 'icon-day' : 'icon-night'" />
-        </button>-->
+        </button>
 
-        <div class="divider" />
+        <div class="divider" />-->
 
         <div class="user-details">
             <BaseDropdown placement="right">

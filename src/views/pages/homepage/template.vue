@@ -1,5 +1,35 @@
 <template>
-    <section class="hero">
+    <section class="top-section">
+        <picture>
+            <img src="/images/nuxt-hero-gradient.svg" alt="" />
+        </picture>
+        <div class="page-content">
+            <div class="wrapper">
+                <div class="content">
+                    <h1 v-html="$t('page.homepage.slogan.title')" />
+                    <p v-html="$t('page.homepage.slogan.descriptions.v' + number)" />
+                    <div class="buttons">
+                        <button class="see-more" v-html="$t('page.homepage.slogan.button')" />
+                        <button class="generate" @click="generateNumber">
+                            <i class="icon-refresh" />
+                        </button>
+                    </div>
+                </div>
+                <div class="object">
+                    <span>
+                        По идея на Nuxt уебсайта тук може да има въртящ се 3D модел на връх Шипка, Мадарският конник, НДК,
+                        Античният театър или друг обект.
+                    </span>
+                    <span>
+                        Изображението за фон също е взето от сайта на Nuxt, затова трябва да се създаде ново, което да наподобява
+                        сияние и да е подходящо спрямо 3D модела, който ще застане върху него.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<section class="hero">
         <div class="page-content">
             <div class="preview">
                 <picture>
@@ -24,7 +54,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <section class="locations">
         <div class="page-content">
@@ -85,7 +115,6 @@
                     <li class="divider"></li>
                     <li>
                         <router-link :to="{ name: 'Categories' }">
-                            <i class="icon-category-all" />
                             <span>{{ $t('page.homepage.locations.categories.tabs.viewAll') }}</span>
                         </router-link>
                     </li>
@@ -151,28 +180,28 @@
 </template>
 
 <script>
-    import { computed, defineComponent } from 'vue'
+    import { computed, defineComponent, ref } from 'vue'
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
-
-    import BaseInput from '@/components/BaseInput.vue'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
-        components: {
-            BaseInput
-        },
         setup() {
             const i18n = useI18n()
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
+            let number = ref((Math.random() * 19).toFixed(0))
 
             const pageTitle = computed(() => {
                 return i18n.t('page.homepage.pageTitle') + titleSuffix
             })
 
             useTitle(pageTitle)
+
+            const generateNumber = () => {
+                number.value = (Math.random() * 19).toFixed(0)
+            }
 
             const categoryPopularNow = [
                 {
@@ -353,9 +382,11 @@
             ]
 
             return {
+                number,
                 categoryPopularNow,
                 categoryNature,
-                regions
+                regions,
+                generateNumber
             }
         }
     })
