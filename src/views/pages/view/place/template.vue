@@ -95,7 +95,7 @@
                             }}
                         </span>
                     </div>
-                    <div class="tooltip-container">
+                    <div class="tooltip-container center">
                         <div class="weather-days">
                             <div v-for="day in place.weather" :key="day" class="weather-day">
                                 <span class="weather-heading">
@@ -193,7 +193,7 @@
                 <div class="copyrights">
                     <p>
                         <i class="icon-alert-triangle" />
-                        <span>{{ $t('page.place.contents.copyrights') }}</span>
+                        <span v-html="$t('page.place.contents.copyrights', { repo: gitRepository })" />
                     </p>
                 </div>
             </div>
@@ -226,11 +226,22 @@
                         </div>
                         <div class="review">
                             <p>{{ review.comment }}</p>
-                            <a v-if="review.attachment != null" href="javascript:void(0);">
-                                <picture>
-                                    <img :src="`/images/photos/${review.attachment}`" />
+                            <div
+                                v-if="review.attachment.type != null"
+                                :class="[
+                                    'attachment',
+                                    review.attachment.type,
+                                    review.attachment.ratio === 'invert' ? 'invert' : null
+                                ]"
+                            >
+                                <picture v-if="review.attachment.type === 'photo'">
+                                    <img :src="`/images/photos/${review.attachment.source}`" />
                                 </picture>
-                            </a>
+
+                                <picture v-if="review.attachment.type === 'video'">
+                                    <img :src="review.attachment.source" />
+                                </picture>
+                            </div>
                         </div>
                         <div class="dates">
                             <time>{{ $d(new Date(review.date_added), 'full', String(locale)) }}</time>
@@ -260,6 +271,7 @@
             const { locale } = useI18n({ useScope: 'global' })
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
+            const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
 
             const pageTitle = computed(() => {
                 return i18n.t('page.place.pageTitle') + titleSuffix
@@ -276,25 +288,25 @@
                     {
                         id: 1,
                         image: '/images/photos/4-1.jpg',
-                        author: 'Александър Костов',
+                        author: 'Министерство на туризма на Република България',
                         date_added: 1670777697
                     },
                     {
                         id: 2,
                         image: '/images/photos/4-2.jpg',
-                        author: 'Александър Костов',
+                        author: 'Министерство на туризма на Република България',
                         date_added: 1670777697
                     },
                     {
                         id: 3,
                         image: '/images/photos/4-3.jpg',
-                        author: 'Александър Костов',
+                        author: 'Министерство на туризма на Република България',
                         date_added: 1670777697
                     },
                     {
                         id: 4,
                         image: '/images/photos/4-4.jpg',
-                        author: 'Александър Костов',
+                        author: 'Министерство на туризма на Република България',
                         date_added: 1670777697
                     }
                 ],
@@ -416,7 +428,11 @@
                         comment:
                             'Храм-паметникът "Свети Александър Невски" в София е впечатляваща и красива православна катедрала. Трябва да се види, когато посещавате града.',
                         comment_language: 'bg',
-                        attachment: '4-2.jpg'
+                        attachment: {
+                            source: '4-2.jpg',
+                            ratio: 'normal',
+                            type: 'photo'
+                        }
                     },
                     {
                         id: 2,
@@ -430,7 +446,11 @@
                         comment:
                             'Бях поразен от величието на храм-паметника "Свети Александър Невски" в София. Златните куполи и сложните детайли по екстериора са наистина зашеметяващи.',
                         comment_language: 'bg',
-                        attachment: null
+                        attachment: {
+                            source: null,
+                            ratio: null,
+                            type: null
+                        }
                     },
                     {
                         id: 3,
@@ -444,7 +464,11 @@
                         comment:
                             'Интериорът на храм-паметника "Свети Александър Невски" в София е също толкова впечатляващ, колкото и екстериорът. Стенописите и иконите спират дъха, а атмосферата е спокойна.',
                         comment_language: 'bg',
-                        attachment: null
+                        attachment: {
+                            source: null,
+                            ratio: null,
+                            type: null
+                        }
                     },
                     {
                         id: 4,
@@ -458,7 +482,11 @@
                         comment:
                             'Горещо препоръчвам да го посетите, дори и да не сте особено религиозни. Архитектурата и историята на катедралата я превръщат в завладяващо културно преживяване.',
                         comment_language: 'bg',
-                        attachment: '4-6.jpg'
+                        attachment: {
+                            source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
+                            ratio: null,
+                            type: 'video'
+                        }
                     },
                     {
                         id: 5,
@@ -472,7 +500,11 @@
                         comment:
                             'Разочарован съм от посещението си. Екстериорът беше хубав, но интериорът не беше впечатляващ и не беше добре поддържан. Не оправда очакванията ми.',
                         comment_language: 'bg',
-                        attachment: '4-7.jpg'
+                        attachment: {
+                            source: '4-7.jpg',
+                            ratio: 'invert',
+                            type: 'photo'
+                        }
                     },
                     {
                         id: 5,
@@ -486,7 +518,11 @@
                         comment:
                             'Едно от най-хубавите неща за храма е местоположението. Разположен е на хълм с изглед към града, осигуряващ спираща дъха гледка от територията.',
                         comment_language: 'bg',
-                        attachment: null
+                        attachment: {
+                            source: null,
+                            ratio: null,
+                            type: null
+                        }
                     }
                 ]
             }
@@ -506,6 +542,7 @@
             return {
                 locale,
                 place,
+                gitRepository,
                 isFavorite,
                 toggleGallery
             }

@@ -329,7 +329,7 @@
 
         button,
         .copyrights {
-            z-index: 3;
+            z-index: 2;
         }
 
         button {
@@ -374,8 +374,11 @@
             position: absolute;
             right: 25px;
             bottom: 25px;
+            left: 25px;
             color: $white;
             font-weight: 600;
+            line-height: 1.4;
+            text-align: right;
             text-shadow: 0 1px 2px rgba($black, 1);
             opacity: 0.8;
         }
@@ -453,7 +456,7 @@
 
         .copyrights {
             p {
-                padding: 50px 40px 0;
+                padding: 50px 100px 0;
                 text-align: center;
 
                 i {
@@ -469,6 +472,11 @@
 
                     color: $slate-500;
                     line-height: 1.2;
+                }
+
+                a {
+                    color: inherit;
+                    font-weight: 500;
                 }
             }
         }
@@ -572,21 +580,67 @@
 
             .review {
                 padding: 20px 0;
+            }
 
-                a {
-                    display: inline-block;
-                    overflow: hidden;
+            .attachment {
+                display: flex;
+                overflow: hidden;
+                margin: 20px 0 0;
+                border-radius: 12px;
+                cursor: pointer;
+
+                &.invert {
                     max-width: 50%;
-                    margin: 20px 0 0;
-                    border-radius: 12px;
                 }
 
-                picture {
-                    display: block;
-
-                    img {
+                &.photo,
+                &.video {
+                    picture {
                         display: block;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &.video {
+                    position: relative;
+                    padding: 56.25% 0 0;
+
+                    &:hover {
+                        &::before {
+                            width: 40px;
+                            height: 29px;
+                            background-size: 40px 29px;
+                        }
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 1;
+                        width: 30px;
+                        height: 22px;
+                        background-image: url('/images/youtube-button.svg');
+                        background-size: 30px 22px;
+                        transition: all 100ms linear;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    picture {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         width: 100%;
+                        height: 100%;
+                        transform: translate(-50%, -50%);
                     }
                 }
             }

@@ -33,7 +33,7 @@ const messages = {
     contents: {
         tableOfContents: 'Contents',
         copyrights:
-            'All text content on this page is provided completely voluntarily by the users of the site, and we are not responsible for the copyright on it.',
+            'All text content on this page is provided completely voluntarily by the users of the site through our <a href="{repo}" target="blank">GitHub repository</a>, and we are not responsible for the copyright on it.',
         author: 'Author of the content is | Authors of the content are'
     },
     audio: {
