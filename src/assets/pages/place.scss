@@ -599,9 +599,7 @@
 
             .attachment {
                 display: flex;
-                overflow: hidden;
                 margin: 20px 0 0;
-                border-radius: 12px;
                 cursor: pointer;
 
                 &.invert {
@@ -612,6 +610,17 @@
                 &.video {
                     picture {
                         display: block;
+                        overflow: hidden;
+                        border-radius: 12px;
+                        outline-width: 2px;
+                        outline-style: solid;
+                        outline-color: transparent;
+                        outline-offset: 4px;
+                        transition: all 200ms linear;
+
+                        &:hover {
+                            outline-color: $blue-400;
+                        }
 
                         img {
                             display: block;
