@@ -296,9 +296,23 @@
             let regions = [
                 {
                     id: 1,
-                    slug: 'sofia',
-                    image: '/images/cities/1.jpg',
+                    slug: 'trakia',
+                    image: '/images/regions/trakia.jpg',
                     locations_count: 213,
+                    locale: {
+                        bg: {
+                            title: 'Тракия'
+                        },
+                        en: {
+                            title: 'Trakia'
+                        }
+                    }
+                },
+                {
+                    id: 2,
+                    slug: 'sofia',
+                    image: '/images/regions/sofia.jpg',
+                    locations_count: 52,
                     locale: {
                         bg: {
                             title: 'София'
@@ -309,44 +323,30 @@
                     }
                 },
                 {
-                    id: 2,
-                    slug: 'vratsa',
-                    image: '/images/cities/2.jpg',
-                    locations_count: 52,
-                    locale: {
-                        bg: {
-                            title: 'Враца'
-                        },
-                        en: {
-                            title: 'Vratsa'
-                        }
-                    }
-                },
-                {
                     id: 3,
-                    slug: 'kazanlak',
-                    image: '/images/cities/3.jpg',
+                    slug: 'rila-pirin',
+                    image: '/images/regions/rila-pirin.jpg',
                     locations_count: 85,
                     locale: {
                         bg: {
-                            title: 'Казанлък'
+                            title: 'Рила и Пирин'
                         },
                         en: {
-                            title: 'Kazanlak'
+                            title: 'Rila & Pirin'
                         }
                     }
                 },
                 {
                     id: 4,
-                    slug: 'plovdiv',
-                    image: '/images/cities/4.jpg',
+                    slug: 'rhodopes',
+                    image: '/images/regions/rhodopes.jpg',
                     locations_count: 61,
                     locale: {
                         bg: {
-                            title: 'Пловдив'
+                            title: 'Родопи'
                         },
                         en: {
-                            title: 'Plovdiv'
+                            title: 'Rhodopes'
                         }
                     }
                 }

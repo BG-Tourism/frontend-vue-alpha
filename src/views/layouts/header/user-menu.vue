@@ -23,13 +23,13 @@
             </BaseDropdown>
         </div>
 
-        <button
+        <!--<button
             :title="isDark ? $t('general.colorMode.toggleToLight') : $t('general.colorMode.toggleToDark')"
             class="color-mode"
             @click="toggleDark()"
         >
             <i :class="isDark ? 'icon-day' : 'icon-night'" />
-        </button>
+        </button>-->
 
         <div class="divider" />
 
