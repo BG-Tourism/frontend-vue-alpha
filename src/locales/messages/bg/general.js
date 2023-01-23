@@ -34,6 +34,7 @@ const messages = {
     logout: 'Изход',
     seeMore: 'Виж повече',
     showMore: 'Покажи повече',
+    showLess: 'Покажи по-малко',
     headerEnvironment: {
         production: 'Това е прототип. Към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>.',
         staging: 'Тестова среда',

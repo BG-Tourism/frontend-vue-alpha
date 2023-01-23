@@ -225,7 +225,8 @@
                             </div>
                         </div>
                         <div class="review">
-                            <p>{{ review.comment }}</p>
+                            <TruncateString :string="review.comment" />
+
                             <div
                                 v-if="review.attachment.type != null"
                                 :class="[
@@ -263,9 +264,14 @@
 
     import getNextFiveDays from '@/helpers/getNextFiveDays'
 
+    import TruncateString from '@/components/TruncateString.vue'
+
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
+        components: {
+            TruncateString
+        },
         setup() {
             const i18n = useI18n()
             const { locale } = useI18n({ useScope: 'global' })

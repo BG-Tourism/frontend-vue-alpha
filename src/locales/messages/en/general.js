@@ -34,6 +34,7 @@ const messages = {
     logout: 'Sign out',
     seeMore: 'See more',
     showMore: 'Show more',
+    showLess: 'Show less',
     headerEnvironment: {
         production: 'This is a prototype. Go to the <a href="{repo}" target="_blank" rel="noopener">GitHub repository</a>.',
         staging: 'Testing Environment',
