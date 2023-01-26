@@ -2,6 +2,8 @@ const messages = {
     navigation: {
         categories: 'Categories',
         category: 'Category "{title}"',
+        district: 'District "{title}"',
+        districts: 'Districts',
         homepage: 'Homepage',
         place: 'Place "{title}"',
         places: 'Places',

@@ -2,6 +2,8 @@ const messages = {
     navigation: {
         categories: 'Категории',
         category: 'Категория "{title}"',
+        district: 'Област "{title}"',
+        districts: 'Области',
         homepage: 'Начало',
         place: 'Забележителност "{title}"',
         places: 'Забележителности',
