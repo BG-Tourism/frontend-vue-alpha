@@ -18,7 +18,13 @@
 
     <div class="page-content">
         <div class="page-container">
-            <pre>{{ $route }}</pre>
+            <ul>
+                <li v-for="region in regions" :key="region.id">
+                    <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
+                        {{ region.locale[$i18n.locale].title }}
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -41,6 +47,121 @@
             })
 
             useTitle(pageTitle)
+
+            let regions = [
+                {
+                    id: 1,
+                    slug: 'trakia',
+                    locale: {
+                        bg: {
+                            title: 'Тракия'
+                        },
+                        en: {
+                            title: 'Trakia'
+                        }
+                    }
+                },
+                {
+                    id: 2,
+                    slug: 'sofia',
+                    locale: {
+                        bg: {
+                            title: 'София'
+                        },
+                        en: {
+                            title: 'Sofia'
+                        }
+                    }
+                },
+                {
+                    id: 3,
+                    slug: 'rila-pirin',
+                    locale: {
+                        bg: {
+                            title: 'Рила и Пирин'
+                        },
+                        en: {
+                            title: 'Rila & Pirin'
+                        }
+                    }
+                },
+                {
+                    id: 4,
+                    slug: 'rhodopes',
+                    locale: {
+                        bg: {
+                            title: 'Родопи'
+                        },
+                        en: {
+                            title: 'Rhodopes'
+                        }
+                    }
+                },
+                {
+                    id: 5,
+                    slug: 'danube',
+                    locale: {
+                        bg: {
+                            title: 'Дунав'
+                        },
+                        en: {
+                            title: 'Danube'
+                        }
+                    }
+                },
+                {
+                    id: 6,
+                    slug: 'varna',
+                    locale: {
+                        bg: {
+                            title: 'Варна'
+                        },
+                        en: {
+                            title: 'Varna'
+                        }
+                    }
+                },
+                {
+                    id: 7,
+                    slug: 'bourgas',
+                    locale: {
+                        bg: {
+                            title: 'Бургас'
+                        },
+                        en: {
+                            title: 'Bourgas'
+                        }
+                    }
+                },
+                {
+                    id: 8,
+                    slug: 'valley-of-roses',
+                    locale: {
+                        bg: {
+                            title: 'Долината на розите'
+                        },
+                        en: {
+                            title: 'Тhe Valley of Roses'
+                        }
+                    }
+                },
+                {
+                    id: 9,
+                    slug: 'stara-planina',
+                    locale: {
+                        bg: {
+                            title: 'Стара Планина'
+                        },
+                        en: {
+                            title: 'Stara Planina'
+                        }
+                    }
+                }
+            ]
+
+            return {
+                regions
+            }
         }
     })
 </script>

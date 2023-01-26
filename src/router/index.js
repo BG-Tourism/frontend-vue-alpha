@@ -27,6 +27,14 @@ const routes = [
         component: () => import('@/views/pages/find/regions/template.vue')
     },
     {
+        path: '/district/:slug',
+        name: 'District',
+        meta: {
+            className: 'page-district'
+        },
+        component: () => import('@/views/pages/view/district/template.vue')
+    },
+    {
         path: '/category/:slug',
         name: 'Category',
         meta: {

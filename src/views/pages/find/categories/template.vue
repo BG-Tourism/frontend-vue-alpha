@@ -18,7 +18,13 @@
 
     <div class="page-content">
         <div class="page-container">
-            <pre>{{ $route }}</pre>
+            <ul>
+                <li v-for="category in categories" :key="category.id">
+                    <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
+                        {{ category.locale[$i18n.locale].title }}
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -40,7 +46,62 @@
                 return i18n.t('general.navigation.categories') + titleSuffix
             })
 
+            const categories = [
+                {
+                    id: 1,
+                    slug: 'nature',
+                    locale: {
+                        bg: {
+                            title: 'Природа'
+                        },
+                        en: {
+                            title: 'Nature'
+                        }
+                    }
+                },
+                {
+                    id: 2,
+                    slug: 'architecture',
+                    locale: {
+                        bg: {
+                            title: 'Архитектура'
+                        },
+                        en: {
+                            title: 'Architecture'
+                        }
+                    }
+                },
+                {
+                    id: 3,
+                    slug: 'monuments',
+                    locale: {
+                        bg: {
+                            title: 'Паметници'
+                        },
+                        en: {
+                            title: 'Monuments'
+                        }
+                    }
+                },
+                {
+                    id: 4,
+                    slug: 'seasonal',
+                    locale: {
+                        bg: {
+                            title: 'Сезонен туризъм'
+                        },
+                        en: {
+                            title: 'Seasonal'
+                        }
+                    }
+                }
+            ]
+
             useTitle(pageTitle)
+
+            return {
+                categories
+            }
         }
     })
 </script>

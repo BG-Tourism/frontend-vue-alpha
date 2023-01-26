@@ -8,8 +8,13 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link :to="{ name: 'Places' }">
-                        {{ $t('general.navigation.places') }}
+                    <router-link :to="{ name: 'Region', params: { slug: place.region.slug } }">
+                        {{ $t('general.navigation.region', { title: place.region.locale[$i18n.locale].title }) }}
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'District', params: { slug: place.district.slug } }">
+                        {{ $t('general.navigation.district', { title: place.district.locale[$i18n.locale].title }) }}
                     </router-link>
                 </li>
                 <li>
@@ -324,10 +329,34 @@
                     slug: 'nature',
                     locale: {
                         bg: {
-                            name: 'Природа'
+                            title: 'Природа'
                         },
                         en: {
-                            name: 'Nature'
+                            title: 'Nature'
+                        }
+                    }
+                },
+                region: {
+                    id: 1,
+                    slug: 'trakia',
+                    locale: {
+                        bg: {
+                            title: 'Тракия'
+                        },
+                        en: {
+                            title: 'Trakia'
+                        }
+                    }
+                },
+                district: {
+                    id: 1,
+                    slug: 'pazardzhik',
+                    locale: {
+                        bg: {
+                            title: 'Пазарджик'
+                        },
+                        en: {
+                            title: 'Pazardzhik'
                         }
                     }
                 },

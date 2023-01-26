@@ -14,7 +14,7 @@
                 </li>
                 <li>
                     <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
-                        {{ category.locale[$i18n.locale].title }}
+                        {{ $t('general.navigation.category', { title: category.locale[$i18n.locale].title }) }}
                     </router-link>
                 </li>
             </ul>
