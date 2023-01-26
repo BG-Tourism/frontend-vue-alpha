@@ -13,6 +13,11 @@
                     </router-link>
                 </li>
             </ul>
+
+            <div class="title">
+                <h1>{{ $t('general.navigation.places') }}</h1>
+                <p>{{ $t('page.category.description.version' + (Math.random() * 5).toFixed(0)) }}</p>
+            </div>
         </div>
     </section>
 

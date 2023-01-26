@@ -18,17 +18,20 @@
                     </router-link>
                 </li>
             </ul>
-        </div>
-    </section>
-
-    <div class="page-content">
-        <div class="page-container">
             <div class="title">
                 <h1>{{ district.locale[$i18n.locale].title }}</h1>
                 <p>{{ district.locale[$i18n.locale].description }}</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="category-heading">
+        <div class="page-content">
+            <div class="container-content">
+                <p>{{ $route.params.slug }}</p>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>

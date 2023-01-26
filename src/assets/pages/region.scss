@@ -1,5 +1,5 @@
-.page-category,
-.page-categories {
+.page-region,
+.page-regions {
     .category-heading {
         .title {
             padding: 0 0 20px;
@@ -19,15 +19,13 @@
             }
         }
     }
-}
-
-.page-categories {
-    .page-container {
-        overflow: hidden;
-    }
 
     .categories-list {
         padding: 20px 0 40px;
+
+        h2 {
+            padding: 30px;
+        }
 
         ul {
             display: grid;
@@ -70,5 +68,11 @@
                 font-weight: 600;
             }
         }
+    }
+}
+
+.page-regions {
+    .page-container {
+        overflow: hidden;
     }
 }

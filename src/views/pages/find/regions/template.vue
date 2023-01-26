@@ -13,20 +13,28 @@
                     </router-link>
                 </li>
             </ul>
+
+            <div class="title">
+                <h1>{{ $t('general.navigation.regions') }}</h1>
+                <p>{{ $t('page.category.description.version' + (Math.random() * 5).toFixed(0)) }}</p>
+            </div>
         </div>
     </section>
 
-    <div class="page-content">
-        <div class="page-container">
-            <ul>
-                <li v-for="region in regions" :key="region.id">
-                    <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
-                        {{ region.locale[$i18n.locale].title }}
-                    </router-link>
-                </li>
-            </ul>
+    <section class="categories-list">
+        <div class="page-content">
+            <div class="page-container">
+                <ul>
+                    <li v-for="region in regions" :key="region.id">
+                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
+                            {{ region.locale[$i18n.locale].title }}
+                            <span>{{ region.places_count }}</span>
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -52,6 +60,7 @@
                 {
                     id: 1,
                     slug: 'trakia',
+                    places_count: 244,
                     locale: {
                         bg: {
                             title: 'Тракия'
@@ -64,6 +73,7 @@
                 {
                     id: 2,
                     slug: 'sofia',
+                    places_count: 124,
                     locale: {
                         bg: {
                             title: 'София'
@@ -76,6 +86,7 @@
                 {
                     id: 3,
                     slug: 'rila-pirin',
+                    places_count: 162,
                     locale: {
                         bg: {
                             title: 'Рила и Пирин'
@@ -88,6 +99,7 @@
                 {
                     id: 4,
                     slug: 'rhodopes',
+                    places_count: 93,
                     locale: {
                         bg: {
                             title: 'Родопи'
@@ -100,6 +112,7 @@
                 {
                     id: 5,
                     slug: 'danube',
+                    places_count: 367,
                     locale: {
                         bg: {
                             title: 'Дунав'
@@ -112,6 +125,7 @@
                 {
                     id: 6,
                     slug: 'varna',
+                    places_count: 45,
                     locale: {
                         bg: {
                             title: 'Варна'
@@ -124,6 +138,7 @@
                 {
                     id: 7,
                     slug: 'bourgas',
+                    places_count: 56,
                     locale: {
                         bg: {
                             title: 'Бургас'
@@ -136,6 +151,7 @@
                 {
                     id: 8,
                     slug: 'valley-of-roses',
+                    places_count: 73,
                     locale: {
                         bg: {
                             title: 'Долината на розите'
@@ -148,6 +164,7 @@
                 {
                     id: 9,
                     slug: 'stara-planina',
+                    places_count: 106,
                     locale: {
                         bg: {
                             title: 'Стара Планина'

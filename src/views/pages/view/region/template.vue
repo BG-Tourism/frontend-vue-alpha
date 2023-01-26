@@ -18,28 +18,28 @@
                     </router-link>
                 </li>
             </ul>
-        </div>
-    </section>
 
-    <div class="page-content">
-        <div class="page-container">
             <div class="title">
                 <h1>{{ region.locale[$i18n.locale].title }}</h1>
                 <p>{{ region.locale[$i18n.locale].description }}</p>
             </div>
-
-            <hr />
-
-            <h2>{{ $t('general.navigation.districts') }}</h2>
-            <ul>
-                <li v-for="district in region.districts" :key="district.id">
-                    <router-link :to="{ name: 'District', params: { slug: district.slug } }">
-                        {{ district.locale[$i18n.locale].title }}
-                    </router-link>
-                </li>
-            </ul>
         </div>
-    </div>
+    </section>
+
+    <section class="categories-list">
+        <div class="page-content">
+            <div class="page-container">
+                <h2>{{ $t('general.navigation.districts') }}</h2>
+                <ul>
+                    <li v-for="district in region.districts" :key="district.id">
+                        <router-link :to="{ name: 'District', params: { slug: district.slug } }">
+                            {{ district.locale[$i18n.locale].title }}
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
