@@ -392,21 +392,12 @@
         }
 
         .table-of-contents {
-            .holder {
-                padding: 40px;
-                border-radius: 24px;
-                background-color: $slate-100;
-            }
-
-            h2 {
-                @include font-size(20px);
-
-                padding: 0 0 15px;
-                color: $slate-800;
-            }
+            padding: 20px;
+            border-radius: 12px;
+            background-color: $slate-100;
 
             ul {
-                padding: 0 0 0 20px;
+                padding: 0 0 0 30px;
             }
 
             li {
@@ -451,6 +442,35 @@
                         }
                     }
                 }
+            }
+        }
+
+        .ai-generated {
+            display: flex;
+            align-items: center;
+            margin: 0 0 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: $red-100;
+
+            i {
+                @include font-size(26px);
+
+                display: block;
+                margin: 0 20px 0 0;
+                color: $red-600;
+            }
+
+            p {
+                @include font-size(16px);
+
+                color: $red-500;
+                line-height: 1.4;
+            }
+
+            a {
+                color: inherit;
+                font-weight: 500;
             }
         }
 
@@ -731,6 +751,45 @@
                 @include font-size(18px);
 
                 line-height: 1.2;
+            }
+        }
+    }
+
+    .page-container {
+        overflow: hidden;
+    }
+
+    .categories-list {
+        padding: 20px 0 40px;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+        }
+
+        li {
+            display: flex;
+            align-items: stretch;
+            outline-width: 1px;
+            outline-style: solid;
+            outline-color: $slate-200;
+        }
+
+        a {
+            @include font-size(16px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            color: $slate-600;
+            text-align: right;
+            transition: all 200ms linear;
+
+            &:hover {
+                background-color: $slate-100;
             }
         }
     }

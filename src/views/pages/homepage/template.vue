@@ -65,7 +65,7 @@
                 </div>
 
                 <ul class="list">
-                    <li v-for="place in categoryPopularNow" :key="place.id">
+                    <li v-for="place in mostPopular" :key="place.id">
                         <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                             <picture>
                                 <img :src="place.image" alt="" loading="lazy" />
@@ -88,41 +88,23 @@
                 </div>
 
                 <ul class="tabs">
-                    <li>
-                        <button class="active">
-                            <i class="icon-category-nature" />
-                            <span>{{ $t('page.homepage.locations.categories.tabs.nature') }}</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="icon-category-architecture" />
-                            <span>{{ $t('page.homepage.locations.categories.tabs.architecture') }}</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="icon-category-monuments" />
-                            <span>{{ $t('page.homepage.locations.categories.tabs.monuments') }}</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <i class="icon-category-seasonal" />
-                            <span>{{ $t('page.homepage.locations.categories.tabs.seasonal') }}</span>
+                    <li v-for="category in categories.slice(0, 5)" :key="category.id">
+                        <button :class="category.id === 1 ? 'active' : null">
+                            <!--<i :class="'icon-category-' + category.slug" />-->
+                            <span>{{ category.locale[$i18n.locale].title }}</span>
                         </button>
                     </li>
                     <li class="divider"></li>
                     <li>
                         <router-link :to="{ name: 'Categories' }">
-                            <span>{{ $t('page.homepage.locations.categories.tabs.viewAll') }}</span>
+                            <span>{{ $t('page.homepage.locations.categories.tabs.viewAll', categories.length) }}</span>
                         </router-link>
                     </li>
                 </ul>
 
                 <div class="tab-content">
                     <ul class="list">
-                        <li v-for="place in categoryNature" :key="place.id">
+                        <li v-for="place in categoryArchitecture" :key="place.id">
                             <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                                 <picture>
                                     <img :src="place.image" alt="" loading="lazy" />
@@ -184,6 +166,10 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
+    import mostPopular from '@/api/most-popular.js'
+    import categories from '@/api/categories'
+    import categoryArchitecture from '@/api/category-architecture.js'
+
     import { useGeneralStore } from '@/stores/GeneralStore'
 
     export default defineComponent({
@@ -202,125 +188,6 @@
             const generateNumber = () => {
                 number.value = (Math.random() * 19).toFixed(0)
             }
-
-            const categoryPopularNow = [
-                {
-                    id: 7,
-                    slug: 'dyavolski-most',
-                    image: '/images/photos/1.jpg',
-                    locale: {
-                        bg: {
-                            title: 'Дяволски мост',
-                            location: 'до гр. Дядовци'
-                        },
-                        en: {
-                            title: "The Devil's Bridge",
-                            location: 'next to Dyadovtsi City'
-                        }
-                    }
-                },
-                {
-                    id: 2,
-                    slug: 'vrachanski-balkan',
-                    image: '/images/photos/7.jpg',
-                    locale: {
-                        bg: {
-                            title: 'Врачански Балкан',
-                            location: 'до гр. Враца'
-                        },
-                        en: {
-                            title: 'Vratsa Balkan',
-                            location: 'next to Vratsa City'
-                        }
-                    }
-                },
-                {
-                    id: 3,
-                    slug: 'priroden-park-rilski-manastir',
-                    image: '/images/photos/2.jpg',
-                    locale: {
-                        bg: {
-                            title: 'Природен парк "Рилски манастир"',
-                            location: 'гр. Рила'
-                        },
-                        en: {
-                            title: 'Rila Monastery Nature Park',
-                            location: 'Rila City'
-                        }
-                    }
-                }
-            ]
-
-            const categoryNature = [
-                {
-                    id: 5,
-                    slug: 'belogradchishkite-skali',
-                    image: '/images/photos/9.jpg',
-                    user_score: 4.2,
-                    visitors: 2345,
-                    locale: {
-                        bg: {
-                            title: 'Белоградчишките скали',
-                            location: 'гр. Белоградчик'
-                        },
-                        en: {
-                            title: 'The Rocks of Belogradchik',
-                            location: 'Belogradchik City'
-                        }
-                    }
-                },
-                {
-                    id: 6,
-                    slug: 'natsionalen-park-muzey-shipka',
-                    image: '/images/photos/5.jpg',
-                    user_score: 5,
-                    visitors: 1244,
-                    locale: {
-                        bg: {
-                            title: 'Национален парк-музей "Шипка"',
-                            location: 'до гр. Шипка'
-                        },
-                        en: {
-                            title: 'Shipka National Park-Museum',
-                            location: 'next to Shipka City'
-                        }
-                    }
-                },
-                {
-                    id: 8,
-                    slug: 'krepost-tsarevets',
-                    image: '/images/photos/3.jpg',
-                    user_score: 3.6,
-                    visitors: 614,
-                    locale: {
-                        bg: {
-                            title: 'Крепост Царевец',
-                            location: 'гр. Велико Търново'
-                        },
-                        en: {
-                            title: 'Fortress Tsarevets',
-                            location: 'Veliko Tarnovo City'
-                        }
-                    }
-                },
-                {
-                    id: 1,
-                    slug: 'hram-pametnik-sveti-aleksandar-nevski',
-                    image: '/images/photos/4.jpg',
-                    user_score: 4.7,
-                    visitors: 3821,
-                    locale: {
-                        bg: {
-                            title: 'Храм-паметник "Свети Александър Невски"',
-                            location: 'гр. София'
-                        },
-                        en: {
-                            title: 'St. Alexander Nevsky Temple-Monument',
-                            location: 'Sofia City'
-                        }
-                    }
-                }
-            ]
 
             let regions = [
                 {
@@ -383,8 +250,9 @@
 
             return {
                 number,
-                categoryPopularNow,
-                categoryNature,
+                mostPopular,
+                categories,
+                categoryArchitecture,
                 regions,
                 generateNumber
             }

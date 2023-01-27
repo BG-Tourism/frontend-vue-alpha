@@ -21,17 +21,27 @@
         </div>
     </section>
 
-    <div class="page-content">
-        <div class="page-container">
-            <pre>{{ $route }}</pre>
+    <section class="categories-list">
+        <div class="page-content">
+            <div class="page-container">
+                <ul>
+                    <li v-for="place in places" :key="place.id">
+                        <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
+                            {{ place.locale[$i18n.locale].title }}
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
     import { computed, defineComponent } from 'vue'
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
+
+    import places from '@/api/places'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -46,6 +56,10 @@
             })
 
             useTitle(pageTitle)
+
+            return {
+                places
+            }
         }
     })
 </script>
