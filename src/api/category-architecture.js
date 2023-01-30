@@ -1,10 +1,9 @@
 const categoryArchitecture = [
     {
-        id: 1,
         slug: 'sveti-aleksandar-nevski',
         image: '/images/photos/1.jpg',
         user_score: 4.2,
-        visitors: 2345,
+        visitors: Math.floor(Math.random() * 1000),
         locale: {
             bg: {
                 title: 'Храм-паметник "Свети Александър Невски"',
@@ -17,11 +16,10 @@ const categoryArchitecture = [
         }
     },
     {
-        id: 2,
         slug: 'tsarevets',
         image: '/images/photos/2.jpg',
         user_score: 5,
-        visitors: 1244,
+        visitors: Math.floor(Math.random() * 1000),
         locale: {
             bg: {
                 title: 'Крепост "Царевец"',
@@ -34,11 +32,10 @@ const categoryArchitecture = [
         }
     },
     {
-        id: 3,
         slug: 'rilski-manastir',
         image: '/images/photos/3.jpg',
         user_score: 3.6,
-        visitors: 614,
+        visitors: Math.floor(Math.random() * 1000),
         locale: {
             bg: {
                 title: 'Манастир "Свети Иван Рилски"',
@@ -51,11 +48,10 @@ const categoryArchitecture = [
         }
     },
     {
-        id: 4,
         slug: 'shipka-monument',
         image: '/images/photos/4.jpg',
         user_score: 5,
-        visitors: 1244,
+        visitors: Math.floor(Math.random() * 1000),
         locale: {
             bg: {
                 title: 'Паметник на свободата "Шипка"',
@@ -68,11 +64,10 @@ const categoryArchitecture = [
         }
     },
     {
-        id: 5,
         slug: 'belogradchishkite-skali',
         image: '/images/photos/5.jpg',
         user_score: 4.2,
-        visitors: 2345,
+        visitors: Math.floor(Math.random() * 1000),
         locale: {
             bg: {
                 title: 'Белоградчишките скали',

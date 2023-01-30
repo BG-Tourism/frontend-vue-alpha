@@ -148,8 +148,8 @@ const messages = {
     region: {
         pageTitle: 'Region'
     },
-    regions: {
-        pageTitle: 'Regions'
+    locality: {
+        pageTitle: 'Locality'
     },
     terms: {
         pageTitle: 'Terms & Conditions'

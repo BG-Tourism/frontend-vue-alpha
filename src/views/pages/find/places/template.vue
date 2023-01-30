@@ -25,7 +25,7 @@
         <div class="page-content">
             <div class="page-container">
                 <ul>
-                    <li v-for="place in places" :key="place.id">
+                    <li v-for="place in places" :key="place">
                         <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                             {{ place.locale[$i18n.locale].title }}
                         </router-link>

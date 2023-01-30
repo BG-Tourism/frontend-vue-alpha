@@ -9,20 +9,19 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'Categories' }">
-                            {{ $t('general.navigation.categories') }}
+                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
+                            {{ $t('general.navigation.region', { title: region.locale[$i18n.locale].title }) }}
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
-                            {{ $t('general.navigation.category', { title: category.locale[$i18n.locale].title }) }}
+                        <router-link :to="{ name: 'Locality', params: { region: region.slug, locality: locality.slug } }">
+                            {{ $t('general.navigation.locality', { title: locality.locale[$i18n.locale].title }) }}
                         </router-link>
                     </li>
                 </ul>
 
                 <div class="title">
-                    <h1>{{ category.locale[$i18n.locale].title }}</h1>
-                    <p>{{ $t('page.category.description.version' + (Math.random() * 5).toFixed(0)) }}</p>
+                    <h1>{{ locality.locale[$i18n.locale].title }}</h1>
                 </div>
             </div>
         </section>
@@ -53,9 +52,9 @@
     import { useRoute, useRouter } from 'vue-router'
 
     import places from '@/api/places'
-    import categories from '@/api/categories'
+    import regions from '@/api/regions'
 
-    import getPlacesByCategory from '@/helpers/getPlacesByCategory'
+    import getPlacesByLocality from '@/helpers/getPlacesByLocality'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -69,27 +68,29 @@
             const titleSuffix = store.titleSuffix
             const loading = ref(true)
 
-            let category = categories.find((item) => item.slug === route.params.slug)
+            let region = regions.find((item) => item.slug === route.params.region)
+            let locality = region.localities.find((item) => item.slug === route.params.locality)
             onBeforeMount(() => {
-                if (!category) {
-                    router.push({ name: 'Categories' })
+                if (!region || !locality) {
+                    router.push({ name: 'Regions' })
                 } else {
                     loading.value = false
                 }
             })
 
             const pageTitle = computed(() => {
-                return i18n.t('page.category.pageTitle') + titleSuffix
+                return i18n.t('page.locality.pageTitle') + titleSuffix
             })
             useTitle(pageTitle)
 
-            let filteredPlaces = getPlacesByCategory(places, category.slug)
+            let filteredPlaces = getPlacesByLocality(places, locality.slug)
 
             return {
                 loading,
                 locale,
                 route,
-                category,
+                region,
+                locality,
                 filteredPlaces
             }
         }

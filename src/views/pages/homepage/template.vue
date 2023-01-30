@@ -65,7 +65,7 @@
                 </div>
 
                 <ul class="list">
-                    <li v-for="place in mostPopular" :key="place.id">
+                    <li v-for="place in mostPopular" :key="place">
                         <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                             <picture>
                                 <img :src="place.image" alt="" loading="lazy" />
@@ -88,8 +88,8 @@
                 </div>
 
                 <ul class="tabs">
-                    <li v-for="category in categories.slice(0, 5)" :key="category.id">
-                        <button :class="category.id === 1 ? 'active' : null">
+                    <li v-for="category in categories.slice(0, 5)" :key="category">
+                        <button :class="category.slug === 'history-and-culture' ? 'active' : null">
                             <!--<i :class="'icon-category-' + category.slug" />-->
                             <span>{{ category.locale[$i18n.locale].title }}</span>
                         </button>
@@ -104,7 +104,7 @@
 
                 <div class="tab-content">
                     <ul class="list">
-                        <li v-for="place in categoryArchitecture" :key="place.id">
+                        <li v-for="place in categoryArchitecture" :key="place">
                             <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                                 <picture>
                                     <img :src="place.image" alt="" loading="lazy" />
@@ -125,7 +125,7 @@
                         </li>
                     </ul>
 
-                    <router-link :to="{ name: 'Category', params: { slug: 'nature' } }" class="see-more">
+                    <router-link :to="{ name: 'Category', params: { slug: 'nature-and-culture' } }" class="see-more">
                         {{ $t('general.seeMore') }}
                     </router-link>
                 </div>
@@ -142,7 +142,7 @@
                 </div>
 
                 <ul class="list">
-                    <li v-for="region in regions" :key="region.id">
+                    <li v-for="region in regions.slice(0, 4)" :key="region">
                         <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
                             <picture>
                                 <img :src="region.image" alt="" loading="lazy" />
@@ -168,6 +168,7 @@
 
     import mostPopular from '@/api/most-popular.js'
     import categories from '@/api/categories'
+    import regions from '@/api/regions'
     import categoryArchitecture from '@/api/category-architecture.js'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
@@ -188,65 +189,6 @@
             const generateNumber = () => {
                 number.value = (Math.random() * 19).toFixed(0)
             }
-
-            let regions = [
-                {
-                    id: 1,
-                    slug: 'trakia',
-                    image: '/images/regions/trakia.jpg',
-                    locations_count: 213,
-                    locale: {
-                        bg: {
-                            title: 'Тракия'
-                        },
-                        en: {
-                            title: 'Trakia'
-                        }
-                    }
-                },
-                {
-                    id: 2,
-                    slug: 'sofia',
-                    image: '/images/regions/sofia.jpg',
-                    locations_count: 52,
-                    locale: {
-                        bg: {
-                            title: 'София'
-                        },
-                        en: {
-                            title: 'Sofia'
-                        }
-                    }
-                },
-                {
-                    id: 3,
-                    slug: 'rila-pirin',
-                    image: '/images/regions/rila-pirin.jpg',
-                    locations_count: 85,
-                    locale: {
-                        bg: {
-                            title: 'Рила и Пирин'
-                        },
-                        en: {
-                            title: 'Rila & Pirin'
-                        }
-                    }
-                },
-                {
-                    id: 4,
-                    slug: 'rhodopes',
-                    image: '/images/regions/rhodopes.jpg',
-                    locations_count: 61,
-                    locale: {
-                        bg: {
-                            title: 'Родопи'
-                        },
-                        en: {
-                            title: 'Rhodopes'
-                        }
-                    }
-                }
-            ]
 
             return {
                 number,

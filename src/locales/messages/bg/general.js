@@ -2,13 +2,13 @@ const messages = {
     navigation: {
         categories: 'Категории',
         category: 'Категория "{title}"',
-        district: 'Област "{title}"',
-        districts: 'Области',
+        locality: 'Местност "{title}"',
+        localities: 'Местности ({count})',
         homepage: 'Начало',
         place: 'Забележителност "{title}"',
         places: 'Забележителности',
-        region: 'Регион "{title}"',
-        regions: 'Региони'
+        region: 'Район "{title}"',
+        regions: 'Райони'
     },
     colorMode: {
         toggleToLight: 'Превключване към светла тема',
@@ -37,6 +37,7 @@ const messages = {
     seeMore: 'Виж повече',
     showMore: 'Покажи повече',
     showLess: 'Покажи по-малко',
+    noResults: 'Няма резултати, които да покажем.',
     headerEnvironment: {
         production: 'Това е прототип. Към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>.',
         staging: 'Тестова среда',

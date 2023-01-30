@@ -1,8 +1,7 @@
 const categories = [
     {
-        id: 1,
         slug: 'history-and-culture',
-        places_count: 124,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'История и култура'
@@ -13,9 +12,8 @@ const categories = [
         }
     },
     {
-        id: 2,
         slug: 'nature-and-parks',
-        places_count: 64,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Природа и паркове'
@@ -26,9 +24,8 @@ const categories = [
         }
     },
     {
-        id: 3,
         slug: 'religion',
-        places_count: 261,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Религия'
@@ -39,9 +36,8 @@ const categories = [
         }
     },
     {
-        id: 4,
         slug: 'architecture',
-        places_count: 91,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Архитектура'
@@ -52,9 +48,8 @@ const categories = [
         }
     },
     {
-        id: 5,
         slug: 'beaches-and-ski-resorts',
-        places_count: 12,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Плажове и ски курорти'
@@ -65,9 +60,8 @@ const categories = [
         }
     },
     {
-        id: 6,
         slug: 'caves',
-        places_count: 23,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Пещери'
@@ -78,9 +72,8 @@ const categories = [
         }
     },
     {
-        id: 7,
         slug: 'eco-trails-and-scenic-routes',
-        places_count: 157,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Екопътеки и живописни маршрути'
@@ -91,9 +84,8 @@ const categories = [
         }
     },
     {
-        id: 8,
         slug: 'zoos-and-aquariums',
-        places_count: 8,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Зоологически градини и аквариуми'
@@ -104,9 +96,8 @@ const categories = [
         }
     },
     {
-        id: 9,
         slug: 'art-galleries',
-        places_count: 17,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Художествени галерии'
@@ -117,9 +108,8 @@ const categories = [
         }
     },
     {
-        id: 10,
         slug: 'waterfalls-and-lakes',
-        places_count: 61,
+        places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
                 title: 'Водопади и езера'

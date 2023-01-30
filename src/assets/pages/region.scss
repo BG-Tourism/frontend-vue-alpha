@@ -29,7 +29,6 @@
 
         ul {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
         }
 
@@ -74,5 +73,23 @@
 .page-regions {
     .page-container {
         overflow: hidden;
+    }
+
+    .categories-list {
+        ul {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+}
+
+.page-region {
+    .page-container {
+        overflow: hidden;
+    }
+
+    .categories-list {
+        ul {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
     }
 }

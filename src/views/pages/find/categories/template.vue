@@ -25,10 +25,12 @@
         <div class="page-content">
             <div class="page-container">
                 <ul>
-                    <li v-for="category in categories" :key="category.id">
+                    <li v-for="category in categories" :key="category">
                         <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
                             {{ category.locale[$i18n.locale].title }}
-                            <span>{{ category.places_count }}</span>
+                            <span v-if="countPlacesWithCategory(places, category.slug)">
+                                {{ countPlacesWithCategory(places, category.slug) }}
+                            </span>
                         </router-link>
                     </li>
                 </ul>
@@ -42,7 +44,10 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
+    import places from '@/api/places'
     import categories from '@/api/categories'
+
+    import countPlacesWithCategory from '@/helpers/countPlacesWithCategory'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -59,7 +64,9 @@
             useTitle(pageTitle)
 
             return {
-                categories
+                places,
+                categories,
+                countPlacesWithCategory
             }
         }
     })

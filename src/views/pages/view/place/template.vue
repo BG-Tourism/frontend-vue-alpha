@@ -14,8 +14,10 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link :to="{ name: 'District', params: { slug: place.district.slug } }">
-                            {{ $t('general.navigation.district', { title: place.district.locale[$i18n.locale].title }) }}
+                        <router-link
+                            :to="{ name: 'Locality', params: { region: place.region.slug, locality: place.locality.slug } }"
+                        >
+                            {{ $t('general.navigation.locality', { title: place.locality.locale[$i18n.locale].title }) }}
                         </router-link>
                     </li>
                     <li>
@@ -161,11 +163,11 @@
         <section class="location-gallery">
             <div class="page-content">
                 <div class="wrapper">
-                    <div v-for="(photo, index) in place.photos" :key="photo.id" class="photo">
-                        <picture @click.prevent="toggleGallery(photo.id)">
+                    <div v-for="(photo, index) in place.photos" :key="photo" class="photo">
+                        <picture @click.prevent="toggleGallery(index + 1)">
                             <img :src="photo.image" alt="" />
                         </picture>
-                        <button v-if="index === 0" @click.prevent="toggleGallery(photo.id)">
+                        <button v-if="index === 0" @click.prevent="toggleGallery(index + 1)">
                             <i class="icon-image" />
                             <span>{{ $t('page.place.photography.more') }}</span>
                         </button>
@@ -219,7 +221,7 @@
                         <p>{{ $t('page.place.reviews.description') }}</p>
                     </div>
                     <div class="list">
-                        <div v-for="review in place.reviews" :key="review.id" class="item">
+                        <div v-for="review in place.reviews" :key="review" class="item">
                             <div class="author">
                                 <picture>
                                     <img :src="review.author.photo" alt="" />
@@ -296,7 +298,6 @@
             const loading = ref(true)
 
             let place = places.find((item) => item.slug === route.params.slug)
-
             onBeforeMount(() => {
                 if (!place) {
                     router.push({ name: 'Places' })
@@ -308,11 +309,10 @@
             const pageTitle = computed(() => {
                 return i18n.t('page.place.pageTitle') + titleSuffix
             })
+            useTitle(pageTitle)
 
             const isFavorite = ref(false)
             const isGalleryOpened = ref(false)
-
-            useTitle(pageTitle)
 
             const toggleGallery = (id) => {
                 isGalleryOpened.value = !isGalleryOpened.value

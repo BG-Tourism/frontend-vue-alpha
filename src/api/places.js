@@ -6,30 +6,25 @@ let locale = i18n.locale
 
 const places = [
     {
-        id: 1,
         slug: 'sveti-aleksandar-nevski',
         image: '/images/photos/1.jpg',
         photos: [
             {
-                id: 1,
                 image: '/images/photos/1-1.jpg',
                 author: 'Министерство на туризма на Република България',
                 date_added: 1670777697
             },
             {
-                id: 2,
                 image: '/images/photos/1-2.jpg',
                 author: 'Министерство на туризма на Република България',
                 date_added: 1670777697
             },
             {
-                id: 3,
                 image: '/images/photos/1-3.jpg',
                 author: 'Министерство на туризма на Република България',
                 date_added: 1670777697
             },
             {
-                id: 4,
                 image: '/images/photos/1-4.jpg',
                 author: 'Министерство на туризма на Република България',
                 date_added: 1670777697
@@ -46,10 +41,9 @@ const places = [
             }
         },
         user_score: 4.8,
-        reviews_count: 125,
-        visitors: 3255,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
         category: {
-            id: 1,
             slug: 'architecture',
             locale: {
                 bg: {
@@ -61,7 +55,6 @@ const places = [
             }
         },
         region: {
-            id: 1,
             slug: 'sofia',
             locale: {
                 bg: {
@@ -72,8 +65,7 @@ const places = [
                 }
             }
         },
-        district: {
-            id: 1,
+        locality: {
             slug: 'sofia',
             locale: {
                 bg: {
@@ -116,13 +108,11 @@ const places = [
             latitude: 42.69577,
             longitude: 23.33286
         },
-        altitude: 559,
+        altitude: Math.floor(Math.random() * 1000),
         contents: [
             {
-                id: 1,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     }
@@ -139,15 +129,12 @@ const places = [
                 }
             },
             {
-                id: 2,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     },
                     {
-                        id: 2,
                         names: 'Александър Найденов',
                         photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
                     }
@@ -166,9 +153,7 @@ const places = [
         ],
         reviews: [
             {
-                id: 1,
                 author: {
-                    id: 1,
                     names: 'Том Атанасов',
                     photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
                 },
@@ -184,9 +169,7 @@ const places = [
                 }
             },
             {
-                id: 2,
                 author: {
-                    id: 2,
                     names: 'Александър Найденов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -202,9 +185,7 @@ const places = [
                 }
             },
             {
-                id: 3,
                 author: {
-                    id: 3,
                     names: 'Петър Георгиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -220,9 +201,7 @@ const places = [
                 }
             },
             {
-                id: 4,
                 author: {
-                    id: 4,
                     names: 'Пламен Калайджиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -238,9 +217,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Георги Йорданов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -256,9 +233,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Мария Величкова',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -276,30 +251,25 @@ const places = [
         ]
     },
     {
-        id: 2,
         slug: 'tsarevets',
         image: '/images/photos/2.jpg',
         photos: [
             {
-                id: 1,
                 image: '/images/photos/2-1.jpg',
                 author: 'Архитектурно-музеен резерват "Царевец"',
                 date_added: 1670777697
             },
             {
-                id: 2,
                 image: '/images/photos/2-2.jpg',
                 author: 'Архитектурно-музеен резерват "Царевец"',
                 date_added: 1670777697
             },
             {
-                id: 3,
                 image: '/images/photos/2-3.jpg',
                 author: 'Архитектурно-музеен резерват "Царевец"',
                 date_added: 1670777697
             },
             {
-                id: 4,
                 image: '/images/photos/2-4.jpg',
                 author: 'Архитектурно-музеен резерват "Царевец"',
                 date_added: 1670777697
@@ -316,10 +286,9 @@ const places = [
             }
         },
         user_score: 4.4,
-        reviews_count: 262,
-        visitors: 1853,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
         category: {
-            id: 1,
             slug: 'architecture',
             locale: {
                 bg: {
@@ -331,7 +300,6 @@ const places = [
             }
         },
         region: {
-            id: 1,
             slug: 'stara-planina',
             locale: {
                 bg: {
@@ -342,8 +310,7 @@ const places = [
                 }
             }
         },
-        district: {
-            id: 1,
+        locality: {
             slug: 'veliko-tarnovo',
             locale: {
                 bg: {
@@ -386,13 +353,11 @@ const places = [
             latitude: 43.16662,
             longitude: 23.48327
         },
-        altitude: 152,
+        altitude: Math.floor(Math.random() * 1000),
         contents: [
             {
-                id: 1,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     }
@@ -409,15 +374,12 @@ const places = [
                 }
             },
             {
-                id: 2,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     },
                     {
-                        id: 2,
                         names: 'Александър Найденов',
                         photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
                     }
@@ -436,9 +398,7 @@ const places = [
         ],
         reviews: [
             {
-                id: 1,
                 author: {
-                    id: 1,
                     names: 'Том Атанасов',
                     photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
                 },
@@ -454,9 +414,7 @@ const places = [
                 }
             },
             {
-                id: 2,
                 author: {
-                    id: 2,
                     names: 'Александър Найденов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -472,9 +430,7 @@ const places = [
                 }
             },
             {
-                id: 3,
                 author: {
-                    id: 3,
                     names: 'Петър Георгиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -490,9 +446,7 @@ const places = [
                 }
             },
             {
-                id: 4,
                 author: {
-                    id: 4,
                     names: 'Пламен Калайджиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -508,9 +462,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Георги Йорданов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -526,9 +478,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Мария Величкова',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -546,30 +496,25 @@ const places = [
         ]
     },
     {
-        id: 3,
         slug: 'rilski-manastir',
         image: '/images/photos/3.jpg',
         photos: [
             {
-                id: 1,
                 image: '/images/photos/3-1.jpg',
                 author: 'Андрей Андреев',
                 date_added: 1670777697
             },
             {
-                id: 2,
                 image: '/images/photos/3-2.jpg',
                 author: 'Андрей Андреев',
                 date_added: 1670777697
             },
             {
-                id: 3,
                 image: '/images/photos/3-3.jpg',
                 author: 'Андрей Андреев',
                 date_added: 1670777697
             },
             {
-                id: 4,
                 image: '/images/photos/3-4.jpg',
                 author: 'Андрей Андреев',
                 date_added: 1670777697
@@ -586,10 +531,9 @@ const places = [
             }
         },
         user_score: 4.8,
-        reviews_count: 436,
-        visitors: 4825,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
         category: {
-            id: 1,
             slug: 'religion',
             locale: {
                 bg: {
@@ -601,7 +545,6 @@ const places = [
             }
         },
         region: {
-            id: 1,
             slug: 'rila-pirin',
             locale: {
                 bg: {
@@ -612,15 +555,14 @@ const places = [
                 }
             }
         },
-        district: {
-            id: 1,
-            slug: 'kyustendil',
+        locality: {
+            slug: 'rila',
             locale: {
                 bg: {
-                    title: 'Кюстендил'
+                    title: 'Рила'
                 },
                 en: {
-                    title: 'Kyustendil'
+                    title: 'Rila'
                 }
             }
         },
@@ -656,13 +598,11 @@ const places = [
             latitude: 42.12823,
             longitude: 23.13548
         },
-        altitude: 164,
+        altitude: Math.floor(Math.random() * 1000),
         contents: [
             {
-                id: 1,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     }
@@ -679,15 +619,12 @@ const places = [
                 }
             },
             {
-                id: 2,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     },
                     {
-                        id: 2,
                         names: 'Александър Найденов',
                         photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
                     }
@@ -706,9 +643,7 @@ const places = [
         ],
         reviews: [
             {
-                id: 1,
                 author: {
-                    id: 1,
                     names: 'Том Атанасов',
                     photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
                 },
@@ -724,9 +659,7 @@ const places = [
                 }
             },
             {
-                id: 2,
                 author: {
-                    id: 2,
                     names: 'Александър Найденов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -742,9 +675,7 @@ const places = [
                 }
             },
             {
-                id: 3,
                 author: {
-                    id: 3,
                     names: 'Петър Георгиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -760,9 +691,7 @@ const places = [
                 }
             },
             {
-                id: 4,
                 author: {
-                    id: 4,
                     names: 'Пламен Калайджиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -778,9 +707,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Георги Йорданов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -796,9 +723,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Мария Величкова',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -816,30 +741,25 @@ const places = [
         ]
     },
     {
-        id: 4,
         slug: 'shipka-monument',
         image: '/images/photos/4.jpg',
         photos: [
             {
-                id: 1,
                 image: '/images/photos/4-1.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
             },
             {
-                id: 2,
                 image: '/images/photos/4-2.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
             },
             {
-                id: 3,
                 image: '/images/photos/4-3.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
             },
             {
-                id: 4,
                 image: '/images/photos/4-4.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
@@ -856,10 +776,9 @@ const places = [
             }
         },
         user_score: 4.9,
-        reviews_count: 154,
-        visitors: 1245,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
         category: {
-            id: 1,
             slug: 'architecture',
             locale: {
                 bg: {
@@ -871,7 +790,6 @@ const places = [
             }
         },
         region: {
-            id: 1,
             slug: 'valley-of-roses',
             locale: {
                 bg: {
@@ -882,15 +800,14 @@ const places = [
                 }
             }
         },
-        district: {
-            id: 1,
-            slug: 'stara-zagora',
+        locality: {
+            slug: 'kazanlak',
             locale: {
                 bg: {
-                    title: 'Стара Загора'
+                    title: 'Казанлък'
                 },
                 en: {
-                    title: 'Stara Zagora'
+                    title: 'Kazanlak'
                 }
             }
         },
@@ -926,13 +843,11 @@ const places = [
             latitude: 42.74829,
             longitude: 25.3215
         },
-        altitude: 256,
+        altitude: Math.floor(Math.random() * 1000),
         contents: [
             {
-                id: 1,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     }
@@ -949,15 +864,12 @@ const places = [
                 }
             },
             {
-                id: 2,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     },
                     {
-                        id: 2,
                         names: 'Александър Найденов',
                         photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
                     }
@@ -976,9 +888,7 @@ const places = [
         ],
         reviews: [
             {
-                id: 1,
                 author: {
-                    id: 1,
                     names: 'Том Атанасов',
                     photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
                 },
@@ -994,9 +904,7 @@ const places = [
                 }
             },
             {
-                id: 2,
                 author: {
-                    id: 2,
                     names: 'Александър Найденов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1012,9 +920,7 @@ const places = [
                 }
             },
             {
-                id: 3,
                 author: {
-                    id: 3,
                     names: 'Петър Георгиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1030,9 +936,7 @@ const places = [
                 }
             },
             {
-                id: 4,
                 author: {
-                    id: 4,
                     names: 'Пламен Калайджиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1048,9 +952,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Георги Йорданов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1066,9 +968,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Мария Величкова',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1086,30 +986,25 @@ const places = [
         ]
     },
     {
-        id: 5,
         slug: 'belogradchishkite-skali',
         image: '/images/photos/5.jpg',
         photos: [
             {
-                id: 1,
                 image: '/images/photos/5-1.jpg',
                 author: 'Владислав Терзийски',
                 date_added: 1670777697
             },
             {
-                id: 2,
                 image: '/images/photos/5-2.jpg',
                 author: 'Пламен Петков',
                 date_added: 1670777697
             },
             {
-                id: 3,
                 image: '/images/photos/5-3.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
             },
             {
-                id: 4,
                 image: '/images/photos/5-4.jpg',
                 author: 'Неизвестен',
                 date_added: 1670777697
@@ -1126,10 +1021,9 @@ const places = [
             }
         },
         user_score: 4.5,
-        reviews_count: 84,
-        visitors: 983,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
         category: {
-            id: 1,
             slug: 'nature-and-parks',
             locale: {
                 bg: {
@@ -1141,7 +1035,6 @@ const places = [
             }
         },
         region: {
-            id: 1,
             slug: 'danube',
             locale: {
                 bg: {
@@ -1152,8 +1045,7 @@ const places = [
                 }
             }
         },
-        district: {
-            id: 1,
+        locality: {
             slug: 'vidin',
             locale: {
                 bg: {
@@ -1196,13 +1088,11 @@ const places = [
             latitude: 43.62837,
             longitude: 22.67985
         },
-        altitude: 195,
+        altitude: Math.floor(Math.random() * 1000),
         contents: [
             {
-                id: 1,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     }
@@ -1219,15 +1109,12 @@ const places = [
                 }
             },
             {
-                id: 2,
                 authors: [
                     {
-                        id: 1,
                         names: 'Том Атанасов',
                         photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
                     },
                     {
-                        id: 2,
                         names: 'Александър Найденов',
                         photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
                     }
@@ -1246,9 +1133,7 @@ const places = [
         ],
         reviews: [
             {
-                id: 1,
                 author: {
-                    id: 1,
                     names: 'Том Атанасов',
                     photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
                 },
@@ -1264,9 +1149,7 @@ const places = [
                 }
             },
             {
-                id: 2,
                 author: {
-                    id: 2,
                     names: 'Александър Найденов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1282,9 +1165,7 @@ const places = [
                 }
             },
             {
-                id: 3,
                 author: {
-                    id: 3,
                     names: 'Петър Георгиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1300,9 +1181,7 @@ const places = [
                 }
             },
             {
-                id: 4,
                 author: {
-                    id: 4,
                     names: 'Пламен Калайджиев',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1318,9 +1197,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Георги Йорданов',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1336,9 +1213,7 @@ const places = [
                 }
             },
             {
-                id: 5,
                 author: {
-                    id: 5,
                     names: 'Мария Величкова',
                     photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
                 },
@@ -1346,6 +1221,962 @@ const places = [
                 date_added: 1685017043000,
                 comment:
                     'Белоградчишките скали надхвърлиха очакванията ми. Природната красота на района беше спираща дъха, а историческото значение добави дълбочина към изживяването. Горещо препоръчвам да посетите и да направите обиколка с екскурзовод, за да оцените напълно всичко, което районът може да предложи.',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            }
+        ]
+    },
+    {
+        slug: 'chudnite-mostove',
+        image: '/images/photos/6.jpg',
+        photos: [
+            {
+                image: '/images/photos/6-1.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/6-2.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/6-3.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/6-4.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            }
+        ],
+        locale: {
+            bg: {
+                title: 'Чудните мостове',
+                location: 'до Забърдо'
+            },
+            en: {
+                title: 'The Wonderful Bridges',
+                location: 'next to Zabardo'
+            }
+        },
+        user_score: 4.5,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
+        category: {
+            slug: 'nature-and-parks',
+            locale: {
+                bg: {
+                    title: 'Природа и паркове'
+                },
+                en: {
+                    title: 'Nature & Parks'
+                }
+            }
+        },
+        region: {
+            slug: 'rhodopes',
+            locale: {
+                bg: {
+                    title: 'Родопи'
+                },
+                en: {
+                    title: 'Rhodopes'
+                }
+            }
+        },
+        locality: {
+            slug: 'rodopi',
+            locale: {
+                bg: {
+                    title: 'Родопи'
+                },
+                en: {
+                    title: 'Rodopi'
+                }
+            }
+        },
+        unesco: false,
+        weather: [
+            {
+                date: getNextFiveDays(locale)[0],
+                state: 'cloudy',
+                temperature: [2, -3] // 0 = day, 1 = night
+            },
+            {
+                date: getNextFiveDays(locale)[1],
+                state: 'snow',
+                temperature: [9, 1]
+            },
+            {
+                date: getNextFiveDays(locale)[2],
+                state: 'windy-cloudy',
+                temperature: [12, 4]
+            },
+            {
+                date: getNextFiveDays(locale)[3],
+                state: 'snow',
+                temperature: [14, 6]
+            },
+            {
+                date: getNextFiveDays(locale)[4],
+                state: 'partly-sunny',
+                temperature: [9, -2]
+            }
+        ],
+        coords: {
+            latitude: 41.8188,
+            longitude: 24.5816
+        },
+        altitude: Math.floor(Math.random() * 1000),
+        contents: [
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'Кратко резюме',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'Summary',
+                        text: '<p>text</p>'
+                    }
+                }
+            },
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    },
+                    {
+                        names: 'Александър Найденов',
+                        photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'История',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'History',
+                        text: '<p>text</p>'
+                    }
+                }
+            }
+        ],
+        reviews: [
+            {
+                author: {
+                    names: 'Том Атанасов',
+                    photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
+                },
+                rating: 5,
+                date_added: 1660815374000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-2.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Александър Найденов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 4,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Петър Георгиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 2,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Пламен Калайджиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
+                    ratio: null,
+                    type: 'video'
+                }
+            },
+            {
+                author: {
+                    names: 'Георги Йорданов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-5.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Мария Величкова',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            }
+        ]
+    },
+    {
+        slug: 'nessebar-architectural-historical-reserve',
+        image: '/images/photos/7.jpg',
+        photos: [
+            {
+                image: '/images/photos/7-1.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/7-2.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/7-3.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/7-4.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            }
+        ],
+        locale: {
+            bg: {
+                title: 'Архитектурно-исторически резерват Несебър',
+                location: 'гр. Несебър'
+            },
+            en: {
+                title: 'Architectural-historical reserve Nessebar',
+                location: 'Nessebar City'
+            }
+        },
+        user_score: 4.5,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
+        category: {
+            slug: 'history-and-culture',
+            locale: {
+                bg: {
+                    title: 'История и култура'
+                },
+                en: {
+                    title: 'History & Culture'
+                }
+            }
+        },
+        region: {
+            slug: 'bourgas-black-sea',
+            locale: {
+                bg: {
+                    title: 'Бургаско черноморие'
+                },
+                en: {
+                    title: 'Bourgas Black Sea'
+                }
+            }
+        },
+        locality: {
+            slug: 'nesebar',
+            locale: {
+                bg: {
+                    title: 'Несебър'
+                },
+                en: {
+                    title: 'Nesebar'
+                }
+            }
+        },
+        unesco: false,
+        weather: [
+            {
+                date: getNextFiveDays(locale)[0],
+                state: 'cloudy',
+                temperature: [2, -3] // 0 = day, 1 = night
+            },
+            {
+                date: getNextFiveDays(locale)[1],
+                state: 'snow',
+                temperature: [9, 1]
+            },
+            {
+                date: getNextFiveDays(locale)[2],
+                state: 'windy-cloudy',
+                temperature: [12, 4]
+            },
+            {
+                date: getNextFiveDays(locale)[3],
+                state: 'snow',
+                temperature: [14, 6]
+            },
+            {
+                date: getNextFiveDays(locale)[4],
+                state: 'partly-sunny',
+                temperature: [9, -2]
+            }
+        ],
+        coords: {
+            latitude: 42.6587,
+            longitude: 27.7334
+        },
+        altitude: Math.floor(Math.random() * 1000),
+        contents: [
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'Кратко резюме',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'Summary',
+                        text: '<p>text</p>'
+                    }
+                }
+            },
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    },
+                    {
+                        names: 'Александър Найденов',
+                        photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'История',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'History',
+                        text: '<p>text</p>'
+                    }
+                }
+            }
+        ],
+        reviews: [
+            {
+                author: {
+                    names: 'Том Атанасов',
+                    photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
+                },
+                rating: 5,
+                date_added: 1660815374000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-2.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Александър Найденов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 4,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Петър Георгиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 2,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Пламен Калайджиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
+                    ratio: null,
+                    type: 'video'
+                }
+            },
+            {
+                author: {
+                    names: 'Георги Йорданов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-5.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Мария Величкова',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            }
+        ]
+    },
+    {
+        slug: 'pliska-national-historical-and-archaeological-reserve',
+        image: '/images/photos/8.jpg',
+        photos: [
+            {
+                image: '/images/photos/8-1.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/8-2.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/8-3.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/8-4.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            }
+        ],
+        locale: {
+            bg: {
+                title: 'Национален историко-археологически резерват "Плиска"',
+                location: 'гр. Плиска'
+            },
+            en: {
+                title: 'National Historical and Archaeological Reserve "Pliska"',
+                location: 'Pliska City'
+            }
+        },
+        user_score: 4.5,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
+        category: {
+            slug: 'architecture',
+            locale: {
+                bg: {
+                    title: 'Архитектура'
+                },
+                en: {
+                    title: 'Architecture'
+                }
+            }
+        },
+        region: {
+            slug: 'varna-black-sea',
+            locale: {
+                bg: {
+                    title: 'Варненско черноморие'
+                },
+                en: {
+                    title: 'Varna Black Sea'
+                }
+            }
+        },
+        locality: {
+            slug: 'novi-pazar',
+            locale: {
+                bg: {
+                    title: 'Нови пазар'
+                },
+                en: {
+                    title: 'Novi Pazar'
+                }
+            }
+        },
+        unesco: false,
+        weather: [
+            {
+                date: getNextFiveDays(locale)[0],
+                state: 'cloudy',
+                temperature: [2, -3] // 0 = day, 1 = night
+            },
+            {
+                date: getNextFiveDays(locale)[1],
+                state: 'snow',
+                temperature: [9, 1]
+            },
+            {
+                date: getNextFiveDays(locale)[2],
+                state: 'windy-cloudy',
+                temperature: [12, 4]
+            },
+            {
+                date: getNextFiveDays(locale)[3],
+                state: 'snow',
+                temperature: [14, 6]
+            },
+            {
+                date: getNextFiveDays(locale)[4],
+                state: 'partly-sunny',
+                temperature: [9, -2]
+            }
+        ],
+        coords: {
+            latitude: 42.6587,
+            longitude: 27.7334
+        },
+        altitude: Math.floor(Math.random() * 1000),
+        contents: [
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'Кратко резюме',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'Summary',
+                        text: '<p>text</p>'
+                    }
+                }
+            },
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    },
+                    {
+                        names: 'Александър Найденов',
+                        photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'История',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'History',
+                        text: '<p>text</p>'
+                    }
+                }
+            }
+        ],
+        reviews: [
+            {
+                author: {
+                    names: 'Том Атанасов',
+                    photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
+                },
+                rating: 5,
+                date_added: 1660815374000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-2.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Александър Найденов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 4,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Петър Георгиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 2,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Пламен Калайджиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
+                    ratio: null,
+                    type: 'video'
+                }
+            },
+            {
+                author: {
+                    names: 'Георги Йорданов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '5-5.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Мария Величкова',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            }
+        ]
+    },
+    {
+        slug: 'plovdiv-ancient-theater',
+        image: '/images/photos/9.jpg',
+        photos: [
+            {
+                image: '/images/photos/9-1.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/9-2.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/9-3.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            },
+            {
+                image: '/images/photos/9-4.jpg',
+                author: 'Неизвестен',
+                date_added: 1670777697
+            }
+        ],
+        locale: {
+            bg: {
+                title: 'Античен театър - Пловдив',
+                location: 'гр. Пловдив'
+            },
+            en: {
+                title: 'Ancient Theater - Plovdiv',
+                location: 'Plovdiv City'
+            }
+        },
+        user_score: 4.5,
+        reviews_count: Math.floor(Math.random() * 100),
+        visitors: Math.floor(Math.random() * 1000),
+        category: {
+            slug: 'architecture',
+            locale: {
+                bg: {
+                    title: 'Архитектура'
+                },
+                en: {
+                    title: 'Architecture'
+                }
+            }
+        },
+        region: {
+            slug: 'trakia',
+            locale: {
+                bg: {
+                    title: 'Тракия'
+                },
+                en: {
+                    title: 'Trakia'
+                }
+            }
+        },
+        locality: {
+            slug: 'plovdiv',
+            locale: {
+                bg: {
+                    title: 'Пловдив'
+                },
+                en: {
+                    title: 'Plovdiv'
+                }
+            }
+        },
+        unesco: false,
+        weather: [
+            {
+                date: getNextFiveDays(locale)[0],
+                state: 'cloudy',
+                temperature: [2, -3] // 0 = day, 1 = night
+            },
+            {
+                date: getNextFiveDays(locale)[1],
+                state: 'snow',
+                temperature: [9, 1]
+            },
+            {
+                date: getNextFiveDays(locale)[2],
+                state: 'windy-cloudy',
+                temperature: [12, 4]
+            },
+            {
+                date: getNextFiveDays(locale)[3],
+                state: 'snow',
+                temperature: [14, 6]
+            },
+            {
+                date: getNextFiveDays(locale)[4],
+                state: 'partly-sunny',
+                temperature: [9, -2]
+            }
+        ],
+        coords: {
+            latitude: 42.1468,
+            longitude: 24.7511
+        },
+        altitude: Math.floor(Math.random() * 1000),
+        contents: [
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'Кратко резюме',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'Summary',
+                        text: '<p>text</p>'
+                    }
+                }
+            },
+            {
+                authors: [
+                    {
+                        names: 'Том Атанасов',
+                        photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=30'
+                    },
+                    {
+                        names: 'Александър Найденов',
+                        photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=30'
+                    }
+                ],
+                locale: {
+                    bg: {
+                        title: 'История',
+                        text: '<p>text</p>'
+                    },
+                    en: {
+                        title: 'History',
+                        text: '<p>text</p>'
+                    }
+                }
+            }
+        ],
+        reviews: [
+            {
+                author: {
+                    names: 'Том Атанасов',
+                    photo: 'https://gravatar.com/avatar/101ecaaeb9247c0da0285d295c2a2e80?size=40'
+                },
+                rating: 5,
+                date_added: 1660815374000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '9-2.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Александър Найденов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 4,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Петър Георгиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 2,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: null,
+                    ratio: null,
+                    type: null
+                }
+            },
+            {
+                author: {
+                    names: 'Пламен Калайджиев',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
+                    ratio: null,
+                    type: 'video'
+                }
+            },
+            {
+                author: {
+                    names: 'Георги Йорданов',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
+                comment_language: 'bg',
+                attachment: {
+                    source: '9-5.jpg',
+                    ratio: 'normal',
+                    type: 'photo'
+                }
+            },
+            {
+                author: {
+                    names: 'Мария Величкова',
+                    photo: 'https://gravatar.com/avatar/e1dee3092e2726a4e58e99f63c8f4807?size=40'
+                },
+                rating: 5,
+                date_added: 1685017043000,
+                comment: 'text',
                 comment_language: 'bg',
                 attachment: {
                     source: null,

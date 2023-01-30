@@ -234,9 +234,14 @@
         }
 
         .photo {
+            @include image {
+                @include font-size(42px);
+            }
+
             position: relative;
             overflow: hidden;
             border-radius: 16px;
+            background-color: $slate-100;
             cursor: pointer;
 
             &:first-child {
@@ -279,11 +284,10 @@
             display: block;
             width: 100%;
             height: 100%;
+            min-height: 220px;
         }
 
         picture {
-            background-color: $slate-100;
-
             &::before {
                 @include icon;
                 @include font-size(16px);
@@ -620,7 +624,6 @@
             .attachment {
                 display: flex;
                 margin: 20px 0 0;
-                cursor: pointer;
 
                 &.invert {
                     max-width: 50%;
@@ -629,13 +632,21 @@
                 &.photo,
                 &.video {
                     picture {
+                        @include image {
+                            @include font-size(22px);
+                        }
+
+                        position: relative;
                         display: block;
                         overflow: hidden;
+                        min-width: 100px;
                         border-radius: 12px;
+                        background-color: $slate-100;
                         outline-width: 2px;
                         outline-style: solid;
                         outline-color: transparent;
                         outline-offset: 4px;
+                        cursor: pointer;
                         transition: all 200ms linear;
 
                         &:hover {
@@ -684,6 +695,7 @@
                         justify-content: center;
                         width: 100%;
                         height: 100%;
+                        cursor: pointer;
                         transform: translate(-50%, -50%);
                     }
                 }

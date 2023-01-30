@@ -1,5 +1,9 @@
 .page-category,
 .page-categories {
+    .page-container {
+        overflow: hidden;
+    }
+
     .category-heading {
         .title {
             padding: 0 0 20px;
@@ -18,12 +22,6 @@
                 line-height: 1.2;
             }
         }
-    }
-}
-
-.page-categories {
-    .page-container {
-        overflow: hidden;
     }
 
     .categories-list {

@@ -2,8 +2,8 @@ const messages = {
     navigation: {
         categories: 'Categories',
         category: 'Category "{title}"',
-        district: 'District "{title}"',
-        districts: 'Districts',
+        locality: 'Locality "{title}"',
+        localities: 'Localities ({count})',
         homepage: 'Homepage',
         place: 'Place "{title}"',
         places: 'Places',
@@ -37,6 +37,7 @@ const messages = {
     seeMore: 'See more',
     showMore: 'Show more',
     showLess: 'Show less',
+    noResults: 'There are no results to show.',
     headerEnvironment: {
         production: 'This is a prototype. Go to the <a href="{repo}" target="_blank" rel="noopener">GitHub repository</a>.',
         staging: 'Testing Environment',

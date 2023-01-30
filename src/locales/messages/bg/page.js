@@ -149,10 +149,10 @@ const messages = {
         pageTitle: 'Лични данни'
     },
     region: {
-        pageTitle: 'Регион'
+        pageTitle: 'Район'
     },
-    regions: {
-        pageTitle: 'Региони'
+    locality: {
+        pageTitle: 'Местност'
     },
     terms: {
         pageTitle: 'Общи условия'
