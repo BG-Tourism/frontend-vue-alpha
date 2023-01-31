@@ -8,7 +8,7 @@ const routes = [
         meta: {
             className: 'page-homepage'
         },
-        component: () => import('@/views/pages/homepage/template.vue')
+        component: () => import('@/views/pages/homepage.vue')
     },
     {
         path: '/region/:slug',
@@ -16,7 +16,7 @@ const routes = [
         meta: {
             className: 'page-region'
         },
-        component: () => import('@/views/pages/view/region/template.vue')
+        component: () => import('@/views/pages/view-region.vue')
     },
     {
         path: '/region/:region/:locality',
@@ -24,7 +24,7 @@ const routes = [
         meta: {
             className: 'page-locality'
         },
-        component: () => import('@/views/pages/view/locality/template.vue')
+        component: () => import('@/views/pages/view-locality.vue')
     },
     {
         path: '/regions',
@@ -32,7 +32,7 @@ const routes = [
         meta: {
             className: 'page-regions'
         },
-        component: () => import('@/views/pages/find/regions/template.vue')
+        component: () => import('@/views/pages/find-regions.vue')
     },
     {
         path: '/category/:slug',
@@ -40,7 +40,7 @@ const routes = [
         meta: {
             className: 'page-category'
         },
-        component: () => import('@/views/pages/view/category/template.vue')
+        component: () => import('@/views/pages/view-category.vue')
     },
     {
         path: '/categories',
@@ -48,7 +48,7 @@ const routes = [
         meta: {
             className: 'page-categories'
         },
-        component: () => import('@/views/pages/find/categories/template.vue')
+        component: () => import('@/views/pages/find-categories.vue')
     },
     {
         path: '/place/:slug',
@@ -56,7 +56,7 @@ const routes = [
         meta: {
             className: 'page-place'
         },
-        component: () => import('@/views/pages/view/place/template.vue')
+        component: () => import('@/views/pages/view-place.vue')
     },
     {
         path: '/places',
@@ -64,7 +64,7 @@ const routes = [
         meta: {
             className: 'page-places'
         },
-        component: () => import('@/views/pages/find/places/template.vue')
+        component: () => import('@/views/pages/find-places.vue')
     },
     {
         path: '/about',
@@ -72,7 +72,7 @@ const routes = [
         meta: {
             className: 'page-about'
         },
-        component: () => import('@/views/pages/about/template.vue')
+        component: () => import('@/views/pages/about.vue')
     },
     {
         path: '/contact',
@@ -80,7 +80,7 @@ const routes = [
         meta: {
             className: 'page-contact'
         },
-        component: () => import('@/views/pages/contact/template.vue')
+        component: () => import('@/views/pages/contact.vue')
     },
     {
         path: '/terms',
@@ -88,7 +88,7 @@ const routes = [
         meta: {
             className: 'page-general'
         },
-        component: () => import('@/views/pages/terms/template.vue')
+        component: () => import('@/views/pages/terms.vue')
     },
     {
         path: '/privacy',
@@ -96,7 +96,7 @@ const routes = [
         meta: {
             className: 'page-general'
         },
-        component: () => import('@/views/pages/privacy/template.vue')
+        component: () => import('@/views/pages/privacy.vue')
     },
     {
         path: '/:catchAll(.*)',
@@ -104,7 +104,7 @@ const routes = [
         meta: {
             className: 'page-error'
         },
-        component: () => import('@/views/pages/errors/template.vue')
+        component: () => import('@/views/pages/error.vue')
     }
 ]
 
