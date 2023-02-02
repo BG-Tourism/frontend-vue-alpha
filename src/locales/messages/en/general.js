@@ -41,7 +41,7 @@ const messages = {
     noResults: 'There are no results to show.',
     close: 'Close',
     filters: {
-        filterBy: 'Филтрирай по',
+        filterBy: 'Filter by',
         autosaving: 'Every selection you make will be reflected in the results instantly.',
         categories: 'Categories',
         categoriesCounter: 'Categories ({n})',

@@ -1,7 +1,11 @@
 <template>
     <footer class="page-footer">
         <div class="container">
-            <p class="open-source" v-html="$t('general.footerOpenSource', { repo: gitRepository })" />
+            <p
+                v-if="$i18n.locale === 'bg'"
+                class="open-source"
+                v-html="$t('general.footerOpenSource', { repo: gitRepository })"
+            />
             <div class="wrapper">
                 <p>
                     &copy; {{ currentYear }}

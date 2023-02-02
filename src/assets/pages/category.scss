@@ -1,33 +1,10 @@
-.page-category,
 .page-categories {
     .page-container {
         overflow: hidden;
     }
 
-    .category-heading {
-        padding: 90px 0 0;
-
-        .title {
-            padding: 0 0 20px;
-
-            h1 {
-                @include font-size(48px);
-
-                padding: 0 0 15px;
-                font-weight: 600;
-                line-height: 1.2;
-            }
-
-            p {
-                @include font-size(18px);
-
-                line-height: 1.2;
-            }
-        }
-    }
-
     .categories-list {
-        padding: 20px 0 40px;
+        padding: 50px 0;
 
         ul {
             display: grid;

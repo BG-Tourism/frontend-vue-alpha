@@ -1,5 +1,5 @@
 <template>
-    <section class="top-section">
+    <section class="heading">
         <picture>
             <img src="/images/nuxt-hero-gradient.svg" alt="" />
         </picture>
@@ -28,33 +28,6 @@
             </div>
         </div>
     </section>
-
-    <!--<section class="hero">
-        <div class="page-content">
-            <div class="preview">
-                <picture>
-                    <img src="/images/photos/6.jpg" alt="" loading="lazy" />
-                </picture>
-                <div class="content">
-                    <h1 v-html="$t('page.homepage.slogan.title')" />
-                    <p v-html="$t('page.homepage.slogan.description')" />
-                    <button class="see-more" v-html="$t('page.homepage.slogan.button')" />
-                </div>
-            </div>
-            <div class="search-box">
-                <div class="wrapper">
-                    <BaseInput :placeholder="$t('page.homepage.slogan.search')">
-                        <template #prefix>
-                            <i class="icon-navigation" />
-                        </template>
-                    </BaseInput>
-                    <button>
-                        <i class="icon-search" />
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <section class="locations">
         <div class="page-content">

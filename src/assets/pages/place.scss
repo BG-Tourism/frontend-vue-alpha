@@ -1,4 +1,8 @@
 .page-place {
+    .place-content {
+        padding: 50px 0;
+    }
+
     .location-heading {
         padding: 90px 0 0;
 
@@ -751,123 +755,6 @@
 }
 
 .page-places {
-    .top-section {
-        padding: 180px 0 60px;
-        background-color: $slate-50;
-
-        .title {
-            h1 {
-                @include font-size(48px);
-
-                padding: 0 0 15px;
-                color: $slate-900;
-                font-weight: 600;
-                line-height: 1.2;
-            }
-
-            h2 {
-                @include font-size(16px);
-
-                padding: 0 0 10px;
-                color: $blue-700;
-                font-weight: 500;
-                line-height: 1.5;
-            }
-
-            p {
-                @include font-size(20px);
-
-                color: $slate-600;
-                line-height: 1.5;
-            }
-        }
-
-        .filters {
-            padding: 40px 0 0;
-
-            h3 {
-                @include font-size(14px);
-
-                padding: 0 0 10px;
-                color: $slate-700;
-                line-height: 1.5;
-            }
-
-            ul {
-                display: flex;
-                gap: 10px;
-            }
-
-            .filter {
-                position: relative;
-                display: flex;
-                align-items: stretch;
-                justify-content: center;
-                border-width: 1px;
-                border-style: solid;
-                border-color: $gray-300;
-                border-radius: 8px;
-                background-color: $white;
-                box-shadow: 0 1px 2px 0 rgba($blue-900, 5%);
-                cursor: pointer;
-                user-select: none;
-                transition: all 100ms linear;
-
-                &:hover {
-                    background-color: $gray-50;
-
-                    .name {
-                        color: $slate-800;
-                    }
-                }
-
-                &.contains-selections {
-                    border-color: $gray-400;
-                }
-
-                .name {
-                    @include font-size(16px);
-
-                    padding: 10px 18px;
-                    color: $slate-700;
-                    font-weight: 500;
-                    white-space: nowrap;
-                    transition: all 100ms linear;
-                }
-
-                .clear {
-                    display: flex;
-                    align-items: center;
-                    padding: 5px 5px 5px 0;
-
-                    &:hover {
-                        span {
-                            background-color: $red-700;
-                        }
-                    }
-
-                    span {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 24px;
-                        height: 24px;
-                        margin: 0 1px 0 0;
-                        border-radius: 50%;
-                        background-color: $red-600;
-                        transition: all 100ms linear;
-
-                        i {
-                            @include font-size(14px);
-
-                            color: $white;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .results {
         padding: 50px 0;
 

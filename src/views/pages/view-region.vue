@@ -1,33 +1,16 @@
 <template>
     <div v-if="!loading">
-        <section class="category-heading">
+        <section class="top-section">
             <div class="page-content">
-                <ul class="breadcrumbs">
-                    <li>
-                        <router-link :to="{ name: 'Homepage' }">
-                            <i class="icon-home" />
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link :to="{ name: 'Regions' }">
-                            {{ $t('general.navigation.regions') }}
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
-                            {{ $t('general.navigation.region', { title: region.locale[$i18n.locale].title }) }}
-                        </router-link>
-                    </li>
-                </ul>
-
                 <div class="title">
+                    <h2>{{ $t('page.region.subtitle') }}</h2>
                     <h1>{{ region.locale[$i18n.locale].title }}</h1>
                     <p>{{ region.locale[$i18n.locale].description }}</p>
                 </div>
             </div>
         </section>
 
-        <section class="categories-list">
+        <section class="regions-list">
             <div class="page-content">
                 <div class="page-container">
                     <h2>{{ $t('general.navigation.localities', { count: region.localities.length }) }}</h2>
@@ -41,6 +24,23 @@
                             </router-link>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div v-else>
+        <section class="top-section">
+            <div class="page-content">
+                <div class="title">
+                    <h1>{{ $t('page.region.title') }}</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="regions-list">
+            <div class="page-content">
+                <div class="page-container">
+                    <div class="container-content padding">{{ $t('general.loading') }}</div>
                 </div>
             </div>
         </section>
@@ -68,11 +68,11 @@
             const { locale } = useI18n({ useScope: 'global' })
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
+            const region = regions.find((item) => item.slug === route.params.slug)
             const loading = ref(true)
 
-            let region = regions.find((item) => item.slug === route.params.slug)
             onBeforeMount(() => {
-                if (!region) {
+                if (!regions.find((item) => item.slug === route.params.slug)) {
                     router.push({ name: 'Regions' })
                 } else {
                     loading.value = false
@@ -80,7 +80,7 @@
             })
 
             const pageTitle = computed(() => {
-                return i18n.t('page.region.pageTitle') + titleSuffix
+                return i18n.t('page.region.subtitle') + ' "' + region.locale[locale.value].title + '"' + titleSuffix
             })
             useTitle(pageTitle)
 

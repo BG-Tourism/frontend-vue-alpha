@@ -269,6 +269,23 @@
             </div>
         </section>
     </div>
+    <div v-else>
+        <section class="top-section">
+            <div class="page-content">
+                <div class="title">
+                    <h1>{{ $t('page.place.subtitle') }}</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="place-content">
+            <div class="page-content">
+                <div class="page-container">
+                    <div class="container-content padding">{{ $t('general.loading') }}</div>
+                </div>
+            </div>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -295,11 +312,11 @@
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
             const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
+            const place = places.find((item) => item.slug === route.params.slug)
             const loading = ref(true)
 
-            let place = places.find((item) => item.slug === route.params.slug)
             onBeforeMount(() => {
-                if (!place) {
+                if (!places.find((item) => item.slug === route.params.slug)) {
                     router.push({ name: 'Places' })
                 } else {
                     loading.value = false
@@ -307,7 +324,7 @@
             })
 
             const pageTitle = computed(() => {
-                return i18n.t('page.place.pageTitle') + titleSuffix
+                return i18n.t('page.place.subtitle') + ' "' + place.locale[locale.value].title + '"' + titleSuffix
             })
             useTitle(pageTitle)
 

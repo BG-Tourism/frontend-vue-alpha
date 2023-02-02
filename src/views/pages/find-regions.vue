@@ -1,27 +1,15 @@
 <template>
-    <section class="category-heading">
+    <section class="top-section">
         <div class="page-content">
-            <ul class="breadcrumbs">
-                <li>
-                    <router-link :to="{ name: 'Homepage' }">
-                        <i class="icon-home" />
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ name: 'Regions' }">
-                        {{ $t('general.navigation.regions') }}
-                    </router-link>
-                </li>
-            </ul>
-
             <div class="title">
-                <h1>{{ $t('general.navigation.regions') }}</h1>
-                <p>{{ $t('page.category.description.version' + (Math.random() * 5).toFixed(0)) }}</p>
+                <h2>{{ $t('page.regions.subtitle') }}</h2>
+                <h1>{{ $t('page.regions.title') }}</h1>
+                <p>{{ $t('page.regions.description') }}</p>
             </div>
         </div>
     </section>
 
-    <section class="categories-list">
+    <section class="regions-list">
         <div class="page-content">
             <div class="page-container">
                 <ul>
@@ -53,7 +41,7 @@
             const titleSuffix = store.titleSuffix
 
             const pageTitle = computed(() => {
-                return i18n.t('general.navigation.regions') + titleSuffix
+                return i18n.t('page.regions.title') + titleSuffix
             })
 
             useTitle(pageTitle)

@@ -15,6 +15,11 @@ const messages = {
                 "Experience the stunning architecture and natural beauty of Bulgaria's landmarks, from medieval fortresses to seaside cities, on our list."
         }
     },
+    categories: {
+        title: 'Categories',
+        subtitle: 'subtitle',
+        description: 'description'
+    },
     contact: {
         pageTitle: 'Contact',
         form: {
@@ -89,7 +94,7 @@ const messages = {
         }
     },
     place: {
-        pageTitle: 'View Location',
+        subtitle: 'Place',
         buttons: {
             map: 'View the location on the map',
             favorite: {
@@ -152,7 +157,12 @@ const messages = {
         pageTitle: 'Privacy Policy'
     },
     region: {
-        pageTitle: 'Region'
+        subtitle: 'Region'
+    },
+    regions: {
+        title: 'Regions',
+        subtitle: 'subtitle',
+        description: 'description'
     },
     locality: {
         pageTitle: 'Locality'

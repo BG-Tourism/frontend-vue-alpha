@@ -3,9 +3,10 @@
         <div class="page-content">
             <div class="title">
                 <h2>{{ $t('page.places.subtitle') }}</h2>
-                <h1>{{ $t('general.navigation.places') }}</h1>
+                <h1>{{ $t('page.places.title') }}</h1>
                 <p>{{ $t('page.places.description') }}</p>
             </div>
+
             <div class="filters">
                 <h3>{{ $t('general.filters.filterBy') }}</h3>
                 <ul>
@@ -181,7 +182,7 @@
             let productsPerPage = 5
 
             const pageTitle = computed(() => {
-                return i18n.t('general.navigation.places') + titleSuffix
+                return i18n.t('page.places.title') + titleSuffix
             })
             useTitle(pageTitle)
 

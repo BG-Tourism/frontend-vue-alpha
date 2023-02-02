@@ -17,6 +17,11 @@ const messages = {
                 'Насладете се на зашеметяващата архитектура и природната красота на забележителностите на България, от средновековни крепости до морски градове.'
         }
     },
+    categories: {
+        title: 'Категории',
+        subtitle: 'subtitle',
+        description: 'description'
+    },
     contact: {
         pageTitle: 'Контакти',
         form: {
@@ -92,7 +97,7 @@ const messages = {
         }
     },
     place: {
-        pageTitle: 'Преглед на локация',
+        subtitle: 'Забележителност',
         buttons: {
             map: 'Виж локацията на карта',
             favorite: {
@@ -155,7 +160,12 @@ const messages = {
         pageTitle: 'Лични данни'
     },
     region: {
-        pageTitle: 'Район'
+        subtitle: 'Район'
+    },
+    regions: {
+        title: 'Райони',
+        subtitle: 'subtitle',
+        description: 'description'
     },
     locality: {
         pageTitle: 'Местност'
