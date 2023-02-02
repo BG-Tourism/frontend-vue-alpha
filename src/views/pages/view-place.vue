@@ -15,7 +15,7 @@
                     </li>
                     <li>
                         <router-link
-                            :to="{ name: 'Locality', params: { region: place.region.slug, locality: place.locality.slug } }"
+                            :to="{ name: 'Places', query: { region: place.region.slug, locality: place.locality.slug } }"
                         >
                             {{ $t('general.navigation.locality', { title: place.locality.locale[$i18n.locale].title }) }}
                         </router-link>
