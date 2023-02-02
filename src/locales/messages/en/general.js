@@ -34,10 +34,27 @@ const messages = {
     },
     settings: 'Settings',
     logout: 'Sign out',
+    loading: 'Loading...',
     seeMore: 'See more',
     showMore: 'Show more',
     showLess: 'Show less',
     noResults: 'There are no results to show.',
+    close: 'Close',
+    filters: {
+        filterBy: 'Филтрирай по',
+        autosaving: 'Every selection you make will be reflected in the results instantly.',
+        categories: 'Categories',
+        categoriesCounter: 'Categories ({n})',
+        regionsAndLocalities: 'Regions & Localities',
+        regionsAndLocalitiesCounter: 'Regions & Localities ({n})',
+        rating: 'Rating',
+        ratingCounter: 'Rating ({n})'
+    },
+    pagination: {
+        next: 'Next',
+        previous: 'Previous',
+        pages: 'Page <strong>{current}</strong> of <strong>{total}</strong>.<br>A total of <strong>{places}</strong> places.'
+    },
     headerEnvironment: {
         production: 'This is a prototype. Go to the <a href="{repo}" target="_blank" rel="noopener">GitHub repository</a>.',
         staging: 'Testing Environment',

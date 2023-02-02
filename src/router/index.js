@@ -19,28 +19,12 @@ const routes = [
         component: () => import('@/views/pages/view-region.vue')
     },
     {
-        path: '/region/:region/:locality',
-        name: 'Locality',
-        meta: {
-            className: 'page-locality'
-        },
-        component: () => import('@/views/pages/view-locality.vue')
-    },
-    {
         path: '/regions',
         name: 'Regions',
         meta: {
             className: 'page-regions'
         },
         component: () => import('@/views/pages/find-regions.vue')
-    },
-    {
-        path: '/category/:slug',
-        name: 'Category',
-        meta: {
-            className: 'page-category'
-        },
-        component: () => import('@/views/pages/view-category.vue')
     },
     {
         path: '/categories',

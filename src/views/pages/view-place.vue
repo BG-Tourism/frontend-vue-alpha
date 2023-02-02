@@ -5,7 +5,7 @@
                 <ul class="breadcrumbs">
                     <li>
                         <router-link :to="{ name: 'Homepage' }">
-                            {{ $t('general.navigation.homepage') }}
+                            <i class="icon-home" />
                         </router-link>
                     </li>
                     <li>

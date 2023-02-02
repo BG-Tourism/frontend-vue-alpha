@@ -5,7 +5,7 @@
                 <ul class="breadcrumbs">
                     <li>
                         <router-link :to="{ name: 'Homepage' }">
-                            {{ $t('general.navigation.homepage') }}
+                            <i class="icon-home" />
                         </router-link>
                     </li>
                     <li>
@@ -33,9 +33,7 @@
                     <h2>{{ $t('general.navigation.localities', { count: region.localities.length }) }}</h2>
                     <ul>
                         <li v-for="locality in region.localities" :key="locality">
-                            <router-link
-                                :to="{ name: 'Locality', params: { region: route.params.slug, locality: locality.slug } }"
-                            >
+                            <router-link :to="{ name: 'Places', query: { region: route.params.slug, locality: locality.slug } }">
                                 {{ locality.locale[$i18n.locale].title }}
                                 <span v-if="countPlacesWithLocality(places, locality.slug)">
                                     {{ countPlacesWithLocality(places, locality.slug) }}
@@ -50,7 +48,7 @@
 </template>
 
 <script>
-    import { computed, onBeforeMount, defineComponent, ref } from 'vue'
+    import { computed, defineComponent, ref, onBeforeMount } from 'vue'
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
     import { useRoute, useRouter } from 'vue-router'
@@ -91,6 +89,7 @@
                 locale,
                 route,
                 region,
+                regions,
                 places,
                 countPlacesWithLocality
             }

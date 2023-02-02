@@ -142,6 +142,12 @@ const messages = {
             }
         }
     },
+    places: {
+        title: 'Places',
+        subtitle: 'The beauties of Bulgaria',
+        description:
+            "Explore the rich cultural heritage of Bulgaria. Enjoy the country's most iconic sights, rich in medieval architecture, natural beauty and cultural heritage."
+    },
     privacy: {
         pageTitle: 'Privacy Policy'
     },

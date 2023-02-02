@@ -125,7 +125,7 @@
                         </li>
                     </ul>
 
-                    <router-link :to="{ name: 'Category', params: { slug: 'nature-and-parks' } }" class="see-more">
+                    <router-link :to="{ name: 'Places', query: { category: 'nature-and-parks' } }" class="see-more">
                         {{ $t('general.seeMore') }}
                     </router-link>
                 </div>

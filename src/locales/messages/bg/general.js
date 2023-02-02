@@ -34,10 +34,27 @@ const messages = {
     },
     settings: 'Настройки',
     logout: 'Изход',
+    loading: 'Зареждане...',
     seeMore: 'Виж повече',
     showMore: 'Покажи повече',
     showLess: 'Покажи по-малко',
     noResults: 'Няма резултати, които да покажем.',
+    close: 'Затвори',
+    filters: {
+        filterBy: 'Филтрирай по',
+        autosaving: 'Всеки избор, който направиш, ще се отрази в резултатите мигновено.',
+        categories: 'Категории',
+        categoriesCounter: 'Категории ({n})',
+        regionsAndLocalities: 'Региони и местности',
+        regionsAndLocalitiesCounter: 'Региони и местности ({n})',
+        rating: 'Рейтинг',
+        ratingCounter: 'Рейтинг ({n})'
+    },
+    pagination: {
+        next: 'Напред',
+        previous: 'Назад',
+        pages: 'Страница <strong>{current}</strong> от <strong>{total}</strong>.<br>Общо <strong>{places}</strong> забележителности.'
+    },
     headerEnvironment: {
         production: 'Това е прототип. Към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>.',
         staging: 'Тестова среда',

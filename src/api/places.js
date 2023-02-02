@@ -40,7 +40,7 @@ const places = [
                 location: 'Sofia City'
             }
         },
-        user_score: 4.8,
+        user_score: 3.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
         category: {
@@ -530,7 +530,7 @@ const places = [
                 location: 'next to Rila City'
             }
         },
-        user_score: 4.8,
+        user_score: 5.0,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
         category: {

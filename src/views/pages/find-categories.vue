@@ -4,7 +4,7 @@
             <ul class="breadcrumbs">
                 <li>
                     <router-link :to="{ name: 'Homepage' }">
-                        {{ $t('general.navigation.homepage') }}
+                        <i class="icon-home" />
                     </router-link>
                 </li>
                 <li>
@@ -26,7 +26,7 @@
             <div class="page-container">
                 <ul>
                     <li v-for="category in categories" :key="category">
-                        <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
+                        <router-link :to="{ name: 'Places', query: { category: category.slug } }">
                             {{ category.locale[$i18n.locale].title }}
                             <span v-if="countPlacesWithCategory(places, category.slug)">
                                 {{ countPlacesWithCategory(places, category.slug) }}

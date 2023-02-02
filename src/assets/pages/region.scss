@@ -1,6 +1,12 @@
 .page-region,
 .page-regions {
+    .page-container {
+        overflow: hidden;
+    }
+
     .category-heading {
+        padding: 90px 0 0;
+
         .title {
             padding: 0 0 20px;
 
@@ -70,26 +76,18 @@
     }
 }
 
-.page-regions {
-    .page-container {
-        overflow: hidden;
-    }
-
+.page-region {
     .categories-list {
         ul {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
         }
     }
 }
 
-.page-region {
-    .page-container {
-        overflow: hidden;
-    }
-
+.page-regions {
     .categories-list {
         ul {
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 }
