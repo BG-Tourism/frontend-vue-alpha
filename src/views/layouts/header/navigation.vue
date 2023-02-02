@@ -21,12 +21,12 @@
 
             <li>
                 <router-link :to="{ name: 'About' }" class="link">
-                    <span>{{ $t('page.about.pageTitle') }}</span>
+                    <span>{{ $t('page.about.title') }}</span>
                 </router-link>
             </li>
             <li>
                 <router-link :to="{ name: 'Contact' }" class="link">
-                    <span>{{ $t('page.contact.pageTitle') }}</span>
+                    <span>{{ $t('page.contact.title') }}</span>
                 </router-link>
             </li>
         </ul>

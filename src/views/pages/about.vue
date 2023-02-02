@@ -2,7 +2,7 @@
     <div class="page-content">
         <div class="page-container">
             <div class="container-title">
-                <h1>{{ $t('page.about.pageTitle') }}</h1>
+                <h1>{{ $t('page.about.title') }}</h1>
             </div>
             <div class="container-content padding">
                 <p>
@@ -39,7 +39,7 @@
             const titleSuffix = store.titleSuffix
 
             const pageTitle = computed(() => {
-                return i18n.t('page.about.pageTitle') + titleSuffix
+                return i18n.t('page.about.title') + titleSuffix
             })
 
             useTitle(pageTitle)

@@ -154,7 +154,7 @@
             let number = ref((Math.random() * 19).toFixed(0))
 
             const pageTitle = computed(() => {
-                return i18n.t('page.homepage.pageTitle') + titleSuffix
+                return i18n.t('page.homepage.title') + titleSuffix
             })
 
             useTitle(pageTitle)

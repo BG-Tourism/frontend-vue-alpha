@@ -1,9 +1,9 @@
 const messages = {
     about: {
-        pageTitle: 'About Us'
+        title: 'About Us'
     },
     category: {
-        pageTitle: 'Category',
+        title: 'Category',
         description: {
             version0: 'Relive your memories of Bulgaria or plan your first visit through our list of iconic landmarks.',
             version1: 'Discover the rich cultural heritage of Bulgaria through our list of landmarks.',
@@ -21,7 +21,7 @@ const messages = {
         description: 'description'
     },
     contact: {
-        pageTitle: 'Contact',
+        title: 'Contact',
         form: {
             title: 'Write to us',
             label: {
@@ -38,12 +38,12 @@ const messages = {
         }
     },
     error: {
-        pageTitle: 'Error 404 - Page Not Found',
+        title: 'Error 404 - Page Not Found',
         message: 'The page you are looking for could not be found!',
         button: 'Go back to the website'
     },
     homepage: {
-        pageTitle: 'Homepage',
+        title: 'Homepage',
         slogan: {
             title: 'The wealth of<br>Bulgaria in one place',
             descriptions: {
@@ -154,21 +154,24 @@ const messages = {
             "Explore the rich cultural heritage of Bulgaria. Enjoy the country's most iconic sights, rich in medieval architecture, natural beauty and cultural heritage."
     },
     privacy: {
-        pageTitle: 'Privacy Policy'
+        title: 'Privacy Policy'
     },
     region: {
-        subtitle: 'Region'
+        subtitle: 'Tourist Region'
     },
     regions: {
-        title: 'Regions',
+        title: 'Tourist Regions',
         subtitle: 'subtitle',
         description: 'description'
     },
     locality: {
-        pageTitle: 'Locality'
+        title: 'Locality'
     },
     terms: {
-        pageTitle: 'Terms & Conditions'
+        title: 'Terms & Conditions'
+    },
+    cookies: {
+        title: 'Cookie Policy'
     }
 }
 

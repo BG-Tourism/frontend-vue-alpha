@@ -24,7 +24,7 @@
             const i18n = useI18n()
 
             const pageTitle = computed(() => {
-                return i18n.t('page.error.pageTitle')
+                return i18n.t('page.error.title')
             })
 
             useTitle(pageTitle)

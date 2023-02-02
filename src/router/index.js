@@ -83,6 +83,14 @@ const routes = [
         component: () => import('@/views/pages/privacy.vue')
     },
     {
+        path: '/cookies',
+        name: 'Cookies',
+        meta: {
+            className: 'page-general'
+        },
+        component: () => import('@/views/pages/cookies.vue')
+    },
+    {
         path: '/:catchAll(.*)',
         name: 'PageError',
         meta: {

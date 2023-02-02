@@ -7,8 +7,8 @@ const messages = {
         homepage: 'Начало',
         place: 'Забележителност "{title}"',
         places: 'Забележителности',
-        region: 'Район "{title}"',
-        regions: 'Райони'
+        region: 'Туристически район "{title}"',
+        regions: 'Туристически райони'
     },
     colorMode: {
         toggleToLight: 'Превключване към светла тема',
@@ -45,8 +45,8 @@ const messages = {
         autosaving: 'Всеки избор, който направиш, ще се отрази в резултатите мигновено.',
         categories: 'Категории',
         categoriesCounter: 'Категории ({n})',
-        regionsAndLocalities: 'Региони и местности',
-        regionsAndLocalitiesCounter: 'Региони и местности ({n})',
+        regionsAndLocalities: 'Туристически райони и местности',
+        regionsAndLocalitiesCounter: 'Туристически райони и местности ({n})',
         rating: 'Рейтинг',
         ratingCounter: 'Рейтинг ({n})'
     },
@@ -60,9 +60,19 @@ const messages = {
         staging: 'Тестова среда',
         local: 'Среда за разработка'
     },
-    footerOpenSource:
-        'Този проект е разработка с отворен код и е достъпен в <a href="{repo}" target="_blank" rel="noopener">GitHub</a>. Всеки желаещ може да допринесе за неговото развитие.',
-    footerCopyright: 'всички права запазени'
+    footer: {
+        description:
+            '<p>Отправи се на пътешествие, за да откриеш тайните кътчета на България, където историята и културата са преплетени, за да създадат спиращи дъха гледки.</p><p>Нашата цел е да хвърлим светлина върху богатото наследство и уникалните истории зад всяка забележителност и да те вдъхновим да ги посетиш и изживееш.</p>',
+        rights: 'всички права запазени',
+        regarding: 'Относно',
+        links: {
+            about: 'За проекта',
+            contact: 'За връзка с нас',
+            terms: 'Общи условия',
+            privacyPolicy: 'Лични данни',
+            cookies: 'Бисквитки'
+        }
+    }
 }
 
 export default messages

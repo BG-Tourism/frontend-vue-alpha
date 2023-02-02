@@ -1,9 +1,9 @@
 const messages = {
     about: {
-        pageTitle: 'За нас'
+        title: 'За нас'
     },
     category: {
-        pageTitle: 'Категория',
+        title: 'Категория',
         description: {
             version0:
                 'Изживей отново спомените си от България или планирай първото си посещение чрез списъка ни с емблематични забележителности.',
@@ -23,7 +23,7 @@ const messages = {
         description: 'description'
     },
     contact: {
-        pageTitle: 'Контакти',
+        title: 'Контакти',
         form: {
             title: 'Пишете ни',
             label: {
@@ -40,12 +40,12 @@ const messages = {
         }
     },
     error: {
-        pageTitle: 'Грешка 404 - страницата не съществува',
+        title: 'Грешка 404 - страницата не съществува',
         message: 'Страницата, която се опитвате да достъпите, не може да бъде намерена!',
         button: 'Назад към сайта'
     },
     homepage: {
-        pageTitle: 'Начало',
+        title: 'Начало',
         slogan: {
             title: 'Богатството на България на едно място',
             descriptions: {
@@ -157,21 +157,24 @@ const messages = {
             'Изследвай богатото културно наследство на България. Наслади се на най-емблематичните забележителности на страната, богати на средновековна архитектура, природна красота и културно наследство.'
     },
     privacy: {
-        pageTitle: 'Лични данни'
+        title: 'Лични данни'
     },
     region: {
-        subtitle: 'Район'
+        subtitle: 'Туристически район'
     },
     regions: {
-        title: 'Райони',
+        title: 'Туристически райони',
         subtitle: 'subtitle',
         description: 'description'
     },
     locality: {
-        pageTitle: 'Местност'
+        title: 'Местност'
     },
     terms: {
-        pageTitle: 'Общи условия'
+        title: 'Общи условия'
+    },
+    cookies: {
+        title: 'Политика за бисквитките'
     }
 }
 

@@ -7,8 +7,8 @@ const messages = {
         homepage: 'Homepage',
         place: 'Place "{title}"',
         places: 'Places',
-        region: 'Region "{title}"',
-        regions: 'Regions'
+        region: 'Tourist Region "{title}"',
+        regions: 'Tourist Regions'
     },
     colorMode: {
         toggleToLight: 'Toggle to Light theme',
@@ -45,8 +45,8 @@ const messages = {
         autosaving: 'Every selection you make will be reflected in the results instantly.',
         categories: 'Categories',
         categoriesCounter: 'Categories ({n})',
-        regionsAndLocalities: 'Regions & Localities',
-        regionsAndLocalitiesCounter: 'Regions & Localities ({n})',
+        regionsAndLocalities: 'Tourist Regions & Localities',
+        regionsAndLocalitiesCounter: 'Tourist Regions & Localities ({n})',
         rating: 'Rating',
         ratingCounter: 'Rating ({n})'
     },
@@ -60,9 +60,19 @@ const messages = {
         staging: 'Testing Environment',
         local: 'Development Environment'
     },
-    footerOpenSource:
-        'This project is an open source development and is available on <a href="{repo}" target="_blank" rel="noopener">GitHub</a>. Anyone can contribute to its development.',
-    footerCopyright: 'All Rights Reserved'
+    footer: {
+        description:
+            '<p>Embark on a journey to uncover the hidden gems of Bulgaria, where history and culture are intertwined to create breathtaking sights.</p><p>Our goal is to shed light on the rich heritage and unique stories behind each landmark, and to inspire you to visit and experience them for yourself.</p>',
+        rights: 'All Rights Reserved',
+        regarding: 'Regarding',
+        links: {
+            about: 'About the project',
+            contact: 'Contact with us',
+            terms: 'Terms & Conditions',
+            privacyPolicy: 'Privacy Policy',
+            cookies: 'Cookie Policy'
+        }
+    }
 }
 
 export default messages
