@@ -96,6 +96,7 @@ const messages = {
     place: {
         subtitle: 'Place',
         buttons: {
+            wantToVisit: 'I want to visit',
             map: 'View the location on the map',
             favorite: {
                 make: 'Add to Favorites',

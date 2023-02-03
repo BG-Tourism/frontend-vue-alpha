@@ -99,6 +99,7 @@ const messages = {
     place: {
         subtitle: 'Забележителност',
         buttons: {
+            wantToVisit: 'Искам да посетя',
             map: 'Виж локацията на карта',
             favorite: {
                 make: 'Добави в любими',
@@ -121,7 +122,7 @@ const messages = {
             cloudy: 'облачно {temperature} {unit}'
         },
         unesco: {
-            label: 'UNESCO',
+            label: 'ЮНЕСКО',
             title: 'Тази забележителност е част от културното наследство на ЮНЕСКО.'
         },
         photography: {

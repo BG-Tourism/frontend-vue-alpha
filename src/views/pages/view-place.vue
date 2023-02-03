@@ -2,63 +2,19 @@
     <div v-if="!loading">
         <section class="location-heading">
             <div class="page-content">
-                <ul class="breadcrumbs">
-                    <li>
-                        <router-link :to="{ name: 'Homepage' }">
-                            <i class="icon-home" />
-                        </router-link>
-                    </li>
-                    <li>
+                <div class="title">
+                    <h2>
                         <router-link :to="{ name: 'Region', params: { slug: place.region.slug } }">
-                            {{ $t('general.navigation.region', { title: place.region.locale[$i18n.locale].title }) }}
+                            {{ place.region.locale[$i18n.locale].title }}
                         </router-link>
-                    </li>
-                    <li>
+                        <i class="icon-arrow-right-tail" />
                         <router-link
                             :to="{ name: 'Places', query: { region: place.region.slug, locality: place.locality.slug } }"
                         >
-                            {{ $t('general.navigation.locality', { title: place.locality.locale[$i18n.locale].title }) }}
+                            {{ place.locality.locale[$i18n.locale].title }}
                         </router-link>
-                    </li>
-                    <li>
-                        <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
-                            {{ place.locale[$i18n.locale].title }}
-                        </router-link>
-                    </li>
-                </ul>
-
-                <div class="title">
+                    </h2>
                     <h1>{{ place.locale[$i18n.locale].title }}</h1>
-                    <aside>
-                        <button>
-                            <i class="icon-route" />
-                            <div class="tooltip-container center">
-                                <div class="tooltip-content">
-                                    {{ $t('page.place.buttons.map') }}
-                                </div>
-                            </div>
-                        </button>
-                        <button :class="['favorite', isFavorite ? 'active' : null]" @click.prevent="isFavorite = !isFavorite">
-                            <i :class="isFavorite ? 'icon-heart-solid' : 'icon-heart'" />
-                            <div class="tooltip-container right">
-                                <div class="tooltip-content">
-                                    {{
-                                        isFavorite
-                                            ? $t('page.place.buttons.favorite.undo')
-                                            : $t('page.place.buttons.favorite.make')
-                                    }}
-                                </div>
-                            </div>
-                        </button>
-                        <button>
-                            <i class="icon-share" />
-                            <div class="tooltip-container right">
-                                <div class="tooltip-content">
-                                    {{ $t('page.place.buttons.share') }}
-                                </div>
-                            </div>
-                        </button>
-                    </aside>
                 </div>
 
                 <ul class="information">
@@ -155,6 +111,20 @@
                                 {{ $t('page.place.unesco.title') }}
                             </div>
                         </div>
+                    </li>
+                </ul>
+
+                <ul class="buttons">
+                    <li>
+                        <button>
+                            <i class="icon-route" />
+                            <span>{{ $t('page.place.buttons.map') }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="only-icon">
+                            <i class="icon-menu-dots" />
+                        </button>
                     </li>
                 </ul>
             </div>
