@@ -1953,12 +1953,12 @@ const places = [
         photos: [
             {
                 image: '/images/photos/9-1.jpg',
-                author: 'Неизвестен',
+                author: 'Владислав Терзийски',
                 date_added: 1670777697
             },
             {
                 image: '/images/photos/9-2.jpg',
-                author: 'Неизвестен',
+                author: 'The Paradise of Bulgaria',
                 date_added: 1670777697
             },
             {
@@ -1968,7 +1968,7 @@ const places = [
             },
             {
                 image: '/images/photos/9-4.jpg',
-                author: 'Неизвестен',
+                author: 'Община Пловдив',
                 date_added: 1670777697
             }
         ],
@@ -2165,7 +2165,7 @@ const places = [
                 comment_language: 'bg',
                 attachment: {
                     source: '9-5.jpg',
-                    ratio: 'normal',
+                    ratio: 'invert',
                     type: 'photo'
                 }
             },

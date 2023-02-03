@@ -153,7 +153,7 @@
     import { computed, defineComponent, onBeforeMount, onBeforeUnmount } from 'vue'
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
-    import { useRoute } from 'vue-router'
+    import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
     import categories from '@/api/categories'
     import regions from '@/api/regions'
@@ -165,6 +165,8 @@
     import FindCategories from '@/modals/filters/FindCategories.vue'
     import FindRegionsAndLocalities from '@/modals/filters/FindRegionsAndLocalities.vue'
     import FindRatings from '@/modals/filters/FindRatings.vue'
+
+    import addItemsByQuery from '@/helpers/addItemsByQuery'
 
     export default defineComponent({
         components: {
@@ -187,27 +189,21 @@
             useTitle(pageTitle)
 
             onBeforeMount(() => {
-                const convertToJson = (parameters) => {
-                    const object = {}
+                finder.truncate()
 
-                    for (const key in parameters) {
-                        object[key] = parameters[key].split(',').map((value) => {
-                            if (!isNaN(value)) {
-                                return Number(value)
-                            }
-
-                            return value
-                        })
-
-                        finder.manageItem(key, object[key])
-                    }
-
-                    return object
-                }
-
-                convertToJson(route.query)
+                addItemsByQuery(route.query)
 
                 finder.fetch(true)
+            })
+
+            onBeforeRouteUpdate((next) => {
+                if (next.name === 'Places') {
+                    finder.truncate()
+
+                    addItemsByQuery(next.query)
+
+                    finder.fetch(true)
+                }
             })
 
             onBeforeUnmount(() => {
