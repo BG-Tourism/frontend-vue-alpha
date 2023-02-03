@@ -65,6 +65,86 @@
                     }
                 }
             }
+
+            .socials {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                padding: 30px 0 0;
+
+                a,
+                i {
+                    display: block;
+                }
+
+                i {
+                    @include font-size(24px);
+
+                    position: relative;
+                    z-index: 2;
+                    color: $slate-500;
+                    transition: all 200ms linear;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        z-index: 1;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        opacity: 0;
+                        transition: all 200ms linear;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                a {
+                    &:hover {
+                        i {
+                            &::after {
+                                width: 45px;
+                                height: 45px;
+                                opacity: 1;
+                            }
+                        }
+
+                        .icon-social-twitter {
+                            color: #1D9BF0;
+
+                            &::after {
+                                background-color: rgba(#1D9BF0, 0.15);
+                            }
+                        }
+
+                        .icon-social-facebook {
+                            color: #1877F2;
+
+                            &::after {
+                                background-color: rgba(#1877F2, 0.15);
+                            }
+                        }
+
+                        .icon-social-github {
+                            color: #171515;
+
+                            &::after {
+                                background-color: rgba(#171515, 0.15);
+                            }
+                        }
+
+                        .icon-social-discord {
+                            color: #5865F2;
+
+                            &::after {
+                                background-color: rgba(#5865F2, 0.15);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .columns {
@@ -150,10 +230,6 @@
         background-color: $slate-700;
 
         .wrapper {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            justify-content: space-between;
             padding: 30px 0;
         }
 
@@ -162,86 +238,7 @@
 
             color: $white;
             line-height: 1.4;
-        }
-
-        ul {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: flex-end;
-
-            a,
-            i {
-                display: block;
-            }
-
-            i {
-                @include font-size(24px);
-
-                position: relative;
-                z-index: 2;
-                color: $white;
-                transition: all 200ms linear;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    z-index: 1;
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    background-color: transparent;
-                    opacity: 0;
-                    transition: all 200ms linear;
-                    transform: translate(-50%, -50%);
-                }
-            }
-
-            a {
-                &:hover {
-                    i {
-                        &::after {
-                            width: 45px;
-                            height: 45px;
-                            opacity: 1;
-                        }
-                    }
-
-                    .icon-social-twitter {
-                        color: #1D9BF0;
-
-                        &::after {
-                            background-color: rgba(#1D9BF0, 0.15);
-                        }
-                    }
-
-                    .icon-social-facebook {
-                        color: #1877F2;
-
-                        &::after {
-                            background-color: rgba(#1877F2, 0.15);
-                        }
-                    }
-
-                    .icon-social-github {
-                        color: #171515;
-
-                        &::after {
-                            background-color: rgba(#171515, 0.15);
-                        }
-                    }
-
-                    .icon-social-discord {
-                        color: #5865F2;
-
-                        &::after {
-                            background-color: rgba(#5865F2, 0.15);
-                        }
-                    }
-                }
-            }
+            text-align: center;
         }
     }
 

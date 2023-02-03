@@ -105,8 +105,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 42.69577,
-            longitude: 23.33286
+            latitude: 42.695808,
+            longitude: 23.332811
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -350,8 +350,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 43.16662,
-            longitude: 23.48327
+            latitude: 43.0838979,
+            longitude: 25.6524826
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -595,8 +595,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 42.12823,
-            longitude: 23.13548
+            latitude: 42.133485,
+            longitude: 23.340119
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -1085,8 +1085,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 43.62837,
-            longitude: 22.67985
+            latitude: 43.6231151,
+            longitude: 22.6780466
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -1330,8 +1330,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 41.8188,
-            longitude: 24.5816
+            latitude: 41.8194202,
+            longitude: 24.5822032
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -1808,8 +1808,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 42.6587,
-            longitude: 27.7334
+            latitude: 43.388379,
+            longitude: 27.130847
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [

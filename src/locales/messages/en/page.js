@@ -17,8 +17,8 @@ const messages = {
     },
     categories: {
         title: 'Categories',
-        subtitle: 'subtitle',
-        description: 'description'
+        subtitle: 'Embark on a new adventure',
+        description: "Discover the beauty and history of Bulgaria through its landmarks, showcasing the country's rich culture."
     },
     contact: {
         title: 'Contact',
@@ -97,7 +97,11 @@ const messages = {
         subtitle: 'Place',
         buttons: {
             wantToVisit: 'I want to visit',
-            map: 'View the location on the map',
+            map: {
+                show: 'Show the location on the map',
+                hide: 'Hide the map',
+                coordinates: 'GPS Coordinates'
+            },
             favorite: {
                 make: 'Add to Favorites',
                 undo: 'Remove from Favorites'
@@ -162,8 +166,9 @@ const messages = {
     },
     regions: {
         title: 'Tourist Regions',
-        subtitle: 'subtitle',
-        description: 'description'
+        subtitle: 'Discover Your Perfect Destination',
+        description:
+            'Find your next perfect travel destination in Bulgaria tourist regions, offering something for every type of traveler.'
     },
     locality: {
         title: 'Locality'

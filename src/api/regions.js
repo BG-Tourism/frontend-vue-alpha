@@ -5,14 +5,14 @@ const regions = [
         places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
-                title: 'Тракия',
+                title: 'Тракийски',
                 description:
-                    'Тракия е красив район в България, известен с богатата си история и култура. Районът е известен със своето вкусно вино и вкусна храна, както и с древните си руини, включително тракийските гробници. Посетителите могат да разгледат живописни села и градове, идеални за разглеждане на забележителности, както и да участват в дейности на открито като туризъм, риболов и наблюдение на птици. Тракия предлага и традиционни фестивали и събития, които се провеждат през цялата година. Районът е лесно достъпен от столицата София и други големи градове в България и предлага уникална комбинация от природна красота, история и култура, която със сигурност ще зарадва посетителите. Районът е известен и с красивите си плажове, езера и реки, които са идеални за плуване и водни спортове, което го прави задължителна дестинация за всеки, който иска да опознае разнообразното културно наследство на България.'
+                    'Тракийският туристически район в България се състои от 35 общини и включва няколко исторически забележителности. Някои от забележителните атракции включват минерални бани, пещери и древни градове с римска и османска история. Има и много живописни градове и курорти, предлагащи възможности за отдих и почивка. Регионът е известен със своята природна красота, разнообразно културно наследство и богата история.'
             },
             en: {
                 title: 'Trakia',
                 description:
-                    'Trakia is a beautiful region in Bulgaria known for its rich history and culture. The region is known for its delicious wine and delicious food, as well as its ancient ruins including the Thracian tombs. Visitors can explore picturesque villages and towns, perfect for sightseeing, as well as participating in outdoor activities such as hiking, fishing, and birdwatching. Trakia also offers traditional festivals and events held throughout the year. The region is easily accessible from the capital city of Sofia and other major cities in Bulgaria, and offers a unique blend of natural beauty, history and culture that is sure to delight visitors. The region is also known for its beautiful beaches, lakes and rivers which are perfect for swimming and water sports, making it a must-visit destination for anyone looking to explore the diverse cultural heritage of Bulgaria.'
+                    'The Tracian tourist region in Bulgaria is made up of 35 municipalities and contains several historic landmarks. Some of the notable attractions include mineral baths, caves, and ancient cities with Roman and Ottoman history. There are also many scenic towns and resorts, offering opportunities for recreation and relaxation. The region is known for its natural beauty, diverse cultural heritage, and rich history.'
             }
         },
         localities: [
@@ -514,12 +514,14 @@ const regions = [
         places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
-                title: 'София',
-                description: 'text'
+                title: 'Софийски',
+                description:
+                    'Софийският туристически район в България включва 23 общини и разполага с различни исторически забележителности и атракции. Някои от тях включват средновековни крепости, църкви, паметници и музеи, които демонстрират богатото културно наследство на региона. Град София, столицата на България, също се намира в региона и е популярна туристическа дестинация, известна със своите исторически забележителности като храм-паметник Александър Невски, Националния дворец на културата и планината Витоша. Други популярни дестинации включват живописни планини и езера, термални бани и ски курорти.'
             },
             en: {
                 title: 'Sofia',
-                description: 'text'
+                description:
+                    'The Sofia Tourist Region in Bulgaria includes 23 municipalities, and it features various historic landmarks and attractions. Some of these include medieval fortresses, churches, monuments, and museums that showcase the rich cultural heritage of the region. The city of Sofia, the capital of Bulgaria, is also located in the region and is a popular tourist destination known for its historical landmarks, such as the Alexander Nevsky Cathedral, the National Palace of Culture, and the Vitosha Mountain. Other popular destinations include scenic mountains and lakes, thermal baths, and ski resorts.'
             }
         },
         localities: [
@@ -853,12 +855,14 @@ const regions = [
         places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
-                title: 'Рила и Пирин',
-                description: 'text'
+                title: 'Рило-Пирински',
+                description:
+                    'Рило-Пиринският регион на България е богат на исторически забележителности и туристически атракции, включително 23 общини. Регионът е известен с разнообразния си ландшафт, вариращ от Рилския манастир, който е един от най-големите и известни източноправославни манастири в България, до Националния парк Пирин, който е обект на световното наследство на ЮНЕСКО. Районът също така се гордее с множество термални бани и ски курорти, предлагащи на посетителите набор от преживявания през цялата година. Освен това регионът е пропит с история, с древни крепости и руини, които са запазени и са отворени за изследване.'
             },
             en: {
-                title: 'Rila & Pirin',
-                description: 'text'
+                title: 'Rila-Pirin',
+                description:
+                    'The Rila-Pirin region of Bulgaria is rich in historical landmarks and tourist attractions, including 23 municipalities. The region is known for its diverse landscape, ranging from the Rila Monastery, which is one of the largest and most famous Eastern Orthodox monasteries in Bulgaria, to the Pirin National Park, which is a UNESCO World Heritage Site. The area also boasts numerous thermal baths and ski resorts, offering visitors a range of experiences year-round. Additionally, the region is steeped in history, with ancient fortresses and ruins that have been preserved and are open for exploration.'
             }
         },
         localities: [
@@ -1192,12 +1196,14 @@ const regions = [
         places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
-                title: 'Родопи',
-                description: 'text'
+                title: 'Родопите',
+                description:
+                    'Родопите в България са известни с богатото си културно-историческо наследство. Районът включва 27 общини и е дом на много интересни забележителности. Някои от тези забележителности са археологически обекти, културни и религиозни паметници и природни забележителности като живописни планини, езера и пещери. Регионът също така може да се похвали с добре запазени традиции и обичаи, като през цялата година се провеждат много местни фестивали и събития.'
             },
             en: {
                 title: 'Rhodopes',
-                description: 'text'
+                description:
+                    'The Rhodope Mountain region of Bulgaria is known for its rich cultural and historical heritage. The area includes 27 municipalities and is home to many interesting landmarks. Some of these landmarks are archaeological sites, cultural and religious monuments, and natural attractions such as scenic mountains, lakes, and caves. The region also boasts well-preserved traditions and customs, with many local festivals and events being held throughout the year.'
             }
         },
         localities: [
@@ -1587,12 +1593,14 @@ const regions = [
         places_count: Math.floor(Math.random() * 100),
         locale: {
             bg: {
-                title: 'Дунав',
-                description: 'text'
+                title: 'Дунавски',
+                description:
+                    'Дунавският туристически район на България включва 67 общини и разполага с много исторически забележителности. Някои от най-важните и забележителни атракции включват древни крепости, църкви и манастири. Много от тези обекти имат значителна културна и историческа стойност, тъй като съществуват от векове. Регионът е известен със своите живописни пейзажи и уникална комбинация от история, култура и природна красота, което го прави популярна дестинация както за туристи, така и за любители на историята.'
             },
             en: {
                 title: 'Danube',
-                description: 'text'
+                description:
+                    'The Danube tourist region of Bulgaria includes 67 municipalities and features many historical landmarks. Some of the most important and notable attractions include ancient fortresses, churches, and monasteries. Many of these sites have significant cultural and historical value, having been in existence for centuries. The region is known for its picturesque landscapes and unique blend of history, culture, and natural beauty, making it a popular destination for tourists and history buffs alike.'
             }
         },
         localities: [
@@ -2544,11 +2552,13 @@ const regions = [
         locale: {
             bg: {
                 title: 'Варненско черноморие',
-                description: 'text'
+                description:
+                    'Варненското черноморие е туристически регион в България, който включва 24 общини и предлага редица исторически забележителности. Регионът е разположен по крайбрежието на Черно море и е известен със зашеметяващата си природна красота, както и с богатото си културно наследство. Посетителите могат да разгледат множеството древни руини и укрепления, осеяли крайбрежието, да посетят исторически църкви и манастири или просто да се насладят на слънцето на многото девствени плажове в региона. Освен това районът е известен със своя оживен нощен живот и е популярна дестинация за туристи от цял свят.'
             },
             en: {
-                title: 'Varna Black Sea',
-                description: 'text'
+                title: 'Varna Black Sea Coast',
+                description:
+                    "The Varna Black Sea Coast is a tourist region in Bulgaria that includes 24 municipalities and offers a number of historic landmarks. The region is located along the Black Sea Coast and is known for its stunning natural beauty, as well as its rich cultural heritage. Visitors can explore the many ancient ruins and fortifications that dot the coastline, visit historic churches and monasteries, or simply soak up the sun on the region's many pristine beaches. Additionally, the area is renowned for its vibrant nightlife, and is a popular destination for tourists from all over the world."
             }
         },
         localities: [
@@ -2897,11 +2907,13 @@ const regions = [
         locale: {
             bg: {
                 title: 'Бургаско черноморие',
-                description: 'text'
+                description:
+                    'Бургаското черноморие в България е туристическа зона, която включва 13 общини и е известна със своите красиви плажове, културни забележителности и природни паркове. Някои забележителни атракции включват древни римски руини, средновековни крепости и красивия природен резерват Ропотамо, който е дом на разнообразна флора и фауна. Освен това районът е известен със своите оживени курортни градове и традиционни рибарски селища, както и с богатото си културно наследство и разнообразна местна кухня.'
             },
             en: {
-                title: 'Bourgas Black Sea',
-                description: 'text'
+                title: 'Bourgas Black Sea Coast',
+                description:
+                    'The Burgas Black Sea Coast in Bulgaria is a tourist area that includes 13 municipalities and is known for its beautiful beaches, cultural landmarks, and natural parks. Some notable attractions include ancient Roman ruins, medieval fortresses, and the beautiful Ropotamo Nature Reserve, which is home to a diverse range of flora and fauna. Additionally, the area is known for its bustling resort towns and traditional fishing villages, as well as its rich cultural heritage and vibrant local cuisine.'
             }
         },
         localities: [
@@ -3096,11 +3108,13 @@ const regions = [
         locale: {
             bg: {
                 title: 'Долината на розите',
-                description: 'text'
+                description:
+                    'Регионът Долината на розите в България е популярна туристическа дестинация, известна с красивите си пейзажи и богато културно наследство. Районът обхваща 19 общини и е дом на множество исторически забележителности и атракции. Много от тези забележителности датират от средновековния и османския период и демонстрират богатата история и културно наследство на региона. Районът е известен и с природната си красота, с вълнисти хълмове, плодородна земеделска земя и девствени гори, които са убежище за ентусиасти на открито и любители на природата. Регионът е уникална дестинация, която предлага по нещо за всеки, от богатото културно наследство до зашеметяващата си природна красота.'
             },
             en: {
                 title: 'Тhe Valley of Roses',
-                description: 'text'
+                description:
+                    "Тhe Valley of Roses region in Bulgaria is a popular tourist destination known for its beautiful landscapes and rich cultural heritage. The area encompasses 19 municipalities and is home to numerous historical landmarks and attractions. Many of these landmarks date back to the medieval and Ottoman periods, and showcase the region's rich history and cultural heritage. The area is also famous for its natural beauty, with rolling hills, fertile farmland, and pristine forests that are a haven for outdoor enthusiasts and nature lovers. Тhe region is a unique destination that offers something for everyone, from its rich cultural heritage to its stunning natural beauty."
             }
         },
         localities: [
@@ -3379,11 +3393,13 @@ const regions = [
         locale: {
             bg: {
                 title: 'Стара Планина',
-                description: 'text'
+                description:
+                    'Регионът на Стара планина в България, който включва 32 общини, е известен със своята природна красота, исторически и културни забележителности и разнообразни туристически дестинации. Този регион има богата история, датираща от древни времена и е дом на много интересни забележителности, включително средновековни крепости, манастири, църкви и музеи. Има и много възможности за дейности на открито, като туризъм, каране на ски и къмпинг. Естествената красота на региона също е голяма привлекателност за туристите със своите вълнисти хълмове, гъсти гори и чисти реки. Освен това Стара планина е известна със своята уникална местна кухня, традиционни занаяти и оживени културни събития.'
             },
             en: {
                 title: 'Stara Planina',
-                description: 'text'
+                description:
+                    "The region of Stara Planina in Bulgaria, which includes 32 municipalities, is known for its natural beauty, historical and cultural landmarks, and diverse tourist destinations. This region has a rich history dating back to ancient times and is home to many interesting sights, including medieval fortresses, monasteries, churches, and museums. There are also many opportunities for outdoor activities, such as hiking, skiing, and camping. The region's natural beauty is also a big draw for tourists, with its rolling hills, dense forests, and clear rivers. Additionally, Stara Planina is known for its unique local cuisine, traditional crafts, and vibrant cultural events."
             }
         },
         localities: [

@@ -9,6 +9,28 @@
                             <strong>{{ appName }}</strong>
                         </router-link>
                         <div class="description" v-html="$t('general.footer.description')" />
+                        <ul class="socials">
+                            <li>
+                                <a href="https://twitter.com/placesinbg" target="_blank" rel="noopener" title="Twitter">
+                                    <i class="icon-social-twitter" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/placesbg" target="_blank" rel="noopener" title="Facebook">
+                                    <i class="icon-social-facebook" />
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="gitRepository" target="_blank" rel="noopener" title="GitHub">
+                                    <i class="icon-social-github" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/NMRjZ4FdPs" target="_blank" rel="noopener" title="Discord">
+                                    <i class="icon-social-discord" />
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="columns">
@@ -16,14 +38,14 @@
                             <h1>{{ $t('general.footer.regarding') }}</h1>
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <router-link :to="{ name: 'About' }">
                                         <span>{{ $t('general.footer.links.about') }}</span>
-                                    </a>
+                                    </router-link>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">
+                                    <router-link :to="{ name: 'Contact' }">
                                         <span>{{ $t('general.footer.links.contact') }}</span>
-                                    </a>
+                                    </router-link>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
@@ -92,28 +114,6 @@
                         <strong>{{ appName }}</strong>
                         - {{ $t('general.footer.rights') }}.
                     </p>
-                    <ul>
-                        <li>
-                            <a href="https://twitter.com/placesinbg" target="_blank" rel="noopener" title="Twitter">
-                                <i class="icon-social-twitter" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/placesbg" target="_blank" rel="noopener" title="Facebook">
-                                <i class="icon-social-facebook" />
-                            </a>
-                        </li>
-                        <li>
-                            <a :href="gitRepository" target="_blank" rel="noopener" title="GitHub">
-                                <i class="icon-social-github" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://discord.gg/NMRjZ4FdPs" target="_blank" rel="noopener" title="Discord">
-                                <i class="icon-social-discord" />
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

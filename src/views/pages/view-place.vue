@@ -5,13 +5,13 @@
                 <div class="title">
                     <h2>
                         <router-link :to="{ name: 'Region', params: { slug: place.region.slug } }">
-                            {{ place.region.locale[$i18n.locale].title }}
+                            {{ $t('general.navigation.region', { title: place.region.locale[$i18n.locale].title }) }}
                         </router-link>
                         <i class="icon-arrow-right-tail" />
                         <router-link
                             :to="{ name: 'Places', query: { region: place.region.slug, locality: place.locality.slug } }"
                         >
-                            {{ place.locality.locale[$i18n.locale].title }}
+                            {{ $t('general.navigation.locality', { title: place.locality.locale[$i18n.locale].title }) }}
                         </router-link>
                     </h2>
                     <h1>{{ place.locale[$i18n.locale].title }}</h1>
@@ -38,17 +38,6 @@
                         <div class="information-holder">
                             <i class="icon-location" />
                             <span>{{ place.locale[$i18n.locale].location }}</span>
-                        </div>
-                        <div class="tooltip-container center">
-                            <div
-                                class="tooltip-content"
-                                v-html="
-                                    $t('general.unit.coords', {
-                                        latitude: place.coords.latitude,
-                                        longitude: place.coords.longitude
-                                    })
-                                "
-                            />
                         </div>
                     </li>
                     <li>
@@ -116,9 +105,10 @@
 
                 <ul class="buttons">
                     <li>
-                        <button>
+                        <button @click.prevent="toggleMap()">
                             <i class="icon-route" />
-                            <span>{{ $t('page.place.buttons.map') }}</span>
+                            <span v-if="isMapEnabled">{{ $t('page.place.buttons.map.hide') }}</span>
+                            <span v-else>{{ $t('page.place.buttons.map.show') }}</span>
                         </button>
                     </li>
                     <li>
@@ -127,6 +117,44 @@
                         </button>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <section v-if="isMapEnabled" class="location-map">
+            <div ref="mapRef" class="map">
+                <div class="coordinates">
+                    <p>{{ $t('page.place.buttons.map.coordinates') }}</p>
+                    <div class="coords">
+                        <span>{{ place.coords.latitude }}, {{ place.coords.longitude }}</span>
+                        <button @click="copyCoordinates(place.coords.latitude, place.coords.longitude)">
+                            <i class="icon-copy" />
+                        </button>
+                    </div>
+                </div>
+                <v-map :options="mapLocation">
+                    <v-navigation-control :show-compass="false" :show-zoom="true" :visualize-pitch="false" position="top-right" />
+
+                    <v-scale-control position="bottom-left" />
+
+                    <v-marker
+                        v-model:center="mapMarker.center"
+                        :options="mapMarker"
+                        @click="handleClick"
+                        @mouseenter="handleMouseEnter"
+                    />
+
+                    <v-popup
+                        v-model:visible="mapMarker.visible"
+                        :center="mapMarker.center"
+                        :options="{
+                            anchor: 'bottom',
+                            offset: [0, -36],
+                            closeOnMove: false
+                        }"
+                    >
+                        {{ mapMarker.text }}
+                    </v-popup>
+                </v-map>
             </div>
         </section>
 
@@ -259,8 +287,8 @@
 </template>
 
 <script>
-    import { computed, onBeforeMount, defineComponent, ref } from 'vue'
-    import { useTitle } from '@vueuse/core'
+    import { computed, onBeforeMount, defineComponent, reactive, ref, watch } from 'vue'
+    import { useTitle, onKeyStroke } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
     import { useRoute, useRouter } from 'vue-router'
 
@@ -283,6 +311,7 @@
             const titleSuffix = store.titleSuffix
             const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
             const place = places.find((item) => item.slug === route.params.slug)
+            const mapRef = ref(null)
             const loading = ref(true)
 
             onBeforeMount(() => {
@@ -293,13 +322,70 @@
                 }
             })
 
+            const mapLocation = reactive({
+                accessToken: import.meta.env.VITE_APP_MAPBOX_ACCESS_TOKEN,
+                style: import.meta.env.VITE_APP_MAPBOX_MAP_STYLE,
+                center: [place.coords.longitude, place.coords.latitude],
+                zoom: 15,
+                scrollZoom: false,
+                crossSourceCollisions: false,
+                failIfMajorPerformanceCaveat: false,
+                attributionControl: false,
+                preserveDrawingBuffer: true,
+                hash: false,
+                pitchWithRotate: false
+            })
+
+            let mapMarker = reactive({
+                center: mapLocation.center,
+                draggable: false,
+                visible: true,
+                scale: 1,
+                text: place.locale[locale.value].title
+            })
+
+            const handleClick = () => {
+                mapMarker.visible = true
+            }
+
+            const handleMouseEnter = () => {
+                mapMarker.visible = true
+            }
+
+            const copyCoordinates = (latitude, longitude) => {
+                const textArea = document.createElement('textarea')
+
+                textArea.value = latitude + ',' + longitude
+                document.body.appendChild(textArea)
+                textArea.select()
+                document.execCommand('copy')
+                document.body.removeChild(textArea)
+            }
+
+            watch(locale, async (newLocale, oldLocale) => {
+                if (newLocale != oldLocale) {
+                    mapMarker.text = place.locale[newLocale].title
+                }
+            })
+
             const pageTitle = computed(() => {
                 return i18n.t('page.place.subtitle') + ' "' + place.locale[locale.value].title + '"' + titleSuffix
             })
             useTitle(pageTitle)
 
             const isFavorite = ref(false)
+            const isMapEnabled = ref(false)
             const isGalleryOpened = ref(false)
+
+            const toggleMap = () => {
+                isMapEnabled.value = !isMapEnabled.value
+            }
+
+            onKeyStroke('Escape', () => {
+                if (isMapEnabled.value) {
+                    isMapEnabled.value = false
+                }
+            })
 
             const toggleGallery = (id) => {
                 isGalleryOpened.value = !isGalleryOpened.value
@@ -316,8 +402,16 @@
                 locale,
                 place,
                 gitRepository,
+                mapRef,
+                mapLocation,
+                mapMarker,
                 isFavorite,
-                toggleGallery
+                isMapEnabled,
+                toggleMap,
+                toggleGallery,
+                handleClick,
+                handleMouseEnter,
+                copyCoordinates
             }
         }
     })

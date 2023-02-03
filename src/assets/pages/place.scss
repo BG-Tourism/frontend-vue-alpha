@@ -55,6 +55,7 @@
                 a {
                     @include font-size(18px);
 
+                    position: relative;
                     display: flex;
                     align-items: center;
                     color: $blue-700;
@@ -64,13 +65,34 @@
 
                     &:hover {
                         color: $blue-600;
+
+                        &::after {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        display: inline-block;
+                        width: 100%;
+                        height: 2px;
+                        border-width: 0 0 1px;
+                        border-style: solid;
+                        border-color: $blue-600;
+                        opacity: 0;
+                        transition: opacity 0.35s, transform 0.35s;
+                        transform: scale(0, 1);
                     }
                 }
 
                 i {
                     @include font-size(10px);
 
-                    color: $slate-300;
+                    color: $slate-400;
                 }
             }
         }
@@ -193,7 +215,7 @@
 
                     i,
                     span {
-                        color: $slate-500;
+                        color: $slate-600;
                     }
 
                     span,
@@ -298,6 +320,77 @@
                     font-weight: 500;
                     white-space: nowrap;
                 }
+            }
+        }
+    }
+
+    .location-map {
+        margin: -80px 0 0;
+        padding: 0 0 50px;
+
+        .map {
+            position: relative;
+            overflow: hidden;
+            width: calc(100vw - 60px);
+            height: 500px;
+            margin: 0 auto;
+            border-radius: 12px;
+
+            .coordinates {
+                position: absolute;
+                right: 5px;
+                bottom: 5px;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 10px;
+                align-items: flex-end;
+                padding: 20px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: $slate-400;
+                border-radius: 24px 6px 14px;
+                background-color: $white;
+
+                p {
+                    @include font-size(14px);
+
+                    width: 100%;
+                    color: $slate-600;
+                    text-align: right;
+                }
+
+                .coords {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    span {
+                        @include font-size(16px);
+
+                        color: $slate-900;
+                        font-weight: 500;
+                    }
+
+                    button {
+                        @include font-size(12px);
+
+                        border: 0;
+                        background-color: transparent;
+                        color: $slate-900;
+                        outline: none;
+
+                        &:hover {
+                            color: $blue-600;
+                            transition: all 300ms linear;
+                        }
+                    }
+                }
+            }
+
+            .mapboxgl-map {
+                z-index: 1;
             }
         }
     }

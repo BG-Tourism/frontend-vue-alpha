@@ -16,9 +16,12 @@
         "prepare": "husky install"
     },
     "dependencies": {
+        "@mapbox/mapbox-gl-geocoder": "^5.0.1",
         "@vueuse/core": "^9.6.0",
         "axios": "^1.2.1",
         "js-md5": "^0.7.3",
+        "mapbox-gl": "^1.13.2",
+        "mapvue": "^0.3.1",
         "nprogress": "^0.2.0",
         "pinia": "^2.0.28",
         "vee-validate": "^4.7.3",

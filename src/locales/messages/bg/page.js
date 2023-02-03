@@ -19,8 +19,9 @@ const messages = {
     },
     categories: {
         title: 'Категории',
-        subtitle: 'subtitle',
-        description: 'description'
+        subtitle: 'Впусни се в ново приключение',
+        description:
+            'Открийте красотата и историята на България чрез нейните забележителности, демонстриращи богатата култура на страната.'
     },
     contact: {
         title: 'Контакти',
@@ -100,7 +101,11 @@ const messages = {
         subtitle: 'Забележителност',
         buttons: {
             wantToVisit: 'Искам да посетя',
-            map: 'Виж локацията на карта',
+            map: {
+                show: 'Покажи локацията на карта',
+                hide: 'Скрий картата',
+                coordinates: 'GPS координати'
+            },
             favorite: {
                 make: 'Добави в любими',
                 undo: 'Махни от любими'
@@ -165,8 +170,9 @@ const messages = {
     },
     regions: {
         title: 'Туристически райони',
-        subtitle: 'subtitle',
-        description: 'description'
+        subtitle: 'Открий идеалната си дестинация',
+        description:
+            'Намери твоята идеална дестинация за следващо пътуване из туристическите райони на България, предлагащи по нещо за всеки тип пътешественик.'
     },
     locality: {
         title: 'Местност'
