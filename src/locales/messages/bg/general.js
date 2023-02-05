@@ -69,7 +69,7 @@ const messages = {
         regarding: 'Относно',
         links: {
             about: 'За проекта',
-            contact: 'За връзка с нас',
+            contact: 'Връзка с нас',
             terms: 'Общи условия',
             privacyPolicy: 'Лични данни',
             cookies: 'Бисквитки'

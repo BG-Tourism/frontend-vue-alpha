@@ -16,19 +16,6 @@
                     <span>{{ $t('general.navigation.regions') }}</span>
                 </router-link>
             </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <router-link :to="{ name: 'About' }" class="link">
-                    <span>{{ $t('page.about.title') }}</span>
-                </router-link>
-            </li>
-            <li>
-                <router-link :to="{ name: 'Contact' }" class="link">
-                    <span>{{ $t('page.contact.title') }}</span>
-                </router-link>
-            </li>
         </ul>
     </nav>
 </template>

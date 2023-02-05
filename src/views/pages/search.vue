@@ -76,7 +76,7 @@
             const searchTerm = ref('')
 
             const results = computed(() => {
-                if (!searchTerm.value.trim() || searchTerm.value.trim().length <= 2)
+                if (!searchTerm.value.trim() || searchTerm.value.trim().length < 2)
                     return {
                         places: [],
                         regions: [],
