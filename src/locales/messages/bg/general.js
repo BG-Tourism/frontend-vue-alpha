@@ -34,6 +34,7 @@ const messages = {
     },
     settings: 'Настройки',
     logout: 'Изход',
+    search: 'Търсене',
     loading: 'Зареждане...',
     seeMore: 'Виж повече',
     showMore: 'Покажи повече',
@@ -48,7 +49,8 @@ const messages = {
         regionsAndLocalities: 'Туристически райони и местности',
         regionsAndLocalitiesCounter: 'Туристически райони и местности ({n})',
         rating: 'Рейтинг',
-        ratingCounter: 'Рейтинг ({n})'
+        ratingCounter: 'Рейтинг ({n})',
+        searchPlaceholder: 'Започнете да пишете...'
     },
     pagination: {
         next: 'Напред',

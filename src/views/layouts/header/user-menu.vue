@@ -2,6 +2,12 @@
     <div class="user-menu">
         <div class="divider" />
 
+        <div class="search">
+            <router-link :to="{ name: 'Search' }" :title="$t('general.search')">
+                <i class="icon-search" />
+            </router-link>
+        </div>
+
         <div class="language">
             <BaseDropdown placement="right">
                 <template #button>
@@ -74,7 +80,7 @@
 
 <script>
     import { defineComponent } from 'vue'
-    import { useDark, useToggle } from '@vueuse/core'
+    // import { useDark, useToggle } from '@vueuse/core'
     import { useRoute } from 'vue-router'
     import md5 from 'js-md5'
 
@@ -88,8 +94,8 @@
         },
         setup() {
             const route = useRoute()
-            const isDark = useDark()
-            const toggleDark = useToggle(isDark)
+            // const isDark = useDark()
+            // const toggleDark = useToggle(isDark)
             const user = {
                 name: 'Том Атанасов',
                 email: 'tom.atanasov@delta.bg'
@@ -97,8 +103,8 @@
 
             return {
                 route,
-                isDark,
-                toggleDark,
+                // isDark,
+                // toggleDark,
                 user,
                 md5,
                 getSupportedLocales,

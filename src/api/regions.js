@@ -1745,15 +1745,15 @@ const regions = [
                 }
             },
             {
-                slug: 'byala',
+                slug: 'byala-ruse',
                 places_count: Math.floor(Math.random() * 100),
                 locale: {
                     bg: {
-                        title: 'Бяла',
+                        title: 'Бяла (русенско)',
                         description: 'placeholder text'
                     },
                     en: {
-                        title: 'Byala',
+                        title: 'Byala (Ruse)',
                         description: 'placeholder text'
                     }
                 }
@@ -2619,15 +2619,15 @@ const regions = [
                 }
             },
             {
-                slug: 'byala',
+                slug: 'byala-varna',
                 places_count: Math.floor(Math.random() * 100),
                 locale: {
                     bg: {
-                        title: 'Бяла',
+                        title: 'Бяла (варненско)',
                         description: 'placeholder text'
                     },
                     en: {
-                        title: 'Byala',
+                        title: 'Byala (Varna)',
                         description: 'placeholder text'
                     }
                 }

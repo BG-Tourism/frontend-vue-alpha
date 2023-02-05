@@ -2,6 +2,10 @@ const messages = {
     about: {
         title: 'About Us'
     },
+    search: {
+        title: 'Search',
+        description: 'You can search both by names of landmarks and by regions, localities and categories.'
+    },
     categories: {
         title: 'Categories',
         subtitle: 'Embark on a new adventure',
@@ -154,6 +158,9 @@ const messages = {
     },
     locality: {
         title: 'Locality'
+    },
+    localities: {
+        title: 'Localities'
     },
     terms: {
         title: 'Terms & Conditions'

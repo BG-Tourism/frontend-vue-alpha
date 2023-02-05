@@ -11,6 +11,14 @@ const routes = [
         component: () => import('@/views/pages/homepage.vue')
     },
     {
+        path: '/search',
+        name: 'Search',
+        meta: {
+            className: 'page-search'
+        },
+        component: () => import('@/views/pages/search.vue')
+    },
+    {
         path: '/region/:slug',
         name: 'Region',
         meta: {

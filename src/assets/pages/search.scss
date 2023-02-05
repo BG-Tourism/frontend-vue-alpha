@@ -1,0 +1,44 @@
+.page-search {
+    .search-list {
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0 50px;
+
+            .type {
+                padding: 30px 0 0;
+                border-width: 1px 0 0;
+                border-style: solid;
+                border-color: $slate-200;
+
+                &:first-child {
+                    border: 0;
+                }
+
+                li {
+                    margin: 0 0 0 10px;
+                    padding: 5px 0 0 10px;
+                    list-style-type: '-';
+                    line-height: 1.4;
+                }
+
+                h3 {
+                    @include font-size(20px);
+
+                    padding: 0 0 20px;
+                }
+
+                p {
+                    @include font-size(16px);
+                }
+
+                span {
+                    display: inline-block;
+                    border-radius: 8px;
+                    background-color: $yellow-100;
+                }
+            }
+        }
+    }
+}

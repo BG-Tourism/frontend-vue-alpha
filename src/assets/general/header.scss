@@ -377,6 +377,40 @@
                 }
             }
         }
+
+        .search {
+            a {
+                display: flex;
+                flex: 0 0 auto;
+                align-items: center;
+                justify-content: center;
+                overflow: auto;
+                width: 40px;
+                height: 40px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: $slate-200;
+                border-radius: 6px;
+                background-color: $white;
+                transition: all 200ms linear;
+
+                &:hover {
+                    border-color: $slate-100;
+                    background-color: $slate-100;
+
+                    i {
+                        color: $slate-600;
+                    }
+                }
+
+                i {
+                    @include font-size(18px);
+
+                    color: $slate-600;
+                    transition: all 200ms linear;
+                }
+            }
+        }
     }
 }
 

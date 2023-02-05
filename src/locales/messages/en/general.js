@@ -34,6 +34,7 @@ const messages = {
     },
     settings: 'Settings',
     logout: 'Sign out',
+    search: 'Search',
     loading: 'Loading...',
     seeMore: 'See more',
     showMore: 'Show more',
@@ -48,7 +49,8 @@ const messages = {
         regionsAndLocalities: 'Tourist Regions & Localities',
         regionsAndLocalitiesCounter: 'Tourist Regions & Localities ({n})',
         rating: 'Rating',
-        ratingCounter: 'Rating ({n})'
+        ratingCounter: 'Rating ({n})',
+        searchPlaceholder: 'Start typing...'
     },
     pagination: {
         next: 'Next',

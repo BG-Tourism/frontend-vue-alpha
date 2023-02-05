@@ -2,6 +2,10 @@ const messages = {
     about: {
         title: 'За нас'
     },
+    search: {
+        title: 'Търсене',
+        description: 'Може да търсите както по имена на забележителности, така и по региони, местности и категории.'
+    },
     categories: {
         title: 'Категории',
         subtitle: 'Впусни се в ново приключение',
@@ -155,6 +159,9 @@ const messages = {
     },
     locality: {
         title: 'Местност'
+    },
+    localities: {
+        title: 'Местности'
     },
     terms: {
         title: 'Общи условия'
