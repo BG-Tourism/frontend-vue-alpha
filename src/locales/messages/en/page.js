@@ -2,23 +2,11 @@ const messages = {
     about: {
         title: 'About Us'
     },
-    category: {
-        title: 'Category',
-        description: {
-            version0: 'Relive your memories of Bulgaria or plan your first visit through our list of iconic landmarks.',
-            version1: 'Discover the rich cultural heritage of Bulgaria through our list of landmarks.',
-            version2: "Discover the beauty and cultural significance of Bulgaria's landmarks with our list of must-see places.",
-            version3: "Explore the beauty of Bulgaria and discover the country's most iconic landmarks.",
-            version4:
-                "Explore Bulgaria's rich cultural heritage through our list of landmarks, from medieval fortresses to natural wonders.",
-            version5:
-                "Experience the stunning architecture and natural beauty of Bulgaria's landmarks, from medieval fortresses to seaside cities, on our list."
-        }
-    },
     categories: {
         title: 'Categories',
         subtitle: 'Embark on a new adventure',
-        description: "Discover the beauty and history of Bulgaria through its landmarks, showcasing the country's rich culture."
+        description:
+            'Discover the rich cultural heritage of Bulgaria through its diverse range of landmarks. Browse through our category list to find your next adventure.'
     },
     contact: {
         title: 'Contact',
@@ -78,13 +66,7 @@ const messages = {
             categories: {
                 title: 'Select from a Category',
                 description: "Discover some of the Bulgaria's most spectacular sites and monuments.",
-                tabs: {
-                    nature: 'Nature',
-                    architecture: 'Architecture',
-                    monuments: 'Monuments',
-                    seasonal: 'Seasonal Tourism',
-                    viewAll: 'All {n} Categories'
-                }
+                viewAllCategories: 'All {n} Categories'
             }
         },
         destinations: {
@@ -154,9 +136,9 @@ const messages = {
     },
     places: {
         title: 'Places',
-        subtitle: 'The beauties of Bulgaria',
+        subtitle: 'Immerse Yourself in Legacy',
         description:
-            "Explore the rich cultural heritage of Bulgaria. Enjoy the country's most iconic sights, rich in medieval architecture, natural beauty and cultural heritage."
+            "Discover the beauty and heritage of Bulgaria. Explore its most iconic landmarks, each showcasing the country's rich cultural heritage, architectural beauty, and natural wonders."
     },
     privacy: {
         title: 'Privacy Policy'

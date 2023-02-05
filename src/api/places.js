@@ -8,6 +8,25 @@ const places = [
     {
         slug: 'sveti-aleksandar-nevski',
         image: '/images/photos/1.jpg',
+        locale: {
+            bg: {
+                title: 'Храм-паметник "Свети Александър Невски"',
+                location: 'гр. София'
+            },
+            en: {
+                title: 'St. Alexander Nevsky Temple-Monument',
+                location: 'Sofia City'
+            }
+        },
+        category: {
+            slug: 'architecture'
+        },
+        region: {
+            slug: 'sofia'
+        },
+        locality: {
+            slug: 'sofia'
+        },
         photos: [
             {
                 image: '/images/photos/1-1.jpg',
@@ -30,52 +49,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Храм-паметник "Свети Александър Невски"',
-                location: 'гр. София'
-            },
-            en: {
-                title: 'St. Alexander Nevsky Temple-Monument',
-                location: 'Sofia City'
-            }
-        },
         user_score: 3.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'architecture',
-            locale: {
-                bg: {
-                    title: 'Архитектура'
-                },
-                en: {
-                    title: 'Architecture'
-                }
-            }
-        },
-        region: {
-            slug: 'sofia',
-            locale: {
-                bg: {
-                    title: 'София'
-                },
-                en: {
-                    title: 'Sofia'
-                }
-            }
-        },
-        locality: {
-            slug: 'sofia',
-            locale: {
-                bg: {
-                    title: 'София'
-                },
-                en: {
-                    title: 'Sofia'
-                }
-            }
-        },
         unesco: true,
         weather: [
             {
@@ -253,6 +229,25 @@ const places = [
     {
         slug: 'tsarevets',
         image: '/images/photos/2.jpg',
+        locale: {
+            bg: {
+                title: 'Крепост "Царевец"',
+                location: 'гр. Велико Търново'
+            },
+            en: {
+                title: 'Tsarevets Fortress',
+                location: 'Veliko Tarnovo City'
+            }
+        },
+        category: {
+            slug: 'architecture'
+        },
+        region: {
+            slug: 'stara-planina'
+        },
+        locality: {
+            slug: 'veliko-tarnovo'
+        },
         photos: [
             {
                 image: '/images/photos/2-1.jpg',
@@ -275,52 +270,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Крепост "Царевец"',
-                location: 'гр. Велико Търново'
-            },
-            en: {
-                title: 'Tsarevets Fortress',
-                location: 'Veliko Tarnovo City'
-            }
-        },
         user_score: 4.4,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'architecture',
-            locale: {
-                bg: {
-                    title: 'Архитектура'
-                },
-                en: {
-                    title: 'Architecture'
-                }
-            }
-        },
-        region: {
-            slug: 'stara-planina',
-            locale: {
-                bg: {
-                    title: 'Стара Планина'
-                },
-                en: {
-                    title: 'Stara Planina'
-                }
-            }
-        },
-        locality: {
-            slug: 'veliko-tarnovo',
-            locale: {
-                bg: {
-                    title: 'Велико Търново'
-                },
-                en: {
-                    title: 'Veliko Tarnovo'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -498,6 +450,25 @@ const places = [
     {
         slug: 'rilski-manastir',
         image: '/images/photos/3.jpg',
+        locale: {
+            bg: {
+                title: 'Манастир "Свети Иван Рилски"',
+                location: 'до гр. Рила'
+            },
+            en: {
+                title: 'Rila Monastery Saint Ivan of Rila',
+                location: 'next to Rila City'
+            }
+        },
+        category: {
+            slug: 'religion'
+        },
+        region: {
+            slug: 'rila-pirin'
+        },
+        locality: {
+            slug: 'rila'
+        },
         photos: [
             {
                 image: '/images/photos/3-1.jpg',
@@ -520,52 +491,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Манастир "Свети Иван Рилски"',
-                location: 'до гр. Рила'
-            },
-            en: {
-                title: 'Rila Monastery Saint Ivan of Rila',
-                location: 'next to Rila City'
-            }
-        },
         user_score: 5.0,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'religion',
-            locale: {
-                bg: {
-                    title: 'Религия'
-                },
-                en: {
-                    title: 'Religion'
-                }
-            }
-        },
-        region: {
-            slug: 'rila-pirin',
-            locale: {
-                bg: {
-                    title: 'Рила и Пирин'
-                },
-                en: {
-                    title: 'Rila & Pirin'
-                }
-            }
-        },
-        locality: {
-            slug: 'rila',
-            locale: {
-                bg: {
-                    title: 'Рила'
-                },
-                en: {
-                    title: 'Rila'
-                }
-            }
-        },
         unesco: true,
         weather: [
             {
@@ -743,6 +671,25 @@ const places = [
     {
         slug: 'shipka-monument',
         image: '/images/photos/4.jpg',
+        locale: {
+            bg: {
+                title: 'Паметник на свободата "Шипка"',
+                location: 'до гр. Шипка'
+            },
+            en: {
+                title: 'Shipka Monument',
+                location: 'next to Shipka City'
+            }
+        },
+        category: {
+            slug: 'architecture'
+        },
+        region: {
+            slug: 'valley-of-roses'
+        },
+        locality: {
+            slug: 'kazanlak'
+        },
         photos: [
             {
                 image: '/images/photos/4-1.jpg',
@@ -765,52 +712,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Паметник на свободата "Шипка"',
-                location: 'до гр. Шипка'
-            },
-            en: {
-                title: 'Shipka Monument',
-                location: 'next to Shipka City'
-            }
-        },
         user_score: 4.9,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'architecture',
-            locale: {
-                bg: {
-                    title: 'Архитектура'
-                },
-                en: {
-                    title: 'Architecture'
-                }
-            }
-        },
-        region: {
-            slug: 'valley-of-roses',
-            locale: {
-                bg: {
-                    title: 'Долината на розите'
-                },
-                en: {
-                    title: 'Тhe Valley of Roses'
-                }
-            }
-        },
-        locality: {
-            slug: 'kazanlak',
-            locale: {
-                bg: {
-                    title: 'Казанлък'
-                },
-                en: {
-                    title: 'Kazanlak'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -988,6 +892,25 @@ const places = [
     {
         slug: 'belogradchishkite-skali',
         image: '/images/photos/5.jpg',
+        locale: {
+            bg: {
+                title: 'Белоградчишките скали',
+                location: 'гр. Белоградчик'
+            },
+            en: {
+                title: 'The Rocks of Belogradchik',
+                location: 'Belogradchik City'
+            }
+        },
+        category: {
+            slug: 'nature-and-parks'
+        },
+        region: {
+            slug: 'danube'
+        },
+        locality: {
+            slug: 'vidin'
+        },
         photos: [
             {
                 image: '/images/photos/5-1.jpg',
@@ -1010,52 +933,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Белоградчишките скали',
-                location: 'гр. Белоградчик'
-            },
-            en: {
-                title: 'The Rocks of Belogradchik',
-                location: 'Belogradchik City'
-            }
-        },
         user_score: 4.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'nature-and-parks',
-            locale: {
-                bg: {
-                    title: 'Природа и паркове'
-                },
-                en: {
-                    title: 'Nature & Parks'
-                }
-            }
-        },
-        region: {
-            slug: 'danube',
-            locale: {
-                bg: {
-                    title: 'Дунав'
-                },
-                en: {
-                    title: 'Danube'
-                }
-            }
-        },
-        locality: {
-            slug: 'vidin',
-            locale: {
-                bg: {
-                    title: 'Видин'
-                },
-                en: {
-                    title: 'Vidin'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -1233,6 +1113,25 @@ const places = [
     {
         slug: 'chudnite-mostove',
         image: '/images/photos/6.jpg',
+        locale: {
+            bg: {
+                title: 'Чудните мостове',
+                location: 'до Забърдо'
+            },
+            en: {
+                title: 'The Wonderful Bridges',
+                location: 'next to Zabardo'
+            }
+        },
+        category: {
+            slug: 'nature-and-parks'
+        },
+        region: {
+            slug: 'rhodopes'
+        },
+        locality: {
+            slug: 'rodopi'
+        },
         photos: [
             {
                 image: '/images/photos/6-1.jpg',
@@ -1255,52 +1154,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Чудните мостове',
-                location: 'до Забърдо'
-            },
-            en: {
-                title: 'The Wonderful Bridges',
-                location: 'next to Zabardo'
-            }
-        },
         user_score: 4.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'nature-and-parks',
-            locale: {
-                bg: {
-                    title: 'Природа и паркове'
-                },
-                en: {
-                    title: 'Nature & Parks'
-                }
-            }
-        },
-        region: {
-            slug: 'rhodopes',
-            locale: {
-                bg: {
-                    title: 'Родопи'
-                },
-                en: {
-                    title: 'Rhodopes'
-                }
-            }
-        },
-        locality: {
-            slug: 'rodopi',
-            locale: {
-                bg: {
-                    title: 'Родопи'
-                },
-                en: {
-                    title: 'Rodopi'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -1472,6 +1328,25 @@ const places = [
     {
         slug: 'nessebar-architectural-historical-reserve',
         image: '/images/photos/7.jpg',
+        locale: {
+            bg: {
+                title: 'Архитектурно-исторически резерват Несебър',
+                location: 'гр. Несебър'
+            },
+            en: {
+                title: 'Architectural-historical reserve Nessebar',
+                location: 'Nessebar City'
+            }
+        },
+        category: {
+            slug: 'history-and-culture'
+        },
+        region: {
+            slug: 'bourgas-black-sea'
+        },
+        locality: {
+            slug: 'nesebar'
+        },
         photos: [
             {
                 image: '/images/photos/7-1.jpg',
@@ -1494,52 +1369,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Архитектурно-исторически резерват Несебър',
-                location: 'гр. Несебър'
-            },
-            en: {
-                title: 'Architectural-historical reserve Nessebar',
-                location: 'Nessebar City'
-            }
-        },
         user_score: 4.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'history-and-culture',
-            locale: {
-                bg: {
-                    title: 'История и култура'
-                },
-                en: {
-                    title: 'History & Culture'
-                }
-            }
-        },
-        region: {
-            slug: 'bourgas-black-sea',
-            locale: {
-                bg: {
-                    title: 'Бургаско черноморие'
-                },
-                en: {
-                    title: 'Bourgas Black Sea'
-                }
-            }
-        },
-        locality: {
-            slug: 'nesebar',
-            locale: {
-                bg: {
-                    title: 'Несебър'
-                },
-                en: {
-                    title: 'Nesebar'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -1711,6 +1543,25 @@ const places = [
     {
         slug: 'pliska-national-historical-and-archaeological-reserve',
         image: '/images/photos/8.jpg',
+        locale: {
+            bg: {
+                title: 'Национален историко-археологически резерват "Плиска"',
+                location: 'гр. Плиска'
+            },
+            en: {
+                title: 'National Historical and Archaeological Reserve "Pliska"',
+                location: 'Pliska City'
+            }
+        },
+        category: {
+            slug: 'architecture'
+        },
+        region: {
+            slug: 'varna-black-sea'
+        },
+        locality: {
+            slug: 'novi-pazar'
+        },
         photos: [
             {
                 image: '/images/photos/8-1.jpg',
@@ -1733,52 +1584,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Национален историко-археологически резерват "Плиска"',
-                location: 'гр. Плиска'
-            },
-            en: {
-                title: 'National Historical and Archaeological Reserve "Pliska"',
-                location: 'Pliska City'
-            }
-        },
         user_score: 4.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'architecture',
-            locale: {
-                bg: {
-                    title: 'Архитектура'
-                },
-                en: {
-                    title: 'Architecture'
-                }
-            }
-        },
-        region: {
-            slug: 'varna-black-sea',
-            locale: {
-                bg: {
-                    title: 'Варненско черноморие'
-                },
-                en: {
-                    title: 'Varna Black Sea'
-                }
-            }
-        },
-        locality: {
-            slug: 'novi-pazar',
-            locale: {
-                bg: {
-                    title: 'Нови пазар'
-                },
-                en: {
-                    title: 'Novi Pazar'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {
@@ -1950,6 +1758,25 @@ const places = [
     {
         slug: 'plovdiv-ancient-theater',
         image: '/images/photos/9.jpg',
+        locale: {
+            bg: {
+                title: 'Античен театър - Пловдив',
+                location: 'гр. Пловдив'
+            },
+            en: {
+                title: 'Ancient Theater - Plovdiv',
+                location: 'Plovdiv City'
+            }
+        },
+        category: {
+            slug: 'architecture'
+        },
+        region: {
+            slug: 'trakia'
+        },
+        locality: {
+            slug: 'plovdiv'
+        },
         photos: [
             {
                 image: '/images/photos/9-1.jpg',
@@ -1972,52 +1799,9 @@ const places = [
                 date_added: 1670777697
             }
         ],
-        locale: {
-            bg: {
-                title: 'Античен театър - Пловдив',
-                location: 'гр. Пловдив'
-            },
-            en: {
-                title: 'Ancient Theater - Plovdiv',
-                location: 'Plovdiv City'
-            }
-        },
         user_score: 4.5,
         reviews_count: Math.floor(Math.random() * 100),
         visitors: Math.floor(Math.random() * 1000),
-        category: {
-            slug: 'architecture',
-            locale: {
-                bg: {
-                    title: 'Архитектура'
-                },
-                en: {
-                    title: 'Architecture'
-                }
-            }
-        },
-        region: {
-            slug: 'trakia',
-            locale: {
-                bg: {
-                    title: 'Тракия'
-                },
-                en: {
-                    title: 'Trakia'
-                }
-            }
-        },
-        locality: {
-            slug: 'plovdiv',
-            locale: {
-                bg: {
-                    title: 'Пловдив'
-                },
-                en: {
-                    title: 'Plovdiv'
-                }
-            }
-        },
         unesco: false,
         weather: [
             {

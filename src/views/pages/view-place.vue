@@ -4,14 +4,12 @@
             <div class="page-content">
                 <div class="title">
                     <h2>
-                        <router-link :to="{ name: 'Region', params: { slug: place.region.slug } }">
-                            {{ $t('general.navigation.region', { title: place.region.locale[$i18n.locale].title }) }}
+                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
+                            {{ $t('general.navigation.region', { title: region.locale[$i18n.locale].title }) }}
                         </router-link>
                         <i class="icon-arrow-right-tail" />
-                        <router-link
-                            :to="{ name: 'Places', query: { region: place.region.slug, locality: place.locality.slug } }"
-                        >
-                            {{ $t('general.navigation.locality', { title: place.locality.locale[$i18n.locale].title }) }}
+                        <router-link :to="{ name: 'Places', query: { region: region.slug, locality: locality.slug } }">
+                            {{ $t('general.navigation.locality', { title: locality.locale[$i18n.locale].title }) }}
                         </router-link>
                     </h2>
                     <h1>{{ place.locale[$i18n.locale].title }}</h1>
@@ -293,6 +291,7 @@
     import { useRoute, useRouter } from 'vue-router'
 
     import places from '@/api/places'
+    import regions from '@/api/regions'
 
     import TruncateString from '@/components/TruncateString.vue'
 
@@ -310,7 +309,11 @@
             const store = useGeneralStore()
             const titleSuffix = store.titleSuffix
             const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
-            const place = places.find((item) => item.slug === route.params.slug)
+
+            const place = places.find((p) => p.slug === route.params.slug)
+            const region = regions.find((r) => r.slug === place.region.slug)
+            const locality = region.localities.find((l) => l.slug === place.locality.slug)
+
             const mapRef = ref(null)
             const loading = ref(true)
 
@@ -401,6 +404,8 @@
                 loading,
                 locale,
                 place,
+                region,
+                locality,
                 gitRepository,
                 mapRef,
                 mapLocation,

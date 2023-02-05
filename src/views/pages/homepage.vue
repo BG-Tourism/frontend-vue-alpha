@@ -38,7 +38,7 @@
                 </div>
 
                 <ul class="list">
-                    <li v-for="place in mostPopular" :key="place">
+                    <li v-for="place in limitedPlaces" :key="place">
                         <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                             <picture>
                                 <img :src="place.image" alt="" loading="lazy" />
@@ -61,8 +61,8 @@
                 </div>
 
                 <ul class="tabs">
-                    <li v-for="category in categories.slice(0, 5)" :key="category">
-                        <button :class="category.slug === 'history-and-culture' ? 'active' : null">
+                    <li v-for="(category, index) in limitedCategories" :key="category">
+                        <button :class="index === 0 ? 'active' : null">
                             <!--<i :class="'icon-category-' + category.slug" />-->
                             <span>{{ category.locale[$i18n.locale].title }}</span>
                         </button>
@@ -70,14 +70,14 @@
                     <li class="divider"></li>
                     <li>
                         <router-link :to="{ name: 'Categories' }">
-                            <span>{{ $t('page.homepage.locations.categories.tabs.viewAll', categories.length) }}</span>
+                            <span>{{ $t('page.homepage.locations.categories.viewAllCategories', categories.length) }}</span>
                         </router-link>
                     </li>
                 </ul>
 
                 <div class="tab-content">
                     <ul class="list">
-                        <li v-for="place in categoryArchitecture" :key="place">
+                        <li v-for="place in categoryPlaces" :key="place">
                             <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                                 <picture>
                                     <img :src="place.image" alt="" loading="lazy" />
@@ -139,10 +139,9 @@
     import { useTitle } from '@vueuse/core'
     import { useI18n } from 'vue-i18n'
 
-    import mostPopular from '@/api/most-popular.js'
+    import places from '@/api/places.js'
     import categories from '@/api/categories'
     import regions from '@/api/regions'
-    import categoryArchitecture from '@/api/category-architecture.js'
 
     import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -159,16 +158,21 @@
 
             useTitle(pageTitle)
 
+            const limitedPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 3)
+            const limitedCategories = categories.sort(() => 0.5 - Math.random()).slice(0, 4)
+            const categoryPlaces = places.filter((place) => place.category.slug === limitedCategories[0].slug)
+
             const generateNumber = () => {
                 number.value = (Math.random() * 19).toFixed(0)
             }
 
             return {
                 number,
-                mostPopular,
                 categories,
-                categoryArchitecture,
                 regions,
+                categoryPlaces,
+                limitedPlaces,
+                limitedCategories,
                 generateNumber
             }
         }
