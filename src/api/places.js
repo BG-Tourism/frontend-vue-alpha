@@ -1326,15 +1326,15 @@ const places = [
         ]
     },
     {
-        slug: 'nessebar-architectural-historical-reserve',
+        slug: 'church-of-christ-pantocrator',
         image: '/images/photos/7.jpg',
         locale: {
             bg: {
-                title: 'Архитектурно-исторически резерват Несебър',
+                title: 'Църквата "Христос Пантократор"',
                 location: 'гр. Несебър'
             },
             en: {
-                title: 'Architectural-historical reserve Nessebar',
+                title: 'Church of Christ Pantocrator',
                 location: 'Nessebar City'
             }
         },
@@ -1401,8 +1401,8 @@ const places = [
             }
         ],
         coords: {
-            latitude: 42.6587,
-            longitude: 27.7334
+            latitude: 42.658697,
+            longitude: 27.7333567
         },
         altitude: Math.floor(Math.random() * 1000),
         contents: [
@@ -1416,11 +1416,11 @@ const places = [
                 locale: {
                     bg: {
                         title: 'Кратко резюме',
-                        text: '<p>text</p>'
+                        text: '<p>Църквата "Христос Пантократор" е средновековна източноправославна църква, разположена в град Несебър в България. Построена е през 13-14 век и е известна с пищната си външна украса. Църквата е посветена на Христос Пантократор, което на гръцки означава „Владетел на всичко“ и е построена с помощта на камъни и тухлена зидария, строителна техника, известна като opus mixtum. Църквата е проектирана в късновизантийски кръст в квадратен стил и е с размери 16 на 6,90 метра или 14,20 на 4,80 метра. Дебелината на стените на църквата е 0,80 метра, а цветът на тухлите придава на църквата румен вид.</p><p>Църквата се отличава с нартекс и вила, която има правоъгълен издължен план и купол, който е с осмоъгълна форма и стои на видно място в центъра на целата. Най-забележителната особеност на църквата е нейната богата и цветна външна украса, която е най-пищна в източната страна на апсидата. Източната стена включва редуващи се ивици от тухли и дялани камъни, слепи арки, четирилистни флорални мотиви, триъгълни орнаменти, кръгла тюркоазена керамика и тухлени свастични фризове. Включването на свастики в украсата се счита за необичайно и се обяснява със средновековната употреба на символа като символ на слънцето.</p><p>Удължените северна и южна стена включват тухлени слепи арки и голяма арка, съседна на куполът с колонен прозорец в средата. Куполът също има осем прозореца и е богат на декоративни детайли и керамика. Външната украса на църквата включва и прозорци над долните арки на северната и южната фасада.</p><p>Църквата "Христос Пантократор" сега е художествена галерия и е част от античния град Несебър, обект на световното наследство на ЮНЕСКО. От 1927 г. е под държавна закрила като "народна старина" и е обявен за един от паметниците на културата с национално значение на България. Църквата остава до голяма степен непокътната и се смята за една от най-добре запазените църкви в България от Средновековието.</p>'
                     },
                     en: {
                         title: 'Summary',
-                        text: '<p>text</p>'
+                        text: '<p>The Church of Christ Pantocrator is a medieval Eastern Orthodox church located in the town of Nesebar in Bulgaria. It was constructed in the 13th to 14th century and is famous for its lavish exterior decoration. The church was dedicated to Christ Pantocrator, which means "Ruler of All" in Greek, and was built using stones and brickwork, a construction technique known as opus mixtum. The church is designed in late Byzantine cross-in-square style and measures 16 by 6.90 meters or 14.20 by 4.80 meters. The walls of the church are 0.80 meters thick and the colour of the bricks gives the church a ruddy appearance.</p><p>The church features a narthex and a cella, which has a rectangular elongated plan, and a dome that is octagonal in shape and stands prominently in the center of the cella. The most notable feature of the church is its rich and colourful exterior decoration, which is most lavish on the east side of the apse. The east wall features alternating strips of bricks and carved stones, blind arches, four-leaved floral motifs, triangular ornaments, circular turquoise ceramics, and brick swastika friezes. The inclusion of swastikas in the decoration is considered unusual and is explained by the medieval use of the symbol as a symbol of the sun.</p><p>The elongated north and south walls include brick blind arches and a large arch adjacent to the dome with a columned window in the middle. The dome also features eight windows and is rich in ornamental details and ceramics. The church\'s exterior decoration also includes windows above the lower arches of the north and south facades.</p><p>The church of Christ Pantocrator is now an art gallery and forms part of the Ancient City of Nesebar UNESCO World Heritage Site. It has been under state protection since 1927 as a "national antiquity" and is listed as one of Bulgaria\'s monuments of culture of national importance. The church remains largely intact and is considered one of Bulgaria\'s best-preserved churches from the Middle Ages.</p>'
                     }
                 }
             },
@@ -1438,11 +1438,11 @@ const places = [
                 locale: {
                     bg: {
                         title: 'История',
-                        text: '<p>text</p>'
+                        text: '<p>Църквата "Христос Пантократор" в Несебър, България, е зашеметяващ пример за средновековна източноправославна архитектура. Разположена на брега на Черно море, тя е част от Световното културно наследство на ЮНЕСКО Старинен Несебър и се счита за една от най-добре запазените средновековни църкви в България. Църквата, сега художествена галерия, е построена в края на 13 или началото на 14 век и е най-известна със своята богата и богато украсена външна украса. В това есе ще разгледаме историята, архитектурата и украсата на църквата „Христос Пантократор“ и защо тя остава значима културна забележителност в България.</p><p>Църквата „Христос Пантократор“ е посветена на Христос като „ Владетел на всички“, а построяването му обикновено се отнася към средата на 14 век по време на управлението на българския цар Иван Александър. Църквата се намира на ул. "Месембрия" близо до входа на стария град на Несебър и е една от многото атракции, на които посетителите на древния град могат да се насладят. Църквата е под държавна закрила от 1927 г., а през 1964 г. е обявена за „народна старина“. Тя е с приблизителни размери 16 на 6,90 метра и дебелина на стените 0,80 метра. Църквата се отличава с нартекс, вила с по същество правоъгълен издължен план и осмоъгълен купол, който стои на видно място в центъра на вилата. Интегрираната камбанария е разположена на върха на нартекса, както е типично за византийската църковна архитектура, и се простира от правоъгълната основна конструкция. Първоначално камбанарията е била правоъгълна, но сега е частично разрушена.</p><p>Външните стени на църквата Христос Пантократор са най-впечатляващата характеристика на църквата, а източната страна е най-богато украсена. По протежение на източната стена вървят редуващи се ивици от тухли и дялани камъни, слепи арки, флорални мотиви, триъгълни орнаменти, кръгла тюркоазена керамика и фризове от тухлени свастики. Северната и южната стена също имат тухлени слепи арки, голяма арка в съседство с купола и прозорци над долните арки. Куполът разполага с осем прозореца, по един за всяка от страните му, и голям брой декоративни детайли и керамика.</p><p>Украсата на църквата Христос Пантократор се счита за една от най-отличителните й характеристики. Използването на редуващи се ивици от тухли и камъни създава оптичен модел, а насложените аркади на източната стена са оприличени на акведукт от учения Робърт Г. Оустерхаут. Включването на свастики в украсата е уникална характеристика и те се обясняват като символ на Слънцето, използван през средновековието.</p><p>Богатата външна украса на църквата е само малка част от това, което прави църквата на Христос Пантократор е значима културна забележителност в България. Неговата история, местоположение и зашеметяваща архитектура го правят задължително посещение за туристите в Несебър. Като художествена галерия, тя предоставя на посетителите възможност да разгледат произведения на български художници, добавяйки допълнително културно измерение към посещението им.</p><p>В заключение, църквата „Христос Пантократор“ в Несебър е зашеметяващ пример за средновековието Източноправославна архитектура, която остава важна културна забележителност в България. Неговата богата и богато украсена външна украса, съчетана с местоположението му в древния град Несебър и ролята му на художествена галерия, го правят задължително посещение за туристи. Тази църква е свидетелство за архитектурните и художествени постижения на средновековна България и е забележителен пример за красотата и уменията на средновековните майстори, които са я построили.</p>'
                     },
                     en: {
                         title: 'History',
-                        text: '<p>text</p>'
+                        text: '<p>The Church of Christ Pantocrator in Nesebar, Bulgaria is a stunning example of medieval Eastern Orthodox architecture. Located on the Black Sea coast, it is part of the Ancient Nesebar UNESCO World Heritage Site and is considered one of Bulgaria\'s best preserved medieval churches. The church, now an art gallery, was built in the late 13th or early 14th century, and is most famous for its rich and ornate exterior decoration. In this essay, we will explore the history, architecture, and decoration of the Church of Christ Pantocrator and why it remains a significant cultural landmark in Bulgaria.</p><p>The Church of Christ Pantocrator is dedicated to Christ as the "Ruler of All," and its construction is usually attributed to the mid-14th century during the rule of Tsar Ivan Alexander of Bulgaria. The church is located on Mesembria Street near the entrance to Nesebar\'s old town, and is one of the many attractions that visitors to the ancient city can enjoy. The church has been under state protection since 1927 and was designated a "national antiquity" in 1964.</p><p>The church is designed in the late Byzantine cross-in-square style and is constructed from stones and brickwork. It is approximately 16 by 6.90 meters in size and its walls are 0.80 meters thick. The church features a narthex, a cella with an essentially rectangular elongated plan, and an octagonal dome that stands prominently in the center of the cella. The integrated bell tower is located on top of the narthex, as was typical in Byzantine church architecture, and extends from the rectangular main structure. The bell tower was originally rectangular but is now partially ruined.</p><p>The Church of Christ Pantocrator\'s exterior walls are the most striking feature of the church, and the east side is the most ornately decorated. Interchanging strips of bricks and carved stones, blind arches, floral motifs, triangular ornaments, circular turquoise ceramics, and brick swastika friezes run along the east wall. The north and south walls also feature brick blind arches, a large arch adjacent to the dome, and windows above the lower arches. The dome features eight windows, one for each of its sides, and a large number of ornamental details and ceramics.</p><p>The decoration of the Church of Christ Pantocrator is considered to be one of its most distinctive features. The use of interchanging strips of bricks and stones creates an optical pattern, and the superimposed arcades on the east wall are likened to an aqueduct by scholar Robert G. Ousterhout. The inclusion of swastikas in the decoration is a unique feature, and they are explained as a symbol of the Sun used in medieval times.</p><p>The church\'s rich exterior decoration is just a small part of what makes the Church of Christ Pantocrator a significant cultural landmark in Bulgaria. Its history, location, and stunning architecture make it a must-visit for tourists to Nesebar. As an art gallery, it provides visitors with the opportunity to view works by Bulgarian artists, adding an extra cultural dimension to their visit.</p><p>In conclusion, the Church of Christ Pantocrator in Nesebar is a stunning example of medieval Eastern Orthodox architecture that remains an important cultural landmark in Bulgaria. Its rich and ornate exterior decoration, combined with its location in the ancient city of Nesebar and its role as an art gallery, make it a must-visit for tourists. This church is a testament to the architectural and artistic achievements of medieval Bulgaria and is a remarkable example of the beauty and skill of the medieval craftsmen who built it.</p>'
                     }
                 }
             }
@@ -1455,10 +1455,11 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1660815374000,
-                comment: 'text',
+                comment:
+                    'Тази църква е абсолютно зашеметяваща! Сложните произведения на изкуството и зашеметяващите стенописи ме оставиха в страхопочитание. Силно препоръчвам да посетите, ако сте в Несебър.',
                 comment_language: 'bg',
                 attachment: {
-                    source: '5-2.jpg',
+                    source: '7-2.jpg',
                     ratio: 'normal',
                     type: 'photo'
                 }
@@ -1470,7 +1471,8 @@ const places = [
                 },
                 rating: 4,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Бях приятно изненадан от красотата и спокойствието на църквата „Христос Пантократор“. Тя е скрито бижу в Несебър и си заслужава да бъде посетена.',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
@@ -1485,7 +1487,8 @@ const places = [
                 },
                 rating: 2,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Бях разочарован от състоянието на църквата. Въпреки че стенописите са все още красиви, самата църква имаше нужда от сериозен ремонт и поддръжка.',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
@@ -1500,7 +1503,8 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Тази църква беше един от акцентите на пътуването ми до Несебър. Спокойната атмосфера и великолепната архитектура го превърнаха в едно наистина духовно изживяване.',
                 comment_language: 'bg',
                 attachment: {
                     source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
@@ -1515,11 +1519,12 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Църквата на Христос Пантократор е задължително посещение, ако се интересувате от история и религия. Древните фрески и сложните резби са наистина забележителни.',
                 comment_language: 'bg',
                 attachment: {
-                    source: '5-5.jpg',
-                    ratio: 'normal',
+                    source: '7-5.jpg',
+                    ratio: 'invert',
                     type: 'photo'
                 }
             },
@@ -1530,7 +1535,8 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Църквата „Христос Пантократор“ беше един от най-уникалните и красиви религиозни обекти, които съм посещавала. Горещо бих я препоръчала на всеки, който посети Несебър.',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
