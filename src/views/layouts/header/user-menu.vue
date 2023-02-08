@@ -97,8 +97,8 @@
             // const isDark = useDark()
             // const toggleDark = useToggle(isDark)
             const user = {
-                name: 'Том Атанасов',
-                email: 'tom.atanasov@delta.bg'
+                name: 'Потребителско Име',
+                email: 'username@example.com'
             }
 
             return {

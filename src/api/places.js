@@ -1565,22 +1565,22 @@ const places = [
         photos: [
             {
                 image: '/images/photos/8-1.jpg',
-                author: 'Неизвестен',
+                author: 'Лиляна Узунова',
                 date_added: 1670777697
             },
             {
                 image: '/images/photos/8-2.jpg',
-                author: 'Неизвестен',
+                author: 'Свилен Енев',
                 date_added: 1670777697
             },
             {
                 image: '/images/photos/8-3.jpg',
-                author: 'Неизвестен',
+                author: 'Лиляна Узунова',
                 date_added: 1670777697
             },
             {
                 image: '/images/photos/8-4.jpg',
-                author: 'Неизвестен',
+                author: 'Лиляна Узунова',
                 date_added: 1670777697
             }
         ],
@@ -1631,11 +1631,11 @@ const places = [
                 locale: {
                     bg: {
                         title: 'Кратко резюме',
-                        text: '<p>text</p>'
+                        text: '<p>Плиска е първата столица на Първото българско царство през Средновековието. Според легендата е основан от Аспарух Български в края на 7 век, но това не е потвърдено от археологията. В началото на 9-ти век Плиска е заобиколена от отбранителна стена и е допълнително оградена с външна земна насипа с каменна облицовка. През 811 г. византийската армия разграбва и опожарява Плиска, но тя е възстановена от Омуртаг, който използва сполии от близките римски сгради. След като Борис I приема християнството през 864 г., религиозните сгради на Плиска са адаптирани за християнски нужди и е построена Голямата базилика, заедно с манастир. Плиска бавно е изоставена, след като цар Симеон I основава новата си столица в Преслав. През 680 г. българите, водени от Аспарух, нахлуват в земи, които сега са част от днешна България, и Византийската империя е принудена да подпише договор, признаващ българската държава през 681 г. Плиска е столица на Първото българско царство от 681 до 893 г. сл. Хр. и е с площ от 21,8 km2. Плиска преживява почти един век на растеж, но това не е мирна епоха, тъй като българите и Византийската империя са в състояние на постоянна война. Походът на император Никифор I през 811 г. завършва с опожаряването на царската резиденция в Плиска. По-късно през 9 век езическите храмове в Плиска вероятно започват да се превръщат в християнски църкви. Борис I създава Плисковската книжовна школа и когато се разболява и се оттегля в манастир, синът му Владимир прави опит да възстанови езичеството. През този период голямата каменна базилика в Плиска е силно повредена. Плиска е превзета в началото на второто хилядолетие от Теодорокан и Никифор Ксифий, слагайки край на Първото българско царство.</p>'
                     },
                     en: {
                         title: 'Summary',
-                        text: '<p>text</p>'
+                        text: "<p>Pliska was the first capital of the First Bulgarian Empire during the Middle Ages. According to legend, it was founded by Asparuh of Bulgaria in the late 7th century, although this is not substantiated by archaeology. By the early 9th century, Pliska was surrounded by a defensive wall and was further enclosed by an outer earthwork with stone revetment. In 811, the Byzantine army sacked and burned Pliska, but it was rebuilt by Omurtag who used spolia from nearby Roman buildings. After Boris I converted to Christianity in 864, the religious buildings of Pliska were adapted for Christian use and the Great Basilica was constructed, along with a monastery. Pliska was slowly abandoned after the tsar Simeon I founded his new capital at Preslav. In the year 680, the Bulgars, led by Asparukh, invaded lands now part of modern-day Bulgaria and the Byzantine empire was forced to sign a treaty recognizing the Bulgar state in 681. Pliska was the capital of the First Bulgarian Empire from 681 to 893 AD and had an area of 21.8 km2. Pliska experienced nearly a century of growth but this was not a peaceful era as the Bulgars and Byzantine Empire were in constant state of war. Emperor Nikephoros I's campaign in 811 resulted in the burning of the royal residence in Pliska. Later in the 9th century, the pagan temples in Pliska likely began to be converted to Christian churches. Boris I founded the Pliska Literary School and when he fell ill and retired to a monastery, his son Vladimir attempted to reestablish paganism. During this period, the large stone basilica at Pliska was heavily damaged. Pliska was captured at the turn of the 2nd millennium by Theodorokanos and Nikephoros Xiphias, ending the First Bulgarian Empire.</p>"
                     }
                 }
             },
@@ -1653,11 +1653,11 @@ const places = [
                 locale: {
                     bg: {
                         title: 'История',
-                        text: '<p>text</p>'
+                        text: '<p>Плиска, разположена в област Шумен в България, е малък град, който някога е заемал важно място в историята на Първото българско царство. Плиска е първата столица на Българската империя, основана от хан Аспарух, и служи като политически и културен център на империята повече от двеста години, от 681 до 893 г. сл. Хр. Градът е бил известен със своите внушителни земни укрепления, които ограждат по-малко каменно укрепление, в което се помещават дворец, храмове и други сгради, принадлежащи на аристокрацията.</p><p>Историята на Плиска е тясно свързана с възхода на Първото българско царство и множеството битки между империята и Византийската империя. Осми и девети век са време на постоянен конфликт между двете империи, като византийците предприемат няколко кампании срещу българите, включително особено опустошителна атака, водена от император Никифор I през 811 г., която води до опожаряването на царската резиденция в Плиска. Въпреки това българите, водени от хан Крум, в крайна сметка успяват да прогонят нашествениците и да си върнат града.</p><p>По време на управлението на Борис I Плиска преживява културна и религиозна трансформация. Борис приема християнството през 864 г., а езическите храмове в града са превърнати в християнски църкви. През 886 г. основава Плисковската книжовна школа, която по-късно при преместването на столицата е преместена в Преслав. Въпреки временния опит на сина на Борис Владимир да възстанови езичеството, покръстването в крайна сметка е успешно и в Плиска е построена Голямата базилика, голяма каменна църква.</p><p>Въпреки това, като Първото българско царство продължила да расте и да се разширява, Плиска започнала да губи значението си. В края на IX век синът на Борис Симеон I основава нова столица в Преслав и Плиска постепенно запустява. Превзет е в началото на второто хилядолетие от Теодорокан и Никифор Ксифий, по време на походите на византийския император Василий Българоубиец, белязали края на Първото българско царство.</p><p>Днес Плиска е малък град с богата история, която до голяма степен е забравена. Археологическите му останки обаче дават ценна представа за културната, политическата и религиозната история на Първото българско царство. Укрепленията, дворецът и Голямата базилика са сред най-важните останки, които все още могат да се видят на мястото и служат като осезаеми напомняния за миналото значение на града.</p><p>В заключение, Плиска е очарователен град изиграла решаваща роля в историята на Първото българско царство. Въпреки малкия си размер и относителната неизвестност, градът някога е бил процъфтяващ център на политика, култура и религия, а останките му предлагат прозорец в миналото. Въпреки че голяма част от историята на Плиска може да е забравена, нейните впечатляващи крепостни стени, дворец и базилика са свидетелство за миналото значение на града и богатото наследство на Първото българско царство.</p>'
                     },
                     en: {
                         title: 'History',
-                        text: '<p>text</p>'
+                        text: "<p>Pliska, located in the Shumen Province of Bulgaria, is a small town that once held a significant place in the history of the First Bulgarian Empire. Pliska was the first capital of the Bulgarian Empire, founded by Khan Asparukh, and served as the political and cultural center of the empire for over two hundred years, from 681 to 893 AD. The town was known for its impressive earthen ramparts, which enclosed a smaller stone fortification that housed a palace, temples, and other buildings belonging to the aristocracy.</p><p>The history of Pliska is closely tied to the rise of the First Bulgarian Empire and the many battles that took place between the empire and the Byzantine Empire. The eighth and ninth centuries were a time of constant conflict between the two empires, with the Byzantines launching several campaigns against the Bulgarians, including a particularly devastating attack led by Emperor Nikephoros I in 811 that resulted in the burning of the royal residence in Pliska. However, the Bulgarians, led by Khan Krum, were eventually able to drive out the invaders and reclaim the city.</p><p>Under the rule of Boris I, Pliska experienced a cultural and religious transformation. Boris converted to Christianity in 864, and the pagan temples in the city were converted into Christian churches. In 886, he founded the Pliska Literary School, which was later moved to Preslav when the capital was relocated. Despite a temporary attempt by Boris' son Vladimir to reestablish paganism, the conversion to Christianity was ultimately successful, and the Great Basilica, a large stone church, was constructed in Pliska.</p><p>However, as the First Bulgarian Empire continued to grow and expand, Pliska began to lose its importance. In the late ninth century, Boris' son Simeon I founded a new capital at Preslav, and Pliska gradually became abandoned. It was captured at the turn of the second millennium by Theodorokanos and Nikephoros Xiphias, during the campaigns of the Byzantine Emperor Basil the Bulgar-Slayer, which marked the end of the First Bulgarian Empire.</p><p>Today, Pliska is a small town with a rich history that has largely been forgotten. However, its archaeological remains provide valuable insights into the cultural, political, and religious history of the First Bulgarian Empire. The ramparts, the palace, and the Great Basilica are among the most important remains that can still be seen at the site, serving as tangible reminders of the town's past significance.</p><p>In conclusion, Pliska is a fascinating town that played a crucial role in the history of the First Bulgarian Empire. Despite its small size and relative obscurity, the town was once a thriving center of politics, culture, and religion, and its remains offer a window into the past. While much of Pliska's history may have been forgotten, its impressive ramparts, palace, and basilica stand as testimony to the town's past significance and the rich heritage of the First Bulgarian Empire.</p>"
                     }
                 }
             }
@@ -1670,10 +1670,11 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1660815374000,
-                comment: 'text',
+                comment:
+                    'Наскоро посетих това място и бях поразен от красотата и спокойствието. Беше перфектното бягство от шума и суетата на града. Силно препоръчвам посещение.',
                 comment_language: 'bg',
                 attachment: {
-                    source: '5-2.jpg',
+                    source: '8-2.jpg',
                     ratio: 'normal',
                     type: 'photo'
                 }
@@ -1685,7 +1686,8 @@ const places = [
                 },
                 rating: 4,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Пейзажът на това място е спиращ дъха. Бях във възторг от зашеметяващите гледки и спокойната атмосфера. Направих много снимки и определено ще се върна скоро.',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
@@ -1700,7 +1702,8 @@ const places = [
                 },
                 rating: 2,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Бях малко разочарован от посещението си на това място. Съоръженията не бяха толкова чисти, колкото се надявах, а персоналът изглеждаше незаинтересован да ни помогне. Не бих го препоръчал.',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
@@ -1715,7 +1718,8 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Това място е задължително посещение за всеки, който обича природата и красивите пейзажи. Персоналът беше невероятно любезен и отзивчив, правейки изживяването ни още по-добро.',
                 comment_language: 'bg',
                 attachment: {
                     source: 'https://i.ytimg.com/vi/uRKF_tGUhZw/hqdefault.jpg',
@@ -1730,10 +1734,11 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Съоръженията на това място бяха първокласни и надминаха очакванията ми. Бях впечатлен от вниманието към детайла и чистотата. Силно препоръчително!',
                 comment_language: 'bg',
                 attachment: {
-                    source: '5-5.jpg',
+                    source: '8-5.jpg',
                     ratio: 'normal',
                     type: 'photo'
                 }
@@ -1745,7 +1750,8 @@ const places = [
                 },
                 rating: 5,
                 date_added: 1685017043000,
-                comment: 'text',
+                comment:
+                    'Прекарах чудесно на това място. Красотата на околностите беше съчетана само с топлото гостоприемство на персонала. Ще се върна скоро, за да му се насладя отново!',
                 comment_language: 'bg',
                 attachment: {
                     source: null,
