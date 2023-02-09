@@ -5,9 +5,9 @@ const messages = {
         locality: '{title} Municipality',
         localities: 'Municipalities ({count})',
         homepage: 'Homepage',
-        place: 'Place "{title}"',
+        place: '{title}',
         places: 'Places',
-        region: 'Tourist Region "{title}"',
+        region: '{title}',
         regions: 'Tourist Regions'
     },
     colorMode: {

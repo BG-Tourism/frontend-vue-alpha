@@ -5,9 +5,9 @@ const messages = {
         locality: 'Община {title}',
         localities: 'Общини ({count})',
         homepage: 'Начало',
-        place: 'Забележителност "{title}"',
+        place: '{title}',
         places: 'Забележителности',
-        region: 'Туристически район "{title}"',
+        region: '{title}',
         regions: 'Туристически райони'
     },
     colorMode: {

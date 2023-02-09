@@ -74,9 +74,9 @@ const messages = {
             }
         },
         destinations: {
-            title: 'Popular Areas',
-            description: "Visit iconic and unique sights that define the Bulgarian areas' culture and history",
-            locations_count: '{count} locations in this area'
+            title: 'Popular Tourist Regions',
+            description: "Visit iconic and unique sights that define the Bulgarian tourist regions' culture and history",
+            locations_count: '{count} locations in this region'
         }
     },
     place: {
