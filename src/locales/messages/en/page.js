@@ -4,7 +4,7 @@ const messages = {
     },
     search: {
         title: 'Search',
-        description: 'You can search both by names of landmarks and by regions, localities and categories.'
+        description: 'You can search both by names of landmarks and by tourist regions, municipalities and categories.'
     },
     categories: {
         title: 'Categories',
@@ -157,10 +157,10 @@ const messages = {
             'Find your next perfect travel destination in Bulgaria tourist regions, offering something for every type of traveler.'
     },
     locality: {
-        title: 'Locality'
+        title: 'Municipality'
     },
     localities: {
-        title: 'Localities'
+        title: 'Municipalities'
     },
     terms: {
         title: 'Terms & Conditions'

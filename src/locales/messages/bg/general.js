@@ -2,8 +2,8 @@ const messages = {
     navigation: {
         categories: 'Категории',
         category: 'Категория "{title}"',
-        locality: 'Местност "{title}"',
-        localities: 'Местности ({count})',
+        locality: 'Община {title}',
+        localities: 'Общини ({count})',
         homepage: 'Начало',
         place: 'Забележителност "{title}"',
         places: 'Забележителности',
@@ -46,8 +46,8 @@ const messages = {
         autosaving: 'Всеки избор, който направиш, ще се отрази в резултатите мигновено.',
         categories: 'Категории',
         categoriesCounter: 'Категории ({n})',
-        regionsAndLocalities: 'Туристически райони и местности',
-        regionsAndLocalitiesCounter: 'Туристически райони и местности ({n})',
+        regionsAndLocalities: 'Туристически райони и общини',
+        regionsAndLocalitiesCounter: 'Туристически райони и общини ({n})',
         rating: 'Рейтинг',
         ratingCounter: 'Рейтинг ({n})',
         searchPlaceholder: 'Започнете да пишете...'
