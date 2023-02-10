@@ -2,126 +2,126 @@ import { createRouter, createWebHistory } from 'vue-router'
 import NProgress from 'nprogress'
 
 const routes = [
-    {
-        path: '/',
-        name: 'Homepage',
-        meta: {
-            className: 'page-homepage'
-        },
-        component: () => import('@/views/pages/homepage.vue')
+  {
+    path: '/',
+    name: 'Homepage',
+    meta: {
+      className: 'page-homepage',
     },
-    {
-        path: '/region/:slug',
-        name: 'Region',
-        meta: {
-            className: 'page-region'
-        },
-        component: () => import('@/views/pages/view-region.vue')
+    component: () => import('@/views/pages/homepage.vue'),
+  },
+  {
+    path: '/region/:slug',
+    name: 'Region',
+    meta: {
+      className: 'page-region',
     },
-    {
-        path: '/regions',
-        name: 'Regions',
-        meta: {
-            className: 'page-regions'
-        },
-        component: () => import('@/views/pages/find-regions.vue')
+    component: () => import('@/views/pages/view-region.vue'),
+  },
+  {
+    path: '/regions',
+    name: 'Regions',
+    meta: {
+      className: 'page-regions',
     },
-    {
-        path: '/categories',
-        name: 'Categories',
-        meta: {
-            className: 'page-categories'
-        },
-        component: () => import('@/views/pages/find-categories.vue')
+    component: () => import('@/views/pages/find-regions.vue'),
+  },
+  {
+    path: '/categories',
+    name: 'Categories',
+    meta: {
+      className: 'page-categories',
     },
-    {
-        path: '/place/:slug',
-        name: 'Place',
-        meta: {
-            className: 'page-place'
-        },
-        component: () => import('@/views/pages/view-place.vue')
+    component: () => import('@/views/pages/find-categories.vue'),
+  },
+  {
+    path: '/place/:slug',
+    name: 'Place',
+    meta: {
+      className: 'page-place',
     },
-    {
-        path: '/places',
-        name: 'Places',
-        meta: {
-            className: 'page-places'
-        },
-        component: () => import('@/views/pages/find-places.vue')
+    component: () => import('@/views/pages/view-place.vue'),
+  },
+  {
+    path: '/places',
+    name: 'Places',
+    meta: {
+      className: 'page-places',
     },
-    {
-        path: '/about',
-        name: 'About',
-        meta: {
-            className: 'page-about'
-        },
-        component: () => import('@/views/pages/about.vue')
+    component: () => import('@/views/pages/find-places.vue'),
+  },
+  {
+    path: '/about',
+    name: 'About',
+    meta: {
+      className: 'page-about',
     },
-    {
-        path: '/contact',
-        name: 'Contact',
-        meta: {
-            className: 'page-contact'
-        },
-        component: () => import('@/views/pages/contact.vue')
+    component: () => import('@/views/pages/about.vue'),
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    meta: {
+      className: 'page-contact',
     },
-    {
-        path: '/terms',
-        name: 'TermsAndConditions',
-        meta: {
-            className: 'page-general'
-        },
-        component: () => import('@/views/pages/terms.vue')
+    component: () => import('@/views/pages/contact.vue'),
+  },
+  {
+    path: '/terms',
+    name: 'TermsAndConditions',
+    meta: {
+      className: 'page-general',
     },
-    {
-        path: '/privacy',
-        name: 'PrivacyPolicy',
-        meta: {
-            className: 'page-general'
-        },
-        component: () => import('@/views/pages/privacy.vue')
+    component: () => import('@/views/pages/terms.vue'),
+  },
+  {
+    path: '/privacy',
+    name: 'PrivacyPolicy',
+    meta: {
+      className: 'page-general',
     },
-    {
-        path: '/cookies',
-        name: 'Cookies',
-        meta: {
-            className: 'page-general'
-        },
-        component: () => import('@/views/pages/cookies.vue')
+    component: () => import('@/views/pages/privacy.vue'),
+  },
+  {
+    path: '/cookies',
+    name: 'Cookies',
+    meta: {
+      className: 'page-general',
     },
-    {
-        path: '/:catchAll(.*)',
-        name: 'PageError',
-        meta: {
-            className: 'page-error'
-        },
-        component: () => import('@/views/pages/error.vue')
-    }
+    component: () => import('@/views/pages/cookies.vue'),
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'PageError',
+    meta: {
+      className: 'page-error',
+    },
+    component: () => import('@/views/pages/error.vue'),
+  },
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    linkActiveClass: 'active',
-    scrollBehavior: (to, from, savedPosition) => {
-        return (
-            savedPosition ||
-            new Promise((resolve) => {
-                setTimeout(() => resolve({ top: 0, behavior: 'smooth' }), 200)
+  history: createWebHistory(),
+  linkActiveClass: 'active',
+  scrollBehavior: (to, from, savedPosition) => {
+    return (
+      savedPosition
+            || new Promise((resolve) => {
+              setTimeout(() => resolve({ top: 0, behavior: 'smooth' }), 200)
             })
-        )
-    },
-    routes
+    )
+  },
+  routes,
 })
 
 router.beforeEach((to, from, next) => {
-    NProgress.start()
+  NProgress.start()
 
-    next()
+  next()
 })
 
 router.afterEach(() => {
-    NProgress.done()
+  NProgress.done()
 })
 
 export default router

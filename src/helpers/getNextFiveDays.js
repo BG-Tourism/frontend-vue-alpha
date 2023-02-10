@@ -1,20 +1,20 @@
 export default function getNextFiveDays(locale) {
-    var date = new Date()
-    var days = [
-        {
-            number: date.getDay(),
-            long: date.toLocaleDateString(locale).slice(0, 10)
-        }
-    ]
+  const date = new Date()
+  const days = [
+    {
+      number: date.getDay(),
+      long: date.toLocaleDateString(locale).slice(0, 10),
+    },
+  ]
 
-    for (var i = 0; i < 4; i++) {
-        date.setDate(date.getDate() + 1)
+  for (let i = 0; i < 4; i++) {
+    date.setDate(date.getDate() + 1)
 
-        days.push({
-            number: date.getDay(),
-            long: date.toLocaleDateString(locale).slice(0, 10)
-        })
-    }
+    days.push({
+      number: date.getDay(),
+      long: date.toLocaleDateString(locale).slice(0, 10),
+    })
+  }
 
-    return days
+  return days
 }

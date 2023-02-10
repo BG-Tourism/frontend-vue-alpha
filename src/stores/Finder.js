@@ -12,191 +12,186 @@ import places from '@/api/places'
  *  2 = closing
  */
 export const useFinderStore = defineStore('FinderStore', {
-    state: () => ({
-        loadings: {
-            list: true,
-            selections: true
-        },
-        list: {
-            data: [],
-            pagination: {
-                currentPage: 1
-            }
-        },
-        selections: {
-            category: [],
-            region: [],
-            locality: [],
-            rating: []
-        },
-        modals: {
-            search: {
-                shown: false,
-                state: 0
-            },
-            category: {
-                shown: false,
-                state: 0
-            },
-            region: {
-                shown: false,
-                state: 0
-            },
-            rating: {
-                shown: false,
-                state: 0
-            }
-        }
-    }),
-    actions: {
-        fetch(filters = null) {
-            let items = []
+  state: () => ({
+    loadings: {
+      list: true,
+      selections: true,
+    },
+    list: {
+      data: [],
+      pagination: {
+        currentPage: 1,
+      },
+    },
+    selections: {
+      category: [],
+      region: [],
+      locality: [],
+      rating: [],
+    },
+    modals: {
+      search: {
+        shown: false,
+        state: 0,
+      },
+      category: {
+        shown: false,
+        state: 0,
+      },
+      region: {
+        shown: false,
+        state: 0,
+      },
+      rating: {
+        shown: false,
+        state: 0,
+      },
+    },
+  }),
+  actions: {
+    fetch(filters = null) {
+      let items = []
 
-            if (filters) {
-                items = places.filter((item) => {
-                    return (
-                        (this.selections.category.includes(item.category.slug) || this.selections.category.length === 0) &&
-                        (this.selections.region.includes(item.region.slug) || this.selections.region.length === 0) &&
-                        (this.selections.locality.includes(item.locality.slug) || this.selections.locality.length === 0) &&
-                        (this.selections.rating.some((r) => {
-                            return Math.floor(item.user_score) === r
-                        }) ||
-                            this.selections.rating.length === 0)
-                    )
-                })
-            } else {
-                items = places
-            }
+      if (filters) {
+        items = places.filter((item) => {
+          return (
+            (this.selections.category.includes(item.category.slug) || this.selections.category.length === 0) && (this.selections.region.includes(item.region.slug) || this.selections.region.length === 0) && (this.selections.locality.includes(item.locality.slug) || this.selections.locality.length === 0) && (this.selections.rating.includes(Math.floor(item.user_score)) || this.selections.rating.length === 0)
+          )
+        })
+      }
+      else {
+        items = places
+      }
 
-            this.loadings.selections = true
+      this.loadings.selections = true
 
-            setTimeout(() => {
-                this.list.data = items
-                this.loadings.list = false
+      setTimeout(() => {
+        this.list.data = items
+        this.loadings.list = false
 
-                this.loadings.selections = false
-            }, 300)
-        },
-        manageItem(type, items) {
-            if (typeof items === 'object') {
-                Object.values(items).map((item) => {
-                    let existsInDatabase = null
+        this.loadings.selections = false
+      }, 300)
+    },
+    manageItem(type, items) {
+      if (typeof items === 'object') {
+        Object.values(items).map((item) => {
+          let existsInDatabase = null
 
-                    if (type === 'category') {
-                        existsInDatabase = categories.find((i) => i.slug === item) ? true : false
-                    } else if (type === 'region') {
-                        existsInDatabase = regions.find((i) => i.slug === item) ? true : false
-                    } else if (type === 'locality') {
-                        existsInDatabase = regions.some((i) => {
-                            if (Array.isArray(i.localities)) {
-                                return i.localities.some((locality) => locality.slug === item)
-                            }
-                            return i.localities.slug === item
-                        })
-                            ? true
-                            : false
-                    } else if (type === 'rating') {
-                        existsInDatabase = [1, 2, 3, 4, 5].includes(item)
-                    } else {
-                        existsInDatabase = false
-                    }
+          if (type === 'category') {
+            existsInDatabase = !!categories.find(i => i.slug === item)
+          }
+          else if (type === 'region') {
+            existsInDatabase = !!regions.find(i => i.slug === item)
+          }
+          else if (type === 'locality') {
+            existsInDatabase = !!regions.some((i) => {
+              if (Array.isArray(i.localities))
+                return i.localities.some(locality => locality.slug === item)
 
-                    if (existsInDatabase) {
-                        const existsInSelection = this.selections[type].find((i) => i === items)
+              return i.localities.slug === item
+            })
+          }
+          else if (type === 'rating') {
+            existsInDatabase = [1, 2, 3, 4, 5].includes(item)
+          }
+          else {
+            existsInDatabase = false
+          }
 
-                        if (!existsInSelection) {
-                            this.addItem(type, item)
-                        }
-                    } else {
-                        console.log(`Invalid ${type}: ${item}`)
-                    }
-                })
-            } else {
-                const exists = this.selections[type].find((i) => i === items)
+          if (existsInDatabase) {
+            const existsInSelection = this.selections[type].find(i => i === items)
 
-                if (!exists) {
-                    this.addItem(type, items)
-                } else {
-                    this.removeItem(type, items)
-                }
-            }
+            if (!existsInSelection)
+              this.addItem(type, item)
+          }
+          else {
+            console.log(`Invalid ${type}: ${item}`)
+          }
 
-            this.list.pagination.currentPage = 1
-            this.fetch(this.selections)
-        },
-        addItem(type, item) {
-            this.selections[type].push(item)
+          return existsInDatabase
+        })
+      }
+      else {
+        const exists = this.selections[type].find(i => i === items)
 
-            console.log(`Added ${type}: ${item}`, JSON.stringify(this.selections))
-        },
-        removeItem(type, item) {
-            const index = this.selections[type].findIndex((i) => i === item)
+        if (!exists)
+          this.addItem(type, items)
+        else
+          this.removeItem(type, items)
+      }
 
-            if (index !== -1) {
-                this.selections[type].splice(index, 1)
+      this.list.pagination.currentPage = 1
+      this.fetch(this.selections)
+    },
+    addItem(type, item) {
+      this.selections[type].push(item)
 
-                console.log(`Removed ${type}: ${item}`, JSON.stringify(this.selections))
-            }
-        },
-        toggleModal(type) {
-            if (this.modals[type].state === 1) {
-                this.modals[type].state = 2
-            }
+      console.log(`Added ${type}: ${item}`, JSON.stringify(this.selections))
+    },
+    removeItem(type, item) {
+      const index = this.selections[type].findIndex(i => i === item)
 
-            setTimeout(() => {
-                this.modals[type].state = 0
-                this.modals[type].shown = false
-            }, 300)
-        },
-        truncate() {
-            console.log('Clearing filters:', JSON.stringify(this.selections))
+      if (index !== -1) {
+        this.selections[type].splice(index, 1)
 
-            this.loadings.list = true
-            this.loadings.selections = true
+        console.log(`Removed ${type}: ${item}`, JSON.stringify(this.selections))
+      }
+    },
+    toggleModal(type) {
+      if (this.modals[type].state === 1)
+        this.modals[type].state = 2
 
-            this.list.data = []
-            this.list.pagination.currentPage = 1
+      setTimeout(() => {
+        this.modals[type].state = 0
+        this.modals[type].shown = false
+      }, 300)
+    },
+    truncate() {
+      console.log('Clearing filters:', JSON.stringify(this.selections))
 
-            this.selections.category = []
-            this.selections.region = []
-            this.selections.locality = []
-            this.selections.rating = []
+      this.loadings.list = true
+      this.loadings.selections = true
 
-            this.modals.search.shown = false
-            this.modals.search.state = 0
-            this.modals.category.shown = false
-            this.modals.category.state = 0
-            this.modals.region.shown = false
-            this.modals.region.state = 0
-            this.modals.rating.shown = false
-            this.modals.rating.state = 0
-        },
-        truncateByType(type) {
-            if (type === 'category') {
-                console.log(`Removed categories: ${this.selections.category.join(', ')}`, JSON.stringify(this.selections))
+      this.list.data = []
+      this.list.pagination.currentPage = 1
 
-                this.selections.category = []
-            }
+      this.selections.category = []
+      this.selections.region = []
+      this.selections.locality = []
+      this.selections.rating = []
 
-            if (type === 'region') {
-                console.log(
-                    `Removed regions and localities: ${this.selections.region.join(', ')} / ${this.selections.locality}`,
-                    JSON.stringify(this.selections)
-                )
+      this.modals.search.shown = false
+      this.modals.search.state = 0
+      this.modals.category.shown = false
+      this.modals.category.state = 0
+      this.modals.region.shown = false
+      this.modals.region.state = 0
+      this.modals.rating.shown = false
+      this.modals.rating.state = 0
+    },
+    truncateByType(type) {
+      if (type === 'category') {
+        console.log(`Removed categories: ${this.selections.category.join(', ')}`, JSON.stringify(this.selections))
 
-                this.selections.region = []
-                this.selections.locality = []
-            }
+        this.selections.category = []
+      }
 
-            if (type === 'rating') {
-                console.log(`Removed ratings: ${this.selections.rating.join(', ')}`, JSON.stringify(this.selections))
+      if (type === 'region') {
+        console.log(`Removed regions and localities: ${this.selections.region.join(', ')} / ${this.selections.locality}`, JSON.stringify(this.selections))
 
-                this.selections.rating = []
-            }
+        this.selections.region = []
+        this.selections.locality = []
+      }
 
-            this.fetch(this.selections)
+      if (type === 'rating') {
+        console.log(`Removed ratings: ${this.selections.rating.join(', ')}`, JSON.stringify(this.selections))
 
-            console.log('truncateByType:', JSON.stringify(this.selections))
-        }
-    }
+        this.selections.rating = []
+      }
+
+      this.fetch(this.selections)
+
+      console.log('truncateByType:', JSON.stringify(this.selections))
+    },
+  },
 })
