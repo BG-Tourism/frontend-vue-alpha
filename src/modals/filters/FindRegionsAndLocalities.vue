@@ -1,14 +1,13 @@
 <template>
-    <div v-if="finder.popups.region.shown">
+    <div v-if="finder.modals.region.shown">
         <div
             :class="[
-                'popup',
-                'categories',
-                finder.popups.region.state == 1 ? 'opening' : null,
-                finder.popups.region.state == 2 ? 'closing' : null
+                'modal',
+                finder.modals.region.state == 1 ? 'opening' : null,
+                finder.modals.region.state == 2 ? 'closing' : null
             ]"
         >
-            <div v-if="[1, 2].includes(finder.popups.region.state)" class="wrapper">
+            <div v-if="[1, 2].includes(finder.modals.region.state)" class="wrapper">
                 <div class="close">
                     <button>
                         <span class="icon-holder">
@@ -17,7 +16,7 @@
                         <span>{{ $t('general.close') }}</span>
                     </button>
                 </div>
-                <div ref="target" class="holder">
+                <div ref="target" class="finder-container">
                     <div class="section-name">
                         <span>{{ $t('general.filters.regionsAndLocalities') }}</span>
                     </div>
@@ -78,7 +77,7 @@
             const target = ref(null)
 
             const handleClose = () => {
-                finder.togglePopup('region')
+                finder.toggleModal('region')
             }
 
             const toggleSelection = (type, item) => {

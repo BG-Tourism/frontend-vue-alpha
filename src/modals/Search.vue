@@ -1,14 +1,13 @@
 <template>
-    <div v-if="finder.popups.search.shown">
+    <div v-if="finder.modals.search.shown">
         <div
             :class="[
-                'popup',
-                'search',
-                finder.popups.search.state == 1 ? 'opening' : null,
-                finder.popups.search.state == 2 ? 'closing' : null
+                'modal',
+                finder.modals.search.state == 1 ? 'opening' : null,
+                finder.modals.search.state == 2 ? 'closing' : null
             ]"
         >
-            <div v-if="[1, 2].includes(finder.popups.search.state)" class="wrapper">
+            <div v-if="[1, 2].includes(finder.modals.search.state)" class="wrapper">
                 <div class="close">
                     <button>
                         <span class="icon-holder">
@@ -17,7 +16,7 @@
                         <span>{{ $t('general.close') }}</span>
                     </button>
                 </div>
-                <div ref="target" :class="['search-container', searchTerm.length >= 1 ? 'has-results' : null]">
+                <div ref="target" :class="['search-container', searchTerm.length >= 2 ? 'has-results' : null]">
                     <BaseInput
                         v-model="search"
                         :placeholder="$t('general.filters.searchPlaceholder')"
@@ -103,7 +102,7 @@
                     </div>
                     <p
                         v-if="
-                            searchTerm.length >= 1 &&
+                            searchTerm.length >= 2 &&
                             !results.places.length &&
                             !results.regions.length &&
                             !results.localities.length &&
@@ -151,7 +150,7 @@
             })
 
             const results = computed(() => {
-                if (!searchTerm.value.trim() || searchTerm.value.trim().length < 1)
+                if (!searchTerm.value.trim() || searchTerm.value.trim().length < 2)
                     return {
                         places: [],
                         regions: [],
@@ -239,7 +238,7 @@
             const handleClose = () => {
                 handleClear()
 
-                finder.togglePopup('search')
+                finder.toggleModal('search')
             }
 
             onKeyStroke('Escape', () => {

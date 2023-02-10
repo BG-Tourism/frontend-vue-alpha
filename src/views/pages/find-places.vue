@@ -206,8 +206,8 @@
             })
 
             const toggleModal = (type) => {
-                finder.popups[type].shown = true
-                finder.popups[type].state = 1
+                finder.modals[type].shown = true
+                finder.modals[type].state = 1
             }
 
             const clearSelections = (type) => {

@@ -104,8 +104,8 @@
             }
 
             const toggleSearch = () => {
-                finder.popups.search.shown = true
-                finder.popups.search.state = 1
+                finder.modals.search.shown = true
+                finder.modals.search.state = 1
             }
 
             return {

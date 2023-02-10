@@ -5,7 +5,7 @@ import regions from '@/api/regions'
 import places from '@/api/places'
 
 /**
- * Popup states could be:
+ * Modal states could be:
  *
  *  0 = closed
  *  1 = opened
@@ -29,7 +29,7 @@ export const useFinderStore = defineStore('FinderStore', {
             locality: [],
             rating: []
         },
-        popups: {
+        modals: {
             search: {
                 shown: false,
                 state: 0
@@ -138,14 +138,14 @@ export const useFinderStore = defineStore('FinderStore', {
                 console.log(`Removed ${type}: ${item}`, JSON.stringify(this.selections))
             }
         },
-        togglePopup(type) {
-            if (this.popups[type].state === 1) {
-                this.popups[type].state = 2
+        toggleModal(type) {
+            if (this.modals[type].state === 1) {
+                this.modals[type].state = 2
             }
 
             setTimeout(() => {
-                this.popups[type].state = 0
-                this.popups[type].shown = false
+                this.modals[type].state = 0
+                this.modals[type].shown = false
             }, 300)
         },
         truncate() {
@@ -162,14 +162,14 @@ export const useFinderStore = defineStore('FinderStore', {
             this.selections.locality = []
             this.selections.rating = []
 
-            this.popups.search.shown = false
-            this.popups.search.state = 0
-            this.popups.category.shown = false
-            this.popups.category.state = 0
-            this.popups.region.shown = false
-            this.popups.region.state = 0
-            this.popups.rating.shown = false
-            this.popups.rating.state = 0
+            this.modals.search.shown = false
+            this.modals.search.state = 0
+            this.modals.category.shown = false
+            this.modals.category.state = 0
+            this.modals.region.shown = false
+            this.modals.region.state = 0
+            this.modals.rating.shown = false
+            this.modals.rating.state = 0
         },
         truncateByType(type) {
             if (type === 'category') {

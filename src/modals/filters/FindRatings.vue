@@ -1,14 +1,13 @@
 <template>
-    <div v-if="finder.popups.rating.shown">
+    <div v-if="finder.modals.rating.shown">
         <div
             :class="[
-                'popup',
-                'categories',
-                finder.popups.rating.state == 1 ? 'opening' : null,
-                finder.popups.rating.state == 2 ? 'closing' : null
+                'modal',
+                finder.modals.rating.state == 1 ? 'opening' : null,
+                finder.modals.rating.state == 2 ? 'closing' : null
             ]"
         >
-            <div v-if="[1, 2].includes(finder.popups.rating.state)" class="wrapper">
+            <div v-if="[1, 2].includes(finder.modals.rating.state)" class="wrapper">
                 <div class="close">
                     <button>
                         <span class="icon-holder">
@@ -17,7 +16,7 @@
                         <span>{{ $t('general.close') }}</span>
                     </button>
                 </div>
-                <div ref="target" class="holder">
+                <div ref="target" class="finder-container">
                     <div class="section-name">
                         <span>{{ $t('general.filters.rating') }}</span>
                     </div>
@@ -61,7 +60,7 @@
             const target = ref(null)
 
             const handleClose = () => {
-                finder.togglePopup('rating')
+                finder.toggleModal('rating')
             }
 
             const toggleSelection = (type, item) => {
