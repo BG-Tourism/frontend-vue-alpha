@@ -118,6 +118,10 @@
             </div>
         </div>
     </footer>
+
+    <div v-if="environment" :class="['info-line', environment]">
+        <span v-html="$t('general.headerEnvironment.' + environment, { repo: gitRepository })" />
+    </div>
 </template>
 
 <script>
@@ -130,11 +134,13 @@
         name: 'BlockFooter',
         setup() {
             const appName = import.meta.env.VITE_APP_NAME
+            const environment = import.meta.env.VITE_APP_ENV
             const gitRepository = import.meta.env.VITE_APP_GIT_REPO
             const currentYear = new Date().getFullYear()
 
             return {
                 appName,
+                environment,
                 gitRepository,
                 currentYear,
                 categories,

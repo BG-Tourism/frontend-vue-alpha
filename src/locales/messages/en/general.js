@@ -58,7 +58,8 @@ const messages = {
         pages: 'Page <strong>{current}</strong> of <strong>{total}</strong>.<br>A total of <strong>{places}</strong> places.'
     },
     headerEnvironment: {
-        production: 'This is a prototype. Go to the <a href="{repo}" target="_blank" rel="noopener">GitHub repository</a>.',
+        production:
+            'This is a prototype of an open-source project. Go to the <a href="{repo}" target="_blank" rel="noopener">GitHub repository</a> to contribute.',
         staging: 'Testing Environment',
         local: 'Development Environment'
     },

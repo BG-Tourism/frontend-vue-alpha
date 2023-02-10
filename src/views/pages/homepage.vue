@@ -9,7 +9,9 @@
                     <h1 v-html="$t('page.homepage.slogan.title')" />
                     <p v-html="$t('page.homepage.slogan.descriptions.v' + number)" />
                     <div class="buttons">
-                        <button class="see-more" v-html="$t('page.homepage.slogan.button')" />
+                        <router-link :to="{ name: 'Places' }" class="see-more">
+                            <span>{{ $t('page.homepage.slogan.button') }}</span>
+                        </router-link>
                         <button class="generate" @click="generateNumber">
                             <i class="icon-refresh" />
                         </button>
@@ -49,9 +51,9 @@
                     </li>
                 </ul>
 
-                <button class="see-more">
-                    {{ $t('general.showMore') }}
-                </button>
+                <router-link :to="{ name: 'Places' }" class="see-more">
+                    <span>{{ $t('general.showMore') }}</span>
+                </router-link>
             </div>
 
             <div class="categories">

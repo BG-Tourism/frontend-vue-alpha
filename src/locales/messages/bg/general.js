@@ -58,7 +58,8 @@ const messages = {
         pages: 'Страница <strong>{current}</strong> от <strong>{total}</strong>.<br>Общо <strong>{places}</strong> забележителности.'
     },
     headerEnvironment: {
-        production: 'Това е прототип. Към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>.',
+        production:
+            'Това е прототип на проект с отворен код. Насочи се към <a href="{repo}" target="_blank" rel="noopener">GitHub хранилището</a>, за да допринесеш.',
         staging: 'Тестова среда',
         local: 'Среда за разработка'
     },
