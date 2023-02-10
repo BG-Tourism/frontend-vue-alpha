@@ -1,0 +1,172 @@
+.modal {
+    .search-container {
+        width: 800px;
+
+        &.has-results {
+            .input-container {
+                &.focus {
+                    .input-field {
+                        box-shadow: rgba($slate-900, 0.3) 0 0 10px;
+                    }
+                }
+
+                .input-field {
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                    box-shadow: rgba($slate-900, 0.3) 0 0 10px;
+                }
+            }
+        }
+
+        .input-container {
+            position: relative;
+            z-index: 2;
+            padding: 0;
+
+            &.focus {
+                .input-field {
+                    border-color: $slate-200;
+                    box-shadow: none;
+                    outline-color: transparent;
+                }
+            }
+
+            .input-field {
+                border: 0;
+                border-radius: 12px;
+                box-shadow: none;
+                transition: unset;
+            }
+
+            .input-prefix {
+                padding: 0 0 0 20px;
+
+                &::before {
+                    display: none;
+                }
+
+                i {
+                    @include font-size(20px);
+                }
+            }
+
+            .input-suffix {
+                padding: 0 10px 0 0;
+
+                &::before {
+                    display: none;
+                }
+
+                .clear {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border: 0;
+                    background-color: transparent;
+
+                    &:hover {
+                        .icon-holder {
+                            background-color: $slate-300;
+                        }
+                    }
+
+                    .icon-holder {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background-color: $slate-200;
+                        transition: all 200ms linear;
+
+                        i {
+                            @include font-size(16px);
+
+                            color: $slate-700;
+                            transition: all 200ms linear;
+                        }
+                    }
+                }
+            }
+
+            input {
+                @include font-size(20px);
+
+                height: 60px;
+                padding: 0 20px;
+                border-radius: 0;
+                color: $slate-800;
+                line-height: 1;
+            }
+        }
+
+        .results {
+            overflow: hidden;
+            overflow-y: auto;
+            max-height: 500px;
+            border-radius: 0 0 6px 6px;
+            background-color: $white;
+
+            .list {
+                .type {
+                    width: 100%;
+                    padding: 10px 5px;
+                    border-width: 0 0 1px;
+                    border-style: solid;
+                    border-color: $slate-100;
+
+                    &:last-child {
+                        padding: 10px 5px 5px;
+                        border: 0;
+                    }
+                }
+
+                h1 {
+                    @include font-size(18px);
+
+                    padding: 10px 15px;
+                    color: $slate-700;
+                    font-weight: 500;
+                }
+
+                a {
+                    @include font-size(18px);
+
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    padding: 8px 15px;
+                    border-radius: 6px;
+                    color: $slate-700;
+                    font-weight: 300;
+                    line-height: 1.2;
+                    transition: background-color 200ms linear;
+
+                    &:hover {
+                        background-color: $slate-100;
+                    }
+                }
+
+                .highlight {
+                    border-radius: 4px;
+                    background-color: $amber-200;
+                }
+            }
+        }
+
+        .no-results {
+            @include font-size(20px);
+
+            height: auto;
+            padding: 40px;
+            border: 0;
+            border-radius: 0 0 12px 12px;
+            background-color: $white;
+            box-shadow: none;
+            text-align: center;
+        }
+    }
+}

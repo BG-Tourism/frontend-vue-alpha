@@ -3,7 +3,7 @@
 
     &.danger {
         input {
-            ~.radio {
+            ~ .radio {
                 border-color: $red-300;
                 background-color: $red-50;
                 color: $red-500;
@@ -34,7 +34,7 @@
         height: 0;
         opacity: 0;
 
-        ~.radio {
+        ~ .radio {
             &::before {
                 content: '';
                 position: absolute;
@@ -50,7 +50,7 @@
         }
 
         &:checked {
-            ~.radio {
+            ~ .radio {
                 border-color: $blue-600;
                 background-color: $white;
 
@@ -61,12 +61,12 @@
         }
 
         &:disabled {
-            ~.text,
-            ~.radio {
+            ~ .text,
+            ~ .radio {
                 cursor: not-allowed;
             }
 
-            ~.radio {
+            ~ .radio {
                 border-color: $gray-200;
                 background-color: $gray-50;
 
@@ -123,5 +123,3 @@
         margin: 10px 0 0 -40px;
     }
 }
-
-@import 'responsive/form-radio';

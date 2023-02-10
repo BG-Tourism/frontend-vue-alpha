@@ -15,7 +15,7 @@
 
         input {
             &:checked {
-                ~.switch {
+                ~ .switch {
                     &::before {
                         transform: none;
                     }
@@ -96,7 +96,7 @@
         opacity: 0;
 
         &:checked {
-            ~.switch {
+            ~ .switch {
                 border-color: $blue-600;
                 background-color: $blue-600;
 
@@ -108,7 +108,7 @@
         }
 
         &:disabled {
-            ~.switch {
+            ~ .switch {
                 border-color: $gray-200;
                 background-color: $gray-50;
                 cursor: not-allowed;
@@ -147,5 +147,3 @@
         }
     }
 }
-
-@import 'responsive/form-switch';

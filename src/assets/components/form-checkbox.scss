@@ -3,7 +3,7 @@
 
     &.danger {
         input {
-            ~.checkmark {
+            ~ .checkmark {
                 border-color: $red-300;
                 background-color: $red-50;
                 color: $red-500;
@@ -34,7 +34,7 @@
         height: 0;
         opacity: 0;
 
-        ~.checkmark {
+        ~ .checkmark {
             &::before {
                 @include font-size(14px);
                 @include icon;
@@ -50,7 +50,7 @@
         }
 
         &:checked {
-            ~.checkmark {
+            ~ .checkmark {
                 border-color: $blue-600;
                 background-color: $blue-600;
 
@@ -61,12 +61,12 @@
         }
 
         &:disabled {
-            ~.text,
-            ~.checkmark {
+            ~ .text,
+            ~ .checkmark {
                 cursor: not-allowed;
             }
 
-            ~.checkmark {
+            ~ .checkmark {
                 border-color: $gray-200;
                 background-color: $gray-50;
 
@@ -123,5 +123,3 @@
         margin: 10px 0 0 -40px;
     }
 }
-
-@import 'responsive/form-checkbox';
