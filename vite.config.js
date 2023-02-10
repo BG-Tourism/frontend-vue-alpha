@@ -1,5 +1,6 @@
 import path from 'path'
 import { defineConfig } from 'vite'
+import autoprefixer from 'autoprefixer'
 
 import vue from '@vitejs/plugin-vue'
 import topLevelAwait from 'vite-plugin-top-level-await'
@@ -26,6 +27,13 @@ export default defineConfig({
         replacement: path.resolve(__dirname, 'src'),
       },
     ],
+  },
+  css: {
+    postcss: {
+      plugins: [
+        autoprefixer(),
+      ],
+    },
   },
   define: {
     __VUE_I18N_FULL_INSTALL__: true,
