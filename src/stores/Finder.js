@@ -30,6 +30,10 @@ export const useFinderStore = defineStore('FinderStore', {
             rating: []
         },
         popups: {
+            search: {
+                shown: false,
+                state: 0
+            },
             category: {
                 shown: false,
                 state: 0
@@ -158,6 +162,8 @@ export const useFinderStore = defineStore('FinderStore', {
             this.selections.locality = []
             this.selections.rating = []
 
+            this.popups.search.shown = false
+            this.popups.search.state = 0
             this.popups.category.shown = false
             this.popups.category.state = 0
             this.popups.region.shown = false

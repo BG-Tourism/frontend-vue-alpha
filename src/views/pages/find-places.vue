@@ -143,10 +143,6 @@
             </div>
         </div>
     </section>
-
-    <FindCategories />
-    <FindRegionsAndLocalities />
-    <FindRatings />
 </template>
 
 <script>
@@ -162,18 +158,9 @@
     import { useGeneralStore } from '@/stores/GeneralStore'
     import { useFinderStore } from '@/stores/Finder'
 
-    import FindCategories from '@/modals/filters/FindCategories.vue'
-    import FindRegionsAndLocalities from '@/modals/filters/FindRegionsAndLocalities.vue'
-    import FindRatings from '@/modals/filters/FindRatings.vue'
-
     import addItemsByQuery from '@/helpers/addItemsByQuery'
 
     export default defineComponent({
-        components: {
-            FindCategories,
-            FindRegionsAndLocalities,
-            FindRatings
-        },
         setup() {
             const i18n = useI18n()
             const route = useRoute()

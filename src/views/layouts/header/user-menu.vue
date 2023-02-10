@@ -3,9 +3,9 @@
         <div class="divider" />
 
         <div class="search">
-            <router-link :to="{ name: 'Search' }" :title="$t('general.search')">
+            <button :title="$t('general.search')" @click="toggleSearch()">
                 <i class="icon-search" />
-            </router-link>
+            </button>
         </div>
 
         <div class="language">
@@ -87,6 +87,7 @@
     import BaseDropdown from '@/components/BaseDropdown.vue'
 
     import { getSupportedLocales, changeLocale } from '@/utils/locales'
+    import { useFinderStore } from '@/stores/Finder'
 
     export default defineComponent({
         components: {
@@ -94,11 +95,17 @@
         },
         setup() {
             const route = useRoute()
+            const finder = useFinderStore()
             // const isDark = useDark()
             // const toggleDark = useToggle(isDark)
             const user = {
                 name: 'Потребителско Име',
                 email: 'username@example.com'
+            }
+
+            const toggleSearch = () => {
+                finder.popups.search.shown = true
+                finder.popups.search.state = 1
             }
 
             return {
@@ -108,7 +115,8 @@
                 user,
                 md5,
                 getSupportedLocales,
-                changeLocale
+                changeLocale,
+                toggleSearch
             }
         }
     })

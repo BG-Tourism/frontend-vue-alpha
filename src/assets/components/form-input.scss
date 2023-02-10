@@ -26,8 +26,8 @@
         &.has-suffix {
             .input-prefix,
             .input-suffix {
-                background-color: $gray-50;
-                color: $gray-500;
+                background-color: $slate-50;
+                color: $slate-500;
             }
         }
     }
@@ -149,9 +149,9 @@
         min-width: 200px;
         border-width: 1px;
         border-style: solid;
-        border-color: $gray-300;
+        border-color: $slate-300;
         border-radius: 6px;
-        background-color: $gray-200;
+        background-color: $slate-200;
         box-shadow: rgba($black, 5%) 0 1px 2px 0;
         outline-width: 3px;
         outline-style: solid;
@@ -200,7 +200,7 @@
         flex: 0 0 auto;
         align-items: center;
         justify-content: space-between;
-        background-color: $gray-200;
+        background-color: $slate-200;
     }
 
     .input-prepend,
@@ -210,7 +210,7 @@
         @include font-size(14px);
 
         padding: 0 15px;
-        color: $gray-600;
+        color: $slate-600;
         line-height: 1;
         cursor: text;
 
@@ -218,16 +218,16 @@
         svg {
             @include font-size(16px);
 
-            color: $gray-600;
+            color: $slate-600;
         }
 
         svg {
             width: 16px !important;
             height: 16px !important;
-            fill: $gray-600 !important;
+            fill: $slate-600 !important;
 
             path {
-                fill: $gray-600 !important;
+                fill: $slate-600 !important;
             }
         }
     }
@@ -267,13 +267,13 @@
             @include font-size(16px);
 
             background-color: $white !important;
-            color: $gray-600;
+            color: $slate-600;
             -webkit-box-shadow: 0 0 0 50px white inset;
-            -webkit-text-fill-color: $gray-600 !important;
+            -webkit-text-fill-color: $slate-600 !important;
         }
 
         @include placeholder {
-            color: $gray-500;
+            color: $slate-500;
             opacity: 1;
         }
 
@@ -283,7 +283,8 @@
         border: none;
         border-radius: 6px;
         background-color: $white;
-        color: $gray-600;
+        color: $slate-600;
+        font-weight: 400;
         line-height: 1.2;
         filter: none;
         transition: all 200ms linear;
@@ -291,12 +292,12 @@
         &:disabled,
         &:read-only {
             @include placeholder {
-                color: $gray-400;
+                color: $slate-400;
             }
 
-            border-color: $gray-200;
-            background-color: $gray-50;
-            color: $gray-500;
+            border-color: $slate-200;
+            background-color: $slate-50;
+            color: $slate-500;
             opacity: 1;
             cursor: default;
         }

@@ -41,6 +41,7 @@ const messages = {
     showLess: 'Show less',
     noResults: 'There are no results to show.',
     close: 'Close',
+    clear: 'Clear',
     filters: {
         filterBy: 'Filter by',
         autosaving: 'Every selection you make will be reflected in the results instantly.',

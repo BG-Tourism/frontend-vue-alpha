@@ -23,6 +23,7 @@
                 <input
                     v-bind="{ ...$attrs, onInput: updateValue, onFocus: toggleFocus, onFocusout: toggleFocus }"
                     :id="uuid"
+                    ref="inputRef"
                     :name="name"
                     :value="modelValue"
                     :type="type"
@@ -33,6 +34,7 @@
                     :aria-disabled="isDisabled ? 'true' : false"
                     :readonly="isReadOnly"
                     :aria-readonly="isReadOnly ? 'true' : false"
+                    :autofocus="isAutoFocus"
                 />
                 <label v-if="$slots.suffix" :for="uuid" class="input-suffix">
                     <slot name="suffix" />
@@ -50,7 +52,7 @@
 </template>
 
 <script>
-    import { computed, defineComponent, ref } from 'vue'
+    import { computed, defineComponent, onMounted, ref } from 'vue'
 
     import BaseErrorMessage from '@/components/BaseErrorMessage.vue'
 
@@ -105,6 +107,16 @@
                 default: false
             },
             /**
+             * Used to determinate if the input should be autofocused or not
+             * @type Boolean
+             * @default false
+             * @name autofocus
+             */
+            autofocus: {
+                type: Boolean,
+                default: false
+            },
+            /**
              * Used to determinate if the input is in disabled state
              * @type Boolean
              * @default false
@@ -149,6 +161,11 @@
             const uuid = UniqueID().getID()
             const { updateValue } = setupFormComponent(props, context)
             const focus = ref(false)
+            const inputRef = ref(null)
+
+            const isAutoFocus = computed(() => {
+                return props.autofocus
+            })
 
             const isRequired = computed(() => {
                 return props.required
@@ -182,9 +199,17 @@
                 focus.value = !focus.value
             }
 
+            onMounted(() => {
+                if (isAutoFocus.value) {
+                    inputRef.value.focus()
+                }
+            })
+
             return {
                 uuid,
                 focus,
+                inputRef,
+                isAutoFocus,
                 isRequired,
                 isDisabled,
                 isReadOnly,

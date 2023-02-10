@@ -7,6 +7,11 @@
 
     <BlockFooter v-if="$route.name != 'PageError'" />
 
+    <Search />
+    <FindCategories />
+    <FindRegionsAndLocalities />
+    <FindRatings />
+
     <div v-if="width <= sm && store.mobileOverlay" class="mobile-overlay">
         <div class="wrapper">
             <p>
@@ -26,6 +31,11 @@
     import BlockHeader from '@/views/layouts/header/template.vue'
     import BlockFooter from '@/views/layouts/footer/template.vue'
 
+    import Search from '@/modals/Search.vue'
+    import FindCategories from '@/modals/filters/FindCategories.vue'
+    import FindRegionsAndLocalities from '@/modals/filters/FindRegionsAndLocalities.vue'
+    import FindRatings from '@/modals/filters/FindRatings.vue'
+
     import breakpoints from '@/utils/breakpoints'
 
     import { useGeneralStore } from './stores/GeneralStore'
@@ -33,7 +43,11 @@
     export default defineComponent({
         components: {
             BlockHeader,
-            BlockFooter
+            BlockFooter,
+            Search,
+            FindCategories,
+            FindRegionsAndLocalities,
+            FindRatings
         },
         setup() {
             const store = useGeneralStore()
