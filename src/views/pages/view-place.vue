@@ -16,7 +16,6 @@ export default defineComponent({
     TruncateString,
   },
   setup() {
-    const i18n = useI18n()
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
@@ -84,7 +83,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${i18n.t('page.place.subtitle')} "${place.locale[locale.value].title}"${titleSuffix}`
+      return `${place.locale[locale.value].title}${titleSuffix}`
     })
     useTitle(pageTitle)
 

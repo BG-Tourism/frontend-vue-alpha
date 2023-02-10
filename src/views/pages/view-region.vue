@@ -13,7 +13,6 @@ import { useGeneralStore } from '@/stores/GeneralStore'
 
 export default defineComponent({
   setup() {
-    const i18n = useI18n()
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
@@ -30,7 +29,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${i18n.t('page.region.subtitle')} "${region.locale[locale.value].title}"${titleSuffix}`
+      return `${region.locale[locale.value].title}${titleSuffix}`
     })
     useTitle(pageTitle)
 
