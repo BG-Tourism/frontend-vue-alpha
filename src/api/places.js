@@ -1082,7 +1082,7 @@ const places = [
   },
   {
     slug: 'chudnite-mostove',
-    image: '/images/photos/6.jpg',
+    image: '/images/photos/no-photo.jpg',
     locale: {
       bg: {
         title: 'Чудните мостове',
@@ -1104,22 +1104,22 @@ const places = [
     },
     photos: [
       {
-        image: '/images/photos/6-1.jpg',
+        image: '/images/photos/no-photo.jpg',
         author: 'Неизвестен',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/6-2.jpg',
+        image: '/images/photos/no-photo.jpg',
         author: 'Неизвестен',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/6-3.jpg',
+        image: '/images/photos/no-photo.jpg',
         author: 'Неизвестен',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/6-4.jpg',
+        image: '/images/photos/no-photo.jpg',
         author: 'Неизвестен',
         date_added: 1670777697,
       },
