@@ -22,7 +22,7 @@ export default defineComponent({
 
     useTitle(pageTitle)
 
-    const limitedPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 3)
+    const limitedPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 4)
     const limitedCategories = categories.sort(() => 0.5 - Math.random()).slice(0, 4)
     const categoryPlaces = places.filter(place => place.category.slug === limitedCategories[0].slug)
 
