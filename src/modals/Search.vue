@@ -198,15 +198,14 @@ export default defineComponent({
               <li v-if="results.places.length" class="type">
                 <h1>{{ $t('page.places.title') }}</h1>
                 <ul>
-                  <li v-for="place in results.places" :key="place">
+                  <li v-for="place in results.places" :key="place" class="place">
                     <router-link :to="{ name: 'Place', params: { slug: place.slug } }" @click="handleClose">
                       <span
                         v-html="
-                          `${highlight(place.locale[$i18n.locale].title, searchTerm)
-                          }, ${
-                            place.locale[$i18n.locale].location}`
+                          highlight(place.locale[$i18n.locale].title, searchTerm)
                         "
                       />
+                      <span class="address">{{ place.locale[$i18n.locale].location }}</span>
                     </router-link>
                   </li>
                 </ul>

@@ -619,35 +619,6 @@
             }
         }
 
-        .ai-generated {
-            display: flex;
-            align-items: center;
-            margin: 0 0 30px;
-            padding: 20px;
-            border-radius: 12px;
-            background-color: $red-100;
-
-            i {
-                @include font-size(26px);
-
-                display: block;
-                margin: 0 20px 0 0;
-                color: $red-600;
-            }
-
-            p {
-                @include font-size(16px);
-
-                color: $red-500;
-                line-height: 1.4;
-            }
-
-            a {
-                color: inherit;
-                font-weight: 500;
-            }
-        }
-
         .copyrights {
             p {
                 padding: 50px 100px 0;

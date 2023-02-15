@@ -39,6 +39,10 @@ export default defineComponent({
 
   <section class="regions-list">
     <div class="page-content">
+      <div class="page-alert">
+        <i class="icon-alert-triangle" />
+        <p>{{ $t('general.needsRework') }}</p>
+      </div>
       <div class="page-container">
         <ul>
           <li v-for="region in regions" :key="region">

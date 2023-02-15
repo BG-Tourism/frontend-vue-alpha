@@ -311,7 +311,7 @@ export default defineComponent({
     <section class="location-contents">
       <div class="page-content">
         <div class="wrapper">
-          <div class="ai-generated">
+          <div class="page-alert">
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
           </div>

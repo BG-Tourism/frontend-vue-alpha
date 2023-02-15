@@ -124,6 +124,25 @@
                     }
                 }
 
+                .place {
+                    a {
+                        display: flex;
+                        gap: 20px;
+                        justify-content: space-between;
+
+                        span {
+                            flex: 0 0 auto;
+                        }
+
+                        .address {
+                            @include font-size(14px);
+
+                            color: $slate-400;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
                 h1 {
                     @include font-size(18px);
 

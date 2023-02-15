@@ -44,6 +44,10 @@ export default defineComponent({
 
   <section class="categories-list">
     <div class="page-content">
+      <div class="page-alert">
+        <i class="icon-alert-triangle" />
+        <p>{{ $t('general.needsRework') }}</p>
+      </div>
       <div class="page-container">
         <ul>
           <li v-for="category in categories" :key="category">
