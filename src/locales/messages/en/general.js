@@ -35,6 +35,7 @@ const messages = {
   settings: 'Settings',
   photos: 'Photos',
   trips: 'Trips',
+  reviews: 'Reviews',
   logout: 'Sign out',
   search: 'Search',
   loading: 'Loading...',

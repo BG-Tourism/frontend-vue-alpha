@@ -111,14 +111,20 @@ export default defineComponent({
             </li>
             <li>
               <a href="javascript:void(0);">
-                <i class="icon-image" />
-                <span>{{ $t('general.photos') }}</span>
+                <i class="icon-route" />
+                <span>{{ $t('general.trips') }}</span>
               </a>
             </li>
             <li>
               <a href="javascript:void(0);">
-                <i class="icon-route" />
-                <span>{{ $t('general.trips') }}</span>
+                <i class="icon-review" />
+                <span>{{ $t('general.reviews') }}</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <i class="icon-image" />
+                <span>{{ $t('general.photos') }}</span>
               </a>
             </li>
             <li class="divider" />

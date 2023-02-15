@@ -35,6 +35,7 @@ const messages = {
   settings: 'Настройки',
   photos: 'Снимки',
   trips: 'Пътешествия',
+  reviews: 'Ревюта',
   logout: 'Изход',
   search: 'Търсене',
   loading: 'Зареждане...',
