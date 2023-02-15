@@ -1,6 +1,7 @@
 const messages = {
   about: {
-    title: 'About Us',
+    title: 'The Project',
+    description: 'We build this website entirely voluntarily.',
   },
   search: {
     title: 'Search',
@@ -15,6 +16,7 @@ const messages = {
     title: 'Contact',
     form: {
       title: 'Write to us',
+      description: 'We build this website together with the help of people like you. If you are passionate about the history and culture of Bulgaria, we will be glad if you contribute to our project. Your input will help make this project even more exciting and engaging for the public.',
       label: {
         name: 'Name',
         email: 'Email',

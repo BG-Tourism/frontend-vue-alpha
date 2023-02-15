@@ -168,7 +168,7 @@ export default defineComponent({
                 <img :src="region.image" alt="" loading="lazy">
               </picture>
               <h3>{{ region.locale[$i18n.locale].title }}</h3>
-              <p v-html="$t('page.homepage.destinations.locations_count', { count: region.locations_count })" />
+              <p v-html="$t('page.homepage.destinations.locations_count', { count: region.places_count })" />
             </router-link>
           </li>
         </ul>

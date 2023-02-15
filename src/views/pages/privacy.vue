@@ -21,28 +21,20 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="page-content">
-    <div class="page-container">
-      <div class="container-title">
+  <section class="top-section">
+    <div class="page-content">
+      <div class="title">
         <h1>{{ $t('page.privacy.title') }}</h1>
       </div>
-      <div class="container-content padding">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus exercitationem ducimus eaque,
-          unde nemo consectetur reprehenderit ratione sunt minus sed vitae ex pariatur ipsum, omnis corrupti maxime
-          incidunt temporibus!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus exercitationem ducimus eaque,
-          unde nemo consectetur reprehenderit ratione sunt minus sed vitae ex pariatur ipsum, omnis corrupti maxime
-          incidunt temporibus!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore doloribus exercitationem ducimus eaque,
-          unde nemo consectetur reprehenderit ratione sunt minus sed vitae ex pariatur ipsum, omnis corrupti maxime
-          incidunt temporibus!
-        </p>
+    </div>
+  </section>
+
+  <section class="text-section">
+    <div class="page-content">
+      <div class="page-alert">
+        <i class="icon-alert-triangle" />
+        <p>{{ $t('general.needsRework') }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>

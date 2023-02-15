@@ -315,21 +315,19 @@ export default defineComponent({
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
           </div>
-          <div class="table-of-contents">
-            <ul>
-              <li v-for="(content, index) in place.contents" :key="index">
-                <a href="javascript:void(0);">
-                  {{ content.locale[$i18n.locale].title }}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="contents">
-            <div v-for="(content, index) in place.contents" :key="index" class="content">
-              <div class="title">
-                <h1>{{ content.locale[$i18n.locale].title }}</h1>
-              </div>
-              <div class="markdown" v-html="content.locale[$i18n.locale].text" />
+          <div class="markdown-body">
+            <div class="table-of-contents">
+              <ol>
+                <li v-for="(content, index) in place.contents" :key="index">
+                  <a href="javascript:void(0);">
+                    {{ content.locale[$i18n.locale].title }}
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <div v-for="(content, index) in place.contents" :key="index">
+              <h1>{{ content.locale[$i18n.locale].title }}</h1>
+              <div v-html="content.locale[$i18n.locale].text" />
             </div>
           </div>
           <div class="copyrights">

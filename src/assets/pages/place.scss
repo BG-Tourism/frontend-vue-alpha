@@ -559,6 +559,8 @@
     }
 
     .location-contents {
+        @import '../plugins/github-markdown';
+
         padding: 40px 0 0;
 
         .wrapper {
@@ -566,54 +568,39 @@
         }
 
         .table-of-contents {
-            padding: 20px;
-            border-radius: 12px;
-            background-color: $slate-100;
+            float: right;
+            padding: 0 0 30px 30px;
+            background-color: $white;
 
-            ul {
-                padding: 0 0 0 30px;
-            }
+            ol {
+                margin: 0;
+                padding: 25px;
+                border-radius: 12px;
+                background-color: $slate-100;
+                counter-reset: item;
 
-            li {
-                padding: 5px 0 5px 5px;
-                list-style: decimal;
-            }
+                li {
+                    @include font-size(16px);
 
-            a {
-                color: $blue-600;
+                    display: block;
+                    margin: 0;
+                    padding: 5px 0 0;
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        .contents {
-            .content {
-                padding: 50px 0 0;
-
-                .title {
-                    h1 {
-                        @include font-size(28px);
-
-                        padding: 0 0 20px;
-                        color: $slate-800;
+                    &::marker {
                         font-weight: 500;
-                        line-height: 1.2;
                     }
-                }
 
-                .markdown {
-                    p {
-                        @include font-size(18px);
+                    &::before {
+                        content: counters(item, '.') '. ';
+                        counter-increment: item;
+                    }
 
-                        padding: 0 0 15px;
-                        color: $slate-500;
-                        line-height: 1.4;
+                    &:first-child {
+                        padding: 0;
+                    }
 
-                        &:last-of-type {
-                            padding: 0;
-                        }
+                    ol {
+                        padding: 0 0 0 15px;
                     }
                 }
             }

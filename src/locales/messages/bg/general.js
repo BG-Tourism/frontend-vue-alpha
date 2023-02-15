@@ -54,7 +54,7 @@ const messages = {
     regionsAndLocalitiesCounter: 'Туристически райони и общини ({n})',
     rating: 'Рейтинг',
     ratingCounter: 'Рейтинг ({n})',
-    searchPlaceholder: 'Започнете да пишете...',
+    searchPlaceholder: 'Започни да пишеш...',
   },
   pagination: {
     next: 'Напред',
