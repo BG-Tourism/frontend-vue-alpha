@@ -123,7 +123,7 @@ export default defineComponent({
         </ul>
 
         <div class="tab-content">
-          <ul class="list">
+          <ul v-if="categoryPlaces.length" class="list">
             <li v-for="place in categoryPlaces" :key="place">
               <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                 <picture>
@@ -144,6 +144,9 @@ export default defineComponent({
               </router-link>
             </li>
           </ul>
+          <div v-else>
+            {{ $t('general.noResults') }}
+          </div>
 
           <router-link :to="{ name: 'Places', query: { category: 'nature-and-parks' } }" class="see-more">
             {{ $t('general.seeMore') }}
