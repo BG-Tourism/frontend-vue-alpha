@@ -2,7 +2,11 @@
 import { defineComponent, ref } from 'vue'
 import { onClickOutside, onKeyStroke } from '@vueuse/core'
 
+import places from '@/api/places'
 import categories from '@/api/categories'
+
+import countPlacesWithCategory from '@/helpers/countPlacesWithCategory'
+import countPlacesWithSubcategory from '@/helpers/countPlacesWithSubcategory'
 
 import { useFinderStore } from '@/stores/Finder'
 
@@ -29,8 +33,11 @@ export default defineComponent({
 
     return {
       finder,
+      places,
       categories,
       target,
+      countPlacesWithCategory,
+      countPlacesWithSubcategory,
       toggleSelection,
       handleClose,
     }
@@ -60,18 +67,40 @@ export default defineComponent({
             <span>{{ $t('general.filters.categories') }}</span>
           </div>
           <ul class="section-content">
-            <li
-              v-for="category in categories"
-              :key="category"
-              :class="finder.loadings.selections ? 'disabled' : null"
-            >
+            <li v-for="category in categories" :key="category" :class="finder.loadings.selections ? 'disabled' : null">
               <div class="action" @click="toggleSelection('category', category.slug)">
                 <button
                   class="checkbox" :class="[
                     finder.selections.category.find((item) => item === category.slug) ? 'checked' : null,
                   ]"
                 />
-                <span>{{ category.locale[$i18n.locale].title }}</span>
+                <div class="detail">
+                  <span class="name">{{ category.locale[$i18n.locale].title }}</span>
+                  <span v-if="countPlacesWithCategory(places, category.slug) > 0" class="count">{{ countPlacesWithCategory(places, category.slug) }}</span>
+                </div>
+              </div>
+              <div v-if="finder.selections.category.includes(category.slug)" class="subitems">
+                <ul>
+                  <li
+                    v-for="subcategory in category.subcategories"
+                    :key="subcategory"
+                    :class="finder.loadings.selections ? 'disabled' : null"
+                  >
+                    <div class="action" @click="toggleSelection('subcategory', subcategory.slug)">
+                      <button
+                        class="checkbox" :class="[
+                          finder.selections.subcategory.find((item) => item === subcategory.slug)
+                            ? 'checked'
+                            : null,
+                        ]"
+                      />
+                      <div class="detail">
+                        <span class="name">{{ subcategory.locale[$i18n.locale].title }}</span>
+                        <span v-if="countPlacesWithSubcategory(places, subcategory.slug) > 0" class="count">{{ countPlacesWithSubcategory(places, subcategory.slug) }}</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </li>
           </ul>

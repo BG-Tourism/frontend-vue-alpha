@@ -3,10 +3,7 @@ import { computed, defineComponent } from 'vue'
 import { useTitle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 
-import places from '@/api/places'
 import categories from '@/api/categories'
-
-import countPlacesWithCategory from '@/helpers/countPlacesWithCategory'
 
 import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -23,9 +20,7 @@ export default defineComponent({
     useTitle(pageTitle)
 
     return {
-      places,
       categories,
-      countPlacesWithCategory,
     }
   },
 })
@@ -51,11 +46,9 @@ export default defineComponent({
       <div class="page-container">
         <ul>
           <li v-for="category in categories" :key="category">
-            <router-link :to="{ name: 'Places', query: { category: category.slug } }">
+            <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
               {{ category.locale[$i18n.locale].title }}
-              <span v-if="countPlacesWithCategory(places, category.slug)">
-                {{ countPlacesWithCategory(places, category.slug) }}
-              </span>
+              <span>{{ category.subcategories.length }}</span>
             </router-link>
           </li>
         </ul>

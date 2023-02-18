@@ -1,3 +1,4 @@
+.page-category,
 .page-categories {
     .page-container {
         overflow: hidden;
@@ -6,9 +7,13 @@
     .categories-list {
         padding: 50px 0;
 
+        h2 {
+            padding: 30px;
+        }
+
         ul {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 1px;
         }
 

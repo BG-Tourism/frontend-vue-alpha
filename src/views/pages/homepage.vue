@@ -23,8 +23,8 @@ export default defineComponent({
     useTitle(pageTitle)
 
     const limitedPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 4)
-    const limitedCategories = categories.sort(() => 0.5 - Math.random()).slice(0, 4)
-    const categoryPlaces = places.filter(place => place.category.slug === limitedCategories[0].slug)
+    const categoryPlaces = places.filter(place => place.categories.slug === categories.slug)
+    const limitedCategoryPlaces = categoryPlaces.sort(() => 0.5 - Math.random()).slice(0, 5)
 
     const generateNumber = () => {
       number.value = (Math.random() * 19).toFixed(0)
@@ -36,7 +36,7 @@ export default defineComponent({
       regions,
       categoryPlaces,
       limitedPlaces,
-      limitedCategories,
+      limitedCategoryPlaces,
       generateNumber,
     }
   },
@@ -108,23 +108,17 @@ export default defineComponent({
         </div>
 
         <ul class="tabs">
-          <li v-for="(category, index) in limitedCategories" :key="category">
+          <li v-for="(category, index) in categories" :key="category">
             <button :class="index === 0 ? 'active' : null">
               <!-- <i :class="'icon-category-' + category.slug" /> -->
               <span>{{ category.locale[$i18n.locale].title }}</span>
             </button>
           </li>
-          <li class="divider" />
-          <li>
-            <router-link :to="{ name: 'Categories' }">
-              <span>{{ $t('page.homepage.locations.categories.viewAllCategories', categories.length) }}</span>
-            </router-link>
-          </li>
         </ul>
 
         <div class="tab-content">
-          <ul v-if="categoryPlaces.length" class="list">
-            <li v-for="place in categoryPlaces" :key="place">
+          <ul v-if="limitedCategoryPlaces.length" class="list">
+            <li v-for="place in limitedCategoryPlaces" :key="place">
               <router-link :to="{ name: 'Place', params: { slug: place.slug } }">
                 <picture>
                   <img :src="place.image" alt="" loading="lazy">
@@ -148,7 +142,7 @@ export default defineComponent({
             {{ $t('general.noResults') }}
           </div>
 
-          <router-link :to="{ name: 'Places', query: { category: 'nature-and-parks' } }" class="see-more">
+          <router-link :to="{ name: 'Places', query: { category: categories[0].slug } }" class="see-more">
             {{ $t('general.seeMore') }}
           </router-link>
         </div>

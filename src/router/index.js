@@ -27,6 +27,14 @@ const routes = [
     component: () => import('@/views/pages/find-regions.vue'),
   },
   {
+    path: '/category/:slug',
+    name: 'Category',
+    meta: {
+      className: 'page-category',
+    },
+    component: () => import('@/views/pages/view-category.vue'),
+  },
+  {
     path: '/categories',
     name: 'Categories',
     meta: {

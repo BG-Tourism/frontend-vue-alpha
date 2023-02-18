@@ -13,7 +13,7 @@ const regions = [
         description: 'The Trakia Tourist Region in Bulgaria is made up of 35 municipalities and contains several historic landmarks. Some of the notable attractions include mineral baths, caves, and ancient cities with Roman and Ottoman history. There are also many scenic towns and resorts, offering opportunities for recreation and relaxation. The region is known for its natural beauty, diverse cultural heritage, and rich history.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'bratya-daskalovi',
         places_count: Math.floor(Math.random() * 100),
@@ -520,7 +520,7 @@ const regions = [
         description: 'The Sofia Tourist Region in Bulgaria includes 23 municipalities, and it features various historic landmarks and attractions. Some of these include medieval fortresses, churches, monuments, and museums that showcase the rich cultural heritage of the region. The city of Sofia, the capital of Bulgaria, is also located in the region and is a popular tourist destination known for its historical landmarks, such as the Alexander Nevsky Cathedral, the National Palace of Culture, and the Vitosha Mountain. Other popular destinations include scenic mountains and lakes, thermal baths, and ski resorts.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'bobov-dol',
         places_count: Math.floor(Math.random() * 100),
@@ -859,7 +859,7 @@ const regions = [
         description: 'The Rila-Pirin Tourist Region of Bulgaria is rich in historical landmarks and tourist attractions, including 23 municipalities. The region is known for its diverse landscape, ranging from the Rila Monastery, which is one of the largest and most famous Eastern Orthodox monasteries in Bulgaria, to the Pirin National Park, which is a UNESCO World Heritage Site. The area also boasts numerous thermal baths and ski resorts, offering visitors a range of experiences year-round. Additionally, the region is steeped in history, with ancient fortresses and ruins that have been preserved and are open for exploration.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'bansko',
         places_count: Math.floor(Math.random() * 100),
@@ -1198,7 +1198,7 @@ const regions = [
         description: 'The Rhodopes Tourist Region of Bulgaria is known for its rich cultural and historical heritage. The area includes 27 municipalities and is home to many interesting landmarks. Some of these landmarks are archaeological sites, cultural and religious monuments, and natural attractions such as scenic mountains, lakes, and caves. The region also boasts well-preserved traditions and customs, with many local festivals and events being held throughout the year.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'ardino',
         places_count: Math.floor(Math.random() * 100),
@@ -1593,7 +1593,7 @@ const regions = [
         description: 'The Danube Tourist Region of Bulgaria includes 67 municipalities and features many historical landmarks. Some of the most important and notable attractions include ancient fortresses, churches, and monasteries. Many of these sites have significant cultural and historical value, having been in existence for centuries. The region is known for its picturesque landscapes and unique blend of history, culture, and natural beauty, making it a popular destination for tourists and history buffs alike.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'alfatar',
         places_count: Math.floor(Math.random() * 100),
@@ -2549,7 +2549,7 @@ const regions = [
         description: 'The Varna Black Sea Coast is a tourist region in Bulgaria that includes 24 municipalities and offers a number of historic landmarks. The region is located along the Black Sea Coast and is known for its stunning natural beauty, as well as its rich cultural heritage. Visitors can explore the many ancient ruins and fortifications that dot the coastline, visit historic churches and monasteries, or simply soak up the sun on the region\'s many pristine beaches. Additionally, the area is renowned for its vibrant nightlife, and is a popular destination for tourists from all over the world.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'avren',
         places_count: Math.floor(Math.random() * 100),
@@ -2902,7 +2902,7 @@ const regions = [
         description: 'The Burgas Black Sea Coast in Bulgaria is a tourist area that includes 13 municipalities and is known for its beautiful beaches, cultural landmarks, and natural parks. Some notable attractions include ancient Roman ruins, medieval fortresses, and the beautiful Ropotamo Nature Reserve, which is home to a diverse range of flora and fauna. Additionally, the area is known for its bustling resort towns and traditional fishing villages, as well as its rich cultural heritage and vibrant local cuisine.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'aytos',
         places_count: Math.floor(Math.random() * 100),
@@ -3101,7 +3101,7 @@ const regions = [
         description: 'Тhe Valley of Roses region in Bulgaria is a popular tourist destination known for its beautiful landscapes and rich cultural heritage. The area encompasses 19 municipalities and is home to numerous historical landmarks and attractions. Many of these landmarks date back to the medieval and Ottoman periods, and showcase the region\'s rich history and cultural heritage. The area is also famous for its natural beauty, with rolling hills, fertile farmland, and pristine forests that are a haven for outdoor enthusiasts and nature lovers. Тhe region is a unique destination that offers something for everyone, from its rich cultural heritage to its stunning natural beauty.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'anton',
         places_count: Math.floor(Math.random() * 100),
@@ -3384,7 +3384,7 @@ const regions = [
         description: 'The Stara Planina Tourist Region in Bulgaria, which includes 32 municipalities, is known for its natural beauty, historical and cultural landmarks, and diverse tourist destinations. This region has a rich history dating back to ancient times and is home to many interesting sights, including medieval fortresses, monasteries, churches, and museums. There are also many opportunities for outdoor activities, such as hiking, skiing, and camping. The region\'s natural beauty is also a big draw for tourists, with its rolling hills, dense forests, and clear rivers. Additionally, Stara Planina is known for its unique local cuisine, traditional crafts, and vibrant cultural events.',
       },
     },
-    localities: [
+    municipalities: [
       {
         slug: 'antonovo',
         places_count: Math.floor(Math.random() * 100),

@@ -18,15 +18,10 @@ const places = [
         location: 'Sofia City',
       },
     },
-    category: {
-      slug: 'architecture',
-    },
-    region: {
-      slug: 'sofia',
-    },
-    locality: {
-      slug: 'sofia',
-    },
+    categories: ['architecture', 'religion'],
+    subcategories: ['sanctuaries', 'temples'],
+    region: 'sofia',
+    municipality: 'sofia',
     photos: [
       {
         image: '/images/photos/1-1.jpg',
@@ -233,15 +228,10 @@ const places = [
         location: 'Veliko Tarnovo City',
       },
     },
-    category: {
-      slug: 'architecture',
-    },
-    region: {
-      slug: 'stara-planina',
-    },
-    locality: {
-      slug: 'veliko-tarnovo',
-    },
+    categories: ['architecture'],
+    subcategories: ['fortresses-and-ruins', 'historical-sites'],
+    region: 'stara-planina',
+    municipality: 'veliko-tarnovo',
     photos: [
       {
         image: '/images/photos/2-1.jpg',
@@ -448,15 +438,10 @@ const places = [
         location: 'next to Rila City',
       },
     },
-    category: {
-      slug: 'religion',
-    },
-    region: {
-      slug: 'rila-pirin',
-    },
-    locality: {
-      slug: 'rila',
-    },
+    categories: ['religion'],
+    subcategories: ['orthodox-monasteries-and-chapels'],
+    region: 'rila-pirin',
+    municipality: 'rila',
     photos: [
       {
         image: '/images/photos/3-1.jpg',
@@ -663,15 +648,10 @@ const places = [
         location: 'next to Shipka City',
       },
     },
-    category: {
-      slug: 'architecture',
-    },
-    region: {
-      slug: 'valley-of-roses',
-    },
-    locality: {
-      slug: 'kazanlak',
-    },
+    categories: ['architecture'],
+    subcategories: ['monuments'],
+    region: 'valley-of-roses',
+    municipality: 'kazanlak',
     photos: [
       {
         image: '/images/photos/4-1.jpg',
@@ -878,15 +858,10 @@ const places = [
         location: 'Belogradchik City',
       },
     },
-    category: {
-      slug: 'nature-and-parks',
-    },
-    region: {
-      slug: 'danube',
-    },
-    locality: {
-      slug: 'vidin',
-    },
+    categories: ['architecture', 'nature'],
+    subcategories: ['fortresses-and-ruins', 'historical-sites', 'mountainous-sites', 'natural-formations'],
+    region: 'danube',
+    municipality: 'vidin',
     photos: [
       {
         image: '/images/photos/5-1.jpg',
@@ -1093,15 +1068,10 @@ const places = [
         location: 'next to Zabardo',
       },
     },
-    category: {
-      slug: 'nature-and-parks',
-    },
-    region: {
-      slug: 'rhodopes',
-    },
-    locality: {
-      slug: 'rodopi',
-    },
+    categories: ['architecture'],
+    subcategories: ['bridges-and-aqueducts'],
+    region: 'rhodopes',
+    municipality: 'rodopi',
     photos: [
       {
         image: '/images/photos/no-photo.jpg',
@@ -1308,15 +1278,10 @@ const places = [
         location: 'Nessebar City',
       },
     },
-    category: {
-      slug: 'history-and-culture',
-    },
-    region: {
-      slug: 'bourgas-black-sea',
-    },
-    locality: {
-      slug: 'nesebar',
-    },
+    categories: ['architecture', 'religion'],
+    subcategories: ['sanctuaries', 'churches'],
+    region: 'bourgas-black-sea',
+    municipality: 'nesebar',
     photos: [
       {
         image: '/images/photos/7-1.jpg',
@@ -1523,15 +1488,10 @@ const places = [
         location: 'Pliska City',
       },
     },
-    category: {
-      slug: 'architecture',
-    },
-    region: {
-      slug: 'varna-black-sea',
-    },
-    locality: {
-      slug: 'novi-pazar',
-    },
+    categories: ['architecture', 'nature'],
+    subcategories: ['historical-sites', 'nature-reserves'],
+    region: 'varna-black-sea',
+    municipality: 'novi-pazar',
     photos: [
       {
         image: '/images/photos/8-1.jpg',
@@ -1738,15 +1698,10 @@ const places = [
         location: 'Plovdiv City',
       },
     },
-    category: {
-      slug: 'architecture',
-    },
-    region: {
-      slug: 'trakia',
-    },
-    locality: {
-      slug: 'plovdiv',
-    },
+    categories: ['architecture', 'culture'],
+    subcategories: ['historical-sites', 'theaters'],
+    region: 'trakia',
+    municipality: 'plovdiv',
     photos: [
       {
         image: '/images/photos/9-1.jpg',

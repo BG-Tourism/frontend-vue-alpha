@@ -4,9 +4,6 @@ import { useTitle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-import categories from '@/api/categories'
-import regions from '@/api/regions'
-
 import { useGeneralStore } from '@/stores/GeneralStore'
 import { useFinderStore } from '@/stores/Finder'
 
@@ -92,8 +89,6 @@ export default defineComponent({
     }
 
     return {
-      categories,
-      regions,
       places,
       placesLoading,
       finder,
@@ -122,14 +117,27 @@ export default defineComponent({
         <h3>{{ $t('general.filters.filterBy') }}</h3>
         <ul>
           <li>
-            <div class="filter" :class="[finder.selections.category.length ? 'contains-selections' : null]">
-              <span v-if="!finder.selections.category.length" class="name" @click="toggleModal('category')">
+            <div class="filter" :class="[Number(finder.selections.category.length + finder.selections.subcategory.length) ? 'contains-selections' : null]">
+              <span
+                v-if="!Number(finder.selections.category.length + finder.selections.subcategory.length)"
+                class="name"
+                @click="toggleModal('category')"
+              >
                 {{ $t('general.filters.categories') }}
               </span>
               <span v-else class="name" @click="toggleModal('category')">
-                {{ $t('general.filters.categoriesCounter', finder.selections.category.length) }}
+                {{
+                  $t(
+                    'general.filters.categoriesCounter',
+                    Number(finder.selections.category.length + finder.selections.subcategory.length),
+                  )
+                }}
               </span>
-              <div v-if="finder.selections.category.length" class="clear" @click="clearSelections('category')">
+              <div
+                v-if="Number(finder.selections.category.length + finder.selections.subcategory.length)"
+                class="clear"
+                @click="clearSelections('category')"
+              >
                 <span>
                   <i class="icon-close" />
                 </span>
@@ -137,30 +145,24 @@ export default defineComponent({
             </div>
           </li>
           <li>
-            <div
-              class="filter" :class="[
-                Number(finder.selections.region.length + finder.selections.locality.length)
-                  ? 'contains-selections'
-                  : null,
-              ]"
-            >
+            <div class="filter" :class="[Number(finder.selections.region.length + finder.selections.municipality.length) ? 'contains-selections' : null]">
               <span
-                v-if="!Number(finder.selections.region.length + finder.selections.locality.length)"
+                v-if="!Number(finder.selections.region.length + finder.selections.municipality.length)"
                 class="name"
                 @click="toggleModal('region')"
               >
-                {{ $t('general.filters.regionsAndLocalities') }}
+                {{ $t('general.filters.regionsAndMunicipalities') }}
               </span>
               <span v-else class="name" @click="toggleModal('region')">
                 {{
                   $t(
-                    'general.filters.regionsAndLocalitiesCounter',
-                    Number(finder.selections.region.length + finder.selections.locality.length),
+                    'general.filters.regionsAndMunicipalitiesCounter',
+                    Number(finder.selections.region.length + finder.selections.municipality.length),
                   )
                 }}
               </span>
               <div
-                v-if="Number(finder.selections.region.length + finder.selections.locality.length)"
+                v-if="Number(finder.selections.region.length + finder.selections.municipality.length)"
                 class="clear"
                 @click="clearSelections('region')"
               >

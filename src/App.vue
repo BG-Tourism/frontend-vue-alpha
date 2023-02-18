@@ -8,7 +8,7 @@ import BlockFooter from '@/views/layouts/footer/template.vue'
 
 import Search from '@/modals/Search.vue'
 import FindCategories from '@/modals/filters/FindCategories.vue'
-import FindRegionsAndLocalities from '@/modals/filters/FindRegionsAndLocalities.vue'
+import FindRegionsAndMunicipalities from '@/modals/filters/FindRegionsAndMunicipalities.vue'
 import FindRatings from '@/modals/filters/FindRatings.vue'
 
 import breakpoints from '@/utils/breakpoints'
@@ -19,7 +19,7 @@ export default defineComponent({
     BlockFooter,
     Search,
     FindCategories,
-    FindRegionsAndLocalities,
+    FindRegionsAndMunicipalities,
     FindRatings,
   },
   setup() {
@@ -52,7 +52,7 @@ export default defineComponent({
 
   <Search />
   <FindCategories />
-  <FindRegionsAndLocalities />
+  <FindRegionsAndMunicipalities />
   <FindRatings />
 
   <div v-if="width <= sm && store.mobileOverlay" class="mobile-overlay">

@@ -25,8 +25,9 @@ export const useFinderStore = defineStore('FinderStore', {
     },
     selections: {
       category: [],
+      subcategory: [],
       region: [],
-      locality: [],
+      municipality: [],
       rating: [],
     },
     modals: {
@@ -55,7 +56,11 @@ export const useFinderStore = defineStore('FinderStore', {
       if (filters) {
         items = places.filter((item) => {
           return (
-            (this.selections.category.includes(item.category.slug) || this.selections.category.length === 0) && (this.selections.region.includes(item.region.slug) || this.selections.region.length === 0) && (this.selections.locality.includes(item.locality.slug) || this.selections.locality.length === 0) && (this.selections.rating.includes(Math.floor(item.user_score)) || this.selections.rating.length === 0)
+            (item.categories.some(category => this.selections.category.includes(category)) || this.selections.category.length === 0)
+            && (item.subcategories.some(subcategory => this.selections.subcategory.includes(subcategory)) || this.selections.subcategory.length === 0)
+            && (this.selections.region.includes(item.region) || this.selections.region.length === 0)
+            && (this.selections.municipality.includes(item.municipality) || this.selections.municipality.length === 0)
+            && (this.selections.rating.includes(Math.floor(item.user_score)) || this.selections.rating.length === 0)
           )
         })
       }
@@ -80,15 +85,23 @@ export const useFinderStore = defineStore('FinderStore', {
           if (type === 'category') {
             existsInDatabase = !!categories.find(i => i.slug === item)
           }
+          else if (type === 'subcategory') {
+            existsInDatabase = !!categories.some((i) => {
+              if (Array.isArray(i.subcategories))
+                return i.subcategories.some(subcategory => subcategory.slug === item)
+
+              return i.subcategories.slug === item
+            })
+          }
           else if (type === 'region') {
             existsInDatabase = !!regions.find(i => i.slug === item)
           }
-          else if (type === 'locality') {
+          else if (type === 'municipality') {
             existsInDatabase = !!regions.some((i) => {
-              if (Array.isArray(i.localities))
-                return i.localities.some(locality => locality.slug === item)
+              if (Array.isArray(i.municipalities))
+                return i.municipalities.some(municipality => municipality.slug === item)
 
-              return i.localities.slug === item
+              return i.municipalities.slug === item
             })
           }
           else if (type === 'rating') {
@@ -147,7 +160,7 @@ export const useFinderStore = defineStore('FinderStore', {
       }, 300)
     },
     truncate() {
-      console.log('Clearing filters:', JSON.stringify(this.selections))
+      console.log('Clearing filters (truncate)')
 
       this.loadings.list = true
       this.loadings.selections = true
@@ -156,8 +169,9 @@ export const useFinderStore = defineStore('FinderStore', {
       this.list.pagination.currentPage = 1
 
       this.selections.category = []
+      this.selections.subcategory = []
       this.selections.region = []
-      this.selections.locality = []
+      this.selections.municipality = []
       this.selections.rating = []
 
       this.modals.search.shown = false
@@ -170,17 +184,20 @@ export const useFinderStore = defineStore('FinderStore', {
       this.modals.rating.state = 0
     },
     truncateByType(type) {
+      console.log('Clearing filters (truncateByType)')
+
       if (type === 'category') {
-        console.log(`Removed categories: ${this.selections.category.join(', ')}`, JSON.stringify(this.selections))
+        console.log(`Removed categories and subcategories: ${this.selections.category.join(', ')} / ${this.selections.subcategory.join(', ')}`, JSON.stringify(this.selections))
 
         this.selections.category = []
+        this.selections.subcategory = []
       }
 
       if (type === 'region') {
-        console.log(`Removed regions and localities: ${this.selections.region.join(', ')} / ${this.selections.locality}`, JSON.stringify(this.selections))
+        console.log(`Removed regions and municipalities: ${this.selections.region.join(', ')} / ${this.selections.municipality.join(', ')}`, JSON.stringify(this.selections))
 
         this.selections.region = []
-        this.selections.locality = []
+        this.selections.municipality = []
       }
 
       if (type === 'rating') {
@@ -190,8 +207,6 @@ export const useFinderStore = defineStore('FinderStore', {
       }
 
       this.fetch(this.selections)
-
-      console.log('truncateByType:', JSON.stringify(this.selections))
     },
   },
 })

@@ -5,9 +5,9 @@ import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 
 import places from '@/api/places'
-import regions from '@/api/regions'
+import categories from '@/api/categories'
 
-import countPlacesWithMunicipality from '@/helpers/countPlacesWithMunicipality'
+import countPlacesWithSubcategory from '@/helpers/countPlacesWithSubcategory'
 
 import { useGeneralStore } from '@/stores/GeneralStore'
 
@@ -18,18 +18,18 @@ export default defineComponent({
     const { locale } = useI18n({ useScope: 'global' })
     const store = useGeneralStore()
     const titleSuffix = store.titleSuffix
-    const region = regions.find(item => item.slug === route.params.slug)
+    const category = categories.find(item => item.slug === route.params.slug)
     const loading = ref(true)
 
     onBeforeMount(() => {
-      if (!regions.find(item => item.slug === route.params.slug))
-        router.push({ name: 'Regions' })
+      if (!categories.find(item => item.slug === route.params.slug))
+        router.push({ name: 'Categories' })
       else
         loading.value = false
     })
 
     const pageTitle = computed(() => {
-      return `${region.locale[locale.value].title}${titleSuffix}`
+      return `${category.locale[locale.value].title}${titleSuffix}`
     })
     useTitle(pageTitle)
 
@@ -37,10 +37,10 @@ export default defineComponent({
       loading,
       locale,
       route,
-      region,
-      regions,
+      category,
+      categories,
       places,
-      countPlacesWithMunicipality,
+      countPlacesWithSubcategory,
     }
   },
 })
@@ -51,23 +51,23 @@ export default defineComponent({
     <section class="top-section">
       <div class="page-content">
         <div class="title">
-          <h2>{{ $t('page.region.subtitle') }}</h2>
-          <h1>{{ region.locale[$i18n.locale].title }}</h1>
-          <p>{{ region.locale[$i18n.locale].description }}</p>
+          <h2>{{ $t('page.category.subtitle') }}</h2>
+          <h1>{{ category.locale[$i18n.locale].title }}</h1>
+          <p>{{ category.locale[$i18n.locale].description }}</p>
         </div>
       </div>
     </section>
 
-    <section class="regions-list">
+    <section class="categories-list">
       <div class="page-content">
         <div class="page-container">
-          <h2>{{ $t('general.navigation.municipalities', { count: region.municipalities.length }) }}</h2>
+          <h2>{{ $t('general.navigation.subcategories', { count: category.subcategories.length }) }}</h2>
           <ul>
-            <li v-for="municipality in region.municipalities" :key="municipality">
-              <router-link :to="{ name: 'Places', query: { region: route.params.slug, municipality: municipality.slug } }">
-                {{ municipality.locale[$i18n.locale].title }}
-                <span v-if="countPlacesWithMunicipality(places, municipality.slug)">
-                  {{ countPlacesWithMunicipality(places, municipality.slug) }}
+            <li v-for="subcategory in category.subcategories" :key="subcategory">
+              <router-link :to="{ name: 'Places', query: { category: route.params.slug, subcategory: subcategory.slug } }">
+                {{ subcategory.locale[$i18n.locale].title }}
+                <span v-if="countPlacesWithSubcategory(places, subcategory.slug)">
+                  {{ countPlacesWithSubcategory(places, subcategory.slug) }}
                 </span>
               </router-link>
             </li>
@@ -80,12 +80,12 @@ export default defineComponent({
     <section class="top-section">
       <div class="page-content">
         <div class="title">
-          <h1>{{ $t('page.region.title') }}</h1>
+          <h1>{{ $t('page.category.title') }}</h1>
         </div>
       </div>
     </section>
 
-    <section class="regions-list">
+    <section class="categories-list">
       <div class="page-content">
         <div class="page-container">
           <div class="container-content padding">

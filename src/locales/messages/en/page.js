@@ -7,10 +7,16 @@ const messages = {
     title: 'Search',
     description: 'You can search both by names of landmarks and by tourist regions, municipalities and categories.',
   },
+  category: {
+    subtitle: 'Category',
+  },
   categories: {
     title: 'Categories',
     subtitle: 'Embark on a new adventure',
     description: 'Discover the rich cultural heritage of Bulgaria through its diverse range of landmarks. Browse through our category list to find your next adventure.',
+  },
+  subcategories: {
+    title: 'Subcategories',
   },
   contact: {
     title: 'Contact',
@@ -153,10 +159,10 @@ const messages = {
     subtitle: 'Discover Your Perfect Destination',
     description: 'Find your next perfect travel destination in Bulgaria tourist regions, offering something for every type of traveler.',
   },
-  locality: {
+  municipality: {
     title: 'Municipality',
   },
-  localities: {
+  municipalities: {
     title: 'Municipalities',
   },
   terms: {

@@ -1,8 +1,10 @@
 export default function countPlacesWithCategory(places, slug) {
-  return places.reduce((count, place) => {
-    if (place.category.slug === slug)
-      count++
+  let count = 0
 
-    return count
-  }, 0)
+  places.forEach((place) => {
+    if (place.categories.includes(slug))
+      count++
+  })
+
+  return count
 }

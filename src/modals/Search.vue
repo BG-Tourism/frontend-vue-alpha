@@ -34,8 +34,9 @@ export default defineComponent({
         return {
           places: [],
           regions: [],
-          localities: [],
+          municipalities: [],
           categories: [],
+          subcategories: [],
         }
       }
 
@@ -47,9 +48,9 @@ export default defineComponent({
         region.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
       )
 
-      const filteredLocalities = regions.flatMap(region =>
-        region.localities.filter(locality =>
-          locality.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
+      const filteredMunicipalities = regions.flatMap(region =>
+        region.municipalities.filter(municipality =>
+          municipality.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
         ),
       )
 
@@ -57,11 +58,18 @@ export default defineComponent({
         category.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
       )
 
+      const filteredSubcategories = categories.flatMap(region =>
+        region.subcategories.filter(category =>
+          category.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
+        ),
+      )
+
       return {
         places: filteredPlaces,
         regions: filteredRegions,
-        localities: filteredLocalities,
+        municipalities: filteredMunicipalities,
         categories: filteredCategories,
+        subcategories: filteredSubcategories,
       }
     })
 
@@ -189,8 +197,9 @@ export default defineComponent({
             v-if="
               results.places.length
                 || results.regions.length
-                || results.localities.length
+                || results.municipalities.length
                 || results.categories.length
+                || results.subcategories.length
             "
             class="results"
           >
@@ -220,15 +229,15 @@ export default defineComponent({
                   </li>
                 </ul>
               </li>
-              <li v-if="results.localities.length" class="type">
-                <h1>{{ $t('page.localities.title') }}</h1>
+              <li v-if="results.municipalities.length" class="type">
+                <h1>{{ $t('page.municipalities.title') }}</h1>
                 <ul>
-                  <li v-for="locality in results.localities" :key="locality">
+                  <li v-for="municipality in results.municipalities" :key="municipality">
                     <router-link
-                      :to="{ name: 'Places', query: { locality: locality.slug } }"
+                      :to="{ name: 'Places', query: { municipality: municipality.slug } }"
                       @click="handleClose"
                     >
-                      <span v-html="highlight(locality.locale[$i18n.locale].title, searchTerm)" />
+                      <span v-html="highlight(municipality.locale[$i18n.locale].title, searchTerm)" />
                     </router-link>
                   </li>
                 </ul>
@@ -246,6 +255,19 @@ export default defineComponent({
                   </li>
                 </ul>
               </li>
+              <li v-if="results.subcategories.length" class="type">
+                <h1>{{ $t('page.subcategories.title') }}</h1>
+                <ul>
+                  <li v-for="subcategory in results.subcategories" :key="subcategory">
+                    <router-link
+                      :to="{ name: 'Places', query: { subcategory: subcategory.slug } }"
+                      @click="handleClose"
+                    >
+                      <span v-html="highlight(subcategory.locale[$i18n.locale].title, searchTerm)" />
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
           <p
@@ -253,8 +275,9 @@ export default defineComponent({
               searchTerm.length >= 2
                 && !results.places.length
                 && !results.regions.length
-                && !results.localities.length
+                && !results.municipalities.length
                 && !results.categories.length
+                && !results.subcategories.length
             "
             class="no-results"
             v-html="$t('general.noResults')"

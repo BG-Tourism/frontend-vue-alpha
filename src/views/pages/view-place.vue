@@ -24,8 +24,8 @@ export default defineComponent({
     const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
 
     const place = places.find(p => p.slug === route.params.slug)
-    const region = regions.find(r => r.slug === place.region.slug)
-    const locality = region.localities.find(l => l.slug === place.locality.slug)
+    const region = regions.find(r => r.slug === place.region)
+    const municipality = region.municipalities.find(l => l.slug === place.municipality)
 
     const mapRef = ref(null)
     const loading = ref(true)
@@ -114,7 +114,7 @@ export default defineComponent({
       locale,
       place,
       region,
-      locality,
+      municipality,
       gitRepository,
       mapRef,
       mapLocation,
@@ -137,12 +137,12 @@ export default defineComponent({
       <div class="page-content">
         <div class="title">
           <h2>
-            <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
+            <router-link :to="{ name: 'Region', params: { slug: place.region } }">
               {{ $t('general.navigation.region', { title: region.locale[$i18n.locale].title }) }}
             </router-link>
             <i class="icon-arrow-right-tail" />
-            <router-link :to="{ name: 'Places', query: { region: region.slug, locality: locality.slug } }">
-              {{ $t('general.navigation.locality', { title: locality.locale[$i18n.locale].title }) }}
+            <router-link :to="{ name: 'Places', query: { region: place.region, municipality: place.municipality } }">
+              {{ $t('general.navigation.municipality', { title: municipality.locale[$i18n.locale].title }) }}
             </router-link>
           </h2>
           <h1>{{ place.locale[$i18n.locale].title }}</h1>

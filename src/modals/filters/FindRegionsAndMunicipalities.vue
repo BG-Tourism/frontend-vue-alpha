@@ -2,7 +2,11 @@
 import { defineComponent, ref } from 'vue'
 import { onClickOutside, onKeyStroke } from '@vueuse/core'
 
+import places from '@/api/places'
 import regions from '@/api/regions'
+
+import countPlacesWithRegion from '@/helpers/countPlacesWithRegion'
+import countPlacesWithMunicipality from '@/helpers/countPlacesWithMunicipality'
 
 import { useFinderStore } from '@/stores/Finder'
 
@@ -29,8 +33,11 @@ export default defineComponent({
 
     return {
       finder,
+      places,
       regions,
       target,
+      countPlacesWithRegion,
+      countPlacesWithMunicipality,
       toggleSelection,
       handleClose,
     }
@@ -57,7 +64,7 @@ export default defineComponent({
         </div>
         <div ref="target" class="finder-container">
           <div class="section-name">
-            <span>{{ $t('general.filters.regionsAndLocalities') }}</span>
+            <span>{{ $t('general.filters.regionsAndMunicipalities') }}</span>
           </div>
           <ul class="section-content">
             <li v-for="region in regions" :key="region" :class="finder.loadings.selections ? 'disabled' : null">
@@ -67,24 +74,30 @@ export default defineComponent({
                     finder.selections.region.find((item) => item === region.slug) ? 'checked' : null,
                   ]"
                 />
-                <span>{{ region.locale[$i18n.locale].title }}</span>
+                <div class="detail">
+                  <span class="name">{{ region.locale[$i18n.locale].title }}</span>
+                  <span v-if="countPlacesWithRegion(places, region.slug) > 0" class="count">{{ countPlacesWithRegion(places, region.slug) }}</span>
+                </div>
               </div>
-              <div v-if="finder.selections.region.includes(region.slug)" class="localities">
+              <div v-if="finder.selections.region.includes(region.slug)" class="subitems">
                 <ul>
                   <li
-                    v-for="locality in region.localities"
-                    :key="locality"
+                    v-for="municipality in region.municipalities"
+                    :key="municipality"
                     :class="finder.loadings.selections ? 'disabled' : null"
                   >
-                    <div class="action" @click="toggleSelection('locality', locality.slug)">
+                    <div class="action" @click="toggleSelection('municipality', municipality.slug)">
                       <button
                         class="checkbox" :class="[
-                          finder.selections.locality.find((item) => item === locality.slug)
+                          finder.selections.municipality.find((item) => item === municipality.slug)
                             ? 'checked'
                             : null,
                         ]"
                       />
-                      <span>{{ locality.locale[$i18n.locale].title }}</span>
+                      <div class="detail">
+                        <span class="name">{{ municipality.locale[$i18n.locale].title }}</span>
+                        <span v-if="countPlacesWithMunicipality(places, municipality.slug) > 0" class="count">{{ countPlacesWithMunicipality(places, municipality.slug) }}</span>
+                      </div>
                     </div>
                   </li>
                 </ul>

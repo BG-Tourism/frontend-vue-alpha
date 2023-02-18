@@ -48,7 +48,7 @@ export default defineComponent({
           <li v-for="region in regions" :key="region">
             <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
               {{ region.locale[$i18n.locale].title }}
-              <span>{{ region.localities.length }}</span>
+              <span>{{ region.municipalities.length }}</span>
             </router-link>
           </li>
         </ul>
