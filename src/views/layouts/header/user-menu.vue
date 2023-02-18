@@ -2,7 +2,6 @@
 import { defineComponent } from 'vue'
 // import { useDark, useToggle } from '@vueuse/core'
 import { useRoute } from 'vue-router'
-import md5 from 'js-md5'
 
 import BaseDropdown from '@/components/BaseDropdown.vue'
 
@@ -19,8 +18,9 @@ export default defineComponent({
     // const isDark = useDark()
     // const toggleDark = useToggle(isDark)
     const user = {
-      name: 'Потребителско Име',
-      email: 'username@example.com',
+      avatar: 'https://i.pravatar.cc/50?img=50',
+      name: 'Шмулю Юрганчев',
+      email: 'shmulyu@yurganchev.com',
     }
 
     const toggleSearch = () => {
@@ -33,7 +33,6 @@ export default defineComponent({
       // isDark,
       // toggleDark,
       user,
-      md5,
       getSupportedLocales,
       changeLocale,
       toggleSearch,
@@ -95,7 +94,7 @@ export default defineComponent({
         <template #menu>
           <header>
             <picture>
-              <img :src="`https://gravatar.com/avatar/${md5(user.email)}?size=50`" loading="lazy">
+              <img :src="user.avatar" loading="lazy">
             </picture>
             <div class="details">
               <strong>{{ user.name }}</strong>

@@ -606,16 +606,83 @@
             }
         }
 
-        .copyrights {
+        .content-authors {
+            display: flex;
+            align-items: center;
+            margin: 50px 0 0;
+            padding: 50px 0 0;
+            border-width: 1px 0 0;
+            border-style: solid;
+            border-color: $slate-200;
+
             p {
-                padding: 50px 100px 0;
-                text-align: center;
+                @include font-size(14px);
+
+                padding: 0 10px 0 0;
+            }
+
+            ul {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                &.multiple {
+                    gap: 0;
+
+                    li {
+                        margin: -5px;
+                    }
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+
+                        &:hover {
+                            span {
+                                color: $blue-600;
+                            }
+                        }
+                    }
+
+                    img {
+                        display: block;
+                        overflow: hidden;
+                        width: 40px;
+                        height: 40px;
+                        border-width: 2px;
+                        border-style: solid;
+                        border-color: $white;
+                        border-radius: 50%;
+                    }
+
+                    span {
+                        @include font-size(14px);
+
+                        padding: 0 0 0 10px;
+                        font-weight: 500;
+                        transition: all 200ms linear;
+                    }
+                }
+            }
+        }
+
+        .copyrights {
+            padding: 20px 0 0;
+
+            p {
+                display: flex;
+                align-items: center;
 
                 i {
                     @include font-size(26px);
 
                     display: block;
-                    padding: 0 0 10px;
+                    padding: 0 15px 0 0;
                     color: $slate-600;
                 }
 
@@ -623,7 +690,7 @@
                     @include font-size(13px);
 
                     color: $slate-500;
-                    line-height: 1.2;
+                    line-height: 1.4;
                 }
 
                 a {

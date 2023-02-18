@@ -7,6 +7,9 @@ import { useRoute, useRouter } from 'vue-router'
 import places from '@/api/places'
 import regions from '@/api/regions'
 
+import { useTransliterateString } from '@/helpers/useTransliterateString'
+import getRandomNamePair from '@/helpers/getRandomNamePair'
+
 import TruncateString from '@/components/TruncateString.vue'
 
 import { useGeneralStore } from '@/stores/GeneralStore'
@@ -126,6 +129,8 @@ export default defineComponent({
       handleClick,
       handleMouseEnter,
       copyCoordinates,
+      getRandomNamePair,
+      useTransliterateString,
     }
   },
 })
@@ -315,20 +320,19 @@ export default defineComponent({
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
           </div>
-          <div class="markdown-body">
-            <div class="table-of-contents">
-              <ol>
-                <li v-for="(content, index) in place.contents" :key="index">
-                  <a href="javascript:void(0);">
-                    {{ content.locale[$i18n.locale].title }}
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <div v-for="(content, index) in place.contents" :key="index">
-              <h1>{{ content.locale[$i18n.locale].title }}</h1>
-              <div v-html="content.locale[$i18n.locale].text" />
-            </div>
+          <div class="markdown-body" v-html="place.markdown_content.locale[$i18n.locale]" />
+          <div class="content-authors">
+            <p>{{ $t('page.place.contents.author', place.markdown_content.authors.length) }}</p>
+            <ul :class="place.markdown_content.authors.length >= 5 ? 'multiple' : null">
+              <li v-for="author in place.markdown_content.authors" :key="author">
+                <a :href="author.github_profile" target="_blank">
+                  <img :src="`https://i.pravatar.cc/40?img=${Math.floor(Math.random() * 50)}`" loading="lazy" alt="">
+                  <span v-if="place.markdown_content.authors.length < 5">
+                    {{ useTransliterateString(getRandomNamePair(), $i18n.locale) }}
+                  </span>
+                </a>
+              </li>
+            </ul>
           </div>
           <div class="copyrights">
             <p>
@@ -351,10 +355,10 @@ export default defineComponent({
             <div v-for="review in place.reviews" :key="review" class="item">
               <div class="author">
                 <picture>
-                  <img :src="review.author.photo" alt="">
+                  <img :src="`https://i.pravatar.cc/40?img=${Math.floor(Math.random() * 50)}`" alt="">
                 </picture>
                 <div class="info">
-                  <h3>{{ review.author.names }}</h3>
+                  <h3>{{ useTransliterateString(getRandomNamePair(), $i18n.locale) }}</h3>
                   <div class="rating" :title="$t('page.place.reviews.stars', review.rating)">
                     <i
                       v-for="(star, i) in 5"
