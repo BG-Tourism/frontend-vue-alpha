@@ -41,7 +41,7 @@
             width: 50%;
 
             h1 {
-                @include font-size(58px);
+                @include font-size(48px);
 
                 color: $slate-800;
                 font-weight: 600;
@@ -63,6 +63,7 @@
             }
 
             .see-more {
+                width: auto;
                 margin: 0;
             }
 

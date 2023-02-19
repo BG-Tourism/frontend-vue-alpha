@@ -26,10 +26,6 @@ export default defineComponent({
     const categoryPlaces = places.filter(place => place.categories.slug === categories.slug)
     const limitedCategoryPlaces = categoryPlaces.sort(() => 0.5 - Math.random()).slice(0, 5)
 
-    const generateNumber = () => {
-      number.value = (Math.random() * 19).toFixed(0)
-    }
-
     return {
       number,
       categories,
@@ -37,7 +33,6 @@ export default defineComponent({
       categoryPlaces,
       limitedPlaces,
       limitedCategoryPlaces,
-      generateNumber,
     }
   },
 })
@@ -52,14 +47,11 @@ export default defineComponent({
       <div class="wrapper">
         <div class="content">
           <h1 v-html="$t('page.homepage.slogan.title')" />
-          <p v-html="$t(`page.homepage.slogan.descriptions.v${number}`)" />
+          <p v-html="$t('page.homepage.slogan.description')" />
           <div class="buttons">
             <router-link :to="{ name: 'Places' }" class="see-more">
               <span>{{ $t('page.homepage.slogan.button') }}</span>
             </router-link>
-            <button class="generate" @click="generateNumber">
-              <i class="icon-refresh" />
-            </button>
           </div>
         </div>
         <div class="object">

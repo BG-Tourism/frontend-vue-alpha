@@ -5,9 +5,11 @@ const categories = [
     locale: {
       bg: {
         title: 'Архитектура',
+        description: 'Открий архитектурното наследство на България чрез нейните древни крепости, величествени къщи и дворци и впечатляващи мостове и акведукти, всеки със свой уникален дизайн и богата история.',
       },
       en: {
         title: 'Architecture',
+        description: 'Discover Bulgaria\'s architectural heritage through its ancient fortresses, grand houses and palaces, and impressive bridges and aqueducts, each with its own unique design and rich history.',
       },
     },
     subcategories: [
@@ -107,9 +109,11 @@ const categories = [
     locale: {
       bg: {
         title: 'Религия',
+        description: 'Потопи се в красотата на религиозните забележителности на България, които включват църкви, храмове, манастири, джамии и синагоги, всяка със свой собствен уникален архитектурен стил и културно значение.',
       },
       en: {
         title: 'Religion',
+        description: 'Immerse yourself in the beauty of Bulgaria\'s religious landmarks, which include churches, temples, monasteries, mosques, and synagogues, each with its own unique architectural style and cultural significance.',
       },
     },
     subcategories: [
@@ -187,9 +191,11 @@ const categories = [
     locale: {
       bg: {
         title: 'Култура',
+        description: 'Наслади се на оживената културна сцена на България чрез нейните музеи, галерии, библиотеки и театри, които показват художественото творчество и културното наследство на страната.',
       },
       en: {
         title: 'Culture',
+        description: 'Experience Bulgaria\'s vibrant cultural scene through its museums, galleries, libraries, and theaters, which showcase the country\'s artistic creativity and cultural heritage.',
       },
     },
     subcategories: [
@@ -245,9 +251,11 @@ const categories = [
     locale: {
       bg: {
         title: 'Природа',
+        description: 'Впусни се в пътешествие на изследване и откриване през дивата природа на България, където зашеметяващите планински вериги, криволичещи пътеки и спокойните паркове и градини предлагат бягство от градската суматоха и суетата, предоставяйки естествено убежище на всички, които го търсят.',
       },
       en: {
         title: 'Nature',
+        description: 'Embark on a journey of exploration and discovery through Bulgaria\'s untamed wilderness, where stunning mountain ranges, winding trails, and serene parks and gardens offer an escape from the city\'s hustle and bustle, providing a natural sanctuary to all those who seek it.',
       },
     },
     subcategories: [

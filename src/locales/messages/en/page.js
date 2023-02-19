@@ -13,7 +13,7 @@ const messages = {
   categories: {
     title: 'Categories',
     subtitle: 'Embark on a new adventure',
-    description: 'Discover the rich cultural heritage of Bulgaria through its diverse range of landmarks. Browse through our category list to find your next adventure.',
+    description: 'Step into Bulgaria\'s fascinating world of history and natural beauty. Our categories invite you to explore the country\'s many treasures, from ancient ruins to stunning natural landscapes.',
   },
   subcategories: {
     title: 'Subcategories',
@@ -44,7 +44,8 @@ const messages = {
   homepage: {
     title: 'Homepage',
     slogan: {
-      title: 'The wealth of<br>Bulgaria in one place',
+      title: 'Bulgaria - a beautiful and magical destination for every traveler',
+      description: 'The most detailed digital catalog of landmarks in Bulgaria, containing author\'s photos and rich historical information.',
       descriptions: {
         v0: 'The Koprivshtitsa is a historic town with well-preserved 19th-century architecture and traditional Bulgarian customs.',
         v1: 'Bulgaria is home to over 20,000 historical and cultural monuments, including ancient Thracian tombs, medieval fortresses and Ottoman mosques.',
@@ -67,7 +68,7 @@ const messages = {
         v18: 'The ancient city of Odessos, now known as Varna, was an important Roman port and a center of trade and culture.',
         v19: 'Bulgaria played a key role in the spread of Christianity in Eastern Europe, with many ancient churches and monasteries throughout the country.',
       },
-      button: 'Learn more',
+      button: 'See the places',
     },
     locations: {
       featured: {
@@ -157,7 +158,7 @@ const messages = {
   regions: {
     title: 'Tourist Regions',
     subtitle: 'Discover Your Perfect Destination',
-    description: 'Find your next perfect travel destination in Bulgaria tourist regions, offering something for every type of traveler.',
+    description: 'Embark on a journey through Bulgaria\'s breathtaking tourism regions and immerse yourself in the country\'s rich history, diverse culture, and stunning natural beauty.',
   },
   municipality: {
     title: 'Municipality',
