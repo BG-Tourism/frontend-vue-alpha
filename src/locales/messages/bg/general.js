@@ -39,6 +39,8 @@ const messages = {
   reviews: 'Ревюта',
   logout: 'Изход',
   search: 'Търсене',
+  languages: 'Езици',
+  menu: 'Меню',
   loading: 'Зареждане...',
   seeMore: 'Виж повече',
   showMore: 'Покажи повече',

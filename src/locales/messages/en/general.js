@@ -39,6 +39,8 @@ const messages = {
   reviews: 'Reviews',
   logout: 'Sign out',
   search: 'Search',
+  languages: 'Languages',
+  menu: 'Menu',
   loading: 'Loading...',
   seeMore: 'See more',
   showMore: 'Show more',
