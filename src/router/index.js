@@ -15,6 +15,7 @@ const routes = [
     name: 'Region',
     meta: {
       className: 'page-region',
+      category: 'regions',
     },
     component: () => import('@/views/pages/view-region.vue'),
   },
@@ -31,6 +32,7 @@ const routes = [
     name: 'Category',
     meta: {
       className: 'page-category',
+      category: 'categories',
     },
     component: () => import('@/views/pages/view-category.vue'),
   },
@@ -47,6 +49,7 @@ const routes = [
     name: 'Place',
     meta: {
       className: 'page-place',
+      category: 'places',
     },
     component: () => import('@/views/pages/view-place.vue'),
   },
