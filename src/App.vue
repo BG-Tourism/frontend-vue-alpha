@@ -6,7 +6,7 @@ import { useGeneralStore } from './stores/GeneralStore'
 import BlockHeader from '@/views/layouts/header/template.vue'
 import BlockFooter from '@/views/layouts/footer/template.vue'
 
-import UserMenu from '@/modals/UserMenu.vue'
+import Authentication from '@/modals/Authentication.vue'
 import Languages from '@/modals/Languages.vue'
 import Search from '@/modals/Search.vue'
 import FindCategories from '@/modals/filters/FindCategories.vue'
@@ -19,7 +19,7 @@ export default defineComponent({
   components: {
     BlockHeader,
     BlockFooter,
-    UserMenu,
+    Authentication,
     Languages,
     Search,
     FindCategories,
@@ -54,7 +54,7 @@ export default defineComponent({
 
   <BlockFooter v-if="$route.name !== 'PageError'" />
 
-  <UserMenu />
+  <Authentication />
   <Languages />
   <Search />
   <FindCategories />

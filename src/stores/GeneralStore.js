@@ -12,12 +12,22 @@ export const useGeneralStore = defineStore('GeneralStore', {
     appName: import.meta.env.VITE_APP_NAME,
     titleSuffix: ` - ${import.meta.env.VITE_APP_NAME}`,
     mobileOverlay: true,
+    user: {
+      logged: false,
+      avatar: 'https://secure.gravatar.com/avatar/2a30cbe5435813200be7610cde63dc4f?size=50',
+      names: 'Том Атанасов',
+      email: 'me@xen.gg',
+    },
     modals: {
+      authentication: {
+        shown: false,
+        state: 0,
+      },
       language: {
         shown: false,
         state: 0,
       },
-      userMenu: {
+      search: {
         shown: false,
         state: 0,
       },
@@ -34,10 +44,12 @@ export const useGeneralStore = defineStore('GeneralStore', {
       }, 300)
     },
     truncate() {
+      this.modals.authentication.shown = false
+      this.modals.authentication.state = 0
       this.modals.language.shown = false
       this.modals.language.state = 0
-      this.modals.userMenu.shown = false
-      this.modals.userMenu.state = 0
+      this.modals.search.shown = false
+      this.modals.search.state = 0
     },
   },
 })

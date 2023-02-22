@@ -12,6 +12,8 @@ body {
 body {
     @include font-size(16px);
 
+    overflow: hidden;
+    overflow-y: auto;
     color: $slate-700;
     font-weight: 400;
     font-family: $font-base;

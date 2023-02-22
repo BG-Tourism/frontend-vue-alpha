@@ -1,60 +1,129 @@
 <script>
-import { defineComponent } from 'vue'
-import { useRoute } from 'vue-router'
+import { defineComponent, ref } from 'vue'
+import { onClickOutside, onKeyStroke } from '@vueuse/core'
 
-import { changeLocale, getSupportedLocales } from '@/utils/locales'
 import { useGeneralStore } from '@/stores/GeneralStore'
-import { useFinderStore } from '@/stores/Finder'
 
 export default defineComponent({
   setup() {
-    const route = useRoute()
-    const store = useGeneralStore()
-    const finder = useFinderStore()
+    const generalStore = useGeneralStore()
+    const user = generalStore.user
+    const dropdownMenu = ref(false)
+    const dropdownMenuTarget = ref(null)
 
-    const toggleSearch = () => {
-      finder.modals.search.shown = true
-      finder.modals.search.state = 1
+    const handleDropdownOpen = () => {
+      dropdownMenu.value = true
     }
 
-    const toggleLanguage = () => {
-      store.modals.language.shown = true
-      store.modals.language.state = 1
+    const handleDropdownClose = (modal = null) => {
+      dropdownMenu.value = false
+
+      if (modal != null) {
+        generalStore.modals[modal].state = 1
+        generalStore.modals[modal].shown = true
+      }
     }
 
-    const toggleUserMenu = () => {
-      store.modals.userMenu.shown = true
-      store.modals.userMenu.state = 1
+    const handleModal = (modal) => {
+      generalStore.modals[modal].state = 1
+      generalStore.modals[modal].shown = true
     }
+
+    const handleLogout = () => {
+      handleDropdownClose()
+
+      generalStore.user.logged = false
+    }
+
+    onKeyStroke('Escape', () => {
+      handleDropdownClose()
+    })
+
+    onClickOutside(dropdownMenuTarget, () => {
+      handleDropdownClose()
+    })
 
     return {
-      route,
-      getSupportedLocales,
-      changeLocale,
-      toggleLanguage,
-      toggleSearch,
-      toggleUserMenu,
+      user,
+      dropdownMenu,
+      dropdownMenuTarget,
+      handleDropdownOpen,
+      handleDropdownClose,
+      handleModal,
+      handleLogout,
     }
   },
 })
 </script>
 
 <template>
-  <ul class="user-menu">
-    <li>
-      <button :title="$t('general.search')" @click="toggleSearch()">
+  <aside>
+    <div v-if="user.logged" class="user-menu">
+      <div class="trigger" @click="handleDropdownOpen">
+        <picture>
+          <img :src="user.avatar" alt="">
+        </picture>
+        <span>{{ user.names }}</span>
+        <i class="icon-arrow-down" />
+      </div>
+      <div ref="dropdownMenuTarget" class="menu-container" :class="[dropdownMenu ? 'shown' : 'hidden']">
+        <ul>
+          <li>
+            <a href="javascript:void(0);" @click="handleDropdownClose()">
+              <i class="icon-user" />
+              <span>{{ $t('general.viewProfile') }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" @click="handleDropdownClose()">
+              <i class="icon-settings" />
+              <span>{{ $t('general.settings') }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" @click="handleDropdownClose()">
+              <i class="icon-route" />
+              <span>{{ $t('general.trips') }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" @click="handleDropdownClose()">
+              <i class="icon-review" />
+              <span>{{ $t('general.reviews') }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" @click="handleDropdownClose()">
+              <i class="icon-image" />
+              <span>{{ $t('general.photos') }}</span>
+            </a>
+          </li>
+          <li class="divider" />
+          <li>
+            <a href="javascript:void(0);" class="button-like" @click="handleLogout()">
+              <span>{{ $t('general.logout') }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div v-else class="buttons">
+      <button class="login" @click="handleModal('authentication')">
+        <span>{{ $t('general.login') }}</span>
+      </button>
+
+      <button class="register" @click="handleModal('authentication')">
+        <span>{{ $t('general.register') }}</span>
+      </button>
+    </div>
+    <div class="general">
+      <button class="search" :title="$t('general.search')" @click="handleModal('search')">
         <i class="icon-search" />
       </button>
-    </li>
-    <li>
-      <button :title="$t('general.languages')" @click="toggleLanguage()">
+
+      <button class="languages" :title="$t('general.languages')" @click="handleModal('language')">
         <i class="icon-languages" />
       </button>
-    </li>
-    <li>
-      <button :title="$t('general.menu')" @click="toggleUserMenu()">
-        <i class="icon-menu" />
-      </button>
-    </li>
-  </ul>
+    </div>
+  </aside>
 </template>

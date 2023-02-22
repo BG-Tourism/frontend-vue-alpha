@@ -31,10 +31,6 @@ export const useFinderStore = defineStore('FinderStore', {
       rating: [],
     },
     modals: {
-      search: {
-        shown: false,
-        state: 0,
-      },
       category: {
         shown: false,
         state: 0,
@@ -174,8 +170,6 @@ export const useFinderStore = defineStore('FinderStore', {
       this.selections.municipality = []
       this.selections.rating = []
 
-      this.modals.search.shown = false
-      this.modals.search.state = 0
       this.modals.category.shown = false
       this.modals.category.state = 0
       this.modals.region.shown = false

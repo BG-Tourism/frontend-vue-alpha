@@ -9,7 +9,7 @@ import categories from '@/api/categories'
 import places from '@/api/places'
 import regions from '@/api/regions'
 
-import { useFinderStore } from '@/stores/Finder'
+import { useGeneralStore } from '@/stores/GeneralStore'
 
 export default defineComponent({
   components: {
@@ -17,7 +17,7 @@ export default defineComponent({
   },
   setup() {
     const { locale } = useI18n({ useScope: 'global' })
-    const finder = useFinderStore()
+    const generalStore = useGeneralStore()
     const target = ref(null)
     const search = ref('')
     const searchTerm = computed(() => {
@@ -127,7 +127,7 @@ export default defineComponent({
     const handleClose = () => {
       handleClear()
 
-      finder.toggleModal('search')
+      generalStore.toggleModal('search')
     }
 
     onKeyStroke('Escape', () => {
@@ -139,7 +139,7 @@ export default defineComponent({
     })
 
     return {
-      finder,
+      generalStore,
       target,
       search,
       categories,
@@ -157,14 +157,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <div v-if="finder.modals.search.shown">
+  <div v-if="generalStore.modals.search.shown">
     <div
       class="modal" :class="[
-        finder.modals.search.state === 1 ? 'opening' : null,
-        finder.modals.search.state === 2 ? 'closing' : null,
+        generalStore.modals.search.state === 1 ? 'opening' : null,
+        generalStore.modals.search.state === 2 ? 'closing' : null,
       ]"
     >
-      <div v-if="[1, 2].includes(finder.modals.search.state)" class="wrapper">
+      <div v-if="[1, 2].includes(generalStore.modals.search.state)" class="wrapper">
         <div class="close">
           <button>
             <span class="icon-holder">
