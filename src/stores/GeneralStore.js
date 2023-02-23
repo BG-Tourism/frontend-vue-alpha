@@ -14,7 +14,8 @@ export const useGeneralStore = defineStore('GeneralStore', {
     mobileOverlay: true,
     user: {
       logged: false,
-      avatar: 'https://secure.gravatar.com/avatar/2a30cbe5435813200be7610cde63dc4f?size=50',
+      avatar: 'https://secure.gravatar.com/avatar/2a30cbe5435813200be7610cde63dc4f',
+      username: 'tomatanasov',
       names: 'Том Атанасов',
       email: 'me@xen.gg',
     },

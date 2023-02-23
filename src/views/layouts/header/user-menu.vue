@@ -61,7 +61,7 @@ export default defineComponent({
     <div v-if="user.logged" class="user-menu">
       <div class="trigger" @click="handleDropdownOpen">
         <picture>
-          <img :src="user.avatar" alt="">
+          <img :src="`${user.avatar}?size=50`" alt="">
         </picture>
         <span>{{ user.names }}</span>
         <i class="icon-arrow-down" />
@@ -69,10 +69,10 @@ export default defineComponent({
       <div ref="dropdownMenuTarget" class="menu-container" :class="[dropdownMenu ? 'shown' : 'hidden']">
         <ul>
           <li>
-            <a href="javascript:void(0);" @click="handleDropdownClose()">
+            <router-link :to="{ name: 'User', params: { slug: user.username } }" @click="handleDropdownClose()">
               <i class="icon-user" />
               <span>{{ $t('general.viewProfile') }}</span>
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="javascript:void(0);" @click="handleDropdownClose()">

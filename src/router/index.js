@@ -62,6 +62,15 @@ const routes = [
     component: () => import('@/views/pages/find-places.vue'),
   },
   {
+    path: '/@:slug',
+    name: 'User',
+    meta: {
+      className: 'page-user',
+      category: 'user',
+    },
+    component: () => import('@/views/pages/view-user.vue'),
+  },
+  {
     path: '/about',
     name: 'About',
     meta: {

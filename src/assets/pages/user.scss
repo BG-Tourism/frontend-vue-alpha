@@ -1,0 +1,174 @@
+.page-user {
+    .top-section {
+        padding-bottom: 0;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: $slate-200;
+
+        .details {
+            picture {
+                @include image {
+                    @include font-size(30px);
+
+                    color: $slate-200 !important;
+                }
+
+                position: relative;
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+                border-radius: 50%;
+                background-color: $white;
+                box-shadow: rgba(0, 0, 0, 16%) 0 10px 36px 0, rgba(0, 0, 0, 6%) 0 0 0 1px;
+
+                img {
+                    position: relative;
+                    display: block;
+                    width: 150px;
+                    height: 150px;
+                    border-width: 4px;
+                    border-style: solid;
+                    border-color: $white;
+                    border-radius: 50%;
+                }
+            }
+
+            h1 {
+                @include font-size(34px);
+
+                padding: 30px 0 0;
+                color: $slate-900;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            p {
+                @include font-size(16px);
+
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px 0 0;
+                color: $slate-700;
+                text-align: center;
+            }
+
+            .buttons {
+                display: flex;
+                flex: 0 0 auto;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                padding: 40px 0 0;
+            }
+
+            button {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 38px;
+                padding: 0 18px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: $gray-300;
+                border-radius: 8px;
+                background-color: $white;
+                box-shadow: 0 1px 2px 0 rgba($blue-900, 5%);
+                cursor: pointer;
+                user-select: none;
+                transition: all 300ms linear;
+
+                &:hover {
+                    background-color: $gray-50;
+
+                    i,
+                    span {
+                        color: $slate-800;
+                    }
+                }
+
+                &.primary {
+                    border-color: $blue-600;
+                    background-color: $blue-600;
+
+                    i,
+                    span {
+                        color: $white;
+                    }
+
+                    &:hover {
+                        background-color: $blue-700;
+
+                        i,
+                        span {
+                            color: $white;
+                        }
+                    }
+                }
+
+                i,
+                span {
+                    color: $slate-700;
+                    transition: all 300ms linear;
+                }
+
+                i {
+                    @include font-size(14px);
+
+                    display: block;
+                    padding: 0 10px 0 0;
+                }
+
+                span {
+                    @include font-size(16px);
+
+                    font-weight: 500;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .tabs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0 0;
+
+            li {
+                a {
+                    @include font-size(18px);
+
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px 24px;
+                    border-width: 0 0 2px;
+                    border-style: solid;
+                    border-color: transparent;
+                    color: $slate-500;
+                    font-weight: 500;
+                    transition: all 200ms linear;
+
+                    &:hover {
+                        border-color: $slate-200;
+                    }
+
+                    &.active {
+                        border-color: $blue-600;
+                        color: $blue-600;
+                    }
+                }
+            }
+        }
+    }
+
+    .profile-content {
+        padding: 50px 0;
+    }
+}
