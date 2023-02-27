@@ -172,6 +172,14 @@ const messages = {
   cookies: {
     title: 'Политика за бисквитките',
   },
+  user: {
+    rate: 'Оцени със звезда',
+    location: 'Локация',
+    website: 'Личен уебсайт',
+    email: 'Имейл',
+    photos: 'Снимки',
+    reviews: 'Ревюта',
+  },
 }
 
 export default messages

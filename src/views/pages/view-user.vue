@@ -26,7 +26,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${user.firstName} ${user.lastName} (${user.username})${titleSuffix}`
+      return `${user.firstName} ${user.lastName} (@${user.username})${titleSuffix}`
     })
     useTitle(pageTitle)
 
@@ -42,53 +42,137 @@ export default defineComponent({
 
 <template>
   <div v-if="!loading">
-    <section class="top-section">
+    <section class="user-details">
       <div class="page-content">
-        <div class="details">
-          <picture>
-            <img :src="`${user.avatar}?size=150`" alt="">
-          </picture>
+        <div class="container">
+          <aside>
+            <picture>
+              <img :src="`${user.avatarWide}`" alt="">
+            </picture>
 
-          <h1>{{ user.firstName }} {{ user.lastName }}</h1>
-          <p>@{{ user.username }}</p>
+            <h1>{{ user.firstName }} {{ user.lastName }}</h1>
+            <h2>
+              <router-link :to="{ name: 'User', params: { slug: user.username } }">
+                @{{ user.username }}
+              </router-link>
+            </h2>
 
-          <ul class="buttons">
-            <li>
-              <button>
-                <i class="icon-star-solid" />
-                <span>Дай звезда</span>
-              </button>
-            </li>
-          </ul>
+            <p>{{ user.description }}</p>
+
+            <button class="primary">
+              <span>{{ $t('page.user.rate') }}</span>
+            </button>
+
+            <div class="information">
+              <dl>
+                <dt>{{ $t('page.user.location') }}</dt>
+                <dd>София, България</dd>
+              </dl>
+              <dl>
+                <dt>{{ $t('page.user.website') }}</dt>
+                <dd>
+                  <a href="https://xen.gg/" target="_blank" class="external-link">xen.gg</a>
+                </dd>
+              </dl>
+              <dl>
+                <dt>{{ $t('page.user.email') }}</dt>
+                <dd>
+                  <a href="mailto:me@xen.gg">me@xen.gg</a>
+                </dd>
+              </dl>
+              <ul class="socials">
+                <li>
+                  <a href="https://instagram.com/tom.atanasov" target="_blank" title="Instagram">
+                    <i class="icon-social-instagram" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://facebook.com/tom.atanasov" target="_blank" title="Facebook">
+                    <i class="icon-social-facebook" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/xenbg" target="_blank" title="Twitter">
+                    <i class="icon-social-twitter" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <div class="contents">
+            <div class="block">
+              <div class="title">
+                <h1>{{ $t('page.user.photos') }}</h1>
+              </div>
+              <div class="photos">
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/2-1.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/2-2.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/3-1.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/3-2.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/4-1.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/4-2.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/5-1.jpg">
+                    </picture>
+                  </a>
+                </div>
+                <div class="photo">
+                  <a href="javascript:void(0);">
+                    <picture>
+                      <img src="/images/photos/5-2.jpg">
+                    </picture>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="block">
+              <div class="title">
+                <h1>{{ $t('page.user.reviews') }}</h1>
+              </div>
+              <div class="reviews">
+                ...
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="tabs">
-          <li>
-            <a href="javascript:void(0);" class="active">
-              За мен
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);">
-              Снимки
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);">
-              Ревюта
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);">
-              Пътешествия
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="profile-content">
-      <div class="page-content">
-        {{ user.description }}
       </div>
     </section>
   </div>

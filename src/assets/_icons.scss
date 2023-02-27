@@ -270,6 +270,10 @@
     content: '\e942';
 }
 
+.icon-arrow-up-right::before {
+    content: '\e94a';
+}
+
 .icon-social-twitter::before {
     content: '\e943';
 }
@@ -282,6 +286,10 @@
     content: '\e945';
 }
 
+.icon-social-instagram::before {
+    content: '\e94b';
+}
+
 .icon-social-discord::before {
     content: '\e946';
 }
@@ -292,8 +300,4 @@
 
 .icon-review::before {
     content: '\e949';
-}
-
-.icon-arrow-drop-down::before {
-    content: '\e94a';
 }

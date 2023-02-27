@@ -172,6 +172,14 @@ const messages = {
   cookies: {
     title: 'Cookie Policy',
   },
+  user: {
+    rate: 'Rate with Star',
+    location: 'Location',
+    website: 'Personal Website',
+    email: 'Email',
+    photos: 'Photos',
+    reviews: 'Reviews',
+  },
 }
 
 export default messages
