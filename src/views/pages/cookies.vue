@@ -1,21 +1,11 @@
 <script>
-import { computed, defineComponent } from 'vue'
-import { useTitle } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
+import { defineComponent } from 'vue'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
+import pageTitle from '@/utils/pageTitle'
 
 export default defineComponent({
   setup() {
-    const i18n = useI18n()
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
-
-    const pageTitle = computed(() => {
-      return i18n.t('page.cookies.title') + titleSuffix
-    })
-
-    useTitle(pageTitle)
+    pageTitle('page.cookies.title')
   },
 })
 </script>

@@ -31,22 +31,20 @@
                 gap: 15px;
                 align-items: center;
 
-                .logo {
-                    @include image {
-                        color: $slate-700 !important;
-                    }
+                .logo,
+                strong {
+                    color: $slate-900;
+                }
 
-                    position: relative;
-                    width: 42px;
-                    height: 42px;
-                    border-radius: 6px;
-                    background-color: $slate-300;
+                .logo {
+                    @include font-size(28px);
+
+                    width: 28px;
+                    height: 28px;
                 }
 
                 strong {
                     @include font-size(20px);
-
-                    color: $slate-900;
                 }
             }
 
@@ -124,6 +122,14 @@
 
                             &::after {
                                 background-color: rgba(#1877F2, 0.15);
+                            }
+                        }
+
+                        .icon-social-instagram {
+                            color: #FF0069;
+
+                            &::after {
+                                background-color: rgba(#FF0069, 0.15);
                             }
                         }
 

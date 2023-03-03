@@ -9,15 +9,17 @@ import regions from '@/api/regions'
 
 import countPlacesWithMunicipality from '@/helpers/countPlacesWithMunicipality'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   setup() {
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
+    })
     const region = regions.find(item => item.slug === route.params.slug)
     const loading = ref(true)
 
@@ -29,7 +31,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${region.locale[locale.value].title}${titleSuffix}`
+      return `${region.locale[locale.value].title} - ${appName.value}`
     })
     useTitle(pageTitle)
 

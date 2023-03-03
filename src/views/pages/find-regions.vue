@@ -1,23 +1,13 @@
 <script>
-import { computed, defineComponent } from 'vue'
-import { useTitle } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
+import { defineComponent } from 'vue'
+
+import pageTitle from '@/utils/pageTitle'
 
 import regions from '@/api/regions'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   setup() {
-    const i18n = useI18n()
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
-
-    const pageTitle = computed(() => {
-      return i18n.t('page.regions.title') + titleSuffix
-    })
-
-    useTitle(pageTitle)
+    pageTitle('page.regions.title')
 
     return {
       regions,

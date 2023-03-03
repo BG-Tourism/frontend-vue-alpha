@@ -9,11 +9,9 @@ import { defineStore } from 'pinia'
  */
 export const useGeneralStore = defineStore('GeneralStore', {
   state: () => ({
-    appName: import.meta.env.VITE_APP_NAME,
-    titleSuffix: ` - ${import.meta.env.VITE_APP_NAME}`,
     mobileOverlay: true,
     user: {
-      logged: true,
+      logged: false,
       avatar: 'https://secure.gravatar.com/avatar/2a30cbe5435813200be7610cde63dc4f',
       username: 'tomatanasov',
       names: 'Том Атанасов',

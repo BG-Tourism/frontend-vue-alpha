@@ -1,28 +1,21 @@
 <script>
 import { computed, defineComponent, onBeforeMount, onBeforeUnmount } from 'vue'
-import { useTitle } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
 import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
+import pageTitle from '@/utils/pageTitle'
+
 import { useFinderStore } from '@/stores/Finder'
 
 import addItemsByQuery from '@/helpers/addItemsByQuery'
 
 export default defineComponent({
   setup() {
-    const i18n = useI18n()
     const route = useRoute()
-    const store = useGeneralStore()
     const finder = useFinderStore()
-    const titleSuffix = store.titleSuffix
 
     const productsPerPage = 5
 
-    const pageTitle = computed(() => {
-      return i18n.t('page.places.title') + titleSuffix
-    })
-    useTitle(pageTitle)
+    pageTitle('page.places.title')
 
     onBeforeMount(() => {
       finder.truncate()

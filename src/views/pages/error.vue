@@ -1,7 +1,7 @@
 <script>
-import { computed, defineComponent } from 'vue'
-import { useTitle } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
+import { defineComponent } from 'vue'
+
+import pageTitle from '@/utils/pageTitle'
 
 import BaseButton from '@/components/BaseButton.vue'
 
@@ -10,13 +10,7 @@ export default defineComponent({
     BaseButton,
   },
   setup() {
-    const i18n = useI18n()
-
-    const pageTitle = computed(() => {
-      return i18n.t('page.error.title')
-    })
-
-    useTitle(pageTitle)
+    pageTitle('page.error.title')
   },
 })
 </script>

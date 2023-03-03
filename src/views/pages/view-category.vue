@@ -9,15 +9,17 @@ import categories from '@/api/categories'
 
 import countPlacesWithSubcategory from '@/helpers/countPlacesWithSubcategory'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   setup() {
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
+    })
     const category = categories.find(item => item.slug === route.params.slug)
     const loading = ref(true)
 
@@ -29,7 +31,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${category.locale[locale.value].title}${titleSuffix}`
+      return `${category.locale[locale.value].title} - ${appName.value}`
     })
     useTitle(pageTitle)
 

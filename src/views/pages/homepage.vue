@@ -7,20 +7,19 @@ import places from '@/api/places.js'
 import categories from '@/api/categories'
 import regions from '@/api/regions'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   setup() {
-    const i18n = useI18n()
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
+    const { locale } = useI18n()
     const number = ref((Math.random() * 19).toFixed(0))
 
-    const pageTitle = computed(() => {
-      return i18n.t('page.homepage.title') + titleSuffix
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
     })
 
-    useTitle(pageTitle)
+    useTitle(appName)
 
     const limitedPlaces = places.sort(() => 0.5 - Math.random()).slice(0, 4)
     const categoryPlaces = places.filter(place => place.categories.slug === categories.slug)

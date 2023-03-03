@@ -3,7 +3,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    const appName = import.meta.env.VITE_APP_NAME
+    const appName = 'destination.bg'
 
     return {
       appName,
@@ -13,9 +13,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="logo">
-    <router-link :to="{ name: 'Homepage' }">
-      {{ appName }}
-    </router-link>
-  </div>
+  <router-link :to="{ name: 'Homepage' }" class="brand">
+    <div class="logo">
+      <i class="icon-image" />
+    </div>
+    <strong>{{ appName }}</strong>
+  </router-link>
 </template>

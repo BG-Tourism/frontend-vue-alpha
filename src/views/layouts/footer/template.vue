@@ -1,5 +1,6 @@
 <script>
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import categories from '@/api/categories'
 import regions from '@/api/regions'
@@ -7,15 +8,33 @@ import regions from '@/api/regions'
 export default defineComponent({
   name: 'BlockFooter',
   setup() {
-    const appName = import.meta.env.VITE_APP_NAME
+    const { locale } = useI18n()
+
     const environment = import.meta.env.VITE_APP_ENV
+
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
+    })
+
     const gitRepository = import.meta.env.VITE_APP_GIT_REPO
+    const pageDiscord = import.meta.env.VITE_APP_DISCORD
+    const pageFacebook = import.meta.env.VITE_APP_FACEBOOK
+    const pageInstagram = import.meta.env.VITE_APP_INSTAGRAM
+    const pageTwitter = import.meta.env.VITE_APP_TWITTER
+
     const currentYear = new Date().getFullYear()
 
     return {
       appName,
       environment,
       gitRepository,
+      pageDiscord,
+      pageFacebook,
+      pageInstagram,
+      pageTwitter,
       currentYear,
       categories,
       regions,
@@ -31,28 +50,35 @@ export default defineComponent({
         <div class="wrapper">
           <div class="about">
             <router-link :to="{ name: 'Homepage' }" class="brand">
-              <div class="logo" />
+              <div class="logo">
+                <i class="icon-image" />
+              </div>
               <strong>{{ appName }}</strong>
             </router-link>
             <div class="description" v-html="$t('general.footer.description')" />
             <ul class="socials">
               <li>
-                <a href="https://twitter.com/placesinbg" target="_blank" rel="noopener" title="Twitter">
+                <a :href="pageTwitter" target="_blank" rel="noopener" :title="`${appName} - Twitter`">
                   <i class="icon-social-twitter" />
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/placesbg" target="_blank" rel="noopener" title="Facebook">
+                <a :href="pageFacebook" target="_blank" rel="noopener" :title="`${appName} - Facebook`">
                   <i class="icon-social-facebook" />
                 </a>
               </li>
               <li>
-                <a :href="gitRepository" target="_blank" rel="noopener" title="GitHub">
+                <a :href="pageInstagram" target="_blank" rel="noopener" :title="`${appName} - Instagram`">
+                  <i class="icon-social-instagram" />
+                </a>
+              </li>
+              <li>
+                <a :href="gitRepository" target="_blank" rel="noopener" :title="`${appName} - GitHub`">
                   <i class="icon-social-github" />
                 </a>
               </li>
               <li>
-                <a href="https://discord.gg/NMRjZ4FdPs" target="_blank" rel="noopener" title="Discord">
+                <a :href="pageDiscord" target="_blank" rel="noopener" :title="`${appName} - Discord`">
                   <i class="icon-social-discord" />
                 </a>
               </li>

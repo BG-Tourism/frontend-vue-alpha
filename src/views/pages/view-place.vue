@@ -12,8 +12,6 @@ import getRandomNamePair from '@/helpers/getRandomNamePair'
 
 import TruncateString from '@/components/TruncateString.vue'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   components: {
     TruncateString,
@@ -22,8 +20,12 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
+    })
     const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
 
     const place = places.find(p => p.slug === route.params.slug)
@@ -86,7 +88,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${place.locale[locale.value].title}${titleSuffix}`
+      return `${place.locale[locale.value].title} - ${appName.value}`
     })
     useTitle(pageTitle)
 

@@ -6,15 +6,17 @@ import { useRoute, useRouter } from 'vue-router'
 
 import users from '@/api/users'
 
-import { useGeneralStore } from '@/stores/GeneralStore'
-
 export default defineComponent({
   setup() {
     const route = useRoute()
     const router = useRouter()
     const { locale } = useI18n({ useScope: 'global' })
-    const store = useGeneralStore()
-    const titleSuffix = store.titleSuffix
+    const appName = computed(() => {
+      if (locale.value === 'bg')
+        return import.meta.env.VITE_APP_NAME_BG
+
+      return import.meta.env.VITE_APP_NAME_EN
+    })
     const user = users.find(item => item.username === route.params.slug)
     const loading = ref(true)
 
@@ -26,7 +28,7 @@ export default defineComponent({
     })
 
     const pageTitle = computed(() => {
-      return `${user.firstName} ${user.lastName} (@${user.username})${titleSuffix}`
+      return `${user.firstName} ${user.lastName} (@${user.username}) - ${appName.value}`
     })
     useTitle(pageTitle)
 
