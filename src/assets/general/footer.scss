@@ -32,7 +32,7 @@
                 align-items: center;
 
                 .logo,
-                strong {
+                h2 {
                     color: $slate-900;
                 }
 
@@ -43,7 +43,7 @@
                     height: 28px;
                 }
 
-                strong {
+                h2 {
                     @include font-size(20px);
                 }
             }
@@ -162,7 +162,7 @@
         }
 
         .column {
-            h1 {
+            h3 {
                 @include font-size(14px);
 
                 color: $slate-500;
@@ -267,12 +267,12 @@
             box-shadow: rgba($black, 0.2) 0 5px 15px;
         }
 
-        h1,
+        h3,
         p {
             color: $white;
         }
 
-        h1 {
+        h3 {
             @include font-size(30px);
 
             font-weight: 600;

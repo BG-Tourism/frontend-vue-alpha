@@ -44,7 +44,7 @@
                 color: $slate-900;
             }
 
-            h2 {
+            .username {
                 @include font-size(16px);
 
                 padding: 10px 0 0;
@@ -252,7 +252,7 @@
             .title {
                 padding: 0 0 40px;
 
-                h1 {
+                h2 {
                     @include font-size(26px);
 
                     color: $slate-900;

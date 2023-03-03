@@ -20,7 +20,9 @@ export default defineComponent({
   <section class="top-section">
     <div class="page-content">
       <div class="title">
-        <h2>{{ $t('page.regions.subtitle') }}</h2>
+        <div class="subtitle">
+          {{ $t('page.regions.subtitle') }}
+        </div>
         <h1>{{ $t('page.regions.title') }}</h1>
         <p>{{ $t('page.regions.description') }}</p>
       </div>

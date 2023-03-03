@@ -130,6 +130,7 @@ const messages = {
       author: 'Author of the content is | Authors of the content are',
     },
     audio: {
+      about: 'About',
       section: 'Section: "{section}"',
       describe: 'Audio for section from',
       playAudio: 'Play audio track from this section',

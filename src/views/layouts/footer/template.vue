@@ -53,7 +53,7 @@ export default defineComponent({
               <div class="logo">
                 <i class="icon-image" />
               </div>
-              <strong>{{ appName }}</strong>
+              <h2>{{ appName }}</h2>
             </router-link>
             <div class="description" v-html="$t('general.footer.description')" />
             <ul class="socials">
@@ -87,7 +87,7 @@ export default defineComponent({
 
           <div class="columns">
             <div class="column">
-              <h1>{{ $t('general.footer.regarding') }}</h1>
+              <h3>{{ $t('general.footer.regarding') }}</h3>
               <ul>
                 <li>
                   <router-link :to="{ name: 'About' }">
@@ -118,7 +118,7 @@ export default defineComponent({
               </ul>
             </div>
             <div class="column">
-              <h1>{{ $t('page.categories.title') }}</h1>
+              <h3>{{ $t('page.categories.title') }}</h3>
               <ul>
                 <li v-for="category in categories" :key="category">
                   <router-link :to="{ name: 'Places', query: { category: category.slug } }">
@@ -128,7 +128,7 @@ export default defineComponent({
               </ul>
             </div>
             <div class="column">
-              <h1>{{ $t('page.regions.title') }}</h1>
+              <h3>{{ $t('page.regions.title') }}</h3>
               <ul>
                 <li v-for="region in regions" :key="region">
                   <router-link :to="{ name: 'Region', params: { slug: region.slug } }">
@@ -146,7 +146,7 @@ export default defineComponent({
       <div class="container">
         <div class="wrapper">
           <div class="call-to-action">
-            <h1>Присъедини се към общността ни</h1>
+            <h3>Присъедини се към общността ни</h3>
             <p>
               Ние изграждаме този уебсайт заедно с помощта на хора като теб. Ако си запален по историята и културата
               на България, ще се радваме да допринесеш за нашия проект. Твоят принос ще помогне да направим този

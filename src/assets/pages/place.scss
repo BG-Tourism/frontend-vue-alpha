@@ -31,7 +31,7 @@
             padding: 0 200px 40px;
 
             h1,
-            h2 {
+            .subtitle {
                 text-align: center;
             }
 
@@ -44,7 +44,7 @@
                 line-height: 1.2;
             }
 
-            h2 {
+            .subtitle {
                 position: relative;
                 display: flex;
                 gap: 10px;
@@ -565,6 +565,14 @@
 
         .wrapper {
             padding: 0 80px;
+
+            h2 {
+                @include font-size(32px);
+
+                padding: 0 0 20px;
+                color: $slate-700;
+                font-weight: 600;
+            }
         }
 
         .table-of-contents {

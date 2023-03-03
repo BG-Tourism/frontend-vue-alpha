@@ -53,11 +53,11 @@ export default defineComponent({
             </picture>
 
             <h1>{{ user.firstName }} {{ user.lastName }}</h1>
-            <h2>
+            <div class="username">
               <router-link :to="{ name: 'User', params: { slug: user.username } }">
                 @{{ user.username }}
               </router-link>
-            </h2>
+            </div>
 
             <p>{{ user.description }}</p>
 
@@ -104,7 +104,7 @@ export default defineComponent({
           <div class="contents">
             <div class="block">
               <div class="title">
-                <h1>{{ $t('page.user.photos') }}</h1>
+                <h2>{{ $t('page.user.photos') }}</h2>
               </div>
               <div class="photos">
                 <div class="photo">
@@ -167,7 +167,7 @@ export default defineComponent({
             </div>
             <div class="block">
               <div class="title">
-                <h1>{{ $t('page.user.reviews') }}</h1>
+                <h2>{{ $t('page.user.reviews') }}</h2>
               </div>
               <div class="reviews">
                 ...

@@ -101,13 +101,17 @@ export default defineComponent({
   <section class="top-section">
     <div class="page-content">
       <div class="title">
-        <h2>{{ $t('page.places.subtitle') }}</h2>
+        <div class="subtitle">
+          {{ $t('page.places.subtitle') }}
+        </div>
         <h1>{{ $t('page.places.title') }}</h1>
         <p>{{ $t('page.places.description') }}</p>
       </div>
 
       <div class="filters">
-        <h3>{{ $t('general.filters.filterBy') }}</h3>
+        <div class="filter-text">
+          {{ $t('general.filters.filterBy') }}
+        </div>
         <ul>
           <li>
             <div class="filter" :class="[Number(finder.selections.category.length + finder.selections.subcategory.length) ? 'contains-selections' : null]">

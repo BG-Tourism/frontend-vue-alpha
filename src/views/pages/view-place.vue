@@ -143,7 +143,7 @@ export default defineComponent({
     <section class="location-heading">
       <div class="page-content">
         <div class="title">
-          <h2>
+          <div class="subtitle">
             <router-link :to="{ name: 'Region', params: { slug: place.region } }">
               {{ $t('general.navigation.region', { title: region.locale[$i18n.locale].title }) }}
             </router-link>
@@ -151,7 +151,7 @@ export default defineComponent({
             <router-link :to="{ name: 'Places', query: { region: place.region, municipality: place.municipality } }">
               {{ $t('general.navigation.municipality', { title: municipality.locale[$i18n.locale].title }) }}
             </router-link>
-          </h2>
+          </div>
           <h1>{{ place.locale[$i18n.locale].title }}</h1>
         </div>
 
@@ -321,6 +321,9 @@ export default defineComponent({
           <div class="page-alert">
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
+          </div>
+          <div class="title">
+            <h2>{{ $t('page.place.contents.about') }}</h2>
           </div>
           <div class="markdown-body" v-html="place.markdown_content.locale[$i18n.locale]" />
           <div class="content-authors">
