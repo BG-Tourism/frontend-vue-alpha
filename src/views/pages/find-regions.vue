@@ -67,7 +67,7 @@ export default defineComponent({
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1491 968" width="1491" height="968" stroke-width="1.5" stroke="white">
             <g v-for="region in regions" :id="region.slug" :key="region">
               <router-link v-for="municipality in region.municipalities" :id="region.slug" :key="municipality.slug" :to="{ name: 'Places', query: { region: region.slug, municipality: municipality.slug } }" :class="region.slug" @mouseover="showTooltip($event, $t('page.regions.municipality', { title: municipality.locale[$i18n.locale].title }), municipality.slug, region.locale[$i18n.locale].title, region.slug)" @mouseout="hideTooltip">
-                <path :id="municipality.slug" :fill="region.svg_color" :d="municipality.svg_path" />
+                <path :id="municipality.slug" :fill="region.svg_color" :d="municipality.svg_path" data-type="municipality" />
               </router-link>
             </g>
             <g v-if="showLabels" id="labels">

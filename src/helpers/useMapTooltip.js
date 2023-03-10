@@ -41,6 +41,7 @@ export default function useMapTooltip() {
 
   function moveTooltip(event) {
     const el = tooltip.value
+
     if (!el)
       return
 
@@ -66,7 +67,8 @@ export default function useMapTooltip() {
   }
 
   function updatePathOpacity() {
-    const pathElements = document.querySelectorAll('.map svg path')
+    const pathElements = document.querySelectorAll('.map svg path[data-type="municipality"]')
+
     pathElements.forEach((pathElement) => {
       const municipalityTitle = pathElement.id
       const regionSlug = pathElement.parentNode.id
@@ -75,7 +77,6 @@ export default function useMapTooltip() {
 
       if (!searchQuery.value || municipality.locale[locale.value].title.toLowerCase().includes(searchQuery.value.toLowerCase()))
         pathElement.style.opacity = 1
-
       else
         pathElement.style.opacity = 0.5
     })
