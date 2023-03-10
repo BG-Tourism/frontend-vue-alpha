@@ -143,6 +143,35 @@ export const useFinderStore = defineStore('FinderStore', {
       if (index !== -1) {
         this.selections[type].splice(index, 1)
 
+        if (type === 'category') {
+          // Remove all subcategory items
+          const subcategories = categories.find(cat => cat.slug === item)?.subcategories
+
+          if (subcategories) {
+            const subcategoriesToRemove = this.selections.subcategory.filter(sc => subcategories.some(subcat => subcat.slug === sc))
+
+            subcategoriesToRemove.forEach((sc) => {
+              const index = this.selections.subcategory.findIndex(i => i === sc)
+
+              this.selections.subcategory.splice(index, 1)
+            })
+          }
+        }
+        else if (type === 'region') {
+          // Remove all municipality items
+          const municipalities = regions.find(reg => reg.slug === item)?.municipalities
+
+          if (municipalities) {
+            const municipalitiesToRemove = this.selections.municipality.filter(mun => municipalities.some(m => m.slug === mun))
+
+            municipalitiesToRemove.forEach((mun) => {
+              const index = this.selections.municipality.findIndex(i => i === mun)
+
+              this.selections.municipality.splice(index, 1)
+            })
+          }
+        }
+
         console.log(`Removed ${type}: ${item}`, JSON.stringify(this.selections))
       }
     },
