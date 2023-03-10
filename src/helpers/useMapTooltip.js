@@ -65,7 +65,7 @@ export default function useMapTooltip() {
   }
 
   function updatePathOpacity() {
-    const pathElements = document.querySelectorAll('.svg-map path')
+    const pathElements = document.querySelectorAll('.map svg path')
     pathElements.forEach((pathElement) => {
       const municipalityTitle = pathElement.id
       const regionSlug = pathElement.parentNode.id
