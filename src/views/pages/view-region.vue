@@ -69,7 +69,7 @@ export default defineComponent({
           <ul>
             <li v-for="municipality in region.municipalities" :key="municipality">
               <router-link :to="{ name: 'Places', query: { region: route.params.slug, municipality: municipality.slug } }">
-                {{ municipality.locale[$i18n.locale].title }}
+                {{ municipality.locale[$i18n.locale] }}
                 <span v-if="countPlacesWithMunicipality(places, municipality.slug)">
                   {{ countPlacesWithMunicipality(places, municipality.slug) }}
                 </span>

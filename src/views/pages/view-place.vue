@@ -149,7 +149,7 @@ export default defineComponent({
             </router-link>
             <i class="icon-arrow-right-tail" />
             <router-link :to="{ name: 'Places', query: { region: place.region, municipality: place.municipality } }">
-              {{ $t('general.navigation.municipality', { title: municipality.locale[$i18n.locale].title }) }}
+              {{ $t('general.navigation.municipality', { title: municipality.locale[$i18n.locale] }) }}
             </router-link>
           </div>
           <h1>{{ place.locale[$i18n.locale].title }}</h1>

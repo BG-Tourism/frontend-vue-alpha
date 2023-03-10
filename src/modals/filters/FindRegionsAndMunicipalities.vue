@@ -95,7 +95,7 @@ export default defineComponent({
                         ]"
                       />
                       <div class="detail">
-                        <span class="name">{{ municipality.locale[$i18n.locale].title }}</span>
+                        <span class="name">{{ municipality.locale[$i18n.locale] }}</span>
                         <span v-if="countPlacesWithMunicipality(places, municipality.slug) > 0" class="count">{{ countPlacesWithMunicipality(places, municipality.slug) }}</span>
                       </div>
                     </div>

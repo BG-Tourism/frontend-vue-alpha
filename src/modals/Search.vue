@@ -45,12 +45,12 @@ export default defineComponent({
       )
 
       const filteredRegions = regions.filter(region =>
-        region.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
+        region.locale[locale.value].toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
       )
 
       const filteredMunicipalities = regions.flatMap(region =>
         region.municipalities.filter(municipality =>
-          municipality.locale[locale.value].title.toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
+          municipality.locale[locale.value].toLowerCase().includes(searchTerm.value.toLowerCase().trim()),
         ),
       )
 
@@ -237,7 +237,7 @@ export default defineComponent({
                       :to="{ name: 'Places', query: { municipality: municipality.slug } }"
                       @click="handleClose"
                     >
-                      <span v-html="highlight(municipality.locale[$i18n.locale].title, searchTerm)" />
+                      <span v-html="highlight(municipality.locale[$i18n.locale], searchTerm)" />
                     </router-link>
                   </li>
                 </ul>

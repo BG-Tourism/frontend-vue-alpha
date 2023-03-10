@@ -12,7 +12,7 @@ export default function useMapTooltip() {
   const tooltip = ref(null)
   const tooltipRef = ref(null)
   const showingTooltip = ref(false)
-  const showLabels = ref(true)
+  const showLabels = ref(false)
   const tooltipText = ref(null)
   const tooltipPosition = ref({ x: 0, y: 0 })
   const searchQuery = ref(null)
@@ -75,7 +75,7 @@ export default function useMapTooltip() {
       const region = regions.find(r => r.slug === regionSlug)
       const municipality = region.municipalities.find(m => m.slug === municipalityTitle)
 
-      if (!searchQuery.value || municipality.locale[locale.value].title.toLowerCase().includes(searchQuery.value.toLowerCase()))
+      if (!searchQuery.value || municipality.locale[locale.value].toLowerCase().includes(searchQuery.value.toLowerCase()))
         pathElement.style.opacity = 1
       else
         pathElement.style.opacity = 0.5
