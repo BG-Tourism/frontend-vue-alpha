@@ -12,6 +12,7 @@ export default function useMapTooltip() {
   const tooltip = ref(null)
   const tooltipRef = ref(null)
   const showingTooltip = ref(false)
+  const showLabels = ref(true)
   const tooltipText = ref(null)
   const tooltipPosition = ref({ x: 0, y: 0 })
   const searchQuery = ref(null)
@@ -80,6 +81,10 @@ export default function useMapTooltip() {
     })
   }
 
+  function toggleLabels() {
+    showLabels.value = !showLabels.value
+  }
+
   onMounted(() => {
     tooltip.value = tooltipRef.value
     window.addEventListener('mousemove', moveTooltip)
@@ -92,12 +97,14 @@ export default function useMapTooltip() {
   return {
     regions,
     showingTooltip,
+    showLabels,
     tooltipText,
     tooltipPosition,
     tooltipRef,
     tooltip,
     showTooltip,
     hideTooltip,
+    toggleLabels,
     searchQuery,
   }
 }

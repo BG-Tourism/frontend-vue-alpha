@@ -163,6 +163,7 @@ const messages = {
     municipality: 'Община {title}',
     places: 'Няма добавени забележителности. | 1 забележителност | {n} забележителности',
     searchPlaceholder: 'Търсене на община...',
+    showLabels: 'Показване имената на районите върху картата',
   },
   municipality: {
     title: 'Община',

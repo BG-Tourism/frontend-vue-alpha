@@ -78,6 +78,10 @@
 
         .search-wrapper {
             padding: 0 0 30px;
+
+            .form-checkbox {
+                padding: 10px 0 0;
+            }
         }
 
         .map {
@@ -305,6 +309,16 @@
                 stroke: $white;
                 stroke-width: 1.5;
                 transition: all 200ms linear;
+            }
+
+            #labels {
+                path {
+                    pointer-events: none;
+                    user-select: none;
+                    fill: $black;
+                    stroke: transparent;
+                    stroke-width: 0;
+                }
             }
         }
 

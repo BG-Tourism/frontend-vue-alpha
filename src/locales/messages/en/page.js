@@ -163,6 +163,7 @@ const messages = {
     municipality: '{title} Municipality',
     places: 'No landmark added. | 1 landmark | {n} landmarks',
     searchPlaceholder: 'Search for a municipality...',
+    showLabels: 'Show region names on the map',
   },
   municipality: {
     title: 'Municipality',

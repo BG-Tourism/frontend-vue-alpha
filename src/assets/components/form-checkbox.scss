@@ -23,7 +23,9 @@
 
     label {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
         padding: 0 0 0 40px;
         cursor: pointer;
     }
@@ -36,10 +38,10 @@
 
         ~ .checkmark {
             &::before {
-                @include font-size(14px);
+                @include font-size(18px);
                 @include icon;
 
-                content: '\e90c';
+                content: '\e906';
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -78,7 +80,7 @@
     }
 
     .text {
-        @include font-size(14px);
+        @include font-size(16px);
 
         display: inline-block;
         padding: 5px 0;
@@ -100,7 +102,7 @@
         @include font-size(16px);
 
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 0;
         width: 24px;
         height: 24px;
@@ -114,6 +116,7 @@
         outline-style: solid;
         outline-color: transparent;
         transition: all 200ms linear;
+        transform: translateY(-50%);
     }
 
     .message {
