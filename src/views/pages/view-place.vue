@@ -322,9 +322,6 @@ export default defineComponent({
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
           </div>
-          <div class="title">
-            <h2>{{ $t('page.place.contents.about') }}</h2>
-          </div>
           <div class="markdown-body" v-html="place.markdown_content.locale[$i18n.locale]" />
           <div class="content-authors">
             <p>{{ $t('page.place.contents.author', place.markdown_content.authors.length) }}</p>
