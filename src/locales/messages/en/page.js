@@ -160,6 +160,9 @@ const messages = {
     title: 'Tourist Regions',
     subtitle: 'Discover Your Perfect Destination',
     description: 'Embark on a journey through Bulgaria\'s breathtaking tourism regions and immerse yourself in the country\'s rich history, diverse culture, and stunning natural beauty.',
+    municipality: '{title} Municipality',
+    places: 'No landmark added. | 1 landmark | {n} landmarks',
+    searchPlaceholder: 'Search for a municipality...',
   },
   municipality: {
     title: 'Municipality',
