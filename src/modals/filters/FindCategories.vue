@@ -95,7 +95,7 @@ export default defineComponent({
                         ]"
                       />
                       <div class="detail">
-                        <span class="name">{{ subcategory.locale[$i18n.locale].title }}</span>
+                        <span class="name">{{ subcategory.locale[$i18n.locale] }}</span>
                         <span v-if="countPlacesWithSubcategory(places, subcategory.slug) > 0" class="count">{{ countPlacesWithSubcategory(places, subcategory.slug) }}</span>
                       </div>
                     </div>

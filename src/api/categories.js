@@ -16,89 +16,57 @@ const categories = [
       {
         slug: 'fortresses-and-ruins',
         locale: {
-          bg: {
-            title: 'Крепости и руини',
-          },
-          en: {
-            title: 'Fortresses and ruins',
-          },
+          bg: 'Крепости и руини',
+          en: 'Fortresses and ruins',
         },
       },
       {
         slug: 'monuments',
         locale: {
-          bg: {
-            title: 'Паметници',
-          },
-          en: {
-            title: 'Monuments',
-          },
+          bg: 'Паметници',
+          en: 'Monuments',
         },
       },
       {
         slug: 'sanctuaries',
         locale: {
-          bg: {
-            title: 'Светилища',
-          },
-          en: {
-            title: 'Sanctuaries',
-          },
+          bg: 'Светилища',
+          en: 'Sanctuaries',
         },
       },
       {
         slug: 'historical-sites',
         locale: {
-          bg: {
-            title: 'Исторически местности',
-          },
-          en: {
-            title: 'Historical sites',
-          },
+          bg: 'Исторически местности',
+          en: 'Historical sites',
         },
       },
       {
         slug: 'tombs',
         locale: {
-          bg: {
-            title: 'Гробници',
-          },
-          en: {
-            title: 'Tombs',
-          },
+          bg: 'Гробници',
+          en: 'Tombs',
         },
       },
       {
         slug: 'megaliths',
         locale: {
-          bg: {
-            title: 'Мегалити',
-          },
-          en: {
-            title: 'Megaliths',
-          },
+          bg: 'Мегалити',
+          en: 'Megaliths',
         },
       },
       {
         slug: 'houses-and-palaces',
         locale: {
-          bg: {
-            title: 'Kъщи и дворци',
-          },
-          en: {
-            title: 'Houses and palaces',
-          },
+          bg: 'Kъщи и дворци',
+          en: 'Houses and palaces',
         },
       },
       {
         slug: 'bridges-and-aqueducts',
         locale: {
-          bg: {
-            title: 'Mостове и акведукти',
-          },
-          en: {
-            title: 'Bridges and aqueducts',
-          },
+          bg: 'Mостове и акведукти',
+          en: 'Bridges and aqueducts',
         },
       },
     ],
@@ -120,67 +88,43 @@ const categories = [
       {
         slug: 'churches',
         locale: {
-          bg: {
-            title: 'Църкви',
-          },
-          en: {
-            title: 'Churches',
-          },
+          bg: 'Църкви',
+          en: 'Churches',
         },
       },
       {
         slug: 'temples',
         locale: {
-          bg: {
-            title: 'Храмове',
-          },
-          en: {
-            title: 'Temples',
-          },
+          bg: 'Храмове',
+          en: 'Temples',
         },
       },
       {
         slug: 'mausoleums',
         locale: {
-          bg: {
-            title: 'Мавзолеи',
-          },
-          en: {
-            title: 'Mausoleums',
-          },
+          bg: 'Мавзолеи',
+          en: 'Mausoleums',
         },
       },
       {
         slug: 'orthodox-monasteries-and-chapels',
         locale: {
-          bg: {
-            title: 'Православни манастири и параклиси',
-          },
-          en: {
-            title: 'Orthodox monasteries and chapels',
-          },
+          bg: 'Православни манастири и параклиси',
+          en: 'Orthodox monasteries and chapels',
         },
       },
       {
         slug: 'muslim-mosques',
         locale: {
-          bg: {
-            title: 'Мюсюлмански джамии',
-          },
-          en: {
-            title: 'Muslim mosques',
-          },
+          bg: 'Мюсюлмански джамии',
+          en: 'Muslim mosques',
         },
       },
       {
         slug: 'jewish-synagogues',
         locale: {
-          bg: {
-            title: 'Еврейски синагоги',
-          },
-          en: {
-            title: 'Jewish synagogues',
-          },
+          bg: 'Еврейски синагоги',
+          en: 'Jewish synagogues',
         },
       },
     ],
@@ -202,45 +146,29 @@ const categories = [
       {
         slug: 'museums',
         locale: {
-          bg: {
-            title: 'Музеи',
-          },
-          en: {
-            title: 'Museums',
-          },
+          bg: 'Музеи',
+          en: 'Museums',
         },
       },
       {
         slug: 'galleries',
         locale: {
-          bg: {
-            title: 'Галерии',
-          },
-          en: {
-            title: 'Galleries',
-          },
+          bg: 'Галерии',
+          en: 'Galleries',
         },
       },
       {
         slug: 'libraries',
         locale: {
-          bg: {
-            title: 'Библиотеки',
-          },
-          en: {
-            title: 'Libraries',
-          },
+          bg: 'Библиотеки',
+          en: 'Libraries',
         },
       },
       {
         slug: 'theaters',
         locale: {
-          bg: {
-            title: 'Театри',
-          },
-          en: {
-            title: 'Theaters',
-          },
+          bg: 'Театри',
+          en: 'Theaters',
         },
       },
     ],
@@ -262,78 +190,50 @@ const categories = [
       {
         slug: 'mountainous-sites',
         locale: {
-          bg: {
-            title: 'Планински обекти',
-          },
-          en: {
-            title: 'Mountainous sites',
-          },
+          bg: 'Планински обекти',
+          en: 'Mountainous sites',
         },
       },
       {
         slug: 'water-sites',
         locale: {
-          bg: {
-            title: 'Водни обекти',
-          },
-          en: {
-            title: 'Water sites',
-          },
+          bg: 'Водни обекти',
+          en: 'Water sites',
         },
       },
       {
         slug: 'natural-formations',
         locale: {
-          bg: {
-            title: 'Природни образувания',
-          },
-          en: {
-            title: 'Natural formations',
-          },
+          bg: 'Природни образувания',
+          en: 'Natural formations',
         },
       },
       {
         slug: 'parks-and-gardens',
         locale: {
-          bg: {
-            title: 'Паркове и градини',
-          },
-          en: {
-            title: 'Parks and gardens',
-          },
+          bg: 'Паркове и градини',
+          en: 'Parks and gardens',
         },
       },
       {
         slug: 'nature-reserves',
         locale: {
-          bg: {
-            title: 'Резервати',
-          },
-          en: {
-            title: 'Nature reserves',
-          },
+          bg: 'Резервати',
+          en: 'Nature reserves',
         },
       },
       {
         slug: 'lifts',
         locale: {
-          bg: {
-            title: 'Лифтове',
-          },
-          en: {
-            title: 'Lifts',
-          },
+          bg: 'Лифтове',
+          en: 'Lifts',
         },
       },
       {
         slug: 'eco-trails',
         locale: {
-          bg: {
-            title: 'Екопътеки',
-          },
-          en: {
-            title: 'Eco-trails',
-          },
+          bg: 'Екопътеки',
+          en: 'Eco-trails',
         },
       },
     ],

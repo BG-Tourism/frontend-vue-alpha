@@ -69,7 +69,7 @@ export default defineComponent({
           <ul>
             <li v-for="subcategory in category.subcategories" :key="subcategory">
               <router-link :to="{ name: 'Places', query: { category: route.params.slug, subcategory: subcategory.slug } }">
-                {{ subcategory.locale[$i18n.locale].title }}
+                {{ subcategory.locale[$i18n.locale] }}
                 <span v-if="countPlacesWithSubcategory(places, subcategory.slug)">
                   {{ countPlacesWithSubcategory(places, subcategory.slug) }}
                 </span>
