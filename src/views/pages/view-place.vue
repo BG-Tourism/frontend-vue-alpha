@@ -3,6 +3,8 @@ import { computed, defineComponent, onBeforeMount, reactive, ref, watch } from '
 import { onKeyStroke, useTitle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
+import AudioPlayer from 'vue3-audio-player'
+import 'vue3-audio-player/dist/style.css'
 
 import places from '@/api/places'
 import regions from '@/api/regions'
@@ -14,6 +16,7 @@ import TruncateString from '@/components/TruncateString.vue'
 
 export default defineComponent({
   components: {
+    AudioPlayer,
     TruncateString,
   },
   setup() {
@@ -321,6 +324,15 @@ export default defineComponent({
           <div class="page-alert">
             <i class="icon-alert-triangle" />
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
+          </div>
+          <div v-if="place.locale[$i18n.locale].audio !== undefined && place.locale[$i18n.locale].audio !== null" class="audio-player">
+            <p>Слушай текста под формата на аудио</p>
+            <AudioPlayer
+              :option="{
+                src: place.locale[$i18n.locale].audio,
+                title: place.locale[$i18n.locale].title,
+              }"
+            />
           </div>
           <div class="markdown-body" v-html="place.markdown_content.locale[$i18n.locale]" />
           <div class="content-authors">

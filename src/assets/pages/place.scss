@@ -573,6 +573,16 @@
                 color: $slate-700;
                 font-weight: 600;
             }
+
+            .audio-player {
+                padding: 0 0 30px;
+
+                p {
+                    @include font-size(18px);
+
+                    padding: 0 0 10px;
+                }
+            }
         }
 
         .table-of-contents {

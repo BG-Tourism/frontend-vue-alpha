@@ -12,10 +12,12 @@ const places = [
       bg: {
         title: 'Храм-паметник "Свети Александър Невски"',
         location: 'гр. София',
+        audio: null,
       },
       en: {
         title: 'St. Alexander Nevsky Temple-Monument',
         location: 'Sofia City',
+        audio: null,
       },
     },
     categories: ['architecture', 'religion'],
@@ -203,10 +205,12 @@ const places = [
       bg: {
         title: 'Крепост "Царевец"',
         location: 'гр. Велико Търново',
+        audio: null,
       },
       en: {
         title: 'Tsarevets Fortress',
         location: 'Veliko Tarnovo City',
+        audio: null,
       },
     },
     categories: ['architecture'],
@@ -384,10 +388,12 @@ const places = [
       bg: {
         title: 'Манастир "Свети Иван Рилски"',
         location: 'до гр. Рила',
+        audio: '/audios/rilski-manastir_bg_2023-03-10.wav',
       },
       en: {
         title: 'Rila Monastery Saint Ivan of Rila',
         location: 'next to Rila City',
+        audio: '/audios/rilski-manastir_en_2023-03-11.wav',
       },
     },
     categories: ['religion'],
@@ -466,8 +472,8 @@ const places = [
         },
       ],
       locale: {
-        bg: '<h2>Манастир &quot;Свети Иван Рилски&quot;</h2><p>Манастирът „Свети Йоан Рилски“, известен още като Рилски манастир „Свети Иван Рилски“, е значим източноправославен манастир, разположен в югозападната част на Рила в България. Манастирът носи името на своя основател, отшелника Иван Рилски (876 – 946 г.) и се намира в дълбоката долина на река Рилска („Рилска река“) на територията на природен парк „Рилски манастир“. Той е най-големият и известен източноправославен манастир в България, приютяващ около 60 монаси.</p><h3>Историческо значение</h3><p>Основан през 10 век, Рилският манастир се счита за един от най-важните културно-исторически и архитектурни паметници на България. Той е бил подкрепян и уважаван от българските владетели през цялата история, а почти всеки цар от Второто българско царство е правил големи дарения на манастира, превръщайки го в културен и духовен център на българското национално самосъзнание.</p><p>Най-старите сгради в комплекса датират от първата половина на 14 век, по времето на цар Петър I (927-968). Идването на османците в края на 14 век води до многобройни набези и разрушаването на манастира в средата на 15 век. Той е възстановен в края на 15 век с помощта на дарения от султана Мара Бранкович, Руската православна църква и манастира Росикон на Света гора.</p><p>По време на Възраждането (18-19 век) манастирът е опожарен през 1833 г. и възстановен между 1834 и 1862 г. с помощта на заможни българи от цялата страна, под ръководството на известния архитект Алекси Рилец.</p><h3>Архитектурни характеристики</h3><p>Комплексът заема площ от 8800 м² и е с правоъгълна форма, съсредоточен върху вътрешния двор (3200 м²), където се намират кулата и главната църква. Основната църква на манастира е построена в средата на 19 век и има пет купола, три олтара и два странични параклиса. Един от най-ценните предмети в църквата е позлатения иконостас, известен със своята дърворезба, чието създаване отнема пет години от четирима майстори.</p><p>Стенописите в църквата са дело на много майстори от Банско, Самоков и Разлог, сред които известните братя Захари Зограф и Димитър Зограф. Църквата е дом и на много ценни икони, датиращи от 14-ти до 19-ти век. Портиците в двора имат мамелюкско влияние с раираната живопис и куполите, които стават по-популярни в Османската империя след завладяването на Египет.</p><p>Четириетажната (без сутерена) жилищна част на комплекса се състои от 300 стаи, четири параклиса, игуменска стая и други сервизни помещения.</p><h3>Туристическа забележителност</h3><p>Рилският манастир е ключова туристическа атракция в България, като само през 2008 г. е привлякъл около 900 000 посетители. Изобразен е на обратната страна на банкнотата от 1 лев, емисия 1999 г. Манастирският комплекс е считан за един от най-големите шедьоври на българската възрожденска архитектура и е обявен за национален исторически паметник през 1976 г. През 1976 г. е включен в списъка на ЮНЕСКО за световно наследство. 1983 г., а от 1991 г. е изцяло на подчинение на Светия Синод на Българската православна църква.</p><h3>Известни посетители</h3><p>През годините Рилският манастир е посрещал много известни посетители от цял свят, включително папа Йоан Павел II, който посети манастира по време на поклонението си в България през 2002 г. Манастирът е служил и като скривалище на българските революционери по време на османското владичество.</p><h3>Рилският манастир днес</h3><p>Днес Рилският манастир продължава да бъде действащ манастир и основна туристическа атракция в България. Отворен е за посетители и предлага екскурзоводско обслужване на комплекса, както и нощувки за желаещите да пренощуват в манастира. Манастирът разполага и с музей, който показва неговата история, изкуство и архитектура.</p><p>Всяка година на 18 август манастирът отбелязва празника на Свети Иван Рилски със специална литургия и литийно шествие. Манастирът също така е домакин на различни културни събития през цялата година, включително концерти, изложби и лекции.</p><p>През последните години манастирът е изправен пред някои предизвикателства, свързани с туризма, включително пренаселеност и увреждане на природната среда. Полагат се усилия за справяне с тези проблеми и осигуряване на устойчиво управление на манастира и околностите му.</p><h3>Заключение</h3><p>Рилският манастир е забележителен културен и духовен център, изиграл важна роля в българската история и национално самосъзнание. Неговата зашеметяваща архитектура, ценно изкуство и артефакти и богата история го правят задължителна дестинация за всеки, който се интересува от българската култура и източноправославното християнство.</p>',
-        en: '<h2>Rila Monastery &quot;Sveti Ivan Rilski&quot;</h2><p>The Monastery of Saint John of Rila, also known as Rila Monastery &quot;Sveti Ivan Rilski,&quot; is a significant Eastern Orthodox monastery located in the southwestern Rila Mountains of Bulgaria. The monastery is named after its founder, the hermit Ivan of Rila (876 – 946 AD), and is situated in the deep valley of the Rilska River (&quot;Rila River&quot;) inside the Rila Monastery Nature Park. It is the largest and most famous Eastern Orthodox monastery in Bulgaria, housing around 60 monks.</p><h3>Historical Significance</h3><p>Founded in the 10th century, the Rila Monastery is considered one of Bulgaria&#39;s most important cultural, historical, and architectural monuments. It has been supported and respected by Bulgarian rulers throughout history, and almost every tsar of the Second Bulgarian Empire made large donations to the monastery, making it a cultural and spiritual center of Bulgarian national consciousness.</p><p>The oldest buildings in the complex date back to the first half of the 14th century, during the reign of Tsar Peter I (927-968). The arrival of the Ottomans in the late 14th century led to numerous raids and the destruction of the monastery in the mid-15th century. It was rebuilt in the late 15th century with the help of donations from the Sultana Mara Branković, the Russian Orthodox Church, and the Rossikon monastery of Mount Athos.</p><p>During the Bulgarian National Revival (18th-19th century), the monastery was destroyed by fire in 1833 and then reconstructed between 1834 and 1862 with the help of wealthy Bulgarians from across the country, under the famous architect Alexi Rilets.</p><h3>Architectural Features</h3><p>The complex occupies an area of 8,800 m² and is rectangular in form, centered on the inner yard (3,200 m²), where the tower and the main church are situated. The main church of the monastery was built in the mid-19th century and has five domes, three altars, and two side chapels. One of the most precious items inside the church is the gold-plated iconostasis, famous for its wood-carving, the creation of which took five years by four handicraftsmen.</p><p>The frescoes in the church are the work of many masters from Bansko, Samokov, and Razlog, including the famous brothers Zahari Zograf and Dimitar Zograf. The church is also home to many valuable icons, dating from the 14th to the 19th century. Porticos in the courtyard have Mamluk influence with the striped painting and the domes, which became more popular in the Ottoman Empire after the conquest of Egypt.</p><p>The four-story (not counting the basement) residential part of the complex consists of 300 chambers, four chapels, an abbot&#39;s room, and other service premises.</p><h3>Tourist Attraction</h3><p>The Rila Monastery is a key tourist attraction in Bulgaria, attracting around 900,000 visitors in 2008 alone. It is depicted on the reverse of the 1 lev banknote, issued in 1999. The monastery complex is regarded as one of the foremost masterpieces of Bulgarian National Revival architecture and was declared a national historical monument in 1976. It became a UNESCO World Heritage Site in 1983 and has been entirely subordinate to the Holy Synod of the Bulgarian Orthodox Church since 1991.</p><h3>Notable Visitors</h3><p>Over the years, Rila Monastery has welcomed many notable visitors from around the world, including Pope John Paul II, who visited the monastery during his pilgrimage to Bulgaria in 2002. The monastery also served as a hiding place for Bulgarian revolutionaries during the Ottoman rule.</p><h3>Rila Monastery Today</h3><p>Today, Rila Monastery continues to be an active monastery and a major tourist attraction in Bulgaria. It is open to visitors and offers guided tours of the complex, as well as accommodations for those who wish to spend the night in the monastery. The monastery also operates a museum that showcases its history, art, and architecture.</p><p>Every year, on August 18, the monastery celebrates the feast day of Saint Ivan of Rila with a special liturgy and a procession. The monastery also hosts various cultural events throughout the year, including concerts, exhibitions, and lectures.</p><p>In recent years, the monastery has faced some challenges related to tourism, including overcrowding and damage to the natural environment. Efforts are being made to address these issues and ensure the sustainable management of the monastery and its surroundings.</p><h3>Conclusion</h3><p>The Rila Monastery is a remarkable cultural and spiritual center that has played an important role in Bulgarian history and national consciousness. Its stunning architecture, valuable art and artifacts, and rich history make it a must-visit destination for anyone interested in Bulgarian culture and Eastern Orthodox Christianity.</p>',
+        bg: '<h2>Манастирът &quot;Свети Йоан Рилски&quot;</h2><p>Манастирът „Свети Йоан Рилски“, известен още като Рилски манастир „Свети Иван Рилски“, е значим източноправославен манастир, разположен в югозападната част на Рила в България. Манастирът носи името на своя основател, отшелника Иван Рилски и се намира в дълбоката долина на река Рилска на територията на природен парк „Рилски манастир“. Той е най-големият и известен източноправославен манастир в България, приютяващ около 60 монаси.</p><h3>Историческо значение</h3><p>Основан през 10-ти век, Рилският манастир се счита за един от най-важните културно-исторически и архитектурни паметници на България. Той е бил подкрепян и уважаван от българските владетели през цялата история, а почти всеки цар от Второто българско царство е правил големи дарения на манастира, превръщайки го в културен и духовен център на българското национално самосъзнание.</p><p>Най-старите сгради в комплекса датират от първата половина на 14-ти век, по времето на цар Петър Първи (между 927-ма година и 968-ма година). Идването на османците в края на 14-ти век води до многобройни набези и разрушаването на манастира в средата на 15-ти век. Той е възстановен в края на 15-ти век с помощта на дарения от султана Мара Бранкович, Руската православна църква и манастира Росикон на Света гора.</p><p>По време на Възраждането (между 18-ти и 19-ти век) манастирът е опожарен през 1833-та година и възстановен между 1834-та и 1862-ра година с помощта на заможни българи от цялата страна, под ръководството на известния архитект Алекси Рилец.</p><h3>Архитектурни характеристики</h3><p>Комплексът заема площ от 8800 квадратни метра и е с правоъгълна форма, съсредоточен върху вътрешния двор (3200 квадратни метра), където се намират кулата и главната църква. Основната църква на манастира е построена в средата на 19-ти век и има пет купола, три олтара и два странични параклиса. Един от най-ценните предмети в църквата е позлатения иконостас, известен със своята дърворезба, чието създаване отнема пет години от четирима майстори.</p><p>Стенописите в църквата са дело на много майстори от Банско, Самоков и Разлог, сред които известните братя Захари Зограф и Димитър Зограф. Църквата е дом и на много ценни икони, датиращи от 14-ти до 19-ти век. Портиците в двора имат мамелюкско влияние с раираната живопис и куполите, които стават по-популярни в Османската империя след завладяването на Египет.</p><p>Четириетажната жилищна част на комплекса (без сутерена) се състои от 300 стаи, четири параклиса, игуменска стая и други сервизни помещения.</p><h3>Туристическа забележителност</h3><p>Рилският манастир е ключова туристическа атракция в България, като само през 2008-ма година е привлякъл около 900 хиляди посетители. Изобразен е на обратната страна на банкнотата от един лев, емисия 1999-та година. Манастирският комплекс е считан за един от най-големите шедьоври на българската възрожденска архитектура и е обявен за национален исторически паметник през 1976-та година. През 1976-та година е включен в списъка на ЮНЕСКО за световно наследство, а от 1991-ва година е изцяло на подчинение на Светия Синод на Българската православна църква.</p><h3>Известни посетители</h3><p>През годините Рилският манастир е посрещал много известни посетители от цял свят, включително папа Йоан Павел Втори, който посети манастира по време на поклонението си в България през 2002-ра година. Манастирът е служил и като скривалище на българските революционери по време на османското владичество.</p><h3>Рилският манастир днес</h3><p>Днес Рилският манастир продължава да бъде действащ манастир и основна туристическа атракция в България. Отворен е за посетители и предлага екскурзоводско обслужване на комплекса, както и нощувки за желаещите да пренощуват в манастира. Манастирът разполага и с музей, който показва неговата история, изкуство и архитектура.</p><p>Всяка година на 18-ти август манастирът отбелязва празника на Свети Иван Рилски със специална литургия и литийно шествие. Манастирът също така е домакин на различни културни събития през цялата година, включително концерти, изложби и лекции.</p><p>През последните години манастирът е изправен пред някои предизвикателства, свързани с туризма, включително пренаселеност и увреждане на природната среда. Полагат се усилия за справяне с тези проблеми и осигуряване на устойчиво управление на манастира и околностите му.</p><h3>Заключение</h3><p>Рилският манастир е забележителен културен и духовен център, изиграл важна роля в българската история и национално самосъзнание. Неговата зашеметяваща архитектура, ценно изкуство и артефакти и богата история го правят задължителна дестинация за всеки, който се интересува от българската култура и източноправославното християнство.</p>',
+        en: '<h2>The Monastery of Saint John of Rila</h2><p>The Monastery of Saint John of Rila, also known as Rila Monastery &quot;Sveti Ivan Rilski,&quot; is a significant Eastern Orthodox monastery located in the southwestern Rila Mountains of Bulgaria. The monastery is named after its founder, the hermit Ivan of Rila, and is situated in the deep valley of the Rilska River inside the Rila Monastery Nature Park. It is the largest and most famous Eastern Orthodox monastery in Bulgaria, housing around 60 monks.</p><h3>Historical Significance</h3><p>Founded in the 10th century, the Rila Monastery is considered one of Bulgaria&#39;s most important cultural, historical, and architectural monuments. It has been supported and respected by Bulgarian rulers throughout history, and almost every tsar of the Second Bulgarian Empire made large donations to the monastery, making it a cultural and spiritual center of Bulgarian national consciousness.</p><p>The oldest buildings in the complex date back to the first half of the 14th century, during the reign of Tsar Peter I (927-968). The arrival of the Ottomans in the late 14th century led to numerous raids and the destruction of the monastery in the mid-15th century. It was rebuilt in the late 15th century with the help of donations from the Sultana Mara Branković, the Russian Orthodox Church, and the Rossikon monastery of Mount Athos.</p><p>During the Bulgarian National Revival (18th-19th century), the monastery was destroyed by fire in 1833 and then reconstructed between 1834 and 1862 with the help of wealthy Bulgarians from across the country, under the famous architect Alexi Rilets.</p><h3>Architectural Features</h3><p>The complex occupies an area of 8,800 m² and is rectangular in form, centered on the inner yard (3,200 m²), where the tower and the main church are situated. The main church of the monastery was built in the mid-19th century and has five domes, three altars, and two side chapels. One of the most precious items inside the church is the gold-plated iconostasis, famous for its wood-carving, the creation of which took five years by four handicraftsmen.</p><p>The frescoes in the church are the work of many masters from Bansko, Samokov, and Razlog, including the famous brothers Zahari Zograf and Dimitar Zograf. The church is also home to many valuable icons, dating from the 14th to the 19th century. Porticos in the courtyard have Mamluk influence with the striped painting and the domes, which became more popular in the Ottoman Empire after the conquest of Egypt.</p><p>The four-story (not counting the basement) residential part of the complex consists of 300 chambers, four chapels, an abbot&#39;s room, and other service premises.</p><h3>Tourist Attraction</h3><p>The Rila Monastery is a key tourist attraction in Bulgaria, attracting around 900,000 visitors in 2008 alone. It is depicted on the reverse of the 1 lev banknote, issued in 1999. The monastery complex is regarded as one of the foremost masterpieces of Bulgarian National Revival architecture and was declared a national historical monument in 1976. It became a UNESCO World Heritage Site in 1983 and has been entirely subordinate to the Holy Synod of the Bulgarian Orthodox Church since 1991.</p><h3>Notable Visitors</h3><p>Over the years, Rila Monastery has welcomed many notable visitors from around the world, including Pope John Paul II, who visited the monastery during his pilgrimage to Bulgaria in 2002. The monastery also served as a hiding place for Bulgarian revolutionaries during the Ottoman rule.</p><h3>Rila Monastery Today</h3><p>Today, Rila Monastery continues to be an active monastery and a major tourist attraction in Bulgaria. It is open to visitors and offers guided tours of the complex, as well as accommodations for those who wish to spend the night in the monastery. The monastery also operates a museum that showcases its history, art, and architecture.</p><p>Every year, on August 18, the monastery celebrates the feast day of Saint Ivan of Rila with a special liturgy and a procession. The monastery also hosts various cultural events throughout the year, including concerts, exhibitions, and lectures.</p><p>In recent years, the monastery has faced some challenges related to tourism, including overcrowding and damage to the natural environment. Efforts are being made to address these issues and ensure the sustainable management of the monastery and its surroundings.</p><h3>Conclusion</h3><p>The Rila Monastery is a remarkable cultural and spiritual center that has played an important role in Bulgarian history and national consciousness. Its stunning architecture, valuable art and artifacts, and rich history make it a must-visit destination for anyone interested in Bulgarian culture and Eastern Orthodox Christianity.</p>',
       },
     },
     reviews: [
@@ -570,10 +576,12 @@ const places = [
       bg: {
         title: 'Паметник на свободата "Шипка"',
         location: 'до гр. Шипка',
+        audio: null,
       },
       en: {
         title: 'Shipka Monument',
         location: 'next to Shipka City',
+        audio: null,
       },
     },
     categories: ['architecture'],
@@ -756,10 +764,12 @@ const places = [
       bg: {
         title: 'Белоградчишките скали',
         location: 'гр. Белоградчик',
+        audio: null,
       },
       en: {
         title: 'The Rocks of Belogradchik',
         location: 'Belogradchik City',
+        audio: null,
       },
     },
     categories: ['architecture', 'nature'],
@@ -942,10 +952,12 @@ const places = [
       bg: {
         title: 'Чудните мостове',
         location: 'до Забърдо',
+        audio: null,
       },
       en: {
         title: 'The Wonderful Bridges',
         location: 'next to Zabardo',
+        audio: null,
       },
     },
     categories: ['architecture'],
@@ -1123,10 +1135,12 @@ const places = [
       bg: {
         title: 'Църквата "Христос Пантократор"',
         location: 'гр. Несебър',
+        audio: null,
       },
       en: {
         title: 'Church of Christ Pantocrator',
         location: 'Nessebar City',
+        audio: null,
       },
     },
     categories: ['architecture', 'religion'],
@@ -1304,10 +1318,12 @@ const places = [
       bg: {
         title: 'Национален историко-археологически резерват "Плиска"',
         location: 'гр. Плиска',
+        audio: null,
       },
       en: {
         title: 'National Historical and Archaeological Reserve "Pliska"',
         location: 'Pliska City',
+        audio: null,
       },
     },
     categories: ['architecture', 'nature'],
@@ -1500,10 +1516,12 @@ const places = [
       bg: {
         title: 'Античен театър - Пловдив',
         location: 'гр. Пловдив',
+        audio: null,
       },
       en: {
         title: 'Ancient Theater - Plovdiv',
         location: 'Plovdiv City',
+        audio: null,
       },
     },
     categories: ['architecture', 'culture'],
