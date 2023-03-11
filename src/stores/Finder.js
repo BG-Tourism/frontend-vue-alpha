@@ -88,6 +88,21 @@ export const useFinderStore = defineStore('FinderStore', {
 
               return i.subcategories.slug === item
             })
+
+            if (existsInDatabase) {
+              const parentCategory = categories.find((i) => {
+                if (Array.isArray(i.subcategories))
+                  return i.subcategories.some(subcategory => subcategory.slug === item)
+                return i.subcategories.slug === item
+              })
+
+              if (parentCategory) {
+                const existsInSelection = this.selections.category.find(i => i === parentCategory.slug)
+
+                if (!existsInSelection)
+                  this.addItem('category', parentCategory.slug)
+              }
+            }
           }
           else if (type === 'region') {
             existsInDatabase = !!regions.find(i => i.slug === item)
@@ -99,6 +114,21 @@ export const useFinderStore = defineStore('FinderStore', {
 
               return i.municipalities.slug === item
             })
+
+            if (existsInDatabase) {
+              const parentRegion = regions.find((i) => {
+                if (Array.isArray(i.municipalities))
+                  return i.municipalities.some(municipality => municipality.slug === item)
+                return i.municipalities.slug === item
+              })
+
+              if (parentRegion) {
+                const existsInSelection = this.selections.region.find(i => i === parentRegion.slug)
+
+                if (!existsInSelection)
+                  this.addItem('region', parentRegion.slug)
+              }
+            }
           }
           else if (type === 'rating') {
             existsInDatabase = [1, 2, 3, 4, 5].includes(item)
