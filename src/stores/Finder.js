@@ -46,176 +46,242 @@ export const useFinderStore = defineStore('FinderStore', {
     },
   }),
   actions: {
+    /**
+     * Fetches the list of places based on the specified filters.
+     * @param {object} filters - The filters to apply.
+     */
     fetch(filters = null) {
-      let items = []
+      /**
+       * Determines whether an item matches the current selections.
+       * @param {object} item - The item to match.
+       * @returns {boolean} True if the item matches the current selections, false otherwise.
+       */
+      const matchesFilters = (item) => {
+        const categoryFilter = this.selections.category.length === 0 || item.categories.some(cat => this.selections.category.includes(cat))
+        const subcategoryFilter = this.selections.subcategory.length === 0 || item.subcategories.some(subcat => this.selections.subcategory.includes(subcat))
+        const regionFilter = this.selections.region.length === 0 || this.selections.region.includes(item.region)
+        const municipalityFilter = this.selections.municipality.length === 0 || this.selections.municipality.includes(item.municipality)
+        const ratingFilter = this.selections.rating.length === 0 || this.selections.rating.includes(Math.floor(item.user_score))
 
-      if (filters) {
-        items = places.filter((item) => {
-          return (
-            (item.categories.some(category => this.selections.category.includes(category)) || this.selections.category.length === 0)
-            && (item.subcategories.some(subcategory => this.selections.subcategory.includes(subcategory)) || this.selections.subcategory.length === 0)
-            && (this.selections.region.includes(item.region) || this.selections.region.length === 0)
-            && (this.selections.municipality.includes(item.municipality) || this.selections.municipality.length === 0)
-            && (this.selections.rating.includes(Math.floor(item.user_score)) || this.selections.rating.length === 0)
-          )
-        })
+        return categoryFilter && subcategoryFilter && regionFilter && municipalityFilter && ratingFilter
       }
-      else {
-        items = places
-      }
+
+      const items = filters ? places.filter(matchesFilters) : places
 
       this.loadings.selections = true
 
       setTimeout(() => {
         this.list.data = items
         this.loadings.list = false
-
         this.loadings.selections = false
       }, 300)
     },
+    /**
+     * Adds or removes one or more items of the specified type to/from the store's selections.
+     * @param {string} type - The type of item to manage.
+     * @param {string|string[]} items - The item or items to add or remove.
+     */
     manageItem(type, items) {
-      if (typeof items === 'object') {
-        Object.values(items).map((item) => {
-          let existsInDatabase = null
+      const itemsArr = Array.isArray(items) ? items : [items]
 
-          if (type === 'category') {
-            existsInDatabase = !!categories.find(i => i.slug === item)
-          }
-          else if (type === 'subcategory') {
-            existsInDatabase = !!categories.some((i) => {
-              if (Array.isArray(i.subcategories))
-                return i.subcategories.some(subcategory => subcategory.slug === item)
+      for (const item of itemsArr) {
+        if (this.isValidItem(type, item)) {
+          const existsInSelections = this.selections[type].includes(item)
 
-              return i.subcategories.slug === item
-            })
-
-            if (existsInDatabase) {
-              const parentCategory = categories.find((i) => {
-                if (Array.isArray(i.subcategories))
-                  return i.subcategories.some(subcategory => subcategory.slug === item)
-                return i.subcategories.slug === item
-              })
-
-              if (parentCategory) {
-                const existsInSelection = this.selections.category.find(i => i === parentCategory.slug)
-
-                if (!existsInSelection)
-                  this.addItem('category', parentCategory.slug)
-              }
-            }
-          }
-          else if (type === 'region') {
-            existsInDatabase = !!regions.find(i => i.slug === item)
-          }
-          else if (type === 'municipality') {
-            existsInDatabase = !!regions.some((i) => {
-              if (Array.isArray(i.municipalities))
-                return i.municipalities.some(municipality => municipality.slug === item)
-
-              return i.municipalities.slug === item
-            })
-
-            if (existsInDatabase) {
-              const parentRegion = regions.find((i) => {
-                if (Array.isArray(i.municipalities))
-                  return i.municipalities.some(municipality => municipality.slug === item)
-                return i.municipalities.slug === item
-              })
-
-              if (parentRegion) {
-                const existsInSelection = this.selections.region.find(i => i === parentRegion.slug)
-
-                if (!existsInSelection)
-                  this.addItem('region', parentRegion.slug)
-              }
-            }
-          }
-          else if (type === 'rating') {
-            existsInDatabase = [1, 2, 3, 4, 5].includes(item)
+          if (existsInSelections) {
+            this.removeItem(type, item)
           }
           else {
-            existsInDatabase = false
+            this.addItem(type, item)
+
+            if (type === 'subcategory') {
+              const parentCategory = this.getParentCategory(item)
+
+              if (parentCategory && !this.selections.category.includes(parentCategory.slug))
+                this.addItem('category', parentCategory.slug)
+            }
+            else if (type === 'municipality') {
+              const parentRegion = this.getParentRegion(item)
+
+              if (parentRegion && !this.selections.region.includes(parentRegion.slug))
+                this.addItem('region', parentRegion.slug)
+            }
           }
-
-          if (existsInDatabase) {
-            const existsInSelection = this.selections[type].find(i => i === items)
-
-            if (!existsInSelection)
-              this.addItem(type, item)
-          }
-          else {
-            console.log(`Invalid ${type}: ${item}`)
-          }
-
-          return existsInDatabase
-        })
-      }
-      else {
-        const exists = this.selections[type].find(i => i === items)
-
-        if (!exists)
-          this.addItem(type, items)
-        else
-          this.removeItem(type, items)
+        }
+        else {
+          console.log(`Invalid ${type}: ${item}`)
+        }
       }
 
       this.list.pagination.currentPage = 1
       this.fetch(this.selections)
     },
+    /**
+     * Determines whether the specified item of the given type is valid.
+     * @param {string} type - The type of item.
+     * @param {string} item - The item to validate.
+     * @returns {boolean} True if the item is valid, false otherwise.
+     */
+    isValidItem(type, item) {
+      switch (type) {
+        case 'category':
+          return categories.some(category => category.slug === item)
+
+        case 'subcategory':
+          return categories.some((category) => {
+            return Array.isArray(category.subcategories)
+              ? category.subcategories.some(subcategory => subcategory.slug === item)
+              : category.subcategories.slug === item
+          })
+
+        case 'region':
+          return regions.some(region => region.slug === item)
+
+        case 'municipality':
+          return regions.some((region) => {
+            return Array.isArray(region.municipalities)
+              ? region.municipalities.some(municipality => municipality.slug === item)
+              : region.municipalities.slug === item
+          })
+
+        case 'rating':
+          return [1, 2, 3, 4, 5].includes(item)
+
+        default:
+          return false
+      }
+    },
+    /**
+     * Gets the parent category of the specified subcategory.
+     * @param {string} subcategorySlug - The slug of the subcategory.
+     * @returns {object|null} The parent category object, or null if not found.
+     */
+    getParentCategory(subcategorySlug) {
+      for (const category of categories) {
+        if (Array.isArray(category.subcategories)) {
+          const subcategory = category.subcategories.find(subcategory => subcategory.slug === subcategorySlug)
+
+          if (subcategory)
+            return category
+        }
+        else if (category.subcategories.slug === subcategorySlug) {
+          return category
+        }
+      }
+
+      return null
+    },
+    /**
+     * Gets the parent region of the specified municipality.
+     * @param {string} municipalitySlug - The slug of the municipality.
+     * @returns {object|null} The parent region object, or null if not found.
+     */
+    getParentRegion(municipalitySlug) {
+      for (const region of regions) {
+        if (Array.isArray(region.municipalities)) {
+          const municipality = region.municipalities.find(municipality => municipality.slug === municipalitySlug)
+
+          if (municipality)
+            return region
+        }
+        else if (region.municipalities.slug === municipalitySlug) {
+          return region
+        }
+      }
+
+      return null
+    },
+    /**
+     * Adds the specified item of the given type to the store's selections.
+     * @param {string} type - The type of item.
+     * @param {string} item - The item to add.
+     */
     addItem(type, item) {
       this.selections[type].push(item)
 
       console.log(`Added ${type}: ${item}`, JSON.stringify(this.selections))
     },
+    /**
+     * Removes the specified item of the given type from the store's selections.
+     * @param {string} type - The type of item.
+     * @param {string} item - The item to remove.
+     */
     removeItem(type, item) {
-      const index = this.selections[type].findIndex(i => i === item)
+      const index = this.selections[type].indexOf(item)
 
       if (index !== -1) {
         this.selections[type].splice(index, 1)
 
-        if (type === 'category') {
-          // Remove all subcategory items
-          const subcategories = categories.find(cat => cat.slug === item)?.subcategories
-
-          if (subcategories) {
-            const subcategoriesToRemove = this.selections.subcategory.filter(sc => subcategories.some(subcat => subcat.slug === sc))
-
-            subcategoriesToRemove.forEach((sc) => {
-              const index = this.selections.subcategory.findIndex(i => i === sc)
-
-              this.selections.subcategory.splice(index, 1)
-            })
-          }
-        }
-        else if (type === 'region') {
-          // Remove all municipality items
-          const municipalities = regions.find(reg => reg.slug === item)?.municipalities
-
-          if (municipalities) {
-            const municipalitiesToRemove = this.selections.municipality.filter(mun => municipalities.some(m => m.slug === mun))
-
-            municipalitiesToRemove.forEach((mun) => {
-              const index = this.selections.municipality.findIndex(i => i === mun)
-
-              this.selections.municipality.splice(index, 1)
-            })
-          }
-        }
-
         console.log(`Removed ${type}: ${item}`, JSON.stringify(this.selections))
+
+        if (type === 'category')
+          this.removeSelectedSubcategories(item)
+
+        else if (type === 'region')
+          this.removeSelectedMunicipalities(item)
       }
     },
-    toggleModal(type) {
-      if (this.modals[type].state === 1)
-        this.modals[type].state = 2
+    /**
+     * Removes any selected subcategories that belong to the specified category.
+     * @param {string} categorySlug - The slug of the category.
+     */
+    removeSelectedSubcategories(categorySlug) {
+      const category = categories.find(cat => cat.slug === categorySlug)
 
-      setTimeout(() => {
-        this.modals[type].state = 0
-        this.modals[type].shown = false
-      }, 300)
+      if (category && Array.isArray(category.subcategories)) {
+        const subcategoriesToRemove = this.selections.subcategory.filter(sc =>
+          category.subcategories.some(subcat => subcat.slug === sc),
+        )
+
+        for (const subcategory of subcategoriesToRemove) {
+          const index = this.selections.subcategory.indexOf(subcategory)
+          this.selections.subcategory.splice(index, 1)
+
+          console.log(`Removed subcategory: ${subcategory}`, JSON.stringify(this.selections))
+        }
+      }
     },
+    /**
+     * Removes any selected municipalities that belong to the specified region.
+     * @param {string} regionSlug - The slug of the region.
+     */
+    removeSelectedMunicipalities(regionSlug) {
+      const region = regions.find(reg => reg.slug === regionSlug)
+
+      if (region && Array.isArray(region.municipalities)) {
+        const municipalitiesToRemove = this.selections.municipality.filter(mun =>
+          region.municipalities.some(m => m.slug === mun),
+        )
+
+        for (const municipality of municipalitiesToRemove) {
+          const index = this.selections.municipality.indexOf(municipality)
+          this.selections.municipality.splice(index, 1)
+
+          console.log(`Removed municipality: ${municipality}`, JSON.stringify(this.selections))
+        }
+      }
+    },
+    /**
+     * Toggles the state of the specified modal.
+     * @param {string} type - The type of modal.
+     */
+    toggleModal(type) {
+      const modal = this.modals[type]
+
+      if (modal.state === 1) {
+        modal.state = 2
+
+        setTimeout(() => {
+          modal.state = 0
+          modal.shown = false
+        }, 300)
+      }
+    },
+    /**
+     * Clears all filters and selections.
+     */
     truncate() {
-      console.log('Clearing filters (truncate)')
+      console.log('Clearing filters')
 
       this.loadings.list = true
       this.loadings.selections = true
@@ -223,40 +289,33 @@ export const useFinderStore = defineStore('FinderStore', {
       this.list.data = []
       this.list.pagination.currentPage = 1
 
-      this.selections.category = []
-      this.selections.subcategory = []
-      this.selections.region = []
-      this.selections.municipality = []
-      this.selections.rating = []
+      for (const type of ['category', 'subcategory', 'region', 'municipality', 'rating'])
+        this.selections[type] = []
 
-      this.modals.category.shown = false
-      this.modals.category.state = 0
-      this.modals.region.shown = false
-      this.modals.region.state = 0
-      this.modals.rating.shown = false
-      this.modals.rating.state = 0
+      for (const type of ['category', 'region', 'rating']) {
+        this.modals[type].shown = false
+        this.modals[type].state = 0
+      }
+
+      this.fetch(this.selections)
     },
+    /**
+     * Clears the filters and selections of the specified type.
+     * @param {string} type - The type of selection to clear.
+     */
     truncateByType(type) {
-      console.log('Clearing filters (truncateByType)')
+      console.log(`Clearing "${type}" filters`)
 
-      if (type === 'category') {
-        console.log(`Removed categories and subcategories: ${this.selections.category.join(', ')} / ${this.selections.subcategory.join(', ')}`, JSON.stringify(this.selections))
-
-        this.selections.category = []
-        this.selections.subcategory = []
+      const selectionTypes = {
+        category: ['category', 'subcategory'],
+        region: ['region', 'municipality'],
+        rating: ['rating'],
       }
 
-      if (type === 'region') {
-        console.log(`Removed regions and municipalities: ${this.selections.region.join(', ')} / ${this.selections.municipality.join(', ')}`, JSON.stringify(this.selections))
+      for (const st of selectionTypes[type]) {
+        console.log(`Removed ${st}: ${this.selections[st].join(', ')}`, JSON.stringify(this.selections))
 
-        this.selections.region = []
-        this.selections.municipality = []
-      }
-
-      if (type === 'rating') {
-        console.log(`Removed ratings: ${this.selections.rating.join(', ')}`, JSON.stringify(this.selections))
-
-        this.selections.rating = []
+        this.selections[st] = []
       }
 
       this.fetch(this.selections)
