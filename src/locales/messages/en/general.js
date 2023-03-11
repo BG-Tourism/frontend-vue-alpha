@@ -33,6 +33,7 @@ const messages = {
     5: 'Friday',
     6: 'Saturday',
   },
+  allResults: 'All',
   settings: 'Settings',
   photos: 'Photos',
   trips: 'Trips',

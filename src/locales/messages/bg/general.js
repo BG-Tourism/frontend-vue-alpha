@@ -33,6 +33,7 @@ const messages = {
     5: 'Петък',
     6: 'Събота',
   },
+  allResults: 'Всичко',
   settings: 'Настройки',
   photos: 'Снимки',
   trips: 'Пътешествия',

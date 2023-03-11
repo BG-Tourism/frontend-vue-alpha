@@ -20,6 +20,7 @@ export default defineComponent({
     const generalStore = useGeneralStore()
     const target = ref(null)
     const search = ref('')
+    const activeTab = ref(1)
     const searchTerm = computed(() => {
       // console.log(transliterateToBulgarian(search.value))
 
@@ -122,6 +123,11 @@ export default defineComponent({
 
     const handleClear = () => {
       search.value = ''
+      activeTab.value = 1
+    }
+
+    const showTab = (id) => {
+      activeTab.value = id
     }
 
     const handleClose = () => {
@@ -147,9 +153,11 @@ export default defineComponent({
       regions,
       searchTerm,
       results,
+      activeTab,
       updateValue,
       handleClear,
       handleClose,
+      showTab,
       highlight,
     }
   },
@@ -186,30 +194,159 @@ export default defineComponent({
             </template>
             <template v-if="searchTerm.length" #suffix>
               <button class="clear" :title="$t('general.clear')" @click="handleClear">
-                <div class="icon-holder">
-                  <i class="icon-clear" />
-                </div>
+                <span>{{ $t('general.clear') }}</span>
               </button>
             </template>
           </BaseInput>
 
-          <div
-            v-if="
-              results.places.length
-                || results.regions.length
-                || results.municipalities.length
-                || results.categories.length
-                || results.subcategories.length
-            "
-            class="results"
-          >
-            <ul class="list">
-              <li v-if="results.places.length" class="type">
-                <h1>{{ $t('page.places.title') }}</h1>
-                <ul>
+          <div v-if="searchTerm.length >= 2" class="results">
+            <div class="result-tabs">
+              <ul>
+                <li :class="activeTab === 1 ? 'active' : null">
+                  <button @click.prevent="showTab(1)">
+                    <span class="title">{{ $t('general.allResults') }}</span>
+                    <span class="count">{{ Number(results.places.length + results.regions.length + results.municipalities.length + results.categories.length + results.subcategories.length) }}</span>
+                  </button>
+                </li>
+                <li :class="activeTab === 2 ? 'active' : null">
+                  <button @click.prevent="showTab(2)">
+                    <span class="title">{{ $t('page.places.title') }}</span>
+                    <span class="count">{{ results.places.length }}</span>
+                  </button>
+                </li>
+                <li :class="activeTab === 3 ? 'active' : null">
+                  <button @click.prevent="showTab(3)">
+                    <span class="title">{{ $t('page.regions.title') }}</span>
+                    <span class="count">{{ results.regions.length }}</span>
+                  </button>
+                </li>
+                <li :class="activeTab === 4 ? 'active' : null">
+                  <button @click.prevent="showTab(4)">
+                    <span class="title">{{ $t('page.municipalities.title') }}</span>
+                    <span class="count">{{ results.municipalities.length }}</span>
+                  </button>
+                </li>
+                <li :class="activeTab === 5 ? 'active' : null">
+                  <button @click.prevent="showTab(5)">
+                    <span class="title">{{ $t('page.categories.title') }}</span>
+                    <span class="count">{{ results.categories.length }}</span>
+                  </button>
+                </li>
+                <li :class="activeTab === 6 ? 'active' : null">
+                  <button @click.prevent="showTab(6)">
+                    <span class="title">{{ $t('page.subcategories.title') }}</span>
+                    <span class="count">{{ results.subcategories.length }}</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="result-tab-contents">
+              <div v-if="activeTab === 1">
+                <ul class="list">
+                  <li v-if="results.places.length" class="type">
+                    <div class="title">
+                      {{ $t('page.places.title') }}
+                    </div>
+                    <ul>
+                      <li v-for="place in results.places" :key="place" class="place">
+                        <router-link :to="{ name: 'Place', params: { slug: place.slug } }" @click="handleClose">
+                          <picture :class="place.image === null ? 'empty' : null">
+                            <img v-if="place.image !== null" :src="place.image" alt="">
+                          </picture>
+                          <span
+                            class="name"
+                            v-html="
+                              highlight(place.locale[$i18n.locale].title, searchTerm)
+                            "
+                          />
+                          <span class="address">{{ place.locale[$i18n.locale].location }}</span>
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li v-if="results.regions.length" class="type">
+                    <div class="title">
+                      {{ $t('page.regions.title') }}
+                    </div>
+                    <ul>
+                      <li v-for="region in results.regions" :key="region">
+                        <router-link :to="{ name: 'Region', params: { slug: region.slug } }" @click="handleClose">
+                          <span v-html="highlight(region.locale[$i18n.locale].title, searchTerm)" />
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li v-if="results.municipalities.length" class="type">
+                    <div class="title">
+                      {{ $t('page.municipalities.title') }}
+                    </div>
+                    <ul>
+                      <li v-for="municipality in results.municipalities" :key="municipality" class="municipality">
+                        <router-link
+                          :to="{ name: 'Places', query: { municipality: municipality.slug } }"
+                          @click="handleClose"
+                        >
+                          <picture :class="municipality.image === null ? 'empty' : null">
+                            <img v-if="municipality.image !== null" :src="municipality.image" alt="">
+                          </picture>
+                          <span v-html="highlight(municipality.locale[$i18n.locale], searchTerm)" />
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li v-if="results.categories.length" class="type">
+                    <div class="title">
+                      {{ $t('page.categories.title') }}
+                    </div>
+                    <ul>
+                      <li v-for="category in results.categories" :key="category">
+                        <router-link
+                          :to="{ name: 'Places', query: { category: category.slug } }"
+                          @click="handleClose"
+                        >
+                          <span v-html="highlight(category.locale[$i18n.locale].title, searchTerm)" />
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li v-if="results.subcategories.length" class="type">
+                    <div class="title">
+                      {{ $t('page.subcategories.title') }}
+                    </div>
+                    <ul>
+                      <li v-for="subcategory in results.subcategories" :key="subcategory">
+                        <router-link
+                          :to="{ name: 'Places', query: { subcategory: subcategory.slug } }"
+                          @click="handleClose"
+                        >
+                          <span v-html="highlight(subcategory.locale[$i18n.locale], searchTerm)" />
+                        </router-link>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p
+                  v-if="
+                    searchTerm.length >= 2
+                      && !results.places.length
+                      && !results.regions.length
+                      && !results.municipalities.length
+                      && !results.categories.length
+                      && !results.subcategories.length
+                  "
+                  class="no-results"
+                  v-html="$t('general.noResults')"
+                />
+              </div>
+              <div v-if="activeTab === 2" class="content">
+                <ul v-if="results.places.length">
                   <li v-for="place in results.places" :key="place" class="place">
                     <router-link :to="{ name: 'Place', params: { slug: place.slug } }" @click="handleClose">
+                      <picture :class="place.image === null ? 'empty' : null">
+                        <img v-if="place.image !== null" :src="place.image" alt="">
+                      </picture>
                       <span
+                        class="name"
                         v-html="
                           highlight(place.locale[$i18n.locale].title, searchTerm)
                         "
@@ -218,33 +355,36 @@ export default defineComponent({
                     </router-link>
                   </li>
                 </ul>
-              </li>
-              <li v-if="results.regions.length" class="type">
-                <h1>{{ $t('page.regions.title') }}</h1>
-                <ul>
+                <p v-else class="no-results" v-html="$t('general.noResults')" />
+              </div>
+              <div v-if="activeTab === 3" class="content">
+                <ul v-if="results.regions.length">
                   <li v-for="region in results.regions" :key="region">
                     <router-link :to="{ name: 'Region', params: { slug: region.slug } }" @click="handleClose">
                       <span v-html="highlight(region.locale[$i18n.locale].title, searchTerm)" />
                     </router-link>
                   </li>
                 </ul>
-              </li>
-              <li v-if="results.municipalities.length" class="type">
-                <h1>{{ $t('page.municipalities.title') }}</h1>
-                <ul>
-                  <li v-for="municipality in results.municipalities" :key="municipality">
+                <p v-else class="no-results" v-html="$t('general.noResults')" />
+              </div>
+              <div v-if="activeTab === 4" class="content">
+                <ul v-if="results.municipalities.length">
+                  <li v-for="municipality in results.municipalities" :key="municipality" class="municipality">
                     <router-link
                       :to="{ name: 'Places', query: { municipality: municipality.slug } }"
                       @click="handleClose"
                     >
+                      <picture :class="municipality.image === null ? 'empty' : null">
+                        <img v-if="municipality.image !== null" :src="municipality.image" alt="">
+                      </picture>
                       <span v-html="highlight(municipality.locale[$i18n.locale], searchTerm)" />
                     </router-link>
                   </li>
                 </ul>
-              </li>
-              <li v-if="results.categories.length" class="type">
-                <h1>{{ $t('page.categories.title') }}</h1>
-                <ul>
+                <p v-else class="no-results" v-html="$t('general.noResults')" />
+              </div>
+              <div v-if="activeTab === 5" class="content">
+                <ul v-if="results.categories.length">
                   <li v-for="category in results.categories" :key="category">
                     <router-link
                       :to="{ name: 'Places', query: { category: category.slug } }"
@@ -254,10 +394,10 @@ export default defineComponent({
                     </router-link>
                   </li>
                 </ul>
-              </li>
-              <li v-if="results.subcategories.length" class="type">
-                <h1>{{ $t('page.subcategories.title') }}</h1>
-                <ul>
+                <p v-else class="no-results" v-html="$t('general.noResults')" />
+              </div>
+              <div v-if="activeTab === 6" class="content">
+                <ul v-if="results.subcategories.length">
                   <li v-for="subcategory in results.subcategories" :key="subcategory">
                     <router-link
                       :to="{ name: 'Places', query: { subcategory: subcategory.slug } }"
@@ -267,21 +407,10 @@ export default defineComponent({
                     </router-link>
                   </li>
                 </ul>
-              </li>
-            </ul>
+                <p v-else class="no-results" v-html="$t('general.noResults')" />
+              </div>
+            </div>
           </div>
-          <p
-            v-if="
-              searchTerm.length >= 2
-                && !results.places.length
-                && !results.regions.length
-                && !results.municipalities.length
-                && !results.categories.length
-                && !results.subcategories.length
-            "
-            class="no-results"
-            v-html="$t('general.noResults')"
-          />
         </div>
       </div>
     </div>

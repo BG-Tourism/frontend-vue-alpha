@@ -1,19 +1,12 @@
 .modal {
     .search-container {
-        width: 800px;
+        min-width: 1100px;
 
         &.has-results {
             .input-container {
-                &.focus {
-                    .input-field {
-                        box-shadow: rgba($slate-900, 0.3) 0 0 10px;
-                    }
-                }
-
                 .input-field {
                     border-bottom-right-radius: 0;
                     border-bottom-left-radius: 0;
-                    box-shadow: rgba($slate-900, 0.3) 0 0 10px;
                 }
             }
         }
@@ -33,25 +26,27 @@
 
             .input-field {
                 border: 0;
-                border-radius: 12px;
+                border-radius: 18px;
                 box-shadow: none;
                 transition: unset;
             }
 
             .input-prefix {
-                padding: 0 0 0 20px;
+                padding: 0 0 0 30px;
 
                 &::before {
                     display: none;
                 }
 
                 i {
-                    @include font-size(20px);
+                    @include font-size(24px);
+
+                    color: $slate-500;
                 }
             }
 
             .input-suffix {
-                padding: 0 10px 0 0;
+                padding: 0;
 
                 &::before {
                     display: none;
@@ -61,33 +56,20 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    width: 40px;
-                    height: 40px;
+                    width: auto;
+                    height: 60px;
+                    padding: 0 30px;
                     border: 0;
                     background-color: transparent;
 
-                    &:hover {
-                        .icon-holder {
-                            background-color: $slate-300;
-                        }
-                    }
+                    span {
+                        @include font-size(16px);
 
-                    .icon-holder {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        background-color: $slate-200;
-                        transition: all 200ms linear;
-
-                        i {
-                            @include font-size(16px);
-
-                            color: $slate-700;
-                            transition: all 200ms linear;
-                        }
+                        border-width: 0 0 1px;
+                        border-style: solid;
+                        border-color: $slate-900;
+                        color: $slate-900;
+                        font-weight: 500;
                     }
                 }
             }
@@ -95,84 +77,202 @@
             input {
                 @include font-size(20px);
 
-                height: 60px;
-                padding: 0 20px;
+                height: 80px;
+                padding: 0 30px 0 15px;
                 border-radius: 0;
-                color: $slate-800;
+                color: $slate-900;
                 line-height: 1;
+
+                &::placeholder {
+                    color: $slate-500;
+                }
             }
         }
 
         .results {
+            border-radius: 0 0 18px 18px;
+            background-color: $white;
+        }
+
+        .result-tabs {
+            position: relative;
+            z-index: 1;
+            border-width: 1px 0 0;
+            border-style: solid;
+            border-color: $slate-100;
+            box-shadow: rgba($slate-900, 0.3) 0 0 10px;
+
+            ul {
+                display: flex;
+                padding: 0 30px;
+            }
+
+            li {
+                border-width: 0 0 2px;
+                border-style: solid;
+                border-color: transparent;
+                transition: all 200ms linear;
+
+                &.active {
+                    border-color: $slate-600;
+
+                    button {
+                        i,
+                        .title {
+                            color: $slate-900;
+                        }
+                    }
+                }
+
+                button {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    padding: 15px;
+                    border: 0;
+                    background-color: transparent;
+                    transition: all 200ms linear;
+
+                    i,
+                    .title {
+                        color: $slate-600;
+                    }
+
+                    i {
+                        @include font-size(20px);
+                    }
+
+                    .title {
+                        @include font-size(16px);
+
+                        font-weight: 500;
+                    }
+
+                    .count {
+                        @include font-size(14px);
+
+                        padding: 2px 6px;
+                        border-radius: 4px;
+                        background-color: $slate-200;
+                        color: $slate-800;
+                    }
+                }
+            }
+        }
+
+        .result-tab-contents {
             overflow: hidden;
             overflow-y: auto;
             max-height: 500px;
-            border-radius: 0 0 6px 6px;
-            background-color: $white;
+            padding: 20px 0;
 
-            .list {
-                .type {
-                    width: 100%;
-                    padding: 10px 5px;
-                    border-width: 0 0 1px;
-                    border-style: solid;
-                    border-color: $slate-100;
-
-                    &:last-child {
-                        padding: 10px 5px 5px;
-                        border: 0;
-                    }
-                }
-
-                .place {
-                    a {
-                        display: flex;
-                        gap: 20px;
-                        justify-content: space-between;
-
-                        span {
-                            flex: 0 0 auto;
-                        }
-
-                        .address {
-                            @include font-size(14px);
-
-                            color: $slate-400;
-                            font-weight: 500;
-                        }
-                    }
-                }
-
-                h1 {
-                    @include font-size(18px);
-
-                    padding: 10px 15px;
-                    color: $slate-700;
-                    font-weight: 500;
-                }
-
+            .municipality,
+            .place {
                 a {
-                    @include font-size(18px);
+                    padding: 8px 30px;
+                }
+            }
 
+            .place {
+                a {
+                    picture {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .name {
+                        width: 100%;
+                    }
+
+                    .address {
+                        @include font-size(14px);
+
+                        flex: 0 0 auto;
+                        color: $slate-400;
+                        font-weight: 500;
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .type {
+                width: 100%;
+                padding: 15px 0;
+                border-width: 0 0 1px;
+                border-style: solid;
+                border-color: $slate-100;
+
+                &:first-child {
+                    padding: 0 0 15px !important;
+
+                    .title {
+                        padding: 10px 30px 15px;
+                    }
+                }
+
+                &:last-child {
+                    padding: 15px 0 0;
+                    border: 0;
+                }
+            }
+
+            .title {
+                @include font-size(18px);
+
+                padding: 10px 30px;
+                color: $slate-700;
+                font-weight: 500;
+            }
+
+            a {
+                @include font-size(18px);
+
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                width: 100%;
+                padding: 10px 30px;
+                border-radius: 6px;
+                color: $slate-700;
+                font-weight: 400;
+                line-height: 1.2;
+                transition: background-color 200ms linear;
+
+                &:hover {
+                    background-color: $slate-100;
+                }
+
+                picture {
+                    @include image;
+
+                    position: relative;
                     display: flex;
+                    flex: 0 0 auto;
                     align-items: center;
-                    width: 100%;
-                    padding: 8px 15px;
-                    border-radius: 6px;
-                    color: $slate-700;
-                    font-weight: 400;
-                    line-height: 1.2;
-                    transition: background-color 200ms linear;
+                    justify-content: center;
+                    overflow: hidden;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 4px;
 
-                    &:hover {
+                    &.empty {
                         background-color: $slate-100;
                     }
-                }
 
-                .highlight {
-                    border-radius: 4px;
-                    background-color: $amber-200;
+                    img {
+                        position: relative;
+                        z-index: 2;
+                        display: block;
+                        max-width: 40px;
+                        max-height: 40px;
+                    }
                 }
+            }
+
+            .highlight {
+                background-color: $amber-200;
             }
         }
 
