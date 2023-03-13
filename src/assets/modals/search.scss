@@ -1,6 +1,6 @@
 .modal {
     .search-container {
-        min-width: 1100px;
+        width: 1000px;
 
         &.has-results {
             .input-container {
@@ -104,7 +104,7 @@
 
             ul {
                 display: flex;
-                padding: 0 30px;
+                overflow: hidden;
             }
 
             li {
@@ -112,6 +112,14 @@
                 border-style: solid;
                 border-color: transparent;
                 transition: all 200ms linear;
+
+                &:first-child {
+                    margin: 0 0 0 15px;
+                }
+
+                &:last-child {
+                    margin: 0 15px 0 0;
+                }
 
                 &.active {
                     border-color: $slate-600;
@@ -146,6 +154,7 @@
                         @include font-size(16px);
 
                         font-weight: 500;
+                        white-space: nowrap;
                     }
 
                     .count {

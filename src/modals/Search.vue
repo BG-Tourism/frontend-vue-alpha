@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { onClickOutside, onKeyStroke } from '@vueuse/core'
 
 import BaseInput from '@/components/BaseInput.vue'
+import TabsList from '@/components/TabsList.vue'
 
 import categories from '@/api/categories'
 import places from '@/api/places'
@@ -14,6 +15,7 @@ import { useGeneralStore } from '@/stores/GeneralStore'
 export default defineComponent({
   components: {
     BaseInput,
+    TabsList,
   },
   setup() {
     const { locale } = useI18n({ useScope: 'global' })
@@ -201,7 +203,7 @@ export default defineComponent({
 
           <div v-if="searchTerm.length >= 2" class="results">
             <div class="result-tabs">
-              <ul>
+              <TabsList>
                 <li :class="activeTab === 1 ? 'active' : null">
                   <button @click.prevent="showTab(1)">
                     <span class="title">{{ $t('general.allResults') }}</span>
@@ -238,7 +240,7 @@ export default defineComponent({
                     <span class="count">{{ results.subcategories.length }}</span>
                   </button>
                 </li>
-              </ul>
+              </TabsList>
             </div>
             <div class="result-tab-contents">
               <div v-if="activeTab === 1">
