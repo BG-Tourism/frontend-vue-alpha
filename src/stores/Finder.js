@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import router from '@/router/index'
 
 import categories from '@/api/categories'
 import regions from '@/api/regions'
@@ -114,6 +115,7 @@ export const useFinderStore = defineStore('FinderStore', {
       }
 
       this.list.pagination.currentPage = 1
+      this.updateURLParams()
       this.fetch(this.selections)
     },
     /**
@@ -318,7 +320,28 @@ export const useFinderStore = defineStore('FinderStore', {
         this.selections[st] = []
       }
 
+      this.updateURLParams()
       this.fetch(this.selections)
+    },
+    /**
+     * Updates the URL query parameters based on the current selections.
+     */
+    updateURLParams() {
+      const queryParams = {}
+
+      for (const [key, value] of Object.entries(this.selections)) {
+        if (value.length > 0)
+          queryParams[key] = value.join(',')
+      }
+
+      const query = new URLSearchParams(queryParams).toString()
+      const path = `/${router.currentRoute.value.path.split('/').slice(1).join('/')}`
+
+      if (query !== '')
+        router.push(`${path}?${query}`)
+
+      else
+        router.push(path)
     },
   },
 })

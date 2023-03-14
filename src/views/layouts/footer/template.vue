@@ -121,7 +121,7 @@ export default defineComponent({
               <h3>{{ $t('page.categories.title') }}</h3>
               <ul>
                 <li v-for="category in categories" :key="category">
-                  <router-link :to="{ name: 'Places', query: { category: category.slug } }">
+                  <router-link :to="{ name: 'Category', params: { slug: category.slug } }">
                     <span>{{ category.locale[$i18n.locale].title }}</span>
                   </router-link>
                 </li>

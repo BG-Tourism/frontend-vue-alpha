@@ -1,6 +1,6 @@
 <script>
 import { computed, defineComponent, onBeforeMount, onBeforeUnmount } from 'vue'
-import { onBeforeRouteUpdate, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 import pageTitle from '@/utils/pageTitle'
 
@@ -21,18 +21,6 @@ export default defineComponent({
       finder.truncate()
 
       addItemsByQuery(route.query)
-
-      finder.fetch(true)
-    })
-
-    onBeforeRouteUpdate((next) => {
-      if (next.name === 'Places') {
-        finder.truncate()
-
-        addItemsByQuery(next.query)
-
-        finder.fetch(true)
-      }
     })
 
     onBeforeUnmount(() => {
