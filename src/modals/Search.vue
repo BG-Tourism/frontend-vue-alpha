@@ -285,7 +285,7 @@ export default defineComponent({
                     <ul>
                       <li v-for="municipality in results.municipalities" :key="municipality" class="municipality">
                         <router-link
-                          :to="{ name: 'Places', query: { municipality: municipality.slug } }"
+                          :to="{ name: 'Places', query: { municipality: [municipality.slug] } }"
                           @click="handleClose"
                         >
                           <picture :class="municipality.image === null ? 'empty' : null">
@@ -303,7 +303,7 @@ export default defineComponent({
                     <ul>
                       <li v-for="category in results.categories" :key="category">
                         <router-link
-                          :to="{ name: 'Places', query: { category: category.slug } }"
+                          :to="{ name: 'Places', query: { category: [category.slug] } }"
                           @click="handleClose"
                         >
                           <span v-html="highlight(category.locale[$i18n.locale].title, searchTerm)" />
@@ -318,7 +318,7 @@ export default defineComponent({
                     <ul>
                       <li v-for="subcategory in results.subcategories" :key="subcategory">
                         <router-link
-                          :to="{ name: 'Places', query: { subcategory: subcategory.slug } }"
+                          :to="{ name: 'Places', query: { subcategory: [subcategory.slug] } }"
                           @click="handleClose"
                         >
                           <span v-html="highlight(subcategory.locale[$i18n.locale], searchTerm)" />
