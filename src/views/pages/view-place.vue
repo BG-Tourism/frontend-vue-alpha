@@ -326,7 +326,7 @@ export default defineComponent({
             <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
           </div>
           <div v-if="place.locale[$i18n.locale].audio !== undefined && place.locale[$i18n.locale].audio !== null" class="audio-player">
-            <p>Слушай текста под формата на аудио</p>
+            <p>{{ $t('page.place.listenAudio') }}</p>
             <AudioPlayer
               :option="{
                 src: place.locale[$i18n.locale].audio,

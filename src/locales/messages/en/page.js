@@ -129,21 +129,7 @@ const messages = {
       copyrights: 'All text content on this page is provided completely voluntarily by the users of the site through our <a href="{repo}" target="blank">GitHub repository</a>, and we are not responsible for the copyright on it.',
       author: 'Author of the content is | Authors of the content are',
     },
-    audio: {
-      about: 'About',
-      section: 'Section: "{section}"',
-      describe: 'Audio for section from',
-      playAudio: 'Play audio track from this section',
-      controls: {
-        hide: 'Collapse Player',
-        show: 'Expand Player',
-        skipBack: 'Previous Track',
-        skipForward: 'Next Track',
-        play: 'Play',
-        pause: 'Pause',
-        volume: 'Adjust Volume',
-      },
-    },
+    listenAudio: 'Listen to the text as an audio',
   },
   places: {
     title: 'Places',
