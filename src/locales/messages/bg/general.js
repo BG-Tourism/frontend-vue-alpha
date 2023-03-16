@@ -63,6 +63,8 @@ const messages = {
     rating: 'Рейтинг',
     ratingCounter: 'Рейтинг ({n})',
     searchPlaceholder: 'Започни да пишеш...',
+    listView: 'Изглед със списък',
+    mapView: 'Изглед с карта',
   },
   pagination: {
     next: 'Напред',

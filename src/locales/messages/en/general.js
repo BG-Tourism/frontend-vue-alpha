@@ -63,6 +63,8 @@ const messages = {
     rating: 'Rating',
     ratingCounter: 'Rating ({n})',
     searchPlaceholder: 'Start typing...',
+    listView: 'List View',
+    mapView: 'Map View',
   },
   pagination: {
     next: 'Next',

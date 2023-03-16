@@ -135,6 +135,11 @@ const messages = {
     title: 'Places',
     subtitle: 'Immerse Yourself in Legacy',
     description: 'Discover the beauty and heritage of Bulgaria. Explore its most iconic landmarks, each showcasing the country\'s rich cultural heritage, architectural beauty, and natural wonders.',
+    map: {
+      button: {
+        details: 'Details',
+      },
+    },
   },
   privacy: {
     title: 'Privacy Policy',
