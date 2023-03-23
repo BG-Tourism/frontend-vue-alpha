@@ -101,7 +101,7 @@ export default defineComponent({
                 </li>
                 <li class="divider" />
                 <li>
-                  <router-link :to="{ name: 'TermsAndConditions' }">
+                  <router-link :to="{ name: 'TermsOfService' }">
                     <span>{{ $t('general.footer.links.terms') }}</span>
                   </router-link>
                 </li>
@@ -111,7 +111,7 @@ export default defineComponent({
                   </router-link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'Cookies' }">
+                  <router-link :to="{ name: 'CookiePolicy' }">
                     <span>{{ $t('general.footer.links.cookies') }}</span>
                   </router-link>
                 </li>

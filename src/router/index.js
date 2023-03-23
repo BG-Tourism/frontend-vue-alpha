@@ -11,6 +11,151 @@ const routes = [
     component: () => import('@/views/pages/homepage.vue'),
   },
   {
+    path: '/my',
+    meta: {
+      className: 'page-general',
+    },
+    component: () => import('@/views/pages/my/index.vue'),
+    children: [
+      {
+        path: 'settings',
+        meta: {
+          className: 'page-general',
+        },
+        component: () => import('@/views/pages/my/settings/index.vue'),
+        children: [
+          {
+            path: 'profile',
+            name: 'MyProfile',
+            meta: {
+              pageCategory: 'settings',
+              pageName: 'profile',
+              className: 'page-general',
+            },
+            component: () => import('@/views/pages/my/settings/profile/index.vue'),
+          },
+          {
+            path: 'security',
+            name: 'MySecurity',
+            meta: {
+              pageCategory: 'settings',
+              pageName: 'security',
+              className: 'page-general',
+            },
+            component: () => import('@/views/pages/my/settings/security/index.vue'),
+          },
+        ],
+      },
+      {
+        path: 'content',
+        meta: {
+          className: 'page-general',
+        },
+        component: () => import('@/views/pages/my/content/index.vue'),
+        children: [
+          {
+            path: 'trips',
+            meta: {
+              className: 'page-general',
+            },
+            component: () => import('@/views/pages/my/content/trips/index.vue'),
+            children: [
+              {
+                path: 'list',
+                name: 'MyTrips',
+                meta: {
+                  pageCategory: 'content',
+                  pageName: 'tripsList',
+                  className: 'page-general',
+                },
+                component: () => import('@/views/pages/my/content/trips/list/index.vue'),
+              },
+              {
+                path: 'create',
+                name: 'MyTripsCreate',
+                meta: {
+                  pageCategory: 'content',
+                  pageName: 'tripsCreate',
+                  className: 'page-general',
+                },
+                component: () => import('@/views/pages/my/content/trips/create/index.vue'),
+              },
+            ],
+          },
+          {
+            path: 'photos',
+            meta: {
+              className: 'page-general',
+            },
+            component: () => import('@/views/pages/my/content/photos/index.vue'),
+            children: [
+              {
+                path: 'list',
+                name: 'MyPhotos',
+                meta: {
+                  pageCategory: 'content',
+                  pageName: 'photosList',
+                  className: 'page-general',
+                },
+                component: () => import('@/views/pages/my/content/photos/list/index.vue'),
+              },
+              {
+                path: 'upload',
+                name: 'MyPhotosUpload',
+                meta: {
+                  pageCategory: 'content',
+                  pageName: 'photosUpload',
+                  className: 'page-general',
+                },
+                component: () => import('@/views/pages/my/content/photos/upload/index.vue'),
+              },
+            ],
+          },
+          {
+            path: 'reviews',
+            name: 'MyReviews',
+            meta: {
+              pageCategory: 'content',
+              pageName: 'reviewsList',
+              className: 'page-general',
+            },
+            component: () => import('@/views/pages/my/content/reviews/list/index.vue'),
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: '/legal',
+    component: () => import('@/views/pages/legal/index.vue'),
+    children: [
+      {
+        path: 'cookie-policy',
+        name: 'CookiePolicy',
+        meta: {
+          className: 'page-general',
+        },
+        component: () => import('@/views/pages/legal/cookie-policy/index.vue'),
+      },
+      {
+        path: 'privacy-policy',
+        name: 'PrivacyPolicy',
+        meta: {
+          className: 'page-general',
+        },
+        component: () => import('@/views/pages/legal/privacy-policy/index.vue'),
+      },
+      {
+        path: 'terms-of-service',
+        name: 'TermsOfService',
+        meta: {
+          className: 'page-general',
+        },
+        component: () => import('@/views/pages/legal/terms-of-service/index.vue'),
+      },
+    ],
+  },
+  {
     path: '/region/:slug',
     name: 'Region',
     meta: {
@@ -85,30 +230,6 @@ const routes = [
       className: 'page-contact',
     },
     component: () => import('@/views/pages/contact.vue'),
-  },
-  {
-    path: '/terms',
-    name: 'TermsAndConditions',
-    meta: {
-      className: 'page-general',
-    },
-    component: () => import('@/views/pages/terms.vue'),
-  },
-  {
-    path: '/privacy',
-    name: 'PrivacyPolicy',
-    meta: {
-      className: 'page-general',
-    },
-    component: () => import('@/views/pages/privacy.vue'),
-  },
-  {
-    path: '/cookies',
-    name: 'Cookies',
-    meta: {
-      className: 'page-general',
-    },
-    component: () => import('@/views/pages/cookies.vue'),
   },
   {
     path: '/:catchAll(.*)',

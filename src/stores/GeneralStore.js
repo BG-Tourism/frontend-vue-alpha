@@ -11,7 +11,7 @@ export const useGeneralStore = defineStore('GeneralStore', {
   state: () => ({
     mobileOverlay: true,
     user: {
-      logged: false,
+      logged: true,
       avatar: 'https://secure.gravatar.com/avatar/2a30cbe5435813200be7610cde63dc4f',
       username: 'tomatanasov',
       names: 'Том Атанасов',

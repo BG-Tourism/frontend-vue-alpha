@@ -69,34 +69,29 @@ export default defineComponent({
       <div ref="dropdownMenuTarget" class="menu-container" :class="[dropdownMenu ? 'shown' : 'hidden']">
         <ul>
           <li>
-            <router-link :to="{ name: 'User', params: { slug: user.username } }" @click="handleDropdownClose()">
-              <i class="icon-user" />
-              <span>{{ $t('general.viewProfile') }}</span>
+            <router-link :to="{ name: 'MyTrips' }" @click="handleDropdownClose()">
+              <i class="icon-route" />
+              <span>{{ $t('general.my.trips') }}</span>
             </router-link>
           </li>
           <li>
-            <a href="javascript:void(0);" @click="handleDropdownClose()">
-              <i class="icon-settings" />
-              <span>{{ $t('general.settings') }}</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" @click="handleDropdownClose()">
-              <i class="icon-route" />
-              <span>{{ $t('general.trips') }}</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" @click="handleDropdownClose()">
+            <router-link :to="{ name: 'MyReviews' }" @click="handleDropdownClose()">
               <i class="icon-review" />
-              <span>{{ $t('general.reviews') }}</span>
-            </a>
+              <span>{{ $t('general.my.reviews') }}</span>
+            </router-link>
           </li>
           <li>
-            <a href="javascript:void(0);" @click="handleDropdownClose()">
+            <router-link :to="{ name: 'MyPhotos' }" @click="handleDropdownClose()">
               <i class="icon-image" />
-              <span>{{ $t('general.photos') }}</span>
-            </a>
+              <span>{{ $t('general.my.photos') }}</span>
+            </router-link>
+          </li>
+          <li class="divider" />
+          <li>
+            <router-link :to="{ name: 'MyProfile' }" @click="handleDropdownClose()">
+              <i class="icon-settings" />
+              <span>{{ $t('general.profileSettings') }}</span>
+            </router-link>
           </li>
           <li class="divider" />
           <li>

@@ -414,3 +414,78 @@ dd {
         text-align: center;
     }
 }
+
+
+.shell {
+    .page-content {
+        display: flex;
+        gap: 30px;
+        width: 100%;
+        padding: 50px 30px;
+    }
+
+    aside {
+        flex: 0 0 auto;
+        width: 300px;
+
+        .navigation {
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 5%) 0 6px 24px 0, rgba(0, 0, 0, 8%) 0 0 0 1px;
+
+            .category {
+                padding: 0 0 30px;
+
+                &:last-of-type {
+                    padding: 0;
+                }
+            }
+
+            .category-name {
+                padding: 0 0 10px 5px;
+
+                span {
+                    @include font-size(14px);
+
+                    color: $slate-500;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    text-transform: uppercase;
+                }
+            }
+
+            .link {
+                padding: 5px 0;
+
+                a {
+                    display: block;
+                    width: 100%;
+
+                    &:hover,
+                    &:active,
+                    &:focus,
+                    &.active {
+                        span {
+                            color: $blue-600;
+                        }
+                    }
+
+                    span {
+                        @include font-size(16px);
+
+                        width: 100%;
+                        padding: 5px;
+                        color: $slate-900;
+                        font-weight: 500;
+                        line-height: 1.4;
+                        transition: all 200ms linear;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        width: 100%;
+    }
+}
