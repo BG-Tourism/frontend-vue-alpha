@@ -30,6 +30,7 @@ export default defineComponent({
       return import.meta.env.VITE_APP_NAME_EN
     })
     const gitRepository = import.meta.env.VITE_APP_GIT_REPO_FRONTEND
+    const gitContentsRepository = import.meta.env.VITE_APP_GIT_REPO_CONTENTS
 
     const place = places.find(p => p.slug === route.params.slug)
     const region = regions.find(r => r.slug === place.region)
@@ -124,6 +125,7 @@ export default defineComponent({
       region,
       municipality,
       gitRepository,
+      gitContentsRepository,
       mapRef,
       mapLocation,
       mapMarker,
@@ -323,7 +325,7 @@ export default defineComponent({
         <div class="wrapper">
           <div class="page-alert">
             <i class="icon-alert-triangle" />
-            <p v-html="$t('page.place.contents.aiGenerated', { repo: gitRepository })" />
+            <p v-html="$t('page.place.contents.aiGenerated', { repo: `${gitContentsRepository}/blob/main/landmarks/${place.slug}/contents/${locale}.md` })" />
           </div>
           <div v-if="place.locale[$i18n.locale].audio !== undefined && place.locale[$i18n.locale].audio !== null" class="audio-player">
             <p>{{ $t('page.place.listenAudio') }}</p>
