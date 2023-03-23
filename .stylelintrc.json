@@ -5,19 +5,11 @@
     "rules": {
         "block-no-empty": null,
         "color-function-notation": "legacy",
-        "color-hex-case": "upper",
         "declaration-block-no-redundant-longhand-properties": null,
         "font-family-name-quotes": null,
         "font-family-no-missing-generic-family-keyword": null,
         "function-name-case": null,
-        "indentation": [
-            4,
-            {
-                "baseIndentLevel": 2
-            }
-        ],
         "keyframes-name-pattern": null,
-        "max-line-length": null,
         "no-descending-specificity": null,
         "no-empty-source": null,
         "no-invalid-position-at-import-rule": null,
@@ -36,7 +28,6 @@
         "selector-no-vendor-prefix": null,
         "selector-pseudo-class-no-unknown": null,
         "selector-pseudo-element-no-unknown": null,
-        "string-quotes": "single",
         "function-no-unknown": null,
         "order/order": ["dollar-variables", "custom-properties", "at-rules", "declarations"],
         "order/properties-order": [

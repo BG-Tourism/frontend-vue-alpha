@@ -5,7 +5,7 @@ export default function addItemsByQuery(parameters) {
   const object = {}
 
   for (const key in parameters) {
-    object[key] = parameters[key].split(',').map((value) => {
+    object[key] = String(parameters[key]).split(',').map((value) => {
       if (!isNaN(value))
         return Number(value)
 
