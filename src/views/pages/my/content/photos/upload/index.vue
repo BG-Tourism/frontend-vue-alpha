@@ -1,9 +1,14 @@
 <script>
 import { defineComponent } from 'vue'
 
+import BaseSelectFile from '@/components/BaseSelectFile.vue'
+
 import pageTitle from '@/utils/pageTitle'
 
 export default defineComponent({
+  components: {
+    BaseSelectFile,
+  },
   setup() {
     pageTitle('general.my.photosUpload')
   },
@@ -11,8 +16,5 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="page-alert">
-    <i class="icon-alert-triangle" />
-    <p>{{ $t('general.needsRework') }}</p>
-  </div>
+  <BaseSelectFile accept="jpg,png" />
 </template>
