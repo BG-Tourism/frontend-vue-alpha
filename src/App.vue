@@ -2,9 +2,10 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 
-import { useGeneralStore } from './stores/GeneralStore'
 import BlockHeader from '@/views/layouts/header/template.vue'
 import BlockFooter from '@/views/layouts/footer/template.vue'
+
+import { useGeneralStore } from '@/stores/GeneralStore'
 
 import Authentication from '@/modals/Authentication.vue'
 import Languages from '@/modals/Languages.vue'

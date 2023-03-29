@@ -2,7 +2,10 @@
 import { computed, defineComponent, reactive, ref } from 'vue'
 import exifr from 'exifr'
 
+import places from '@/api/places'
+
 import useFileSize from '@/utils/useFileSize'
+import findClosest from '@/utils/useDistance'
 
 export default defineComponent({
   name: 'BaseSelectFile',
@@ -158,6 +161,13 @@ export default defineComponent({
               image: inputFieldFiles[0].fileBlob,
               exif: fileData.value,
             })
+
+            if (fileData.value.latitude && fileData.value.longitude) {
+              const closestItem = findClosest(places, fileData.value.latitude, fileData.value.longitude)
+
+              if (closestItem !== null)
+                console.log(JSON.stringify(closestItem))
+            }
           })
 
           emit('update:modelValue', inputFieldFiles)
