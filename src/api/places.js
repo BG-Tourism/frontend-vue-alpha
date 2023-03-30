@@ -1332,23 +1332,23 @@ const places = [
     municipality: 'novi-pazar',
     photos: [
       {
-        image: '/images/photos/8-1.jpg',
-        author: 'Лиляна Узунова',
-        date_added: 1670777697,
-      },
-      {
-        image: '/images/photos/8-2.jpg',
+        image: '/images/photos/8.jpg',
         author: 'Свилен Енев',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/8-3.jpg',
-        author: 'Лиляна Узунова',
+        image: '/images/photos/no-photo.jpg',
+        author: 'Неизвестен',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/8-4.jpg',
-        author: 'Лиляна Узунова',
+        image: '/images/photos/no-photo.jpg',
+        author: 'Неизвестен',
+        date_added: 1670777697,
+      },
+      {
+        image: '/images/photos/no-photo.jpg',
+        author: 'Неизвестен',
         date_added: 1670777697,
       },
     ],
@@ -1427,7 +1427,7 @@ const places = [
         comment: 'Наскоро посетих това място и бях поразен от красотата и спокойствието. Беше перфектното бягство от шума и суетата на града. Силно препоръчвам посещение.',
         comment_language: 'bg',
         attachment: {
-          source: '8-2.jpg',
+          source: '8.jpg',
           ratio: 'normal',
           type: 'photo',
         },
@@ -1487,9 +1487,9 @@ const places = [
         comment: 'Съоръженията на това място бяха първокласни и надминаха очакванията ми. Бях впечатлен от вниманието към детайла и чистотата. Силно препоръчително!',
         comment_language: 'bg',
         attachment: {
-          source: '8-5.jpg',
-          ratio: 'normal',
-          type: 'photo',
+          source: null,
+          ratio: null,
+          type: null,
         },
       },
       {
