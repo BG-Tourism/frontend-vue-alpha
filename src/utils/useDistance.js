@@ -11,6 +11,16 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
   return R * c
 }
 
+function convertDistance(km) {
+  if (km < 1) {
+    const meters = km * 1000
+    return `${meters.toFixed(2)} m`
+  }
+  else {
+    return `${km.toFixed(2)} km`
+  }
+}
+
 function findClosest(coordsArray, targetLatitude, targetLongitude, maxDistance = 100) {
   let closestItem = null
   let closestDistance = Infinity
@@ -25,11 +35,11 @@ function findClosest(coordsArray, targetLatitude, targetLongitude, maxDistance =
 
     if (distance < closestDistance && distance <= maxDistance) {
       closestDistance = distance
-      closestItem = { ...item, distance: Number(closestDistance.toFixed(2)) }
+      closestItem = { ...item, distance: Number(closestDistance) }
     }
   })
 
   return closestItem
 }
 
-export default findClosest
+export { haversineDistance, convertDistance, findClosest }

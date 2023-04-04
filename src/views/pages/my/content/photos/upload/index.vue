@@ -16,5 +16,5 @@ export default defineComponent({
 </script>
 
 <template>
-  <BaseSelectFile accept="jpg,png" />
+  <BaseSelectFile accept="jpg,png" :max-file-size="10000000" />
 </template>

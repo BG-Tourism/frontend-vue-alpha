@@ -11,11 +11,6 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="page-alert">
-    <i class="icon-alert-triangle" />
-    <p>{{ $t('general.needsRework') }}</p>
-  </div>
-
   <router-link :to="{ name: 'MyTripsCreate' }" class="button big blue">
     <span>{{ $t('general.createTrip') }}</span>
   </router-link>

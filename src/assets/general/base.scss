@@ -415,13 +415,16 @@ dd {
     }
 }
 
-
 .shell {
-    .page-content {
+    .page-alert {
+        margin: 30px 0;
+    }
+
+    .wrapper {
         display: flex;
         gap: 30px;
         width: 100%;
-        padding: 50px 30px;
+        padding: 0 0 50px;
     }
 
     aside {
