@@ -7,7 +7,7 @@ const locale = i18n.locale
 const places = [
   {
     slug: 'sveti-aleksandar-nevski',
-    image: '/images/photos/1.jpg',
+    image: '/images/photos/1-1.jpg',
     locale: {
       bg: {
         title: 'Храм-паметник "Свети Александър Невски"',
@@ -200,7 +200,7 @@ const places = [
   },
   {
     slug: 'tsarevets',
-    image: '/images/photos/2.jpg',
+    image: '/images/photos/2-1.jpg',
     locale: {
       bg: {
         title: 'Крепост "Царевец"',
@@ -383,7 +383,7 @@ const places = [
   },
   {
     slug: 'rilski-manastir',
-    image: '/images/photos/3.jpg',
+    image: '/images/photos/3-1.jpg',
     locale: {
       bg: {
         title: 'Манастир "Свети Иван Рилски"',
@@ -571,7 +571,7 @@ const places = [
   },
   {
     slug: 'shipka-monument',
-    image: '/images/photos/4.jpg',
+    image: '/images/photos/4-1.jpg',
     locale: {
       bg: {
         title: 'Паметник на свободата "Шипка"',
@@ -759,7 +759,7 @@ const places = [
   },
   {
     slug: 'belogradchishkite-skali',
-    image: '/images/photos/5.jpg',
+    image: '/images/photos/5-1.jpg',
     locale: {
       bg: {
         title: 'Белоградчишките скали',
@@ -779,7 +779,7 @@ const places = [
     photos: [
       {
         image: '/images/photos/5-1.jpg',
-        author: 'Владислав Терзийски',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
@@ -947,7 +947,7 @@ const places = [
   },
   {
     slug: 'chudnite-mostove',
-    image: '/images/photos/no-photo.jpg',
+    image: '/images/photos/6-1.jpg',
     locale: {
       bg: {
         title: 'Чудните мостове',
@@ -966,13 +966,13 @@ const places = [
     municipality: 'rodopi',
     photos: [
       {
-        image: '/images/photos/no-photo.jpg',
-        author: 'Неизвестен',
+        image: '/images/photos/6-1.jpg',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/no-photo.jpg',
-        author: 'Неизвестен',
+        image: '/images/photos/6-2.jpg',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
@@ -1046,7 +1046,7 @@ const places = [
         comment: 'text',
         comment_language: 'bg',
         attachment: {
-          source: '5-2.jpg',
+          source: '6-2.jpg',
           ratio: 'normal',
           type: 'photo',
         },
@@ -1106,7 +1106,7 @@ const places = [
         comment: 'text',
         comment_language: 'bg',
         attachment: {
-          source: '5-5.jpg',
+          source: '6-1.jpg',
           ratio: 'normal',
           type: 'photo',
         },
@@ -1130,7 +1130,7 @@ const places = [
   },
   {
     slug: 'church-of-christ-pantocrator',
-    image: '/images/photos/7.jpg',
+    image: '/images/photos/7-1.jpg',
     locale: {
       bg: {
         title: 'Църквата "Христос Пантократор"',
@@ -1313,7 +1313,7 @@ const places = [
   },
   {
     slug: 'pliska-national-historical-and-archaeological-reserve',
-    image: '/images/photos/8.jpg',
+    image: '/images/photos/8-1.jpg',
     locale: {
       bg: {
         title: 'Национален историко-археологически резерват "Плиска"',
@@ -1332,18 +1332,18 @@ const places = [
     municipality: 'novi-pazar',
     photos: [
       {
-        image: '/images/photos/8.jpg',
+        image: '/images/photos/8-1.jpg',
         author: 'Свилен Енев',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/no-photo.jpg',
-        author: 'Неизвестен',
+        image: '/images/photos/8-2.jpg',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
-        image: '/images/photos/no-photo.jpg',
-        author: 'Неизвестен',
+        image: '/images/photos/8-3.jpg',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
@@ -1427,7 +1427,7 @@ const places = [
         comment: 'Наскоро посетих това място и бях поразен от красотата и спокойствието. Беше перфектното бягство от шума и суетата на града. Силно препоръчвам посещение.',
         comment_language: 'bg',
         attachment: {
-          source: '8.jpg',
+          source: '8-1.jpg',
           ratio: 'normal',
           type: 'photo',
         },
@@ -1511,7 +1511,7 @@ const places = [
   },
   {
     slug: 'plovdiv-ancient-theater',
-    image: '/images/photos/9.jpg',
+    image: '/images/photos/9-1.jpg',
     locale: {
       bg: {
         title: 'Античен театър - Пловдив',
@@ -1531,12 +1531,12 @@ const places = [
     photos: [
       {
         image: '/images/photos/9-1.jpg',
-        author: 'Владислав Терзийски',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
         image: '/images/photos/9-2.jpg',
-        author: 'The Paradise of Bulgaria',
+        author: 'Министерство на туризма на Република България',
         date_added: 1670777697,
       },
       {
